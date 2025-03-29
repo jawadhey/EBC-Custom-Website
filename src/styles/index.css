@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  /* Adjust based on your font file */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/fonts/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  /* Adjust based on your font file */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/fonts/Poppins-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  /* Adjust based on your font file */
+  font-style: normal;
+}
+
+
+
+/* Custom Swiper Pagination Styles */
+.swiper-pagination {
+  position: static !important;
+  margin-top: 2rem;
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: #e2e2e2;
+  opacity: 1;
+  margin: 0 5px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #7c3aed;
+  width: 24px;
+  border-radius: 5px;
+}
+
+/* Card styles */
+.services-swiper .swiper-slide {
+  height: auto;
+  padding-bottom: 1rem;
+}
