@@ -26,8 +26,7 @@ module.exports = {
       },
 
       boxShadow: {
-        custom: '0px 0px 4px 0px rgba(13, 37, 123, 0.25)', // #0D257B40 is equivalent to rgba(13, 37, 123, 0.25)
-        'custom-black': '0px 0px 4px 0px rgba(0, 0, 0, 0.25)', // Add your custom shadow
+        TwBoxShadow: '0px 0px 20px 0px rgba(0, 0, 0, 0.08)',
       },
 
       fontFamily: {

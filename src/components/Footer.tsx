@@ -2,13 +2,13 @@ import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaInstagram, FaWhatsa
 
 const FooterSection = () => {
   return (
-    <footer className="bg-gradient-to-r from-gray-900 to-gray-800 text-white rounded-3xl overflow-hidden">
+    <footer className="bg-gradient-to-r m-4 lg:m-8 from-[#000] lg:px-12 to-[#282828] text-white rounded-3xl overflow-hidden">
       <div className="  mx-auto px-6 py-12">
         {/* Top Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-8">
           <div>
             <h2 className="text-2xl font-semibold">
-              Get our <span className="text-TwPrimaryPurple">latest updates</span> to connect with us and write your own{" "}
+              Get our <span className="text-TwPrimaryPurple">latest updates</span> to connect <br/> with us and write your own{" "}
               <span className="text-yellow-500">future.</span>
             </h2>
           </div>
