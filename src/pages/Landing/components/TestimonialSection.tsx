@@ -39,12 +39,12 @@ const TestimonialSection = () => {
   }
 
   return (
-    <div className="py-16 px-4 sm:px-6 lg:px-8 bg-amber-50">
-      <div className="max-w-7xl mx-auto">
+    <div className="py-16   bg-amber-50">
+      <div className="  mx-auto">
         {/* Progress Bar */}
         <div className="w-64 h-2 bg-gray-200 rounded-full mx-auto mb-12">
           <div
-            className="h-full bg-purple-600 rounded-full"
+            className="h-full bg-TwPrimaryPurple rounded-full"
             style={{ width: `${((currentSlide + 1) / testimonials.length) * 100}%` }}
           ></div>
         </div>
@@ -65,7 +65,7 @@ const TestimonialSection = () => {
             <p className="text-gray-700 text-lg leading-relaxed mb-8">{testimonials[currentSlide].text}</p>
 
             <div className="flex items-start">
-              <div className="bg-purple-600 p-3 rounded-lg mr-4">
+              <div className="bg-TwPrimaryPurple p-3 rounded-lg mr-4">
                 <FaQuoteLeft className="text-white text-xl" />
               </div>
               <div>

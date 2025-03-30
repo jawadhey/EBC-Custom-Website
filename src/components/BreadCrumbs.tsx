@@ -12,7 +12,7 @@ const Breadcrumb = ({ items = [], showBackButton = true }) => {
          {showBackButton && (
             <button
                //  onClick={handleBack}
-               className="flex items-center gap-2 px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors"
+               className="flex items-center gap-2 px-4 py-2 bg-TwPrimaryPurple text-white rounded-md hover:bg-TwPrimaryPurpleBgHover transition-colors"
             >
                <FaChevronLeft size={14} />
                <span>Back</span>
@@ -26,12 +26,12 @@ const Breadcrumb = ({ items = [], showBackButton = true }) => {
                   {item.href ? (
                      <Link
                         to={item.href}
-                        className={`hover:text-purple-600 transition-colors ${index === items.length - 1 ? "text-purple-600" : "text-gray-600"}`}
+                        className={`hover:text-TwPrimaryPurple transition-colors ${index === items.length - 1 ? "text-TwPrimaryPurple" : "text-gray-600"}`}
                      >
                         {item.label}
                      </Link>
                   ) : (
-                     <span className={index === items.length - 1 ? "text-purple-600" : "text-gray-600"}>{item.label}</span>
+                     <span className={index === items.length - 1 ? "text-TwPrimaryPurple" : "text-gray-600"}>{item.label}</span>
                   )}
                </React.Fragment>
             ))}

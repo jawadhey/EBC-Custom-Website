@@ -1,7 +1,7 @@
 const AboutUsSection = () => {
    return (
-     <div className="py-16 px-4 sm:px-6 lg:px-8 bg-amber-50">
-       <div className="max-w-7xl mx-auto">
+     <div className="py-16   bg-amber-50">
+       <div className="  mx-auto">
          <div className="grid md:grid-cols-2 gap-8 items-start">
            {/* Left Image */}
            <div>

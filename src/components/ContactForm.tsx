@@ -29,8 +29,8 @@ const ContactForm = ({
    }
 
    return (
-      <div className="py-8 px-4 sm:px-6 lg:px-8">
-         <div className="max-w-7xl mx-auto">
+      <div className="py-8  ">
+         <div className="  mx-auto">
             {/* Breadcrumb */}
             <Breadcrumb items={breadcrumbItems} />
 
@@ -63,7 +63,7 @@ const ContactForm = ({
                               value={formData.fullName}
                               onChange={handleChange}
                               placeholder="Jhon Doe"
-                              className="w-full px-4 py-3 rounded-lg bg-purple-100 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                              className="w-full px-4 py-3 rounded-lg bg-purple-100 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-TwPrimaryPurple"
                               required
                            />
                         </div>
@@ -79,7 +79,7 @@ const ContactForm = ({
                               value={formData.email}
                               onChange={handleChange}
                               placeholder="example@email.com"
-                              className="w-full px-4 py-3 rounded-lg bg-purple-100 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                              className="w-full px-4 py-3 rounded-lg bg-purple-100 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-TwPrimaryPurple"
                               required
                            />
                         </div>
@@ -96,7 +96,7 @@ const ContactForm = ({
                                  value={formData.phone}
                                  onChange={handleChange}
                                  placeholder="+92 000 0000000"
-                                 className="w-full px-4 py-3 rounded-lg bg-purple-100 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                                 className="w-full px-4 py-3 rounded-lg bg-purple-100 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-TwPrimaryPurple"
                               />
                            </div>
 
@@ -111,7 +111,7 @@ const ContactForm = ({
                                  value={formData.city}
                                  onChange={handleChange}
                                  placeholder="Islamabad"
-                                 className="w-full px-4 py-3 rounded-lg bg-purple-100 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                                 className="w-full px-4 py-3 rounded-lg bg-purple-100 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-TwPrimaryPurple"
                               />
                            </div>
                         </div>
@@ -127,14 +127,14 @@ const ContactForm = ({
                               onChange={handleChange}
                               rows={4}
                               placeholder="What's on your mind"
-                              className="w-full px-4 py-3 rounded-lg bg-purple-100 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                              className="w-full px-4 py-3 rounded-lg bg-purple-100 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-TwPrimaryPurple"
                               required
                            ></textarea>
                         </div>
 
                         <button
                            type="submit"
-                           className="w-full px-6 py-3 bg-purple-600 text-white font-medium rounded-lg hover:bg-purple-700 transition-colors"
+                           className="w-full px-6 py-3 bg-TwPrimaryPurple text-white font-medium rounded-lg hover:bg-TwPrimaryPurpleBgHover transition-colors"
                         >
                            Submit
                         </button>

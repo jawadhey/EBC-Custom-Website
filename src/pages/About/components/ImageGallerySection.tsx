@@ -1,7 +1,7 @@
 const ImageGallerySection = () => {
    return (
-     <div className="py-16 px-4 sm:px-6 lg:px-8 bg-amber-50">
-       <div className="max-w-7xl mx-auto">
+     <div className="py-16   bg-amber-50">
+       <div className="  mx-auto">
          <div className="grid grid-cols-12 gap-4 md:gap-6">
            {/* Top Row */}
            <div className="col-span-12 md:col-span-5">

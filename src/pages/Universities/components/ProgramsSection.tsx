@@ -66,8 +66,8 @@ const ProgramsSection = () => {
     activeTab === "all" ? allPrograms : allPrograms.filter((program) => program.categories.includes(activeTab))
 
   return (
-    <div className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-7xl mx-auto">
+    <div className="py-16   bg-white">
+      <div className="  mx-auto">
         {/* Heading */}
         <h2 className="text-3xl md:text-4xl font-bold text-gray-700 text-center mb-4">Programs We Offer</h2>
 
@@ -84,7 +84,7 @@ const ProgramsSection = () => {
               key={category.id}
               onClick={() => setActiveTab(category.id)}
               className={`px-5 py-3 rounded-full text-sm font-medium transition-colors ${
-                activeTab === category.id ? "bg-purple-600 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                activeTab === category.id ? "bg-TwPrimaryPurple text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
             >
               {category.name}
@@ -98,7 +98,7 @@ const ProgramsSection = () => {
             <div key={program.id} className="border rounded-xl overflow-hidden">
               <img src={program.image || "/placeholder.svg"} alt={program.title} className="w-full h-48 object-cover" />
               <div className="p-5">
-                <h3 className="text-purple-600 font-semibold text-lg mb-2">{program.title}</h3>
+                <h3 className="text-TwPrimaryPurple font-semibold text-lg mb-2">{program.title}</h3>
                 <p className="text-gray-600 mb-4">{program.description}</p>
                 <a
                   href="#"

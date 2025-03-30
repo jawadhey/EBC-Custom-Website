@@ -17,8 +17,8 @@ module.exports = {
       },
 
       colors: {
-        TwPrimary: '#7436EA',
-        TwBorder: '#DEDEDE',
+        TwPrimaryPurple: '#7436EA',
+        TwPrimaryPurpleBgHover: '#5d2fb3',
       },
 
       animation: {

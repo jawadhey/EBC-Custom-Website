@@ -3,12 +3,12 @@ import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaInstagram, FaWhatsa
 const FooterSection = () => {
   return (
     <footer className="bg-gradient-to-r from-gray-900 to-gray-800 text-white rounded-3xl overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 py-12">
+      <div className="  mx-auto px-6 py-12">
         {/* Top Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-8">
           <div>
             <h2 className="text-2xl font-semibold">
-              Get our <span className="text-purple-500">latest updates</span> to connect with us and write your own{" "}
+              Get our <span className="text-TwPrimaryPurple">latest updates</span> to connect with us and write your own{" "}
               <span className="text-yellow-500">future.</span>
             </h2>
           </div>
@@ -17,9 +17,9 @@ const FooterSection = () => {
             <input
               type="email"
               placeholder="Email"
-              className="flex-grow px-4 py-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="flex-grow px-4 py-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-TwPrimaryPurple"
             />
-            <button className="px-6 py-3 bg-purple-600 text-white font-medium rounded-lg hover:bg-purple-700 transition-colors whitespace-nowrap">
+            <button className="px-6 py-3 bg-TwPrimaryPurple text-white font-medium rounded-lg hover:bg-TwPrimaryPurpleBgHover transition-colors whitespace-nowrap">
               Contact Us
             </button>
           </div>
@@ -33,23 +33,23 @@ const FooterSection = () => {
           {/* Company Info */}
           <div className="lg:col-span-3">
             <div className="flex items-center mb-6">
-              <div className="w-12 h-12 bg-purple-600 rounded-full mr-3"></div>
+              <div className="w-12 h-12 bg-TwPrimaryPurple rounded-full mr-3"></div>
               <div>
-                <span className="text-purple-500">Company</span> <span className="text-yellow-500">Logo</span>
+                <span className="text-TwPrimaryPurple">Company</span> <span className="text-yellow-500">Logo</span>
               </div>
             </div>
 
             <div className="space-y-4">
               <div className="flex items-center">
-                <FaPhone className="text-purple-500 mr-3" />
+                <FaPhone className="text-TwPrimaryPurple mr-3" />
                 <span>+92 000 0000000</span>
               </div>
               <div className="flex items-center">
-                <FaEnvelope className="text-purple-500 mr-3" />
+                <FaEnvelope className="text-TwPrimaryPurple mr-3" />
                 <span>info@ebcworldwide.com</span>
               </div>
               <div className="flex items-start">
-                <FaMapMarkerAlt className="text-purple-500 mr-3 mt-1" />
+                <FaMapMarkerAlt className="text-TwPrimaryPurple mr-3 mt-1" />
                 <span>Office No. 15, 1st Floor, Pakland Business Centre, I8 Markaz Islamabad</span>
               </div>
             </div>

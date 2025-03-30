@@ -4,7 +4,7 @@ const ContactSection = () => {
          {/* Decorative Shapes */}
          <div className="absolute top-0 left-0 w-40 h-40">
             <div className="absolute w-32 h-32 border-8 border-yellow-400 rounded-full opacity-90"></div>
-            <div className="absolute w-40 h-40 border-8 border-purple-500 rounded-full opacity-30 -translate-x-4 translate-y-4"></div>
+            <div className="absolute w-40 h-40 border-8 border-TwPrimaryPurple rounded-full opacity-30 -translate-x-4 translate-y-4"></div>
          </div>
 
          <div className="absolute bottom-0 left-0 w-64 h-64">
@@ -25,9 +25,9 @@ const ContactSection = () => {
 
          <div className="grid md:grid-cols-2">
             {/* Left Column - Form */}
-            <div className="bg-purple-600 py-16 px-8 md:px-12 lg:px-16 relative">
+            <div className="bg-TwPrimaryPurple py-16 px-8 md:px-12 lg:px-16 relative">
                <div className="max-w-md mx-auto">
-                  <div className="inline-block px-4 py-2 rounded-full bg-purple-500 text-white text-sm mb-8">
+                  <div className="inline-block px-4 py-2 rounded-full bg-TwPrimaryPurple text-white text-sm mb-8">
                      Reach us out!
                   </div>
 
@@ -44,7 +44,7 @@ const ContactSection = () => {
                            type="text"
                            id="fullName"
                            placeholder="Jhon Doe"
-                           className="w-full px-4 py-3 rounded-lg bg-purple-500 text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                           className="w-full px-4 py-3 rounded-lg bg-TwPrimaryPurple text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
                         />
                      </div>
 
@@ -56,7 +56,7 @@ const ContactSection = () => {
                            type="email"
                            id="email"
                            placeholder="example@email.com"
-                           className="w-full px-4 py-3 rounded-lg bg-purple-500 text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                           className="w-full px-4 py-3 rounded-lg bg-TwPrimaryPurple text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
                         />
                      </div>
 
@@ -69,7 +69,7 @@ const ContactSection = () => {
                               type="tel"
                               id="phone"
                               placeholder="+92 000 0000000"
-                              className="w-full px-4 py-3 rounded-lg bg-purple-500 text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                              className="w-full px-4 py-3 rounded-lg bg-TwPrimaryPurple text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
                            />
                         </div>
 
@@ -81,7 +81,7 @@ const ContactSection = () => {
                               type="text"
                               id="city"
                               placeholder="Islamabad"
-                              className="w-full px-4 py-3 rounded-lg bg-purple-500 text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                              className="w-full px-4 py-3 rounded-lg bg-TwPrimaryPurple text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
                            />
                         </div>
                      </div>
@@ -94,7 +94,7 @@ const ContactSection = () => {
                            id="message"
                            rows={4}
                            placeholder="What's on your mind"
-                           className="w-full px-4 py-3 rounded-lg bg-purple-500 text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                           className="w-full px-4 py-3 rounded-lg bg-TwPrimaryPurple text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
                         ></textarea>
                      </div>
 

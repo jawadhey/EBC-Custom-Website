@@ -42,8 +42,8 @@ const ServicesSection = () => {
   ]
 
   return (
-    <div className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
-      <div className="max-w-7xl mx-auto">
+    <div className="py-16   bg-gray-50">
+      <div className="  mx-auto">
         {/* Heading */}
         <h2 className="text-3xl md:text-4xl font-bold text-gray-700 text-center mb-4">Our Services</h2>
 
@@ -79,7 +79,7 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <SwiperSlide key={index}>
               <div className="bg-white rounded-lg shadow-sm p-6 h-full flex flex-col">
-                <div className="bg-purple-600 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                <div className="bg-TwPrimaryPurple w-16 h-16 rounded-lg flex items-center justify-center mb-6">
                   {service.icon}
                 </div>
 
@@ -89,7 +89,7 @@ const ServicesSection = () => {
 
                 <a
                   href="#"
-                  className="text-purple-600 font-medium flex items-center hover:text-purple-700 transition-colors"
+                  className="text-TwPrimaryPurple font-medium flex items-center hover:text-purple-700 transition-colors"
                 >
                   View More <FaArrowRight className="ml-2" />
                 </a>

@@ -10,7 +10,7 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({ to, children, className =
    return (
       <Link
          to={to}
-         className={`hover:scale-[1.05] px-5 h-[47px] flex items-center justify-center w-fit py-[6px] bg-TwPrimary rounded-md text-center transition-transform text-white font-semibold ${className}`}
+         className={`hover:scale-[1.05] px-5 h-[47px] flex items-center justify-center w-fit py-[6px] bg-TwPrimaryPurple rounded-md text-center transition-transform text-white font-semibold ${className}`}
       >
          {children}
       </Link>

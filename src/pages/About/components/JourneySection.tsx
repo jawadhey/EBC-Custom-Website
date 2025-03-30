@@ -36,11 +36,11 @@ const JourneySection = () => {
    ]
  
    return (
-     <div className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-       <div className="max-w-7xl mx-auto">
+     <div className="py-16   bg-white">
+       <div className="  mx-auto">
          {/* Top Badge */}
          <div className="flex justify-center mb-6">
-           <div className="bg-purple-100 text-purple-600 px-6 py-2 rounded-full inline-block">
+           <div className="bg-purple-100 text-TwPrimaryPurple px-6 py-2 rounded-full inline-block">
              Have a look at our journey
            </div>
          </div>
@@ -63,7 +63,7 @@ const JourneySection = () => {
            {journeyItems.map((item, index) => (
              <div key={index} className="relative mb-24 last:mb-0">
                {/* Timeline Dot */}
-               <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-purple-600 z-10"></div>
+               <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-TwPrimaryPurple z-10"></div>
  
                <div
                  className={`flex flex-col ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} items-center gap-8`}
@@ -79,7 +79,7 @@ const JourneySection = () => {
                  </div>
  
                  {/* Year */}
-                 <div className="absolute text-2xl font-bold text-purple-600 top-0 left-1/2 transform -translate-x-1/2 mt-12">
+                 <div className="absolute text-2xl font-bold text-TwPrimaryPurple top-0 left-1/2 transform -translate-x-1/2 mt-12">
                    {item.year}
                  </div>
  

@@ -8,8 +8,8 @@ const Menu = () => {
   const isLogin = localStorage.getItem("authToken")
 
   return (
-    <nav className=" border-b-[1px] border-TwBorder h-[80px] flex items-center">
-      <Container parentClassName="flex-row items-center justify-between w-full hidden lg:flex">
+    <nav className=" border-b-[1px] border-TwBorder  flex items-center">
+      <Container parentClassName="flex-row items-center h-[80px] justify-between w-full hidden lg:flex">
 
         <div className="flex items-center">
           <Link to={"/"} className="flex items-center">

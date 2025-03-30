@@ -2,8 +2,8 @@ import { FaArrowRight, FaQuoteLeft } from "react-icons/fa"
 
 const FoundersMessageSection = () => {
   return (
-    <div className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-7xl mx-auto">
+    <div className="py-16   bg-white">
+      <div className="  mx-auto">
         {/* Top Badge */}
         <div className="flex justify-center mb-6">
           <div className="bg-green-100 text-green-600 px-6 py-2 rounded-full inline-block">Get to know us better</div>
@@ -44,7 +44,7 @@ const FoundersMessageSection = () => {
             <div className="mt-10 flex justify-end">
               <a
                 href="#"
-                className="inline-flex items-center bg-purple-100 text-purple-600 px-6 py-3 rounded-full hover:bg-purple-200 transition-colors"
+                className="inline-flex items-center bg-purple-100 text-TwPrimaryPurple px-6 py-3 rounded-full hover:bg-purple-200 transition-colors"
               >
                 View Executive Team <FaArrowRight className="ml-2" />
               </a>

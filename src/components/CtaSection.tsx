@@ -2,7 +2,7 @@ import { FaArrowRight } from "react-icons/fa"
 
 const CtaSection = () => {
   return (
-    <div className="py-16 px-4 sm:px-6 lg:px-8 bg-purple-50 relative overflow-hidden">
+    <div className="py-16   bg-purple-50 relative overflow-hidden">
       {/* Hexagon Pattern Background */}
       <div className="absolute inset-0 opacity-10">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -15,7 +15,7 @@ const CtaSection = () => {
         </svg>
       </div>
 
-      <div className="max-w-7xl mx-auto relative">
+      <div className="  mx-auto relative">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           {/* Left Content */}
           <div>
@@ -34,7 +34,7 @@ const CtaSection = () => {
           <div className="flex flex-col items-center">
             <img src="/business-man.jpg" alt="Business professional" className="w-full max-w-sm rounded-lg mb-4" />
 
-            <button className="bg-purple-600 text-white px-6 py-3 rounded-lg flex items-center hover:bg-purple-700 transition-colors">
+            <button className="bg-TwPrimaryPurple text-white px-6 py-3 rounded-lg flex items-center hover:bg-TwPrimaryPurpleBgHover transition-colors">
               Contact Us <FaArrowRight className="ml-2" />
             </button>
           </div>

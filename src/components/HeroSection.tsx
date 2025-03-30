@@ -19,9 +19,9 @@ const HeroSection = ({
          </div>
 
          {/* Content */}
-         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+         <div className="relative z-10 max-w-5xl mx-auto   text-center">
             {badgeText && (
-               <button className="mb-6 px-6 py-2 bg-purple-600 text-white rounded-full text-sm font-medium">
+               <button className="mb-6 px-6 py-2 bg-TwPrimaryPurple text-white rounded-full text-sm font-medium">
                   {badgeText}
                </button>
             )}
@@ -33,7 +33,7 @@ const HeroSection = ({
             {buttonText && (
                <a
                   href={buttonLink || "#"}
-                  className="inline-block px-8 py-3 bg-purple-600 text-white rounded-md font-medium hover:bg-purple-700 transition-colors"
+                  className="inline-block px-8 py-3 bg-TwPrimaryPurple text-white rounded-md font-medium hover:bg-TwPrimaryPurpleBgHover transition-colors"
                >
                   {buttonText}
                </a>

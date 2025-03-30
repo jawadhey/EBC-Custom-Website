@@ -1,8 +1,11 @@
+import Container from "../../../components/Container"
 
 const StatsSection = () => {
    return (
-      <div className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-         <div className="max-w-7xl mx-auto">
+      <div className="py-16 lg:py-32   bg-white">
+         <Container>
+
+         <div className="mx-auto">
             {/* Heading */}
             <h2 className="text-3xl md:text-4xl font-bold text-gray-700 text-center mb-16 max-w-3xl mx-auto">
                Lorem ipsum dolor sit amet consectetur. Sem faucibus.
@@ -13,7 +16,7 @@ const StatsSection = () => {
                {/* Stat 1 */}
                <div className="flex flex-col items-center text-center relative">
                   <div className="flex items-baseline mb-2">
-                     <span className="text-purple-600 text-5xl font-bold">15000</span>
+                     <span className="text-TwPrimaryPurple text-5xl font-bold">15000</span>
                      <span className="text-yellow-500 text-5xl font-bold">+</span>
                   </div>
                   <p className="text-lg font-medium text-gray-700 mb-4">Students</p>
@@ -26,7 +29,7 @@ const StatsSection = () => {
                {/* Stat 2 */}
                <div className="flex flex-col items-center text-center relative">
                   <div className="flex items-baseline mb-2">
-                     <span className="text-purple-600 text-5xl font-bold">15000</span>
+                     <span className="text-TwPrimaryPurple text-5xl font-bold">15000</span>
                      <span className="text-yellow-500 text-5xl font-bold">+</span>
                   </div>
                   <p className="text-lg font-medium text-gray-700 mb-4">Students</p>
@@ -39,7 +42,7 @@ const StatsSection = () => {
                {/* Stat 3 */}
                <div className="flex flex-col items-center text-center">
                   <div className="flex items-baseline mb-2">
-                     <span className="text-purple-600 text-5xl font-bold">15000</span>
+                     <span className="text-TwPrimaryPurple text-5xl font-bold">15000</span>
                      <span className="text-yellow-500 text-5xl font-bold">+</span>
                   </div>
                   <p className="text-lg font-medium text-gray-700 mb-4">Students</p>
@@ -47,6 +50,8 @@ const StatsSection = () => {
                </div>
             </div>
          </div>
+         </Container>
+
       </div>
    )
 }

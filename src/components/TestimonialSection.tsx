@@ -2,8 +2,8 @@ import { FaPlay } from "react-icons/fa"
 
 const TestimonialVideoSection = () => {
   return (
-    <div className="py-16 px-4 sm:px-6 lg:px-8 bg-purple-50">
-      <div className="max-w-7xl mx-auto">
+    <div className="py-16   bg-purple-50">
+      <div className="  mx-auto">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           {/* Left Column - Video */}
           <div className="relative">
@@ -12,7 +12,7 @@ const TestimonialVideoSection = () => {
             {/* Play Button Overlay */}
             <div className="absolute inset-0 flex items-center justify-center">
               <button className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-100 transition-colors">
-                <FaPlay className="text-purple-600 ml-1" />
+                <FaPlay className="text-TwPrimaryPurple ml-1" />
               </button>
             </div>
           </div>

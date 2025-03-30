@@ -1,15 +1,16 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from '../components/navbar';
 import Footer from '../components/Footer';
 
-
 const SiteLayout = () => {
+   const location = useLocation();
+   const isAbsolute = location.pathname === '/';
 
    return (
       <div className='font-poppins text-[16px]'>
-         <Navbar/>
+         <Navbar isAbsolute={isAbsolute} />
          <Outlet />
-         <Footer/>
+         <Footer />
       </div>
    );
 };

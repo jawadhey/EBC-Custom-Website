@@ -15,7 +15,7 @@ const AnalyticsSection = () => {
 
   // Progress bar data
   const progressData = [
-    { label: "Student Reach", value: 90, color: "bg-purple-600", percentage: "+50%" },
+    { label: "Student Reach", value: 90, color: "bg-TwPrimaryPurple", percentage: "+50%" },
     { label: "Lorem ipsum", value: 60, color: "bg-blue-100" },
     { label: "Lorem ipsum", value: 85, color: "bg-blue-100" },
     { label: "Lorem ipsum", value: 70, color: "bg-blue-100" },
@@ -23,8 +23,8 @@ const AnalyticsSection = () => {
   ]
 
   return (
-    <div className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-7xl mx-auto">
+    <div className="py-16   bg-white">
+      <div className="  mx-auto">
         {/* Heading */}
         <h2 className="text-3xl md:text-4xl font-bold text-gray-700 text-center mb-12 max-w-4xl mx-auto">
           Lorem ipsum dolor sit amet consectetur. Lobortis id nibh urna velit. Lorem pellentesque elementum.
