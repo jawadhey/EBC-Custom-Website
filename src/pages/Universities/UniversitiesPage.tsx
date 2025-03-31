@@ -3,6 +3,7 @@ import ProgramsSection from './components/ProgramsSection'
 import HeroSection from '../../components/HeroSection'
 import TestimonialVideoSection from '../../components/TestimonialSection'
 import CtaSection from '../../components/CtaSection'
+import { Images } from '../../assets/images'
 
 const UniversitiesPage = () => {
    return (
@@ -13,11 +14,14 @@ const UniversitiesPage = () => {
             description="Lorem ipsum dolor sit amet consectetur. Vel dui molestie tempor elementum gravida nibh vitae ullamcorper ac. Molestie sit phasellus faucibus urna urna in phasellus nullam amet."
             buttonText="Book Consultation Now"
             buttonLink="/contact"
-            backgroundImage="/students-group.jpg"
+            backgroundImage={Images.Universities.UniversityHero}
          />
          <ProgramsSection />
          <TestimonialVideoSection />
-         <CtaSection />
+         <div className='my-14 lg:my-28'>
+
+            <CtaSection backgroundImage={Images.Universities.UniversityBack}/>
+         </div>
 
 
       </>

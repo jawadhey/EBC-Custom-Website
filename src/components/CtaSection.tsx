@@ -2,13 +2,13 @@ import { FaArrowRight } from "react-icons/fa"
 import { Images } from "../assets/images"
 import Container from "./Container"
 
-const CtaSection = () => {
+const CtaSection = ({ backgroundImage }: any) => {
   return (
     <Container>
 
       <div className="py-16 bg-purple-50 overflow-hidden relative">
-        <img src={Images.About.ContactBg} className="absolute object-cover left-0 top-0 w-full h-full z-10"/>
-       
+        <img src={backgroundImage || Images.About.ContactBg} className="absolute object-cover left-0 top-0 w-full h-full z-10" />
+
 
         <div className="z-20  mx-auto relative px-8 lg:px-16">
           <div className="grid md:grid-cols-12 gap-16 items-center">

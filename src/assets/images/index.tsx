@@ -24,6 +24,9 @@ import ContactBg from './About/back.png'
 import ContactHero from './Contact/Frame 3268.png'
 import ContactForm from './Contact/Frame 3270.png'
 
+import UniversityHero from './Universities/Frame 3268 (1).png'
+import UniversityBack from './Universities/Frame 3262 (1).png'
+
 
 
 export const Images = {
@@ -52,5 +55,9 @@ export const Images = {
    Contact: {
       ContactHero,
       ContactForm
+   },
+   Universities: {
+      UniversityHero,
+      UniversityBack
    }
 }
