@@ -1,33 +1,45 @@
-import { FaLightbulb } from "react-icons/fa"
+import { FaArrowRight, FaLightbulb } from "react-icons/fa"
+import { Images } from "../../../assets/images"
+import Container from "../../../components/Container"
 
 const HeroSection = () => {
   return (
-    <div className="py-16   bg-white relative overflow-hidden">
-      <div className="  mx-auto">
-        <div className="grid md:grid-cols-2 gap-8 items-center">
+    <div className="bg-gradient-to-br from-transparent to-[#ECE5F9] flex items-center justify-center pb-24 pt-[70px] lg:pt-[70px]">
+
+      <Container>
+
+        <div className="w-full mx-auto flex flex-col-reverse xl:flex-row items-center justify-between gap-10">
           {/* Left Content */}
-          <div className="z-10">
-            <div className="inline-block px-6 py-2 rounded-full bg-purple-100 text-TwPrimaryPurple text-sm font-medium mb-6">
-              Get to Know Us Better
+          <div className="w-full xl:w-1/2 space-y-6">
+            <div className="flex w-fit px-4 h-[46px] items-center rounded-full bg-purple-100 border border-purple-200">
+              <p className="text-TwPrimaryPurple text-sm font-medium">Best Medical Student Consultant in your City</p>
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-700 leading-tight mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-700 !leading-normal">
               Lorem ipsum dolor sit amet consectetur. Vivamus dignissim.
             </h1>
 
-            <p className="text-gray-600 mb-8 max-w-xl">
-              Lorem ipsum dolor sit amet consectetur. Vel dui molestie tempor elementum gravida nibh vitae ullamcorper
-              ac. Molestie sit phasellus faucibus urna urna in phasellus nullam amet.
+            <p className="text-gray-600 max-w-xl">
+              Lorem ipsum dolor sit amet consectetur. Vitae purus massa felis sed velit urna. Nulla a commodo nulla at
+              cras nulla. Maecenas diam.
             </p>
 
-            <button className="px-6 py-3 bg-TwPrimaryPurple text-white font-medium rounded-md hover:bg-TwPrimaryPurpleBgHover transition-colors mb-12">
-              Book Consultation Now
-            </button>
+            <div className="flex items-center flex-col md:flex-row gap-6 pt-2">
+              <button className="bg-TwPrimaryPurple hover:bg-TwPrimaryPurpleBgHover text-white font-medium py-3 px-6 rounded-md transition duration-300">
+                Book Consultation Now
+              </button>
 
-            {/* Stats */}
-            <div className="flex flex-wrap gap-4">
+              <a
+                href="#"
+                className="flex items-center text-TwPrimaryPurple font-medium hover:text-purple-800 transition duration-300"
+              >
+                About Us <FaArrowRight className="ml-2" />
+              </a>
+            </div>
+
+            <div className="flex flex-wrap gap-4 pt-4">
               {[1, 2, 3].map((item, index) => (
-                <div key={index} className="bg-purple-50 rounded-lg p-4 w-40">
+                <div key={index} className="bg-[#ECE5F9] rounded-lg p-4 w-40">
                   <div className="flex items-baseline mb-2">
                     <span className="text-TwPrimaryPurple text-3xl font-bold">15000</span>
                     <span className="text-yellow-500 text-3xl font-bold">+</span>
@@ -38,38 +50,27 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right Image */}
-          <div className="relative">
-            <img
-              src="/students-discussion.jpg"
-              alt="Students Discussion"
-              className="rounded-2xl w-full h-auto z-10 relative"
-            />
+          {/* Right Content - Hexagon Image */}
+          <div className="w-full xl:w-1/2 relative">
+            <div className="relative">
+              {/* Hexagon shape */}
+              {/* <div className="absolute inset-0 bg-white rounded-3xl transform rotate-45 scale-[0.7] origin-center -z-10"></div> */}
 
-            {/* UI Elements Overlay */}
-            <div className="absolute top-1/4 right-4 bg-white bg-opacity-80 backdrop-blur-sm rounded-xl p-4 shadow-lg z-20">
-              <div className="flex justify-center mb-2">
-                <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
-                  <FaLightbulb className="text-TwPrimaryPurple" />
-                </div>
-              </div>
-              <div className="w-24 h-2 bg-TwPrimaryPurple rounded-full"></div>
-            </div>
+              {/* Main image */}
+              <div className="relative mx-auto xl:ml-auto z-10 rounded-3xl max-w-[500px] xl:max-w-[550px] ">
+                <img
+                  src={Images.About.AboutHero}
+                  alt="Medical Students Consultation"
+                  className="w-auto h-auto rounded-3xl object-contain"
+                />
 
-            <div className="absolute bottom-1/4 right-8 bg-white bg-opacity-80 backdrop-blur-sm rounded-full py-2 px-4 shadow-lg z-20 flex items-center">
-              <div className="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center mr-3">
-                <span className="text-yellow-600 text-xs">🔔</span>
+               
               </div>
-              <div className="flex-grow">
-                <div className="w-full h-2 bg-gray-200 rounded-full">
-                  <div className="w-3/4 h-2 bg-yellow-500 rounded-full"></div>
-                </div>
-              </div>
-              <div className="w-2 h-2 bg-red-500 rounded-full ml-2"></div>
             </div>
           </div>
         </div>
-      </div>
+      </Container>
+
     </div>
   )
 }

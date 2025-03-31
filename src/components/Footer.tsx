@@ -8,7 +8,7 @@ const FooterSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-8">
           <div>
             <h2 className="text-2xl font-semibold">
-              Get our <span className="text-TwPrimaryPurple">latest updates</span> to connect <br/> with us and write your own{" "}
+              Get our <span className="text-TwPrimaryPurple">latest updates</span> to connect <br /> with us and write your own{" "}
               <span className="text-yellow-500">future.</span>
             </h2>
           </div>
@@ -148,9 +148,16 @@ const FooterSection = () => {
           </div>
 
           {/* Map */}
-          <div className="lg:col-span-12 xl:col-span-12 md:col-span-6 lg:col-start-10 lg:col-end-13">
-            <div className="rounded-lg overflow-hidden h-40">
-              <img src="/map-image.jpg" alt="Office Location Map" className="w-full h-full object-cover" />
+          <div className="lg:col-span-12">
+            <div className="rounded-lg overflow-hidden h-60">
+              <iframe
+                title="Google Map Location"
+                className="w-full h-full"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.7997334861324!2d73.04804737615143!3d33.68442103722162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbf9e32d90b7b%3A0xa6f1b8c71f9b5d6f!2sPakland%20Business%20Centre!5e0!3m2!1sen!2s!4v1711812345678"
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </div>
         </div>
