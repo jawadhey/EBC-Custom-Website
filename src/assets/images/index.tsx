@@ -21,6 +21,9 @@ import Founder from './About/Frame 3290.png'
 import Contact from './About/Frame 3264.png'
 import ContactBg from './About/back.png'
 
+import ContactHero from './Contact/Frame 3268.png'
+import ContactForm from './Contact/Frame 3270.png'
+
 
 
 export const Images = {
@@ -45,5 +48,9 @@ export const Images = {
       Founder,
       Contact,
       ContactBg
+   },
+   Contact: {
+      ContactHero,
+      ContactForm
    }
 }

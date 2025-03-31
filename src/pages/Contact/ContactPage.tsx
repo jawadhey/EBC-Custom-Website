@@ -1,3 +1,4 @@
+import { Images } from "../../assets/images";
 import ContactForm from "../../components/ContactForm";
 import HeroSection from "../../components/HeroSection";
 
@@ -10,7 +11,7 @@ export default function ContactPage() {
             description="Lorem ipsum dolor sit amet consectetur. Vel dui molestie tempor elementum gravida nibh vitae ullamcorper ac. Molestie sit phasellus faucibus urna urna in phasellus nullam amet."
             buttonText="Book Consultation Now"
             buttonLink="/contact"
-            backgroundImage="/students-group.jpg"
+            backgroundImage={Images.Contact.ContactHero}
          />
          <ContactForm
             title="Lorem ipsum"
