@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import HeroSection from '../../components/HeroSection'
 import { Images } from '../../assets/images'
 import InstitutionSection from '../SingleUniversity/components/InstituteSection'
@@ -8,6 +8,11 @@ import TeamSection from '../../components/TeamsSection'
 import CtaSection from '../../components/CtaSection'
 
 const EventsPage = () => {
+
+     useEffect(() => {
+         window.scrollTo(0, 0);
+      }, []);
+
    return (
       <>
          <HeroSection

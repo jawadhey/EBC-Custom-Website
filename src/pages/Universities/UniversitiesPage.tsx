@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ProgramsSection from './components/ProgramsSection'
 import HeroSection from '../../components/HeroSection'
 import TestimonialVideoSection from '../../components/TestimonialSection'
@@ -6,6 +6,11 @@ import CtaSection from '../../components/CtaSection'
 import { Images } from '../../assets/images'
 
 const UniversitiesPage = () => {
+
+     useEffect(() => {
+         window.scrollTo(0, 0);
+      }, []);
+
    return (
       <>
          <HeroSection

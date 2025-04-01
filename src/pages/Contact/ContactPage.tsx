@@ -1,8 +1,14 @@
+import { useEffect } from "react";
 import { Images } from "../../assets/images";
 import ContactForm from "../../components/ContactForm";
 import HeroSection from "../../components/HeroSection";
 
 export default function ContactPage() {
+   
+     useEffect(() => {
+         window.scrollTo(0, 0);
+      }, []);
+
    return (
       <div>
          <HeroSection

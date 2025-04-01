@@ -1,9 +1,9 @@
-"use client"
 
 import { useState } from "react"
 import { FaArrowRight } from "react-icons/fa"
 import Container from "../../../components/Container"
 import { Images } from "../../../assets/images"
+import { Link } from "react-router-dom"
 
 const ProgramsSection = () => {
   const [activeTab, setActiveTab] = useState("all")
@@ -103,12 +103,12 @@ const ProgramsSection = () => {
                 <div className="p-5">
                   <h3 className="text-TwPrimaryPurple font-semibold text-lg mb-2">{program.title}</h3>
                   <p className="text-gray-600 mb-4">{program.description}</p>
-                  <a
-                    href="#"
+                  <Link
+                    to="/university-detail"
                     className="text-yellow-500 font-medium flex items-center hover:text-yellow-600 transition-colors"
                   >
                     View More <FaArrowRight className="ml-2" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             ))}

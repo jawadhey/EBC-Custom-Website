@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Container from '../../components/Container'
 import LandingHeroSection from './components/HeroSection'
 import StatsSection from './components/StatsSection'
@@ -11,6 +11,11 @@ import FaqSection from './components/FaqSection'
 import ProgramsSection from '../Universities/components/ProgramsSection'
 
 const MainLandingPage = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+     }, []);
+
   return (
     <>
       <LandingHeroSection />

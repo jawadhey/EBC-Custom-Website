@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import HeroSection from './components/AboutHeroSection'
 import MissionVisionSection from './components/MissionSection'
 import AboutUsSection from '../../components/AboutSection'
@@ -11,6 +11,11 @@ import CtaSection from '../../components/CtaSection'
 import TeamSection from '../../components/TeamsSection'
 
 const AboutUsPage = () => {
+
+     useEffect(() => {
+         window.scrollTo(0, 0);
+      }, []);
+
    return (
       <>
          <HeroSection />
