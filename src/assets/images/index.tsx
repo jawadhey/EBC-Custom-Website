@@ -26,6 +26,8 @@ import ContactForm from './Contact/Frame 3270.png'
 
 import UniversityHero from './Universities/Frame 3268 (1).png'
 import UniversityBack from './Universities/Frame 3262 (1).png'
+import InstituteMain from './Universities/Frame 79 (4).png'
+import TeamImage from './Universities/Image (1).png'
 
 
 
@@ -58,6 +60,8 @@ export const Images = {
    },
    Universities: {
       UniversityHero,
-      UniversityBack
+      UniversityBack,
+      InstituteMain,
+      TeamImage
    }
 }

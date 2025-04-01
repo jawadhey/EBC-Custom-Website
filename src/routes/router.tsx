@@ -5,6 +5,8 @@ import SiteLayout from "../layouts/SiteLayout";
 import AboutUsPage from "../pages/About/AboutUsPage";
 import ContactPage from "../pages/Contact/ContactPage";
 import UniversitiesPage from "../pages/Universities/UniversitiesPage";
+import SingleUnitversity from "../pages/SingleUniversity/SingleUnitversity";
+import EventsPage from "../pages/Events/EventsPage";
  
 
 const Router = () => {
@@ -29,6 +31,14 @@ const Router = () => {
             {
                path: 'universities',
                element: <UniversitiesPage />,
+            },
+            {
+               path: 'university-detail',
+               element: <SingleUnitversity />,
+            },
+            {
+               path: 'events',
+               element: <EventsPage />,
             },
             
          ],

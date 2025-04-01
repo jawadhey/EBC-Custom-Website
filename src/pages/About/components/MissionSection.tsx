@@ -1,6 +1,6 @@
 import Container from "../../../components/Container"
 
-const MissionVisionSection = () => {
+const MissionVisionSection = ({ heading, tagline }: any) => {
   return (
     <div className="py-16 bg-white">
       <Container>
@@ -8,11 +8,11 @@ const MissionVisionSection = () => {
         <div className="  mx-auto">
           {/* Top Badge */}
           <div className="flex justify-center mb-6">
-            <div className="bg-purple-100 text-TwPrimaryPurple px-6 py-2 rounded-full inline-block">What we thrive for</div>
+            <div className="bg-purple-100 text-TwPrimaryPurple px-6 py-2 rounded-full inline-block">{tagline || "What we thrive for"}</div>
           </div>
 
           {/* Heading */}
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-700 text-center mb-4">Mission and Vision</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-700 text-center mb-4">{heading || "Mission and Vision"}</h2>
 
           {/* Subheading */}
           <p className="text-gray-500 text-center max-w-3xl mx-auto mb-12">

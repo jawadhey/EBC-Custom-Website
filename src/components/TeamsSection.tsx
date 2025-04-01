@@ -2,8 +2,8 @@
 
 import { useState } from "react"
 import { FaArrowRight } from "react-icons/fa"
-import { Images } from "../../../assets/images"
-import Container from "../../../components/Container"
+import Container from "./Container"
+import { Images } from "../assets/images"
 
 const TeamSection = () => {
    // Team categories

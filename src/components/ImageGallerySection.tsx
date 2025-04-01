@@ -1,5 +1,5 @@
-import { Images } from "../../../assets/images"
-import Container from "../../../components/Container"
+import { Images } from "../assets/images"
+import Container from "./Container"
 
 const ImageGallerySection = () => {
   return (
