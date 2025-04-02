@@ -1,12 +1,126 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { FaQuoteLeft, FaChevronLeft, FaChevronRight } from "react-icons/fa"
 import Container from "../../../components/Container"
 import { Images } from "../../../assets/images"
+import { motion, AnimatePresence } from "motion/react"
+import { useInView } from "react-intersection-observer"
+
+// Animation variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.3
+    }
+  }
+}
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut"
+    }
+  }
+}
+
+const progressVariants = {
+  hidden: { width: 0, opacity: 0 },
+  visible: (percent: any) => ({
+    width: `${percent}%`,
+    opacity: 1,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut"
+    }
+  })
+}
+
+const imageVariants = {
+  hidden: { scale: 0.9, opacity: 0, x: -30 },
+  visible: {
+    scale: 1,
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.7,
+      ease: "easeOut"
+    }
+  },
+  exit: {
+    scale: 0.9,
+    opacity: 0,
+    x: -30,
+    transition: {
+      duration: 0.5
+    }
+  }
+}
+
+const textVariants = {
+  hidden: { opacity: 0, x: 30 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.7,
+      ease: "easeOut"
+    }
+  },
+  exit: {
+    opacity: 0,
+    x: 30,
+    transition: {
+      duration: 0.5
+    }
+  }
+}
+
+const navButtonVariants = {
+  initial: { scale: 1 },
+  hover: {
+    scale: 1.1,
+    transition: {
+      duration: 0.2,
+      ease: "easeInOut"
+    }
+  },
+  tap: {
+    scale: 0.95,
+    transition: {
+      duration: 0.1
+    }
+  }
+}
+
+const quoteIconVariants = {
+  hidden: { scale: 0, rotate: -45 },
+  visible: {
+    scale: 1,
+    rotate: 0,
+    transition: {
+      delay: 0.5,
+      duration: 0.6,
+      type: "spring",
+      stiffness: 200
+    }
+  }
+}
 
 const TestimonialSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [slideDirection, setSlideDirection] = useState("right")
+  const [ref, inView] = useInView({
+    threshold: 0.2,
+    triggerOnce: false
+  })
 
   const testimonials = [
     {
@@ -33,82 +147,150 @@ const TestimonialSection = () => {
   ]
 
   const nextSlide = () => {
+    setSlideDirection("right")
     setCurrentSlide((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1))
   }
 
   const prevSlide = () => {
+    setSlideDirection("left")
     setCurrentSlide((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1))
   }
 
+  // Auto slide change
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide()
+    }, 8000) // Change slide every 8 seconds
+
+    return () => clearInterval(interval)
+  }, [])
+
+  const progressPercent = ((currentSlide + 1) / testimonials.length) * 100
+
   return (
-    <div className="py-16 bg-[#FFF7E8]">
+    <div className="py-16 bg-[#FFF7E8] overflow-hidden" ref={ref}>
       <Container>
-        <div className="mx-auto">
+        <motion.div
+          className="mx-auto"
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          variants={containerVariants}
+        >
           {/* Progress Bar */}
-          <div className="w-64 h-2 bg-gray-200 rounded-full mx-auto mb-12">
-            <div
+          <motion.div className="w-64 h-2 bg-gray-200 rounded-full mx-auto mb-12" variants={itemVariants}>
+            <motion.div
               className="h-full bg-TwPrimaryPurple rounded-full"
-              style={{ width: `${((currentSlide + 1) / testimonials.length) * 100}%` }}
-            ></div>
-          </div>
+              custom={progressPercent}
+              variants={progressVariants}
+              initial="hidden"
+              animate="visible"
+              key={currentSlide} // Trigger animation when slide changes
+            ></motion.div>
+          </motion.div>
 
           {/* Testimonial Content */}
           <div className="grid md:grid-cols-12 gap-8 lg:gap-16 items-center mb-12">
             {/* Left Column - Image */}
-            <div className="col-span-4">
-              <img
-                src={testimonials[currentSlide].image || "/placeholder.svg"}
-                alt={testimonials[currentSlide].name}
-                className="w-full h-auto max-h-[400px] max-w-[400px] rounded-2xl"
-              />
+            <div className="col-span-4 overflow-hidden">
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={`img-${currentSlide}`}
+                  src={testimonials[currentSlide].image || "/placeholder.svg"}
+                  alt={testimonials[currentSlide].name}
+                  className="w-full h-auto max-h-[400px] max-w-[400px] rounded-2xl"
+                  variants={imageVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  whileHover={{
+                    scale: 1.03,
+                    transition: { duration: 0.3 }
+                  }}
+                />
+              </AnimatePresence>
             </div>
 
             {/* Right Column - Testimonial */}
             <div className="col-span-8">
-              <p className="text-gray-700 text-lg leading-relaxed mb-8">{testimonials[currentSlide].text}</p>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={`text-${currentSlide}`}
+                  variants={textVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                >
+                  <motion.p className="text-gray-700 text-lg leading-relaxed mb-8">
+                    {testimonials[currentSlide].text}
+                  </motion.p>
 
-              <div className="flex items-start">
-                <div className="bg-TwPrimaryPurple p-3 rounded-lg mr-4">
-                  <FaQuoteLeft className="text-white text-xl" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-800">{testimonials[currentSlide].name}</h3>
-                  <p className="text-gray-600">{testimonials[currentSlide].position}</p>
-                </div>
-              </div>
+                  <div className="flex items-start">
+                    <motion.div
+                      className="bg-TwPrimaryPurple p-3 rounded-lg mr-4"
+                      variants={quoteIconVariants}
+                    >
+                      <FaQuoteLeft className="text-white text-xl" />
+                    </motion.div>
+                    <motion.div variants={itemVariants}>
+                      <h3 className="text-xl font-semibold text-gray-800">{testimonials[currentSlide].name}</h3>
+                      <p className="text-gray-600">{testimonials[currentSlide].position}</p>
+                    </motion.div>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
             </div>
           </div>
 
           {/* Divider */}
-          <div className="border-t border-amber-200 mb-6"></div>
+          <motion.div
+            className="border-t border-amber-200 mb-6"
+            initial={{ width: 0 }}
+            animate={{ width: "100%" }}
+            transition={{ duration: 1, delay: 0.5 }}
+          ></motion.div>
 
           {/* Navigation */}
-          <div className="flex justify-between items-center">
-            <button className="border border-gray-300 rounded-full px-8 py-3 text-gray-700 hover:bg-amber-100 transition-colors">
+          <motion.div
+            className="flex justify-between items-center"
+            variants={itemVariants}
+          >
+            <motion.button
+              className="border border-gray-300 rounded-full px-8 py-3 text-gray-700 hover:bg-amber-100 transition-colors"
+              whileHover={{
+                scale: 1.05,
+                backgroundColor: "#FDE68A",
+                transition: { duration: 0.2 }
+              }}
+              whileTap={{ scale: 0.98 }}
+            >
               See All Reviews
-            </button>
+            </motion.button>
 
             <div className="flex space-x-2">
-              <button
+              <motion.button
                 onClick={prevSlide}
                 className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center hover:bg-amber-100 transition-colors"
+                variants={navButtonVariants}
+                whileHover="hover"
+                whileTap="tap"
               >
                 <FaChevronLeft className="text-gray-700" />
-              </button>
-              <button
+              </motion.button>
+              <motion.button
                 onClick={nextSlide}
                 className="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center hover:bg-gray-800 transition-colors"
+                variants={navButtonVariants}
+                whileHover="hover"
+                whileTap="tap"
               >
                 <FaChevronRight className="text-white" />
-              </button>
+              </motion.button>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </Container>
-
     </div>
   )
 }
 
 export default TestimonialSection
-

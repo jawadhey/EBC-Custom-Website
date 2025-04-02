@@ -1,154 +1,357 @@
+
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa"
+import { motion, AnimatePresence } from "framer-motion"
+import { useInView } from "react-intersection-observer"
+
+// Animation variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.3
+    }
+  }
+}
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut"
+    }
+  }
+}
+
+const textVariants = {
+  hidden: { opacity: 0, x: -20 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.7,
+      ease: "easeOut"
+    }
+  }
+}
+
+const buttonVariants = {
+  initial: { scale: 1 },
+  hover: {
+    scale: 1.05,
+    transition: {
+      duration: 0.2,
+      ease: "easeInOut"
+    }
+  },
+  tap: {
+    scale: 0.98,
+    transition: {
+      duration: 0.1
+    }
+  }
+}
+
+const socialIconVariants = {
+  hidden: { scale: 0 },
+  visible: {
+    scale: 1,
+    transition: {
+      type: "spring",
+      stiffness: 200,
+      damping: 10
+    }
+  },
+  hover: {
+    scale: 1.1,
+    transition: {
+      duration: 0.2
+    }
+  }
+}
+
+const mapVariants = {
+  hidden: { opacity: 0, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut"
+    }
+  }
+}
 
 const FooterSection = () => {
+  const [ref, inView] = useInView({
+    threshold: 0,
+    triggerOnce: false
+  })
+
   return (
-    <footer className="bg-gradient-to-r m-4 lg:m-8 from-[#000] lg:px-12 to-[#282828] text-white rounded-3xl overflow-hidden">
-      <div className="  mx-auto px-6 py-12">
+    <motion.footer
+      className="bg-gradient-to-r m-4 lg:m-8 from-[#000] lg:px-12 to-[#282828] text-white rounded-3xl overflow-hidden"
+      ref={ref}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      variants={containerVariants}
+    >
+      <div className="mx-auto px-6 py-12">
         {/* Top Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-8">
-          <div>
+          <motion.div variants={textVariants}>
             <h2 className="text-2xl font-semibold">
               Get our <span className="text-TwPrimaryPurple">latest updates</span> to connect <br /> with us and write your own{" "}
               <span className="text-yellow-500">future.</span>
             </h2>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col sm:flex-row gap-4">
-            <input
+          <motion.div
+            className="flex flex-col sm:flex-row gap-4"
+            variants={itemVariants}
+          >
+            <motion.input
               type="email"
               placeholder="Email"
               className="flex-grow px-4 py-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-TwPrimaryPurple"
+              whileFocus={{
+                scale: 1.02,
+                boxShadow: "0 0 0 2px rgba(139, 92, 246, 0.5)"
+              }}
             />
-            <button className="px-6 py-3 bg-TwPrimaryPurple text-white font-medium rounded-lg hover:bg-TwPrimaryPurpleBgHover transition-colors whitespace-nowrap">
+            <motion.button
+              className="px-6 py-3 bg-TwPrimaryPurple text-white font-medium rounded-lg hover:bg-TwPrimaryPurpleBgHover transition-colors whitespace-nowrap"
+              variants={buttonVariants}
+              whileHover="hover"
+              whileTap="tap"
+            >
               Contact Us
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-700 my-8"></div>
+        <motion.div
+          className="border-t border-gray-700 my-8"
+          initial={{ width: 0 }}
+          animate={{ width: "100%" }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        />
 
         {/* Middle Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 mb-8">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 mb-8"
+          variants={containerVariants}
+        >
           {/* Company Info */}
-          <div className="lg:col-span-3">
-            <div className="flex items-center mb-6">
-              <div className="w-12 h-12 bg-TwPrimaryPurple rounded-full mr-3"></div>
+          <motion.div
+            className="lg:col-span-3"
+            variants={itemVariants}
+          >
+            <motion.div
+              className="flex items-center mb-6"
+              whileHover={{ x: 5 }}
+            >
+              <motion.div
+                className="w-12 h-12 bg-TwPrimaryPurple rounded-full mr-3"
+                animate={{
+                  scale: [1, 1.05, 1],
+                  rotate: [0, 5, -5, 0]
+                }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  repeatType: "reverse"
+                }}
+              />
               <div>
                 <span className="text-TwPrimaryPurple">Company</span> <span className="text-yellow-500">Logo</span>
               </div>
-            </div>
+            </motion.div>
 
             <div className="space-y-4">
-              <div className="flex items-center">
+              <motion.div
+                className="flex items-center"
+                variants={itemVariants}
+                whileHover={{ x: 5 }}
+              >
                 <FaPhone className="text-TwPrimaryPurple mr-3" />
                 <span>+92 000 0000000</span>
-              </div>
-              <div className="flex items-center">
+              </motion.div>
+              <motion.div
+                className="flex items-center"
+                variants={itemVariants}
+                whileHover={{ x: 5 }}
+              >
                 <FaEnvelope className="text-TwPrimaryPurple mr-3" />
                 <span>info@ebcworldwide.com</span>
-              </div>
-              <div className="flex items-start">
+              </motion.div>
+              <motion.div
+                className="flex items-start"
+                variants={itemVariants}
+                whileHover={{ x: 5 }}
+              >
                 <FaMapMarkerAlt className="text-TwPrimaryPurple mr-3 mt-1" />
                 <span>Office No. 15, 1st Floor, Pakland Business Centre, I8 Markaz Islamabad</span>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Quick Links */}
-          <div className="lg:col-span-2">
-            <h3 className="text-yellow-500 font-medium mb-4">Quick Links</h3>
+          <motion.div
+            className="lg:col-span-2"
+            variants={itemVariants}
+          >
+            <motion.h3
+              className="text-yellow-500 font-medium mb-4"
+              whileHover={{ scale: 1.02 }}
+            >
+              Quick Links
+            </motion.h3>
             <ul className="space-y-3">
-              <li>
-                <a href="#" className="hover:text-purple-400 transition-colors">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-purple-400 transition-colors">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-purple-400 transition-colors">
-                  Universities
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-purple-400 transition-colors">
-                  Events
-                </a>
-              </li>
+              {['Home', 'About Us', 'Universities', 'Events'].map((link, index) => (
+                <motion.li
+                  key={index}
+                  variants={itemVariants}
+                  whileHover={{
+                    x: 5,
+                    color: "#a78bfa"
+                  }}
+                >
+                  <a href="#" className="hover:text-purple-400 transition-colors">
+                    {link}
+                  </a>
+                </motion.li>
+              ))}
             </ul>
-          </div>
+          </motion.div>
 
           {/* Universities */}
-          <div className="lg:col-span-2">
-            <h3 className="text-yellow-500 font-medium mb-4">Universities</h3>
+          <motion.div
+            className="lg:col-span-2"
+            variants={itemVariants}
+          >
+            <motion.h3
+              className="text-yellow-500 font-medium mb-4"
+              whileHover={{ scale: 1.02 }}
+            >
+              Universities
+            </motion.h3>
             <ul className="space-y-3">
-              <li>
-                <a href="#" className="hover:text-purple-400 transition-colors">
-                  Lorem Ipsum
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-purple-400 transition-colors">
-                  Lorem Ipsum
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-purple-400 transition-colors">
-                  Lorem Ipsum
-                </a>
-              </li>
-              <li>
+              {['Lorem Ipsum', 'Lorem Ipsum', 'Lorem Ipsum'].map((link, index) => (
+                <motion.li
+                  key={index}
+                  variants={itemVariants}
+                  whileHover={{
+                    x: 5,
+                    color: "#a78bfa"
+                  }}
+                >
+                  <a href="#" className="hover:text-purple-400 transition-colors">
+                    {link}
+                  </a>
+                </motion.li>
+              ))}
+              <motion.li
+                variants={itemVariants}
+                whileHover={{
+                  x: 5,
+                  color: "#8b5cf6"
+                }}
+              >
                 <a href="#" className="text-purple-400 hover:text-purple-300 transition-colors">
                   View More
                 </a>
-              </li>
+              </motion.li>
             </ul>
-          </div>
+          </motion.div>
 
           {/* Programs */}
-          <div className="lg:col-span-2">
-            <h3 className="text-yellow-500 font-medium mb-4">Programs</h3>
+          <motion.div
+            className="lg:col-span-2"
+            variants={itemVariants}
+          >
+            <motion.h3
+              className="text-yellow-500 font-medium mb-4"
+              whileHover={{ scale: 1.02 }}
+            >
+              Programs
+            </motion.h3>
             <ul className="space-y-3">
-              <li>
-                <a href="#" className="hover:text-purple-400 transition-colors">
-                  Lorem Ipsum
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-purple-400 transition-colors">
-                  Lorem Ipsum
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-purple-400 transition-colors">
-                  Lorem Ipsum
-                </a>
-              </li>
-              <li>
+              {['Lorem Ipsum', 'Lorem Ipsum', 'Lorem Ipsum'].map((link, index) => (
+                <motion.li
+                  key={index}
+                  variants={itemVariants}
+                  whileHover={{
+                    x: 5,
+                    color: "#a78bfa"
+                  }}
+                >
+                  <a href="#" className="hover:text-purple-400 transition-colors">
+                    {link}
+                  </a>
+                </motion.li>
+              ))}
+              <motion.li
+                variants={itemVariants}
+                whileHover={{
+                  x: 5,
+                  color: "#8b5cf6"
+                }}
+              >
                 <a href="#" className="text-purple-400 hover:text-purple-300 transition-colors">
                   View More
                 </a>
-              </li>
+              </motion.li>
             </ul>
-          </div>
+          </motion.div>
 
           {/* Office Hours */}
-          <div className="lg:col-span-3">
-            <div className="flex items-center mb-4">
+          <motion.div
+            className="lg:col-span-3"
+            variants={itemVariants}
+          >
+            <motion.div
+              className="flex items-center mb-4"
+              whileHover={{ x: 5 }}
+            >
               <span className="text-yellow-500 text-xl mr-2">📅</span>
-              <h3 className="text-yellow-500 font-medium">Office Hours</h3>
-            </div>
-            <p className="mb-2">Mon - Sat</p>
-            <p className="mb-6">09:00 AM - 06:00 PM</p>
-            <p className="text-sm text-gray-400">Get directions to our office directly</p>
-          </div>
+              <motion.h3
+                className="text-yellow-500 font-medium"
+                whileHover={{ scale: 1.02 }}
+              >
+                Office Hours
+              </motion.h3>
+            </motion.div>
+            <motion.p
+              className="mb-2"
+              variants={itemVariants}
+            >
+              Mon - Sat
+            </motion.p>
+            <motion.p
+              className="mb-6"
+              variants={itemVariants}
+            >
+              09:00 AM - 06:00 PM
+            </motion.p>
+            <motion.p
+              className="text-sm text-gray-400"
+              variants={itemVariants}
+            >
+              Get directions to our office directly
+            </motion.p>
+          </motion.div>
 
           {/* Map */}
-          <div className="lg:col-span-12">
+          <motion.div
+            className="lg:col-span-12"
+            variants={mapVariants}
+          >
             <div className="rounded-lg overflow-hidden h-60">
               <iframe
                 title="Google Map Location"
@@ -157,43 +360,64 @@ const FooterSection = () => {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
+              />
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Divider */}
-        <div className="border-t border-gray-700 my-8"></div>
+        <motion.div
+          className="border-t border-gray-700 my-8"
+          initial={{ width: 0 }}
+          animate={{ width: "100%" }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        />
 
         {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="text-gray-400 mb-4 md:mb-0">EBC World Wide. © 2025. All Rights Reserved</div>
+        <motion.div
+          className="flex flex-col md:flex-row justify-between items-center"
+          variants={containerVariants}
+        >
+          <motion.div
+            className="text-gray-400 mb-4 md:mb-0"
+            variants={itemVariants}
+          >
+            EBC World Wide. © 2025. All Rights Reserved
+          </motion.div>
 
-          <div className="flex space-x-4">
-            <a
+          <motion.div
+            className="flex space-x-4"
+            variants={containerVariants}
+          >
+            <motion.a
               href="#"
               className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"
+              variants={socialIconVariants}
+              whileHover="hover"
             >
               <FaFacebookF />
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="#"
               className="w-10 h-10 bg-gradient-to-r from-purple-600 to-pink-500 rounded-full flex items-center justify-center hover:from-purple-700 hover:to-pink-600 transition-colors"
+              variants={socialIconVariants}
+              whileHover="hover"
             >
               <FaInstagram />
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="#"
               className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center hover:bg-green-700 transition-colors"
+              variants={socialIconVariants}
+              whileHover="hover"
             >
               <FaWhatsapp />
-            </a>
-          </div>
-        </div>
+            </motion.a>
+          </motion.div>
+        </motion.div>
       </div>
-    </footer>
+    </motion.footer>
   )
 }
 
 export default FooterSection
-

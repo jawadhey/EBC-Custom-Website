@@ -2,51 +2,73 @@ import { Link, useLocation } from "react-router-dom";
 import { Icons } from "../../assets/icons";
 import Container from "../Container";
 import PrimaryButton from "../PrimaryButton";
+import { motion } from "motion/react";
 
 const Menu = () => {
   const location = useLocation();
   const isLogin = localStorage.getItem("authToken");
 
+  const menuItems = [
+    { path: "/", label: "Home" },
+    { path: "/about-us", label: "About Us" },
+    { path: "/universities", label: "Universities" },
+    { path: "/events", label: "Events" }
+  ];
+
   return (
-    <nav className="border-b-[1px] border-TwBorder flex items-center">
+    <motion.nav
+      className="border-b-[1px] border-TwBorder flex items-center"
+      initial={{ y: -20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <Container parentClassName="flex-row items-center h-[80px] justify-between w-full hidden lg:flex">
-        <div className="flex items-center">
+        <motion.div
+          className="flex items-center"
+          initial={{ x: -20, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: 0.2 }}
+        >
           <Link to={"/"} className="flex items-center">
-            <img src={Icons.Brand.NavLogo} alt="" />
+            <motion.img
+              src={Icons.Brand.NavLogo}
+              alt="Logo"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            />
           </Link>
-        </div>
+        </motion.div>
 
         <div className="flex flex-row items-center gap-8 font-medium">
-          <Link
-            to="/"
-            className={`hover:scale-[1.05] text-center transition-transform ${location.pathname === "/" ? "text-TwPrimaryPurple font-semibold" : "text-gray-800"}`}
-          >
-            Home
-          </Link>
-
-          <Link
-            to="/about-us"
-            className={`hover:scale-[1.05] text-center transition-transform ${location.pathname === "/about-us" ? "text-TwPrimaryPurple font-semibold" : "text-gray-800"}`}
-          >
-            About Us
-          </Link>
-          <Link
-            to="/universities"
-            className={`hover:scale-[1.05] text-center transition-transform ${location.pathname === "/universities" ? "text-TwPrimaryPurple font-semibold" : "text-gray-800"}`}
-          >
-            Universities
-          </Link>
-          <Link
-            to="/events"
-            className={`hover:scale-[1.05] text-center transition-transform ${location.pathname === "/events" ? "text-TwPrimaryPurple font-semibold" : "text-gray-800"}`}
-          >
-            Events
-          </Link>
+          {menuItems.map((item, index) => (
+            <motion.div
+              key={item.path}
+              initial={{ y: -10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.3 + index * 0.1 }}
+            >
+              <Link
+                to={item.path}
+                className={`block hover:scale-[1.05] text-center transition-transform ${location.pathname === item.path
+                    ? "text-TwPrimaryPurple font-semibold"
+                    : "text-gray-800"
+                  }`}
+              >
+                {item.label}
+              </Link>
+            </motion.div>
+          ))}
         </div>
 
-        <PrimaryButton to="/contact-us">Contact Us</PrimaryButton>
+        <motion.div
+          initial={{ x: 20, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: 0.6 }}
+        >
+          <PrimaryButton to="/contact-us">Contact Us</PrimaryButton>
+        </motion.div>
       </Container>
-    </nav>
+    </motion.nav>
   );
 };
 

@@ -1,12 +1,66 @@
-
 import { useState } from "react"
 import { FaArrowRight } from "react-icons/fa"
 import Container from "../../../components/Container"
 import { Images } from "../../../assets/images"
 import { Link } from "react-router-dom"
+import { motion } from "motion/react"
+import { useInView } from "react-intersection-observer"
+
+// Animation variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.3
+    }
+  }
+}
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut"
+    }
+  }
+}
+
+const buttonVariants = {
+  hidden: { opacity: 0, y: 10 },
+  visible: (i: any) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.2 + i * 0.1,
+      duration: 0.4
+    }
+  })
+}
+
+const cardVariants = {
+  hidden: { scale: 0.95, opacity: 0 },
+  visible: (i: any) => ({
+    scale: 1,
+    opacity: 1,
+    transition: {
+      delay: 0.3 + i * 0.1,
+      duration: 0.6,
+      ease: "easeOut"
+    }
+  })
+}
 
 const ProgramsSection = () => {
   const [activeTab, setActiveTab] = useState("all")
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+    triggerOnce: true
+  })
 
   // Program categories
   const categories = [
@@ -68,57 +122,114 @@ const ProgramsSection = () => {
     activeTab === "all" ? allPrograms : allPrograms.filter((program) => program.categories.includes(activeTab))
 
   return (
-    <div className="py-16 bg-white">
+    <div className="py-16 bg-white overflow-hidden" ref={ref}>
       <Container>
-
-        <div className="mx-auto">
+        <motion.div
+          className="mx-auto"
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          variants={containerVariants}
+        >
           {/* Heading */}
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-700 text-center mb-4">Programs We Offer</h2>
+          <motion.h2
+            className="text-3xl md:text-4xl font-bold text-gray-700 text-center mb-4"
+            variants={itemVariants}
+          >
+            Programs We Offer
+          </motion.h2>
 
           {/* Subheading */}
-          <p className="text-gray-500 text-center max-w-3xl mx-auto mb-12">
+          <motion.p
+            className="text-gray-500 text-center max-w-3xl mx-auto mb-12"
+            variants={itemVariants}
+          >
             Lorem ipsum dolor sit amet consectetur. Nam sem amet nulla in non lorem. Rhoncus a lectus venenatis mattis
             tellus risus nullam risus. Eu amet feugiat enim nunc. Eget.
-          </p>
+          </motion.p>
 
           {/* Tabs */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
-            {categories.map((category) => (
-              <button
+          <motion.div
+            className="flex flex-wrap justify-center gap-3 mb-12"
+            variants={containerVariants}
+          >
+            {categories.map((category, index) => (
+              <motion.button
                 key={category.id}
                 onClick={() => setActiveTab(category.id)}
                 className={`px-5 py-3 rounded-full text-sm font-medium transition-colors ${activeTab === category.id ? "bg-TwPrimaryPurple text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                   }`}
+                variants={buttonVariants}
+                custom={index}
+                whileHover={{
+                  scale: 1.05,
+                  transition: { duration: 0.2 }
+                }}
+                whileTap={{ scale: 0.95 }}
               >
                 {category.name}
-              </button>
+              </motion.button>
             ))}
-          </div>
+          </motion.div>
 
           {/* Programs Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredPrograms.map((program) => (
-              <div key={program.id} className="border rounded-xl overflow-hidden">
-                <img src={Images.ProgramsImage || "/placeholder.svg"} alt={program.title} className="w-full h-48 object-cover" />
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            variants={containerVariants}
+          >
+            {filteredPrograms.map((program, index) => (
+              <motion.div
+                key={program.id}
+                className="border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+                variants={cardVariants}
+                custom={index}
+                whileHover={{
+                  y: -5,
+                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                  transition: { duration: 0.3 }
+                }}
+                layout
+              >
+                <motion.img
+                  src={Images.ProgramsImage || "/placeholder.svg"}
+                  alt={program.title}
+                  className="w-full h-48 object-cover"
+                  whileHover={{
+                    scale: 1.05,
+                    transition: { duration: 0.5 }
+                  }}
+                />
                 <div className="p-5">
-                  <h3 className="text-TwPrimaryPurple font-semibold text-lg mb-2">{program.title}</h3>
-                  <p className="text-gray-600 mb-4">{program.description}</p>
-                  <Link
-                    to="/university-detail"
-                    className="text-yellow-500 font-medium flex items-center hover:text-yellow-600 transition-colors"
+                  <motion.h3
+                    className="text-TwPrimaryPurple font-semibold text-lg mb-2"
+                    variants={itemVariants}
                   >
-                    View More <FaArrowRight className="ml-2" />
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Container>
+                    {program.title}
+                  </motion.h3>
+                  <motion.p
+                    className="text-gray-600 mb-4"
+                    variants={itemVariants}
+                  >
+                    {program.description}
+                  </motion.p>
+                  <motion.div variants={itemVariants}
+                    whileHover={{ x: 5 }}
+                  >
+                    <Link
+                      to="/university-detail"
+                      className="text-yellow-500 font-medium flex items-center hover:text-yellow-600 transition-colors"
 
+                    >
+                      View More <FaArrowRight className="ml-2" />
+                    </Link>
+                  </motion.div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
+      </Container>
     </div>
   )
 }
 
 export default ProgramsSection
-

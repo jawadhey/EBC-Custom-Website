@@ -1,6 +1,8 @@
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Pagination, Navigation } from "swiper/modules"
 import { FaArrowRight, FaStethoscope, FaHardHat, FaPills, FaFlag } from "react-icons/fa"
+import { motion } from "motion/react"
+import { useInView } from "react-intersection-observer"
 
 // Import Swiper styles
 import "swiper/css"
@@ -8,7 +10,61 @@ import "swiper/css/pagination"
 import "swiper/css/navigation"
 import Container from "../../../components/Container"
 
+// Animation variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.3
+    }
+  }
+}
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut"
+    }
+  }
+}
+
+const serviceCardVariants = {
+  hidden: { scale: 0.95, opacity: 0 },
+  visible: (i: any) => ({
+    scale: 1,
+    opacity: 1,
+    transition: {
+      delay: 0.2 + i * 0.1,
+      duration: 0.6,
+      ease: "easeOut"
+    }
+  })
+}
+
+const iconVariants = {
+  hidden: { scale: 0.8, opacity: 0 },
+  visible: {
+    scale: 1,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: "anticipate"
+    }
+  }
+}
+
 const ServicesSection = () => {
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+    triggerOnce: true
+  })
+
   const services = [
     {
       icon: <FaStethoscope className="text-white text-2xl" />,
@@ -43,22 +99,33 @@ const ServicesSection = () => {
   ]
 
   return (
-    <div className="py-16">
+    <div className="py-16 overflow-hidden" ref={ref}>
       <Container>
-
-        <div className="  mx-auto">
+        <motion.div
+          className="mx-auto"
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          variants={containerVariants}
+        >
           {/* Heading */}
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-700 text-center mb-4">Our Services</h2>
+          <motion.h2
+            className="text-3xl md:text-4xl font-bold text-gray-700 text-center mb-4"
+            variants={itemVariants}
+          >
+            Our Services
+          </motion.h2>
 
           {/* Subheading */}
-          <p className="text-gray-500 text-center max-w-3xl mx-auto mb-12">
+          <motion.p
+            className="text-gray-500 text-center max-w-3xl mx-auto mb-12"
+            variants={itemVariants}
+          >
             Lorem ipsum dolor sit amet consectetur. Nam sem amet nulla in non lorem. Rhoncus
-          </p>
+          </motion.p>
 
           {/* Services Swiper */}
           <Swiper
             slidesPerView={1}
-            // spaceBetween={20}
             pagination={{
               clickable: true,
               el: ".swiper-pagination",
@@ -81,34 +148,63 @@ const ServicesSection = () => {
           >
             {services.map((service, index) => (
               <SwiperSlide key={index}>
-                <div className="bg-white rounded-lg shadow-TwBoxShadow p-6 h-full flex flex-col">
-                  <div className="bg-TwPrimaryPurple w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                <motion.div
+                  className="bg-white rounded-lg shadow-TwBoxShadow p-6 h-full flex flex-col"
+                  variants={serviceCardVariants}
+                  custom={index}
+                  whileHover={{
+                    y: -5,
+                    // boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+                    transition: { duration: 0.3 }
+                  }}
+                >
+                  <motion.div
+                    className="bg-TwPrimaryPurple w-16 h-16 rounded-lg flex items-center justify-center mb-6"
+                    variants={iconVariants}
+                    // whileHover={{
+                    //   rotate: [0, -10, 10, -5, 0],
+                    //   transition: { duration: 0.5 }
+                    // }}
+                  >
                     {service.icon}
-                  </div>
+                  </motion.div>
 
-                  <h3 className="text-xl font-semibold text-gray-800 mb-4">{service.title}</h3>
+                  <motion.h3
+                    className="text-xl font-semibold text-gray-800 mb-4"
+                    variants={itemVariants}
+                  >
+                    {service.title}
+                  </motion.h3>
 
-                  <p className="text-gray-600 mb-6 flex-grow">{service.description}</p>
+                  <motion.p
+                    className="text-gray-600 mb-6 flex-grow"
+                    variants={itemVariants}
+                  >
+                    {service.description}
+                  </motion.p>
 
-                  <a
+                  <motion.a
                     href="#"
                     className="text-TwPrimaryPurple font-medium flex items-center hover:text-purple-700 transition-colors"
+                    variants={itemVariants}
+                    whileHover={{ x: 5 }}
                   >
                     View More <FaArrowRight className="ml-2" />
-                  </a>
-                </div>
+                  </motion.a>
+                </motion.div>
               </SwiperSlide>
             ))}
           </Swiper>
 
           {/* Custom Pagination */}
-          <div className="swiper-pagination flex justify-center items-center mt-10 space-x-2"></div>
-        </div>
+          <motion.div
+            className="swiper-pagination flex justify-center items-center mt-10 space-x-2"
+            variants={itemVariants}
+          ></motion.div>
+        </motion.div>
       </Container>
-
     </div>
   )
 }
 
 export default ServicesSection
-
