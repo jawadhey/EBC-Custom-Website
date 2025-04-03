@@ -1,8 +1,9 @@
 import { FaQuestion, FaLightbulb } from "react-icons/fa"
 import { Images } from "../../../assets/images"
 import Container from "../../../components/Container"
-import { motion } from "motion/react"
+import { motion, AnimatePresence } from "motion/react"
 import { useInView } from "react-intersection-observer"
+import { useState, useEffect } from "react"
 
 // Animation variants
 const containerVariants = {
@@ -49,6 +50,14 @@ const imageVariants = {
       duration: 0.8,
       ease: "easeOut"
     }
+  },
+  exit: {
+    scale: 0.95,
+    opacity: 0,
+    transition: {
+      duration: 0.3,
+      ease: "easeIn"
+    }
   }
 }
 
@@ -65,11 +74,45 @@ const cardVariants = {
   })
 }
 
+// Content for the cards and images
+const helpContent = [
+  {
+    title: "Finding the Right Program",
+    description: "Lorem ipsum dolor sit amet consectetur. Arcu quam mauris ornare senectus tortor sit. Quisque sed facilisis aenean adipiscing pulvinar nunc et.",
+    image: Images.HelpImage // Replace with your actual image path
+  },
+  {
+    title: "Application Process Guidance",
+    description: "Nullam feugiat gravida risus, ac dignissim nibh tincidunt nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.",
+    image: Images.About.AboutGallery1 // Replace with your actual image path
+  },
+  {
+    title: "Interview Preparation",
+    description: "Suspendisse potenti. Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero.",
+    image: Images.About.Graduate // Replace with your actual image path
+  }
+]
+
 const HelpSection = () => {
+
   const [ref, inView] = useInView({
     threshold: 0.1,
     triggerOnce: false
   })
+
+  const [activeIndex, setActiveIndex] = useState(0)
+  const [paused, setPaused] = useState(false)
+
+
+  useEffect(() => {
+    if (paused) return
+
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % helpContent.length)
+    }, 3000)
+
+    return () => clearInterval(interval)
+  }, [paused])
 
   return (
     <div className="py-16 bg-white overflow-hidden" ref={ref}>
@@ -106,102 +149,81 @@ const HelpSection = () => {
 
           {/* Two Column Layout */}
           <div className="grid lg:grid-cols-2 gap-8 items-start">
-            {/* Left Column - Image with Chat Bubbles */}
+            {/* Left Column - Dynamic Image with Animation */}
             <motion.div
-              className="relative rounded-2xl overflow-hidden"
+              className="relative rounded-2xl overflow-hidden h-[507px]"
               variants={imageVariants}
             >
-              <motion.img
-                src={Images.HelpImage}
-                alt="Students Discussion"
-                className="w-full max-h-[507px] object-contain rounded-2xl"
-                animate={{
-                  y: [0, -10, 0],
-                }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={activeIndex}
+                  src={helpContent[activeIndex].image}
+                  alt={helpContent[activeIndex].title}
+                  className="w-full h-full object-cover rounded-2xl"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{
+                    opacity: 1,
+                    scale: 1,
+                    // y: [0, -10, 0],
+                  }}
 
-              {/* Uncomment if you want to add the chat bubbles back */}
-              {/* Alen Joe Chat Bubble */}
-              {/* <motion.div 
-                className="absolute top-1/2 left-8 transform -translate-y-12 bg-white rounded-full py-2 px-4 shadow-md flex items-center max-w-xs"
-                initial={{ opacity: 0, x: -30 }}
-                animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
-                transition={{ delay: 0.8, duration: 0.6 }}
-              >
-                <div className="flex-shrink-0 mr-3">
-                  <img
-                    src="/placeholder.svg?height=40&width=40"
-                    alt="Alen Joe"
-                    className="w-10 h-10 rounded-full border-2 border-white"
-                  />
-                </div>
-                <div>
-                  <p className="font-medium text-sm">Alen Joe</p>
-                  <p className="text-gray-500 text-xs">Lorem ipsum dolor sit amet consectetur.</p>
-                </div>
-                <div className="ml-3 bg-yellow-400 rounded-full p-2">
-                  <FaQuestion className="text-white text-xs" />
-                </div>
-              </motion.div> */}
-
-              {/* Mary Jane Chat Bubble */}
-              {/* <motion.div 
-                className="absolute bottom-8 right-8 bg-white rounded-full py-2 px-4 shadow-md flex items-center max-w-xs"
-                initial={{ opacity: 0, x: 30 }}
-                animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
-                transition={{ delay: 1.2, duration: 0.6 }}
-              >
-                <div className="mr-3 bg-yellow-400 rounded-full p-2">
-                  <FaLightbulb className="text-white text-xs" />
-                </div>
-                <div className="text-right">
-                  <p className="text-gray-500 text-xs">Lorem ipsum dolor sit amet consectetur.</p>
-                  <p className="font-medium text-sm">Mary Jane</p>
-                </div>
-                <div className="flex-shrink-0 ml-3">
-                  <img
-                    src="/placeholder.svg?height=40&width=40"
-                    alt="Mary Jane"
-                    className="w-10 h-10 rounded-full border-2 border-white"
-                  />
-                </div>
-              </motion.div> */}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{
+                    opacity: { duration: 0.4 },
+                    scale: { duration: 0.4 },
+                    y: {
+                      duration: 6,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }
+                  }}
+                />
+              </AnimatePresence>
             </motion.div>
 
             {/* Right Column - Information Cards */}
             <motion.div
               className="space-y-6"
+              onMouseEnter={() => setPaused(true)}
+              onMouseLeave={() => setPaused(false)}
               variants={containerVariants}
             >
-              {[1, 2, 3].map((item, index) => (
+              {helpContent.map((item, index) => (
                 <motion.div
                   key={index}
-                  className="bg-purple-50 rounded-xl p-6"
+                  className={`rounded-xl p-6 cursor-pointer transition-all duration-300 ${activeIndex === index
+                    ? "bg-[#FFC2551A] border-l-4 border-[#ffc15552]"
+                    : "bg-purple-50 hover:bg-purple-100"
+                    }`}
                   variants={cardVariants}
                   custom={index}
+                  onClick={() => setActiveIndex(index)}
                   whileHover={{
                     scale: 1.03,
                     boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
                     transition: { duration: 0.3 }
                   }}
                 >
-                  <motion.h3
-                    className="text-xl font-semibold text-gray-800 mb-4 border-b border-purple-100 pb-3"
+                  <motion.div
+                    className="flex items-center justify-between"
                     variants={itemVariants}
                   >
-                    Lorem ipsum dolor sit amet consectetur.
-                  </motion.h3>
+                    <h3 className="text-xl font-semibold text-gray-800 mb-4 border-b border-purple-100 pb-3">
+                      {item.title}
+                    </h3>
+                    {/* {activeIndex === index && (
+                      <motion.div
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        className="w-3 h-3 rounded-full bg-purple-500"
+                      />
+                    )} */}
+                  </motion.div>
                   <motion.p
                     className="text-gray-600"
                     variants={itemVariants}
                   >
-                    Lorem ipsum dolor sit amet consectetur. Arcu quam mauris ornare senectus tortor sit. Quisque sed
-                    facilisis aenean adipiscing pulvinar nunc et. Lectus a ac.
+                    {item.description}
                   </motion.p>
                 </motion.div>
               ))}

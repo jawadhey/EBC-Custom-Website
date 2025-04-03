@@ -4,6 +4,11 @@ import Container from "../../../components/Container"
 import { Images } from "../../../assets/images"
 import { motion } from "motion/react"
 import { useInView } from "react-intersection-observer"
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, EffectCoverflow } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/effect-coverflow'
+import 'swiper/css/autoplay'
 
 // Animation variants
 const containerVariants = {
@@ -59,13 +64,22 @@ const LandingHeroSection = () => {
       triggerOnce: true
    })
 
+   // Harvard university images array
+   const harvardImages = [
+      Images.HarwardLogo,
+      Images.HarwardLogo,
+      Images.HarwardLogo,
+      Images.HarwardLogo,
+      Images.HarwardLogo,
+   ]
+
    return (
       <div
          className="bg-gradient-to-br from-transparent to-[#ECE5F9] flex items-center justify-center pb-24 pt-[120px] lg:pt-[168px] overflow-hidden"
          ref={ref}
       >
          <Container>
-            <div className="w-full mx-auto flex flex-col-reverse xl:flex-row items-center justify-between gap-10">
+            <div className="w-full mx-auto flex flex-col xl:flex-row items-center justify-between gap-10">
                {/* Left Content */}
                <motion.div
                   className="w-full xl:w-1/2 space-y-6"
@@ -116,20 +130,51 @@ const LandingHeroSection = () => {
                      </motion.a>
                   </motion.div>
 
+                  {/* Harvard Swiper instead of static logos */}
                   <motion.div
-                     className="flex items-center flex-wrap gap-x-8 gap-y-4 pt-12 justify-center md:justify-start"
+                     className="pt-12 w-auto overflow-hidden"
                      variants={containerVariants}
                   >
-                     {[1, 2, 3].map((item, i) => (
-                        <motion.img
-                           key={item}
-                           src={Images.HarwardLogo}
-                           alt="Harvard University"
-                           className="h-12"
-                           variants={logoVariants}
-                           custom={i}
-                        />
-                     ))}
+                     <Swiper
+                        modules={[Autoplay]}
+                        spaceBetween={40}
+                        slidesPerView={2}
+                        autoplay={{
+                           delay: 1500,
+                           disableOnInteraction: false,
+                        }}
+                        loop={true}
+                        speed={1000}
+                        breakpoints={{
+                           640: {
+                              slidesPerView: 2,
+                           },
+                           768: {
+                              slidesPerView: 3,
+                           },
+                           1024: {
+                              slidesPerView: 4,
+                           },
+                        }}
+
+                        className="w-[80vw] xl:w-auto mx-auto md:ml-0"
+                     >
+                        {harvardImages.map((image, index) => (
+                           <SwiperSlide key={index} className="py-4">
+                              <motion.div
+                                 custom={index}
+                                 variants={logoVariants}
+                                 className="flex justify-center items-center"
+                              >
+                                 <img
+                                    src={image}
+                                    alt={`Harvard University ${index + 1}`}
+                                    className="h-auto w-auto object-contain"
+                                 />
+                              </motion.div>
+                           </SwiperSlide>
+                        ))}
+                     </Swiper>
                   </motion.div>
                </motion.div>
 
@@ -144,14 +189,6 @@ const LandingHeroSection = () => {
                      {/* Main image with floating animation */}
                      <motion.div
                         className="relative mx-auto xl:ml-auto z-10 rounded-3xl max-w-[500px] xl:max-w-[550px]"
-                        animate={{
-                           y: [0, -15, 0],
-                        }}
-                        transition={{
-                           duration: 6,
-                           repeat: Infinity,
-                           ease: "easeInOut"
-                        }}
                      >
                         <img
                            src={Images.LandingHero}
@@ -159,8 +196,6 @@ const LandingHeroSection = () => {
                            className="w-auto h-auto rounded-3xl object-contain"
                         />
                      </motion.div>
-
-                    
                   </div>
                </motion.div>
             </div>

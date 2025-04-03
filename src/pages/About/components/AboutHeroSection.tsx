@@ -8,7 +8,7 @@ const HeroSection = () => {
 
       <Container>
 
-        <div className="w-full mx-auto flex flex-col-reverse xl:flex-row items-center justify-between gap-10">
+        <div className="w-full mx-auto flex flex-col xl:flex-row items-center justify-between gap-10">
           {/* Left Content */}
           <div className="w-full xl:w-1/2 space-y-6">
             <div className="flex w-fit px-4 h-[46px] items-center rounded-full bg-purple-100 border border-purple-200">

@@ -149,10 +149,8 @@ const FoundersMessageSection = () => {
                 <motion.img
                   src={Images.FounderImage}
                   alt="Founder"
-                  className="h-auto w-auto rounded-lg object-cover object-top"
-                  animate={{
-                    y: [0, -5, 0],
-                  }}
+                  className="h-auto w-full rounded-lg object-cover object-top"
+                   
                   transition={{
                     duration: 5,
                     repeat: Infinity,
@@ -164,14 +162,14 @@ const FoundersMessageSection = () => {
                 <motion.img
                   src={Images.coFounderImage}
                   alt="Co-Founder"
-                  className="h-full w-auto rounded-lg object-cover object-top"
+                  className="h-full w-auto rounded-[2rem] object-cover object-top"
                   variants={smallImageVariants}
                   custom={0}
                 />
                 <motion.img
                   src={Images.coFounderImage}
                   alt="Co-Founder"
-                  className="h-full w-auto rounded-lg object-cover object-top"
+                  className="h-full w-auto rounded-[2rem] object-cover object-top"
                   variants={smallImageVariants}
                   custom={1}
                 />

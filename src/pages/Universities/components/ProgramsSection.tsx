@@ -122,7 +122,7 @@ const ProgramsSection = () => {
     activeTab === "all" ? allPrograms : allPrograms.filter((program) => program.categories.includes(activeTab))
 
   return (
-    <div className="py-16 bg-white overflow-hidden" ref={ref}>
+    <div className="py-16 bg-white overflow-hidden px-0 lg:px-16 xl:px-32" ref={ref}>
       <Container>
         <motion.div
           className="mx-auto"

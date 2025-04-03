@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react"
-import { Pagination, Navigation } from "swiper/modules"
+import { Pagination, Navigation, Autoplay } from "swiper/modules"
 import { FaArrowRight, FaStethoscope, FaHardHat, FaPills, FaFlag } from "react-icons/fa"
 import { motion } from "motion/react"
 import { useInView } from "react-intersection-observer"
@@ -96,6 +96,24 @@ const ServicesSection = () => {
       description:
         "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
     },
+    {
+      icon: <FaPills className="text-white text-2xl" />,
+      title: "MD in Europe",
+      description:
+        "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
+    },
+    {
+      icon: <FaFlag className="text-white text-2xl" />,
+      title: "Study in USA",
+      description:
+        "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
+    },
+    {
+      icon: <FaStethoscope className="text-white text-2xl" />,
+      title: "MBBS in Australia",
+      description:
+        "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
+    },
   ]
 
   return (
@@ -132,6 +150,12 @@ const ServicesSection = () => {
               bulletClass: "swiper-pagination-bullet",
               bulletActiveClass: "swiper-pagination-bullet-active",
             }}
+            autoplay={{
+              delay: 1500,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+
+            }}
             breakpoints={{
               640: {
                 slidesPerView: 2,
@@ -143,7 +167,7 @@ const ServicesSection = () => {
                 slidesPerView: 4,
               },
             }}
-            modules={[Pagination, Navigation]}
+            modules={[Autoplay, Pagination, Navigation]}
             className="services-swiper"
           >
             {services.map((service, index) => (
@@ -161,10 +185,10 @@ const ServicesSection = () => {
                   <motion.div
                     className="bg-TwPrimaryPurple w-16 h-16 rounded-lg flex items-center justify-center mb-6"
                     variants={iconVariants}
-                    // whileHover={{
-                    //   rotate: [0, -10, 10, -5, 0],
-                    //   transition: { duration: 0.5 }
-                    // }}
+                  // whileHover={{
+                  //   rotate: [0, -10, 10, -5, 0],
+                  //   transition: { duration: 0.5 }
+                  // }}
                   >
                     {service.icon}
                   </motion.div>

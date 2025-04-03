@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { FaQuoteLeft, FaChevronLeft, FaChevronRight } from "react-icons/fa"
 import Container from "../../../components/Container"
 import { Images } from "../../../assets/images"
@@ -29,18 +29,6 @@ const itemVariants = {
       ease: "easeOut"
     }
   }
-}
-
-const progressVariants = {
-  hidden: { width: 0, opacity: 0 },
-  visible: (percent: any) => ({
-    width: `${percent}%`,
-    opacity: 1,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut"
-    }
-  })
 }
 
 const imageVariants = {
@@ -117,6 +105,11 @@ const quoteIconVariants = {
 const TestimonialSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [slideDirection, setSlideDirection] = useState("right")
+  const [progressWidth, setProgressWidth] = useState(0)
+  const [isTransitioning, setIsTransitioning] = useState(false)
+  const intervalRef = useRef<NodeJS.Timeout | null>(null)
+  const slideDuration = 6000 // 8 seconds per slide
+
   const [ref, inView] = useInView({
     threshold: 0.2,
     triggerOnce: false
@@ -146,26 +139,87 @@ const TestimonialSection = () => {
     },
   ]
 
+  // Function to handle slide transition
+  const changeSlide = (direction: "next" | "prev") => {
+    // Stop current progress animation
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current)
+    }
+
+    // Set transition flag to prevent rapid clicking
+    setIsTransitioning(true)
+
+    // Reset progress bar immediately
+    setProgressWidth(0)
+
+    // Update slide direction
+    setSlideDirection(direction === "next" ? "right" : "left")
+
+    // Calculate new slide index
+    if (direction === "next") {
+      setCurrentSlide((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1))
+    } else {
+      setCurrentSlide((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1))
+    }
+
+    // Allow small delay for animation to complete
+    setTimeout(() => {
+      setIsTransitioning(false)
+      startProgressTimer()
+    }, 500)
+  }
+
   const nextSlide = () => {
-    setSlideDirection("right")
-    setCurrentSlide((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1))
+    if (isTransitioning) return
+    changeSlide("next")
   }
 
   const prevSlide = () => {
-    setSlideDirection("left")
-    setCurrentSlide((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1))
+    if (isTransitioning) return
+    changeSlide("prev")
   }
 
-  // Auto slide change
+  // Timer for progress bar
+  const startProgressTimer = () => {
+    // Clear any existing interval
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current)
+    }
+
+    // Reset progress width
+    setProgressWidth(0)
+
+    // Set up new timer
+    let startTime = Date.now()
+
+    intervalRef.current = setInterval(() => {
+      const elapsed = Date.now() - startTime
+      const newWidth = (elapsed / slideDuration) * 100
+
+      if (newWidth >= 100) {
+        // When timer is complete, move to next slide
+        nextSlide()
+      } else {
+        // Update progress width
+        setProgressWidth(newWidth)
+      }
+    }, 30) // Update every 50ms for smooth animation
+  }
+
+  // Start timer when component mounts or when inView changes
   useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide()
-    }, 8000) // Change slide every 8 seconds
+    if (inView) {
+      startProgressTimer()
+    } else if (intervalRef.current) {
+      clearInterval(intervalRef.current)
+    }
 
-    return () => clearInterval(interval)
-  }, [])
-
-  const progressPercent = ((currentSlide + 1) / testimonials.length) * 100
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current)
+      }
+    }
+  }, [inView])
 
   return (
     <div className="py-16 bg-[#FFF7E8] overflow-hidden" ref={ref}>
@@ -176,22 +230,18 @@ const TestimonialSection = () => {
           animate={inView ? "visible" : "hidden"}
           variants={containerVariants}
         >
-          {/* Progress Bar */}
+          {/* Timer Progress Bar */}
           <motion.div className="w-64 h-2 bg-gray-200 rounded-full mx-auto mb-12" variants={itemVariants}>
             <motion.div
-              className="h-full bg-TwPrimaryPurple rounded-full"
-              custom={progressPercent}
-              variants={progressVariants}
-              initial="hidden"
-              animate="visible"
-              key={currentSlide} // Trigger animation when slide changes
+              className="h-full bg-TwPrimaryPurple rounded-full transition-none"
+              style={{ width: `${progressWidth}%` }}
             ></motion.div>
           </motion.div>
 
           {/* Testimonial Content */}
           <div className="grid md:grid-cols-12 gap-8 lg:gap-16 items-center mb-12">
             {/* Left Column - Image */}
-            <div className="col-span-4 overflow-hidden">
+            <div className="col-span-3 overflow-hidden">
               <AnimatePresence mode="wait">
                 <motion.img
                   key={`img-${currentSlide}`}
@@ -211,7 +261,7 @@ const TestimonialSection = () => {
             </div>
 
             {/* Right Column - Testimonial */}
-            <div className="col-span-8">
+            <div className="col-span-9">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={`text-${currentSlide}`}
@@ -273,6 +323,7 @@ const TestimonialSection = () => {
                 variants={navButtonVariants}
                 whileHover="hover"
                 whileTap="tap"
+                disabled={isTransitioning}
               >
                 <FaChevronLeft className="text-gray-700" />
               </motion.button>
@@ -282,6 +333,7 @@ const TestimonialSection = () => {
                 variants={navButtonVariants}
                 whileHover="hover"
                 whileTap="tap"
+                disabled={isTransitioning}
               >
                 <FaChevronRight className="text-white" />
               </motion.button>
