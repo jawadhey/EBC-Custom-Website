@@ -102,39 +102,51 @@ const FaqSection = () => {
 
    const aboutFaqs = [
       {
-         question: "Lorem ipsum dolor sit amet consectetur. Pellentesque orci potenti non sit netus.",
-         answer: "Lorem ipsum dolor sit amet consectetur. Donec sit tristique velit justo vel a scelerisque laoreet. Urna lectus justo lectus quis duis odio montes. Lacus.",
+         question: "Who is behind this student consultancy?",
+         answer:
+            "We are a dedicated team of education consultants with years of experience in helping students navigate their journey to study abroad. Our mission is to make the process as smooth and stress-free as possible for you.",
       },
       {
-         question: "Lorem ipsum dolor sit amet consectetur. Pellentesque orci potenti non sit netus.",
-         answer: "Lorem ipsum dolor sit amet consectetur. Donec sit tristique velit justo vel a scelerisque laoreet. Urna lectus justo lectus quis duis odio montes. Lacus.",
+         question: "How long have you been helping students?",
+         answer:
+            "We have been assisting students for over [X] years, with a proven track record of successful placements in top medical universities abroad, especially in China.",
       },
       {
-         question: "Lorem ipsum dolor sit amet consectetur. Pellentesque orci potenti non sit netus.",
-         answer: "Lorem ipsum dolor sit amet consectetur. Donec sit tristique velit justo vel a scelerisque laoreet. Urna lectus justo lectus quis duis odio montes. Lacus.",
+         question: "Is your consultancy fee high?",
+         answer:
+            "Our services are affordable and tailored to the needs of each student. We aim to provide value and ensure that every student gets the best possible guidance throughout the application process.",
       },
       {
-         question: "Lorem ipsum dolor sit amet consectetur. Pellentesque orci potenti non sit netus.",
-         answer: "Lorem ipsum dolor sit amet consectetur. Donec sit tristique velit justo vel a scelerisque laoreet. Urna lectus justo lectus quis duis odio montes. Lacus.",
+         question: "Can I contact you for advice even after I've enrolled in my program?",
+         answer:
+            "Absolutely! We believe in ongoing support, so we’re always here to help, even after you’ve started your studies abroad.",
       },
    ]
-
    const programsFaqs = [
       {
-         question: "Lorem ipsum dolor sit amet consectetur. Pellentesque orci potenti non sit netus.",
-         answer: "Lorem ipsum dolor sit amet consectetur. Donec sit tristique velit justo vel a scelerisque laoreet. Urna lectus justo lectus quis duis odio montes. Lacus.",
+         question: "Which universities in China do you work with?",
+         answer:
+            "We partner with top-tier medical universities in China, including [University A], [University B], and [University C], all recognized for their high-quality medical programs and global reputation.",
       },
       {
-         question: "Lorem ipsum dolor sit amet consectetur. Pellentesque orci potenti non sit netus.",
-         answer: "Lorem ipsum dolor sit amet consectetur. Donec sit tristique velit justo vel a scelerisque laoreet. Urna lectus justo lectus quis duis odio montes. Lacus.",
+         question: "What documents do I need to apply for a program?",
+         answer:
+            "Generally, you'll need your academic transcripts, passport, proof of language proficiency (if required), a recommendation letter, and a medical check-up certificate. Our team will guide you through the specific requirements for each university.",
       },
       {
-         question: "Lorem ipsum dolor sit amet consectetur. Pellentesque orci potenti non sit netus.",
-         answer: "Lorem ipsum dolor sit amet consectetur. Donec sit tristique velit justo vel a scelerisque laoreet. Urna lectus justo lectus quis duis odio montes. Lacus.",
+         question: "How long does the application process take?",
+         answer:
+            "The application process typically takes 2-3 months, depending on the university’s requirements and the time needed to process your visa. We work with you to ensure everything is submitted on time.",
       },
       {
-         question: "Lorem ipsum dolor sit amet consectetur. Pellentesque orci potenti non sit netus.",
-         answer: "Lorem ipsum dolor sit amet consectetur. Donec sit tristique velit justo vel a scelerisque laoreet. Urna lectus justo lectus quis duis odio montes. Lacus.",
+         question: "Can I work while studying abroad?",
+         answer:
+            "Yes, many students can work part-time during their studies, depending on visa regulations. We’ll provide you with all the necessary information to ensure you’re aware of the rules regarding work while studying in China.",
+      },
+      {
+         question: "What are the living costs in China?",
+         answer:
+            "Living costs vary depending on the city, but on average, students spend between $300 to $600 per month on accommodation, food, transportation, and other expenses. We’ll help you plan a budget to make sure you’re financially prepared.",
       },
    ]
 

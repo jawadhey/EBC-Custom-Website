@@ -98,15 +98,16 @@ const LandingHeroSection = () => {
                      className="text-4xl md:text-5xl font-bold text-gray-700 !leading-normal"
                      variants={itemVariants}
                   >
-                     Lorem ipsum dolor sit amet consectetur. Vivamus dignissim.
+                     Your Trusted Guide to Study Abroad
                   </motion.h1>
 
                   <motion.p
                      className="text-gray-600 max-w-xl"
                      variants={itemVariants}
                   >
-                     Lorem ipsum dolor sit amet consectetur. Vitae purus massa felis sed velit urna. Nulla a commodo nulla at
-                     cras nulla. Maecenas diam.
+                     Assisting FSC Students in Fulfilling Their Medical Dreams! <br />
+                     Obtain admission to China's best medical schools with professional assistance and a simple application process. Begin your path to a degree that is recognized throughout the world right now! Admission is assured. Reasonably priced tuition. Full-Service Visa Support.
+
                   </motion.p>
 
                   <motion.div

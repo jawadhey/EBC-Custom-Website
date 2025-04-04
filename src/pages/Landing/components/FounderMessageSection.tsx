@@ -79,7 +79,7 @@ const foundersImageVariants = {
 
 const smallImageVariants = {
   hidden: { y: 30, opacity: 0 },
-  visible: (i:any) => ({
+  visible: (i: any) => ({
     y: 0,
     opacity: 1,
     transition: {
@@ -134,8 +134,8 @@ const FoundersMessageSection = () => {
             className="text-gray-500 text-center max-w-3xl mx-auto mb-12"
             variants={itemVariants}
           >
-            Lorem ipsum dolor sit amet consectetur. Nam sem amet nulla in non lorem. Rhoncus a lectus venenatis mattis
-            tellus risus nullam risus. Eu amet feugiat enim nunc. Eget.
+            Helping students achieve their dreams is at the heart of everything we do.
+
           </motion.p>
 
           {/* Two Column Layout */}
@@ -150,7 +150,7 @@ const FoundersMessageSection = () => {
                   src={Images.FounderImage}
                   alt="Founder"
                   className="h-auto w-full rounded-lg object-cover object-top"
-                   
+
                   transition={{
                     duration: 5,
                     repeat: Infinity,
@@ -186,10 +186,8 @@ const FoundersMessageSection = () => {
                 className="text-gray-700 text-lg leading-relaxed"
                 variants={itemVariants}
               >
-                Lorem ipsum dolor sit amet consectetur. Nibh mollis molestie quis faucibus commodo ullamcorper venenatis
-                purus molestie. Tempus sit purus pretium egestas pellentesque nulla erat. Proin semper pellentesque
-                ultricies enim id tellus condimentum. Enim arcu aliquet neque dolor eget in dolor in consectetur.
-                Habitasse ornare aliquam faucibus cursus.
+                We started this platform to <b>make international education simple and accessible.</b> From choosing the right university to securing your admission and visa, we guide you every step of the way. Your success is our pride, and we’re here to help you achieve it!
+
               </motion.p>
 
               <motion.div

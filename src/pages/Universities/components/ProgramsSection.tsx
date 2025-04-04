@@ -140,11 +140,11 @@ const ProgramsSection = () => {
 
           {/* Subheading */}
           <motion.p
-            className="text-gray-500 text-center max-w-3xl mx-auto mb-12"
+            className="text-gray-500 text-center max-w-5xl mx-auto mb-12"
             variants={itemVariants}
           >
-            Lorem ipsum dolor sit amet consectetur. Nam sem amet nulla in non lorem. Rhoncus a lectus venenatis mattis
-            tellus risus nullam risus. Eu amet feugiat enim nunc. Eget.
+            Explore top-ranked universities offering world-class education in <b>medicine, engineering, and other fields</b>. Whether you're aiming for an MBBS in China or a degree in another discipline, we guide you toward the best options that fit your goals and budget.
+
           </motion.p>
 
           {/* Tabs */}

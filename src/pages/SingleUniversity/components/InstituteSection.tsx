@@ -2,7 +2,7 @@ import { Images } from "../../../assets/images"
 import Container from "../../../components/Container"
 
 
-const InstitutionSection = () => {
+const InstitutionSection = ({ Heading, Text }: any) => {
    return (
       <div className="py-16 bg-white">
          <Container>
@@ -17,7 +17,7 @@ const InstitutionSection = () => {
 
                {/* Main Heading */}
                <h2 className="text-3xl md:text-4xl font-bold text-gray-700 text-center mb-12 max-w-4xl mx-auto leading-tight">
-                  Lorem ipsum dolor sit amet consectetur. Lobortis id nibh urna velit. Lorem pellentesque elementum.
+                  {Heading || 'Lorem ipsum dolor sit amet consectetur. Lobortis id nibh urna velit. Lorem pellentesque elementum.'}
                </h2>
 
                {/* Main Content Section */}
@@ -29,31 +29,7 @@ const InstitutionSection = () => {
 
                   {/* Right Column - Text */}
                   <div className="text-gray-600 space-y-4">
-                     <p>
-                        Lorem ipsum dolor sit amet consectetur. Nulla amet mattis ut blandit id. Integer quis mauris amet habitant
-                        varius suspendisse. Non nulla suspendisse duis placerat. Elit egestas elementum nisi nulla adipiscing
-                        libero. Viverra hendrerit massa pellentesque volutpat rhoncus lobortis mattis vel. Sed felis sit arcu
-                        tristique amet. Commodo morbi nulla egestas nam semper justo vitae nunc id. Enim lectus orci mauris velit.
-                     </p>
-                     <p>
-                        Rhoncus leo magna tempus fringilla quam suspendisse vestibulum. Sit tempor auctor arcu semper in nibh
-                        ullamcorper tortor diam. Ultricies in porta mattis pharetra. In sit ullamcorper gravida enim quisque in
-                        vulputate vestibulum laoreet. Commodo et sodales nisl enim leo posuere. Aliquet quam lectus arcu turpis
-                        pretium arcu. Id lacus tristique lacus amet adipiscing orci quisque semper porttitor.
-                     </p>
-                     <p>
-                        Et amet leo gravida facilisi. Dui etiam eu massa ipsum. Pretium vel tincidunt vel quis morbi eget.
-                        Ullamcorper ipsum erat in urna auctor curabitur id in egestas. Vitae scelerisque lectus odio arcu. Ante
-                        cras consequat id cursus. Enim gravida nunc etiam volutpat diam. Ultricies sit volutpat mi tellus semper
-                        dolor amet interdum. Blandit diam sem leo habitasse arcu. At dictum morbi suspendisse neque arcu vel
-                        pulvinar sit. Praesent cum facilisis rutrum cum imperdiet morbi. Egestas sed maecenas nec amet proin
-                        egestas quam cras sit.
-                     </p>
-                     <p>
-                        At hendrerit feugiat aliquam augue. Proin rhoncus faucibus sollicitudin quam. Amet nunc enim malesuada dui
-                        lacinia pellentesque. Eget felis accumsan erat ullamcorper consectetur luctus est viverra. Enim sed
-                        suscipit quam blandit. Purus.
-                     </p>
+                     {Text}
                   </div>
                </div>
 

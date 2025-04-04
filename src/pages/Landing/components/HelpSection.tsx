@@ -77,18 +77,18 @@ const cardVariants = {
 // Content for the cards and images
 const helpContent = [
   {
-    title: "Finding the Right Program",
-    description: "Lorem ipsum dolor sit amet consectetur. Arcu quam mauris ornare senectus tortor sit. Quisque sed facilisis aenean adipiscing pulvinar nunc et.",
+    title: "Get Expert Guidance",
+    description: "Schedule a free consultation with our experts to discuss your goals and get personalized university recommendations based on your budget and preferences.",
     image: Images.HelpImage // Replace with your actual image path
   },
   {
-    title: "Application Process Guidance",
-    description: "Nullam feugiat gravida risus, ac dignissim nibh tincidunt nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.",
+    title: "Secure Admission & Visa",
+    description: "We assist in preparing and submitting your university application while handling all documentation and guiding you through the visa process.",
     image: Images.About.AboutGallery1 // Replace with your actual image path
   },
   {
-    title: "Interview Preparation",
-    description: "Suspendisse potenti. Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero.",
+    title: "Fly & Begin Your Journey",
+    description: "Receive pre-departure support, including travel and accommodation guidance, then arrive at your university and start your journey toward becoming a doctor!",
     image: Images.About.Graduate // Replace with your actual image path
   }
 ]
@@ -144,7 +144,7 @@ const HelpSection = () => {
             className="text-3xl md:text-4xl font-bold text-gray-700 text-center mb-12 max-w-4xl mx-auto leading-tight"
             variants={itemVariants}
           >
-            Lorem ipsum dolor sit amet consectetur. Lobortis id nibh urna velit. Lorem pellentesque elementum.
+            Your Journey to Studying Medicine Abroad in 3 Simple Steps
           </motion.h2>
 
           {/* Two Column Layout */}

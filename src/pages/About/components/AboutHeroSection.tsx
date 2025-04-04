@@ -15,13 +15,17 @@ const HeroSection = () => {
               <p className="text-TwPrimaryPurple text-sm font-medium">Best Medical Student Consultant in your City</p>
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-700 !leading-normal">
-              Lorem ipsum dolor sit amet consectetur. Vivamus dignissim.
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-700 !leading-snug">
+              Get to Know Us Better – Your Trusted Partner for Studying Abroad
+
             </h1>
 
             <p className="text-gray-600 max-w-xl">
-              Lorem ipsum dolor sit amet consectetur. Vitae purus massa felis sed velit urna. Nulla a commodo nulla at
-              cras nulla. Maecenas diam.
+              Helping You Study Abroad with Confidence! <br />
+              At EBC, we believe in turning dreams into reality. Our goal is to guide and support students like you in pursuing medical education abroad, particularly in China’s top universities. With expert counseling, a seamless application process, and unwavering support, we make your journey smooth, stress-free, and successful.
+              <br /> <br />
+              Join 15,000+ students who have taken the leap! Let’s get started today.
+
             </p>
 
             <div className="flex items-center flex-col md:flex-row gap-6 pt-2">
@@ -64,7 +68,7 @@ const HeroSection = () => {
                   className="w-auto h-auto rounded-3xl object-contain"
                 />
 
-               
+
               </div>
             </div>
           </div>

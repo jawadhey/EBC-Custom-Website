@@ -2,7 +2,7 @@ import { FaArrowRight } from "react-icons/fa"
 import { Images } from "../assets/images"
 import Container from "./Container"
 
-const CtaSection = ({ backgroundImage }: any) => {
+const CtaSection = ({ backgroundImage, Heading, Text }: any) => {
   return (
     <Container>
 
@@ -15,13 +15,11 @@ const CtaSection = ({ backgroundImage }: any) => {
             {/* Left Content */}
             <div className="col-span-full lg:col-span-8">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-700 mb-6">
-                Lorem ipsum dolor sit amet consectetur. Massa mi.
+                {Heading || 'Lorem'}
               </h2>
 
               <p className="text-gray-600 mb-8">
-                Lorem ipsum dolor sit amet consectetur. Quis non leo sit ac tristique. Sed pharetra sodales nullam
-                venenatis gravida venenatis sed maecenas tristique. Fringilla eros in malesuada aliquam mauris sed lacus.
-                Tempus eu risus est enim cursus. Ipsum nisl nibh quis vulputate sollicitudin arcu adipiscing. Id.
+                {Text || 'Lorem'}
               </p>
             </div>
 

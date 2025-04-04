@@ -121,21 +121,21 @@ const TestimonialSection = () => {
       name: "Mary Jane",
       position: "MBBS Wuhan University of Medical Sciences",
       image: Images.TestimonialImage,
-      text: "Lorem ipsum dolor sit amet consectetur. Nibh mollis molestie quis faucibus commodo ullamcorper venenatis purus molestie. Tempus sit purus pretium egestas pellentesque nulla erat. Proin semper pellentesque ultricies enim id tellus condimentum. Enim arcu aliquet neque dolor eget in dolor in consectetur. Habitasse ornare aliquam faucibus cursus.",
+      text: '"The best decision I made!" – Thanks to their guidance, I got into a top medical university in China without any hassle. They handled everything, from applications to visas, making the entire process smooth and stress-free. Studying abroad was a life-changing experience, and I’m now living my dream of studying medicine! Highly recommend their support.',
     },
     {
       id: 2,
       name: "John Smith",
       position: "MD European Medical University",
       image: Images.TestimonialImage,
-      text: "Lorem ipsum dolor sit amet consectetur. Nibh mollis molestie quis faucibus commodo ullamcorper venenatis purus molestie. Tempus sit purus pretium egestas pellentesque nulla erat. Proin semper pellentesque ultricies enim id tellus condimentum.",
+      text: '"The best decision I made!" – Thanks to their guidance, I got into a top medical university in China without any hassle. They handled everything, from applications to visas, making the entire process smooth and stress-free. Studying abroad was a life-changing experience, and I’m now living my dream of studying medicine! Highly recommend their support.',
     },
     {
       id: 3,
       name: "Sarah Williams",
       position: "MBBS Beijing Medical University",
       image: Images.TestimonialImage,
-      text: "Lorem ipsum dolor sit amet consectetur. Nibh mollis molestie quis faucibus commodo ullamcorper venenatis purus molestie. Tempus sit purus pretium egestas pellentesque nulla erat. Proin semper pellentesque ultricies enim id tellus condimentum. Enim arcu aliquet neque dolor eget in dolor in consectetur.",
+      text: '"The best decision I made!" – Thanks to their guidance, I got into a top medical university in China without any hassle. They handled everything, from applications to visas, making the entire process smooth and stress-free. Studying abroad was a life-changing experience, and I’m now living my dream of studying medicine! Highly recommend their support.',
     },
   ]
 

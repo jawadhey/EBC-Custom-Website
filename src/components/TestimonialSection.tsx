@@ -2,7 +2,7 @@ import { FaPlay } from "react-icons/fa"
 import Container from "./Container"
 import { Images } from "../assets/images"
 
-const TestimonialVideoSection = () => {
+const TestimonialVideoSection = ({ Text }: any) => {
   return (
     <div className="py-16 bg-purple-50">
       <Container>
@@ -30,10 +30,8 @@ const TestimonialVideoSection = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-700 mb-6">What our students say about us</h2>
 
               <p className="text-gray-600">
-                Lorem ipsum dolor sit amet consectetur. Tellus augue libero convallis a. Elementum enim turpis aliquam
-                porta sollicitudin nam. Turpis eu aliquet purus dolor egestas neque mauris. Pellentesque faucibus viverra
-                risus elit commodo augue bibendum nulla est. Suspendisse lorem egestas urna et ornare accumsan mauris
-                vitae nunc. Ac lobortis morbi ullamcorper convallis fames mauris.
+                {Text || ''}
+
               </p>
             </div>
           </div>

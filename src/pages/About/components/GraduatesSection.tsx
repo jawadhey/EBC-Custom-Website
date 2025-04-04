@@ -3,6 +3,26 @@ import { Images } from "../../../assets/images"
 import Container from "../../../components/Container"
 
 const GraduatesSection = () => {
+
+  const sections = [
+    {
+      title: "Commitment to Student Success",
+      content:
+        "We are dedicated to guiding students toward the best educational opportunities abroad. From personalized counseling to hassle-free admission processes, we ensure that every student gets the support they need to thrive.",
+    },
+    {
+      title: "Transparency & Trust",
+      content:
+        "Our process is built on honesty and clarity, ensuring students and parents receive accurate information about universities, tuition, and visa procedures, leaving no room for uncertainty.",
+    },
+    {
+      title: "Proven Track Record",
+      content:
+        "With 15000+ successful student placements and partnerships with top medical universities, we take pride in our impact on shaping future doctors and healthcare professionals.",
+    },
+  ];
+
+
   return (
     <div className="py-16 bg-white">
       <Container>
@@ -17,7 +37,7 @@ const GraduatesSection = () => {
 
           {/* Heading */}
           <h2 className="text-3xl md:text-4xl font-bold text-gray-700 text-center mb-12 max-w-4xl mx-auto">
-            Lorem ipsum dolor sit amet consectetur. Lobortis id nibh urna velit. Lorem pellentesque elementum.
+            Our Core Values & Achievements
           </h2>
 
           {/* Two Column Layout */}
@@ -47,13 +67,10 @@ const GraduatesSection = () => {
 
             {/* Right Column - Text Blocks */}
             <div className="space-y-6">
-              {[1, 2, 3].map((item, index) => (
+              {sections.map((section, index) => (
                 <div key={index} className="bg-purple-50 rounded-xl p-6">
-                  <h3 className="text-xl font-semibold text-gray-800 mb-4">Lorem ipsum dolor sit amet consectetur.</h3>
-                  <p className="text-gray-600">
-                    Lorem ipsum dolor sit amet consectetur. Arcu quam mauris ornare senectus tortor sit. Quisque sed
-                    facilisis aenean adipiscing pulvinar nunc et. Lectus a ac.
-                  </p>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-4">{section.title}</h3>
+                  <p className="text-gray-600">{section.content}</p>
                 </div>
               ))}
             </div>
