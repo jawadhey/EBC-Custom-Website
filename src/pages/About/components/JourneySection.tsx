@@ -1,7 +1,16 @@
+"use client"
+
 import { Images } from "../../../assets/images"
 import Container from "../../../components/Container"
+import { motion } from "framer-motion"
+import { useInView } from "react-intersection-observer"
 
 const JourneySection = () => {
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  })
+
   // Journey data
   const journeyItems = [
     {
@@ -38,72 +47,192 @@ const JourneySection = () => {
     },
   ]
 
-  return (
-    <div className="py-16 bg-white">
-      <Container>
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.2,
+      },
+    },
+  }
 
-        <div className="mx-auto">
+  const headerVariants = {
+    hidden: { y: -20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  }
+
+  const timelineVariants = {
+    hidden: { height: 0 },
+    visible: {
+      height: "100%",
+      transition: {
+        duration: 1.5,
+        ease: "easeInOut",
+      },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  }
+
+  const textVariants = {
+    hidden: { x: -30, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.7,
+        ease: "easeOut",
+      },
+    },
+  }
+
+  const imageVariants = {
+    hidden: { x: 30, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.7,
+        ease: "easeOut",
+      },
+    },
+  }
+
+  const dotVariants = {
+    hidden: { scale: 0, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        type: "spring",
+        stiffness: 300,
+        damping: 15,
+      },
+    },
+  }
+
+  const yearVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        delay: 0.2,
+      },
+    },
+  }
+
+  return (
+    <div className="py-16 bg-white" ref={ref}>
+      <Container>
+        <motion.div
+          className="mx-auto"
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          variants={containerVariants}
+        >
           {/* Top Badge */}
-          <div className="flex justify-center mb-6">
-            <div className="bg-purple-100 text-TwPrimaryPurple px-6 py-2 rounded-full inline-block">
+          <motion.div className="flex justify-center mb-6" variants={headerVariants}>
+            <motion.div
+              className="bg-purple-100 text-TwPrimaryPurple px-6 py-2 rounded-full inline-block"
+              whileHover={{ y: -3, transition: { duration: 0.2 } }}
+            >
               Have a look at our journey
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Heading */}
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-700 text-center mb-4">Brief History of EBC</h2>
+          <motion.h2
+            className="text-3xl md:text-4xl font-bold text-gray-700 text-center mb-4"
+            variants={headerVariants}
+          >
+            Brief History of EBC
+          </motion.h2>
 
           {/* Subheading */}
-          <p className="text-gray-500 text-center max-w-3xl mx-auto mb-16">
+          <motion.p className="text-gray-500 text-center max-w-3xl mx-auto mb-16" variants={headerVariants}>
             Lorem ipsum dolor sit amet consectetur. Nisl ut neque tortor nulla felis nunc. Sit ac sed sed pulvinar sit
             purus morbi. Elit amet sed velit auctor urna vitae nam ultricies massa.
-          </p>
+          </motion.p>
 
           {/* Timeline */}
           <div className="relative">
             {/* Vertical Line */}
-            <div className="absolute left-[9px] lg:left-1/2 transform lg:-translate-x-1/2 h-full w-1 bg-purple-200"></div>
+            <motion.div
+              className="absolute left-[9px] lg:left-1/2 transform lg:-translate-x-1/2 w-1 bg-purple-200 origin-top"
+              style={{ top: 0, bottom: 0 }}
+              variants={timelineVariants}
+            ></motion.div>
 
             {/* Journey Items */}
             {journeyItems.map((item, index) => (
-              <div key={index} className="relative mb-24 last:mb-0">
+              <motion.div key={index} className="relative mb-24 last:mb-0" variants={itemVariants}>
                 {/* Timeline Dot */}
-                <div className="top-24 absolute left-0 lg:left-1/2 transform lg:-translate-x-1/2 w-6 h-6 rounded-full bg-TwPrimaryPurple z-10"></div>
+                <motion.div
+                  className="top-24 absolute left-0 lg:left-[49.3%] transform lg:-translate-x-1/2 w-6 h-6 rounded-full bg-TwPrimaryPurple z-10"
+                  variants={dotVariants}
+                ></motion.div>
 
                 <div
                   className={`flex flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} lg:pl-0 pl-[70px] items-center gap-14 lg:gap-36`}
                 >
                   {/* Text Content */}
-                  <div
+                  <motion.div
                     className={`w-full lg:w-1/2 ${index % 2 === 0 ? "lg:text-right lg:pr-12" : "lg:text-left lg:pl-12"}`}
+                    variants={index % 2 === 0 ? textVariants : imageVariants}
                   >
-                    <div className="bg-purple-50 rounded-xl p-6 lg:p-8">
+                    <motion.div
+                      className="bg-purple-50 rounded-xl p-6 lg:p-8"
+                      whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                    >
                       <h3 className="text-xl font-semibold text-gray-800 mb-4">{item.title}</h3>
                       <p className="text-gray-600">{item.description}</p>
-                    </div>
-                  </div>
+                    </motion.div>
+                  </motion.div>
 
                   {/* Year */}
-                  <div className="absolute text-2xl font-bold text-TwPrimaryPurple top-0 -left-4 lg:left-1/2 transform lg:-translate-x-1/2 mt-12">
+                  <motion.div
+                    className="absolute text-2xl font-bold text-TwPrimaryPurple top-0 -left-4 lg:left-1/2 transform lg:-translate-x-1/2 mt-12"
+                    variants={yearVariants}
+                  >
                     {item.year}
-                  </div>
+                  </motion.div>
 
                   {/* Image */}
-                  <div className="w-full md:w-1/2 ">
-                    <img
+                  <motion.div className="w-full md:w-1/2" variants={index % 2 === 0 ? imageVariants : textVariants}>
+                    <motion.img
                       src={Images.About.Timeline1 || "/placeholder.svg"}
                       alt={item.imageAlt}
                       className="w-full h-auto rounded-xl max-h-[340px] object-cover object-top"
+                      whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
                     />
-                  </div>
+                  </motion.div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
-
+        </motion.div>
       </Container>
-
     </div>
   )
 }
