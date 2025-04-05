@@ -3,6 +3,8 @@
 import { useState } from "react"
 import { FaPlus, FaChevronUp } from "react-icons/fa"
 import Container from "../../../components/Container"
+import { motion, AnimatePresence } from "framer-motion"
+import { useInView } from "react-intersection-observer"
 
 const FaqSection = () => {
    // FAQ data
@@ -57,50 +59,162 @@ const FaqSection = () => {
       }
    }
 
-   return (
-      <div className="py-16 bg-white">
-         <Container>
+   // Animation with useInView
+   const [ref, inView] = useInView({
+      threshold: 0.1,
+      triggerOnce: true,
+   })
 
-            <div className="mx-auto">
+   // Animation variants
+   const containerVariants = {
+      hidden: { opacity: 0 },
+      visible: {
+         opacity: 1,
+         transition: {
+            staggerChildren: 0.2,
+            delayChildren: 0.1,
+         },
+      },
+   }
+
+   const headerVariants = {
+      hidden: { y: -20, opacity: 0 },
+      visible: {
+         y: 0,
+         opacity: 1,
+         transition: {
+            duration: 0.6,
+            ease: "easeOut",
+         },
+      },
+   }
+
+   const gridVariants = {
+      hidden: { opacity: 0 },
+      visible: {
+         opacity: 1,
+         transition: {
+            staggerChildren: 0.1,
+            delayChildren: 0.3,
+         },
+      },
+   }
+
+   const faqItemVariants = {
+      hidden: { y: 20, opacity: 0 },
+      visible: {
+         y: 0,
+         opacity: 1,
+         transition: {
+            duration: 0.5,
+            ease: "easeOut",
+         },
+      },
+   }
+
+   return (
+      <div className="py-16 bg-white" ref={ref}>
+         <Container>
+            <motion.div
+               className="mx-auto"
+               initial="hidden"
+               animate={inView ? "visible" : "hidden"}
+               variants={containerVariants}
+            >
                {/* Top Badge */}
-               <div className="flex justify-center mb-6">
-                  <div className="bg-purple-100 text-purple-600 px-6 py-2 rounded-full inline-block">
+               <motion.div className="flex justify-center mb-6" variants={headerVariants}>
+                  <motion.div
+                     className="bg-purple-100 text-purple-600 px-6 py-2 rounded-full inline-block"
+                     whileHover={{ y: -3, transition: { duration: 0.2 } }}
+                  >
                      Clearing out your confusions
-                  </div>
-               </div>
+                  </motion.div>
+               </motion.div>
 
                {/* Heading */}
-               <h2 className="text-3xl md:text-4xl font-bold text-gray-700 text-center mb-4">Everything You Need to Know</h2>
+               <motion.h2
+                  className="text-3xl md:text-4xl font-bold text-gray-700 text-center mb-4"
+                  variants={headerVariants}
+               >
+                  Everything You Need to Know
+               </motion.h2>
 
                {/* Subheading */}
-               <p className="text-gray-500 text-center max-w-3xl mx-auto mb-12">
+               <motion.p className="text-gray-500 text-center max-w-3xl mx-auto mb-12" variants={headerVariants}>
                   Lorem ipsum dolor sit amet consectetur. Nam sem amet nulla in non lorem. Rhoncus a lectus venenatis mattis
                   tellus risus nullam risus. Eu amet feugiat enim nunc. Eget.
-               </p>
+               </motion.p>
 
                {/* FAQ Grid */}
-               <div className="grid md:grid-cols-2 gap-6">
+               <motion.div className="grid md:grid-cols-2 gap-6" variants={gridVariants}>
                   {faqs.map((faq) => (
-                     <div key={faq.id} className="bg-white rounded-lg shadow-sm border h-fit border-gray-100 overflow-hidden">
+                     <motion.div
+                        key={faq.id}
+                        className="bg-white rounded-lg shadow-sm border h-fit border-gray-100 overflow-hidden"
+                        variants={faqItemVariants}
+                        whileHover={{
+                           y: -5,
+                           boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+                           transition: { duration: 0.2 },
+                        }}
+                     >
                         <div className="flex justify-between items-start p-6 cursor-pointer" onClick={() => toggleFaq(faq.id)}>
                            <h3 className="text-gray-800 font-medium pr-8">{faq.question}</h3>
-                           <button className="bg-purple-100 rounded-full p-2 flex-shrink-0 hover:bg-purple-200 transition-colors">
-                              {openFaqs.includes(faq.id) ? (
-                                 <FaChevronUp className="text-purple-600 text-sm" />
-                              ) : (
-                                 <FaPlus className="text-purple-600 text-sm" />
-                              )}
-                           </button>
+                           <motion.button
+                              className="bg-purple-100 rounded-full p-2 flex-shrink-0 hover:bg-purple-200 transition-colors"
+                              whileHover={{ scale: 1.1, transition: { duration: 0.2 } }}
+                              whileTap={{ scale: 0.95 }}
+                           >
+                              <motion.div
+                                 animate={{ rotate: openFaqs.includes(faq.id) ? 0 : 180 }}
+                                 transition={{ duration: 0.3, ease: "easeInOut" }}
+                              >
+                                 {openFaqs.includes(faq.id) ? (
+                                    <FaChevronUp className="text-purple-600 text-sm" />
+                                 ) : (
+                                    <FaPlus className="text-purple-600 text-sm" />
+                                 )}
+                              </motion.div>
+                           </motion.button>
                         </div>
 
-                        {openFaqs.includes(faq.id) && <div className="px-6 pb-6 text-gray-600">{faq.answer}</div>}
-                     </div>
+                        <AnimatePresence>
+                           {openFaqs.includes(faq.id) && (
+                              <motion.div
+                                 initial={{ height: 0, opacity: 0 }}
+                                 animate={{
+                                    height: "auto",
+                                    opacity: 1,
+                                    transition: {
+                                       height: { duration: 0.3 },
+                                       opacity: { duration: 0.3, delay: 0.1 },
+                                    },
+                                 }}
+                                 exit={{
+                                    height: 0,
+                                    opacity: 0,
+                                    transition: {
+                                       height: { duration: 0.3 },
+                                       opacity: { duration: 0.2 },
+                                    },
+                                 }}
+                                 className="overflow-hidden"
+                              >
+                                 <motion.div
+                                    className="px-6 pb-6 text-gray-600"
+                                    initial={{ y: 10 }}
+                                    animate={{ y: 0, transition: { duration: 0.3, delay: 0.1 } }}
+                                 >
+                                    {faq.answer}
+                                 </motion.div>
+                              </motion.div>
+                           )}
+                        </AnimatePresence>
+                     </motion.div>
                   ))}
-               </div>
-            </div>
-
+               </motion.div>
+            </motion.div>
          </Container>
-
       </div>
    )
 }

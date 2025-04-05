@@ -27,11 +27,18 @@ const SingleUnitversity = () => {
             backgroundImage={Images.Universities.UniversityHero}
          />
          <StatsSection />
-         <MissionVisionSection heading="Offered Programs for International Students" tagline="Choose the right program for yourself"/>
-         <InstitutionSection/>
-         <BenefitsSection/>
-         <FaqSection/>
-         <TeamSection/>
+         <MissionVisionSection heading="Offered Programs for International Students" tagline="Choose the right program for yourself" />
+         <InstitutionSection
+            Heading="Lorem ipsum dolor sit amet consectetur adipisicing."
+            Text={<p>
+               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum necessitatibus natus exercitationem quisquam illo explicabo sint, officia voluptates reprehenderit quos dolorum earum ullam perferendis impedit numquam dolorem dolor nobis, deleniti corporis ad eius odit eaque. Cum praesentium nisi exercitationem sequi!
+               <br /><br />
+               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem rerum corrupti tenetur, repellat nihil dignissimos eos pariatur sunt ullam libero possimus quas unde mollitia similique facilis voluptatem non. Explicabo, consequuntur. Labore est provident in dolores veritatis magnam quidem! Dolor, consectetur.
+            </p>}
+         />
+         <BenefitsSection />
+         <FaqSection />
+         <TeamSection />
          <TestimonialVideoSection />
 
 
