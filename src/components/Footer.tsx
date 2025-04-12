@@ -1,8 +1,10 @@
+//@ts-nocheck
 
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa"
 import { motion, AnimatePresence } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import Container from "./Container"
+import { universities } from "../constant"
 
 // Animation variants
 const containerVariants = {
@@ -93,6 +95,9 @@ const FooterSection = () => {
     triggerOnce: false
   })
 
+  // Get top 3 universities for the footer
+  const featuredUniversities = universities.slice(0, 3)
+
   return (
     <motion.footer
       className="bg-gradient-to-r m-4 lg:m-8 from-[#000] lg:px-12 to-[#282828] text-white rounded-3xl overflow-hidden"
@@ -172,7 +177,7 @@ const FooterSection = () => {
                   }}
                 />
                 <div>
-                  <span className="text-TwPrimaryPurple">Company</span> <span className="text-yellow-500">Logo</span>
+                  <span className="text-TwPrimaryPurple">EBC</span> <span className="text-yellow-500">Worldwide</span>
                 </div>
               </motion.div>
 
@@ -245,7 +250,7 @@ const FooterSection = () => {
                 Universities
               </motion.h3>
               <ul className="space-y-3">
-                {['Lorem Ipsum', 'Lorem Ipsum', 'Lorem Ipsum'].map((link, index) => (
+                {featuredUniversities.map((university, index) => (
                   <motion.li
                     key={index}
                     variants={itemVariants}
@@ -254,22 +259,11 @@ const FooterSection = () => {
                       color: "#a78bfa"
                     }}
                   >
-                    <a href="#" className="hover:text-purple-400 transition-colors">
-                      {link}
+                    <a href={`/university-detail/${university.id}`} className="hover:text-purple-400 transition-colors">
+                      {university.name}
                     </a>
                   </motion.li>
                 ))}
-                <motion.li
-                  variants={itemVariants}
-                  whileHover={{
-                    x: 5,
-                    color: "#8b5cf6"
-                  }}
-                >
-                  <a href="#" className="text-purple-400 hover:text-purple-300 transition-colors">
-                    View More
-                  </a>
-                </motion.li>
               </ul>
             </motion.div>
 
@@ -285,7 +279,7 @@ const FooterSection = () => {
                 Programs
               </motion.h3>
               <ul className="space-y-3">
-                {['Lorem Ipsum', 'Lorem Ipsum', 'Lorem Ipsum'].map((link, index) => (
+                {featuredUniversities[0].programs.slice(0, 3).map((program, index) => (
                   <motion.li
                     key={index}
                     variants={itemVariants}
@@ -295,21 +289,10 @@ const FooterSection = () => {
                     }}
                   >
                     <a href="#" className="hover:text-purple-400 transition-colors">
-                      {link}
+                      {program.title.props.children}
                     </a>
                   </motion.li>
                 ))}
-                <motion.li
-                  variants={itemVariants}
-                  whileHover={{
-                    x: 5,
-                    color: "#8b5cf6"
-                  }}
-                >
-                  <a href="#" className="text-purple-400 hover:text-purple-300 transition-colors">
-                    View More
-                  </a>
-                </motion.li>
               </ul>
             </motion.div>
 
@@ -417,7 +400,6 @@ const FooterSection = () => {
             </motion.div>
           </motion.div>
         </Container>
-
       </div>
     </motion.footer>
   )

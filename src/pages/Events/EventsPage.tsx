@@ -17,10 +17,10 @@ const EventsPage = () => {
       <>
          <HeroSection
             // badgeText="Put in the Word"
-            title="How Can You Reach Us"
-            description="Lorem ipsum dolor sit amet consectetur. Vel dui molestie tempor elementum gravida nibh vitae ullamcorper ac. Molestie sit phasellus faucibus urna urna in phasellus nullam amet."
+            title="How Can You Reach Us "
+            description="Stay connected with EBC through our latest events, seminars, and webinars held across different countries. Whether you're looking for admission guidance, visa tips, or direct interaction with university representatives, our events are the perfect opportunity to get all your questions answered in person. "
             buttonText="Book Consultation Now"
-            buttonLink="/contact"
+            buttonLink="/contact-us"
             backgroundImage={Images.Universities.UniversityHero}
          />
          <InstitutionSection
@@ -52,7 +52,8 @@ const EventsPage = () => {
          />
          <ImageGallerySection />
          <TeamSection />
-         <CtaSection />
+         <CtaSection Heading="Take the First Step Toward Your Medical Career Abroad!" Text="Your dream of studying abroad is just one step away! Let our experts guide you through the admission, visa, and university selection process—hassle-free and stress-free. Get in touch now and take the first step toward your future!
+"/>
 
       </>
    )

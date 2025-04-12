@@ -201,8 +201,7 @@ const FaqSection = () => {
                   className="text-gray-500 text-center max-w-3xl mx-auto mb-12"
                   variants={itemVariants}
                >
-                  Lorem ipsum dolor sit amet consectetur. Nam sem amet nulla in non lorem. Rhoncus a lectus venenatis mattis
-                  tellus risus nullam risus. Eu amet feugiat enim nunc. Eget.
+                  Got questions? We’ve got answers! Check out our most frequently asked questions to get quick, clear info about studying abroad with EBC.
                </motion.p>
 
                {/* Two Column Layout */}
@@ -217,7 +216,7 @@ const FaqSection = () => {
                      whileHover={{ y: -5, transition: { duration: 0.2 } }}
                   >
                      <motion.h3 className="text-2xl font-semibold text-gray-800 mb-3">About Us</motion.h3>
-                     <motion.p className="text-gray-600 mb-8">Lorem ipsum dolor sit amet consectetur. At est phasellus feugiat.</motion.p>
+                     <motion.p className="text-gray-600 mb-8">Helping students study abroad with expert guidance and ongoing support.</motion.p>
 
                      <div className="space-y-4">
                         {aboutFaqs.map((faq, index) => (
@@ -271,7 +270,7 @@ const FaqSection = () => {
                      whileHover={{ y: -5, transition: { duration: 0.2 } }}
                   >
                      <motion.h3 className="text-2xl font-semibold text-gray-800 mb-3">Our Programs</motion.h3>
-                     <motion.p className="text-gray-600 mb-8">Lorem ipsum dolor sit amet consectetur. At est phasellus feugiat.</motion.p>
+                     <motion.p className="text-gray-600 mb-8">Offering top-tier medical programs through our trusted university partners.</motion.p>
 
                      <div className="space-y-4">
                         {programsFaqs.map((faq, index) => (

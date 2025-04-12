@@ -12,9 +12,9 @@ const TeamSection = () => {
    const categories = [
       { id: "founders", name: "Founders" },
       { id: "executive", name: "Executive Members" },
-      { id: "directors", name: "Lorem ipsum" },
-      { id: "managers", name: "Lorem ipsum" },
-      { id: "staff", name: "Lorem ipsum" },
+      { id: "directors", name: "Directors" },
+      // { id: "managers", name: "Lorem ipsum" },
+      { id: "staff", name: "staff" },
    ]
 
    // Team members data
@@ -117,7 +117,7 @@ const TeamSection = () => {
 
    // State for active category
    const [activeCategory, setActiveCategory] = useState("founders")
-   
+
    // Animation hooks
    const [ref, inView] = useInView({
       threshold: 0.1,
@@ -177,20 +177,20 @@ const TeamSection = () => {
    return (
       <div className="py-16 bg-white" ref={ref}>
          <Container>
-            <motion.div 
+            <motion.div
                className="mx-auto"
                initial="hidden"
                animate={inView ? "visible" : "hidden"}
                variants={containerVariants}
             >
                {/* Top Badge */}
-               <motion.div 
+               <motion.div
                   className="flex justify-center mb-6"
                   variants={itemVariants}
                >
-                  <motion.div 
+                  <motion.div
                      className="bg-green-100 text-green-600 px-6 py-2 rounded-full inline-block"
-                     whileHover={{ 
+                     whileHover={{
                         scale: 1.05,
                         backgroundColor: "#dcfce7"
                      }}
@@ -201,7 +201,7 @@ const TeamSection = () => {
                </motion.div>
 
                {/* Heading */}
-               <motion.h2 
+               <motion.h2
                   className="text-3xl md:text-4xl font-bold text-gray-700 text-center mb-4"
                   variants={itemVariants}
                >
@@ -209,16 +209,16 @@ const TeamSection = () => {
                </motion.h2>
 
                {/* Subheading */}
-               <motion.p 
+               <motion.p
                   className="text-gray-500 text-center max-w-3xl mx-auto mb-12"
                   variants={itemVariants}
                >
-                  Lorem ipsum dolor sit amet consectetur. Nam sem amet nulla in non lorem. Rhoncus a lectus venenatis mattis
-                  tellus risus nullam risus. Eu amet feugiat enim nunc. Eget.
+                  Meet the passionate professionals driving our mission to guide students toward successful academic journeys abroad.
+
                </motion.p>
 
                {/* Category Tabs */}
-               <motion.div 
+               <motion.div
                   className="flex flex-wrap justify-center gap-3 mb-12"
                   variants={itemVariants}
                >
@@ -226,11 +226,10 @@ const TeamSection = () => {
                      <motion.button
                         key={category.id}
                         onClick={() => setActiveCategory(category.id)}
-                        className={`px-5 py-3 rounded-full text-sm font-medium transition-colors ${
-                           activeCategory === category.id
+                        className={`px-5 py-3 rounded-full text-sm font-medium transition-colors ${activeCategory === category.id
                               ? "bg-TwPrimaryPurple text-white"
                               : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                        }`}
+                           }`}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         transition={{ duration: 0.2 }}
@@ -241,7 +240,7 @@ const TeamSection = () => {
                </motion.div>
 
                {/* Team Members Grid */}
-               <motion.div 
+               <motion.div
                   className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-evenly gap-8 mb-12"
                   variants={containerVariants}
                   key={activeCategory} // Force re-render animation when category changes
@@ -249,31 +248,31 @@ const TeamSection = () => {
                   animate="visible"
                >
                   {teamMembers[activeCategory].map((member: any, index: number) => (
-                     <motion.div 
-                        key={member.id} 
+                     <motion.div
+                        key={member.id}
                         className="flex flex-col items-center"
                         custom={index}
                         variants={memberVariants}
                      >
                         {/* Image with corner accents */}
-                        <motion.div 
+                        <motion.div
                            className="relative mb-4"
                            whileHover={{ scale: 1.05 }}
                            transition={{ duration: 0.3 }}
                         >
-                           <motion.div 
+                           <motion.div
                               className="absolute -top-2 -left-2 w-6 h-6 border-t-2 border-l-2 border-yellow-400"
                               variants={cornerVariants}
                            ></motion.div>
-                           <motion.div 
+                           <motion.div
                               className="absolute -top-2 -right-2 w-6 h-6 border-t-2 border-r-2 border-yellow-400"
                               variants={cornerVariants}
                            ></motion.div>
-                           <motion.div 
+                           <motion.div
                               className="absolute -bottom-2 -left-2 w-6 h-6 border-b-2 border-l-2 border-yellow-400"
                               variants={cornerVariants}
                            ></motion.div>
-                           <motion.div 
+                           <motion.div
                               className="absolute -bottom-2 -right-2 w-6 h-6 border-b-2 border-r-2 border-yellow-400"
                               variants={cornerVariants}
                            ></motion.div>
@@ -284,7 +283,7 @@ const TeamSection = () => {
                            />
                         </motion.div>
 
-                        <motion.h3 
+                        <motion.h3
                            className="text-xl font-semibold text-TwPrimaryPurple mb-1"
                            initial={{ opacity: 0 }}
                            animate={{ opacity: 1 }}
@@ -292,7 +291,7 @@ const TeamSection = () => {
                         >
                            {member.name}
                         </motion.h3>
-                        <motion.p 
+                        <motion.p
                            className="text-gray-500"
                            initial={{ opacity: 0 }}
                            animate={{ opacity: 1 }}
@@ -305,25 +304,25 @@ const TeamSection = () => {
                </motion.div>
 
                {/* View All Button */}
-               <motion.div 
+               <motion.div
                   className="flex justify-center"
                   variants={itemVariants}
                >
                   <motion.a
                      href="#"
                      className="inline-flex items-center bg-purple-100 text-TwPrimaryPurple px-6 py-3 rounded-full hover:bg-purple-200 transition-colors"
-                     whileHover={{ 
+                     whileHover={{
                         scale: 1.05,
                         boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)"
                      }}
                      whileTap={{ scale: 0.98 }}
                      transition={{ duration: 0.2 }}
                   >
-                     View Whole Team 
+                     View Whole Team
                      <motion.span
                         initial={{ x: 0 }}
                         animate={{ x: [0, 5, 0] }}
-                        transition={{ 
+                        transition={{
                            duration: 1.2,
                            repeat: Infinity,
                            repeatDelay: 1

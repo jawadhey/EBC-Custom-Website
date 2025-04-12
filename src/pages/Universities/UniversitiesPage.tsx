@@ -15,10 +15,10 @@ const UniversitiesPage = () => {
       <>
          <HeroSection
             badgeText="Put in the Word"
-            title="We would Love to Hear from You"
-            description="Lorem ipsum dolor sit amet consectetur. Vel dui molestie tempor elementum gravida nibh vitae ullamcorper ac. Molestie sit phasellus faucibus urna urna in phasellus nullam amet."
+            title="Explore Top International Universities with EBC "
+            description="Discover a world of opportunities as you browse through the top-ranked universities we work with. From medicine to engineering, we connect you with institutions that match your academic goals and dreams of studying abroad. "
             buttonText="Book Consultation Now"
-            buttonLink="/contact"
+            buttonLink="/contact-us"
             backgroundImage={Images.Universities.UniversityHero}
          />
          <ProgramsSection />

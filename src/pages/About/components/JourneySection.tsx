@@ -15,35 +15,52 @@ const JourneySection = () => {
   const journeyItems = [
     {
       year: "2007",
-      title: "Lorem ipsum dolor sit amet consectetur.",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Maecenas dolor turpis donec mauris quis nulla elit elit cursus. Quis felis lorem habitant elit. Ornare mattis nibh tristique amet amet nisi.",
+      title: "EBC Worldwide is Founded",
+      description: "We officially opened our doors in 2007 with a simple mission — to guide passionate students toward quality education abroad.",
       image: "/whiteboard-person.jpg",
-      imageAlt: "Person writing on whiteboard",
+      imageAlt: "EBC Worldwide founding",
     },
     {
       year: "2008",
-      title: "Lorem ipsum dolor sit amet consectetur.",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Maecenas dolor turpis donec mauris quis nulla elit elit cursus. Quis felis lorem habitant elit. Ornare mattis nibh tristique amet amet nisi.",
+      title: "First Student Batch to China",
+      description: "Our first successful batch of students took off to study in China, marking the start of our deep-rooted partnerships with Chinese universities.",
       image: "/meeting-discussion.jpg",
-      imageAlt: "Two people in discussion",
+      imageAlt: "First student batch to China",
     },
     {
-      year: "2010",
-      title: "Lorem ipsum dolor sit amet consectetur.",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Maecenas dolor turpis donec mauris quis nulla elit elit cursus. Quis felis lorem habitant elit. Ornare mattis nibh tristique amet amet nisi.",
+      year: "2009",
+      title: "Expansion of Services",
+      description: "We expanded our consultancy offerings to include detailed pre-departure guidance, document preparation, and admission assistance.",
       image: "/placeholder.svg?height=300&width=500",
-      imageAlt: "Company expansion",
+      imageAlt: "Service expansion",
     },
     {
-      year: "2015",
-      title: "Lorem ipsum dolor sit amet consectetur.",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Maecenas dolor turpis donec mauris quis nulla elit elit cursus. Quis felis lorem habitant elit. Ornare mattis nibh tristique amet amet nisi.",
+      year: "2009–2015",
+      title: "Strengthening Global Ties",
+      description: "Over the years, we developed long-term collaborations with reputable institutions across China, including Guangxi Medical University and Kunming University of Science and Technology.",
       image: "/placeholder.svg?height=300&width=500",
-      imageAlt: "International partnerships",
+      imageAlt: "Global partnerships",
+    },
+    {
+      year: "2015–2020",
+      title: "Going Beyond Borders",
+      description: "Our reach extended to new destinations like the UK and Azerbaijan, partnering with universities such as Nakhchivan State University and Baku Engineering University.",
+      image: "/placeholder.svg?height=300&width=500",
+      imageAlt: "International expansion",
+    },
+    {
+      year: "2021–2024",
+      title: "5,000+ Students and Growing",
+      description: "We hit a major milestone by guiding over 5,000 students to prestigious institutions globally, with a growing presence across multiple countries.",
+      image: "/placeholder.svg?height=300&width=500",
+      imageAlt: "Student milestone celebration",
+    },
+    {
+      year: "Present Day",
+      title: "Onward to Georgia and Beyond",
+      description: "With upcoming offices in Georgia and continuous global expansion, we remain committed to shaping futures and fulfilling dreams through education.",
+      image: "/placeholder.svg?height=300&width=500",
+      imageAlt: "Future expansion plans",
     },
   ]
 
@@ -171,8 +188,7 @@ const JourneySection = () => {
 
           {/* Subheading */}
           <motion.p className="text-gray-500 text-center max-w-3xl mx-auto mb-16" variants={headerVariants}>
-            Lorem ipsum dolor sit amet consectetur. Nisl ut neque tortor nulla felis nunc. Sit ac sed sed pulvinar sit
-            purus morbi. Elit amet sed velit auctor urna vitae nam ultricies massa.
+            Our journey from humble beginnings to becoming a trusted global education consultancy
           </motion.p>
 
           {/* Timeline */}
@@ -212,7 +228,7 @@ const JourneySection = () => {
 
                   {/* Year */}
                   <motion.div
-                    className="absolute text-2xl font-bold text-TwPrimaryPurple top-0 -left-4 lg:left-1/2 transform lg:-translate-x-1/2 mt-12"
+                    className="absolute max-w-[120px] text-wrap text-2xl font-bold text-TwPrimaryPurple top-0 -left-4 lg:left-1/2 transform lg:-translate-x-1/2 mt-4"
                     variants={yearVariants}
                   >
                     {item.year}
@@ -238,4 +254,3 @@ const JourneySection = () => {
 }
 
 export default JourneySection
-

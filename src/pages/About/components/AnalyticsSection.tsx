@@ -25,10 +25,9 @@ const AnalyticsSection = () => {
   // Progress bar data
   const progressData = [
     { label: "Student Reach", value: 90, color: "bg-TwPrimaryPurple", percentage: "+50%" },
-    { label: "Lorem ipsum", value: 60, color: "bg-blue-100" },
-    { label: "Lorem ipsum", value: 85, color: "bg-blue-100" },
-    { label: "Lorem ipsum", value: 70, color: "bg-blue-100" },
-    { label: "Lorem ipsum", value: 75, color: "bg-blue-100" },
+    { label: "Universites", value: 70, color: "bg-TwPrimaryPurple", percentage: "+70%" },
+    { label: "Campuses", value: 85, color: "bg-TwPrimaryPurple", percentage: "+85%" },
+    // { label: "Lorem ipsum", value: 75, color: "bg-blue-100" },
   ]
 
   const containerVariants = {
@@ -80,7 +79,7 @@ const AnalyticsSection = () => {
 
   const progressVariants = {
     hidden: { width: "0%" },
-    visible: (i:any) => ({
+    visible: (i: any) => ({
       width: `${i}%`,
       transition: {
         duration: 1,
@@ -104,7 +103,7 @@ const AnalyticsSection = () => {
             className="text-3xl md:text-4xl font-bold text-gray-700 text-center mb-12 max-w-4xl mx-auto"
             variants={itemVariants}
           >
-            Lorem ipsum dolor sit amet consectetur. Lobortis id nibh urna velit. Lorem pellentesque elementum.
+            Unveiling the Numbers Behind Our Journey — A Legacy of Student Success and Global Impact
           </motion.h2>
 
           {/* Two Column Layout */}
@@ -115,7 +114,7 @@ const AnalyticsSection = () => {
               variants={imageVariants}
             >
               <motion.div
-                
+
                 transition={{ duration: 0.4 }}
               >
                 <img src={Images.About.Skyscraper} alt="Skyscrapers" className="w-auto max-h-[560px] h-auto rounded-2xl" />
