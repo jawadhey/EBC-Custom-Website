@@ -5,7 +5,11 @@ import { Images } from "../../../assets/images"
 import { Link } from "react-router-dom"
 import { motion } from "motion/react"
 import { useInView } from "react-intersection-observer"
-
+import uni1 from '../../../assets/universities/uni1/hero.jpg'
+import uni2 from '../../../assets/universities/uni2/hero.jpg'
+import uni3 from '../../../assets/universities/uni3/hero.jpg'
+import uni4 from '../../../assets/universities/uni4/hero.jpg'
+import uni5 from '../../../assets/universities/uni5/hero.png'
 // Animation variants
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -71,51 +75,43 @@ const ProgramsSection = () => {
     { id: "other", name: "other" },
   ]
 
-  // Program data
   const allPrograms = [
     {
       id: 1,
-      title: "Wuhan University of Medical Sciences",
-      description: "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue.",
-      image: "/university-building.jpg",
+      title: "Nakhchivan University",
+      description: "A progressive university in Azerbaijan offering diverse academic programs and global collaboration.",
+      image: uni1,
       categories: ["exclusive", "engineering"],
     },
     {
       id: 2,
-      title: "Wuhan University of Medical Sciences",
-      description: "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue.",
-      image: "/university-building.jpg",
+      title: "North China University of Science & Technology",
+      description: "A reputed institution combining science, technology, and medical education in northern China.",
+      image: uni2,
       categories: ["", "medical"],
     },
     {
       id: 3,
-      title: "Wuhan University of Medical Sciences",
-      description: "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue.",
-      image: "/university-building.jpg",
+      title: "Kunming University of Science & Technology",
+      description: "Located in Yunnan, it proudly specializes in applied sciences and innovative, cutting-edge tech research.",
+      image: uni3,
       categories: ["other", "medical"],
     },
     {
       id: 4,
-      title: "Wuhan University of Medical Sciences",
-      description: "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue.",
-      image: "/university-building.jpg",
+      title: "Guangxi Medical University",
+      description: "One of China’s oldest medical universities, known for public health and clinical medicine.",
+      image: uni4,
       categories: ["", "medical"],
     },
     {
       id: 5,
-      title: "Wuhan University of Medical Sciences",
-      description: "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue.",
-      image: "/university-building.jpg",
-      categories: ["exclusive", "medical"],
-    },
-    {
-      id: 6,
-      title: "Wuhan University of Medical Sciences",
-      description: "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue.",
-      image: "/university-building.jpg",
+      title: "Wuhan University of Science & Technology",
+      description: "An interdisciplinary university excelling in engineering, materials, and medical fields.",
+      image: uni5,
       categories: ["", "medical"],
     },
-  ]
+  ];
 
   // Filter programs based on active tab
   const filteredPrograms =
@@ -190,7 +186,7 @@ const ProgramsSection = () => {
                 layout
               >
                 <motion.img
-                  src={Images.ProgramsImage || "/placeholder.svg"}
+                  src={program.image || "/placeholder.svg"}
                   alt={program.title}
                   className="w-full h-48 object-cover"
                   whileHover={{
@@ -215,7 +211,7 @@ const ProgramsSection = () => {
                     whileHover={{ x: 5 }}
                   >
                     <Link
-                      to="/university-detail"
+                      to={`/university-detail/${program.id}`}
                       className="text-yellow-500 font-medium flex items-center hover:text-yellow-600 transition-colors"
 
                     >

@@ -6,46 +6,46 @@ import Container from "../../../components/Container"
 import { motion, AnimatePresence } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 
-const FaqSection = () => {
+const FaqSection = ({ faqs }: any) => {
    // FAQ data
-   const faqs = [
-      {
-         id: 1,
-         question: "Lorem ipsum dolor sit amet consectetur. Pellentesque orci potenti non sit netus.",
-         answer:
-            "Lorem ipsum dolor sit amet consectetur. Donec sit tristique velit justo vel a scelerisque laoreet. Urna lectus justo lectus quis duis odio montes. Lacus.",
-      },
-      {
-         id: 2,
-         question: "Lorem ipsum dolor sit amet consectetur. Pellentesque orci potenti non sit netus.",
-         answer:
-            "Lorem ipsum dolor sit amet consectetur. Donec sit tristique velit justo vel a scelerisque laoreet. Urna lectus justo lectus quis duis odio montes. Lacus.",
-      },
-      {
-         id: 3,
-         question: "Lorem ipsum dolor sit amet consectetur. Pellentesque orci potenti non sit netus.",
-         answer:
-            "Lorem ipsum dolor sit amet consectetur. Donec sit tristique velit justo vel a scelerisque laoreet. Urna lectus justo lectus quis duis odio montes. Lacus.",
-      },
-      {
-         id: 4,
-         question: "Lorem ipsum dolor sit amet consectetur. Pellentesque orci potenti non sit netus.",
-         answer:
-            "Lorem ipsum dolor sit amet consectetur. Donec sit tristique velit justo vel a scelerisque laoreet. Urna lectus justo lectus quis duis odio montes. Lacus.",
-      },
-      {
-         id: 5,
-         question: "Lorem ipsum dolor sit amet consectetur. Pellentesque orci potenti non sit netus.",
-         answer:
-            "Lorem ipsum dolor sit amet consectetur. Donec sit tristique velit justo vel a scelerisque laoreet. Urna lectus justo lectus quis duis odio montes. Lacus.",
-      },
-      {
-         id: 6,
-         question: "Lorem ipsum dolor sit amet consectetur. Pellentesque orci potenti non sit netus.",
-         answer:
-            "Lorem ipsum dolor sit amet consectetur. Donec sit tristique velit justo vel a scelerisque laoreet. Urna lectus justo lectus quis duis odio montes. Lacus.",
-      },
-   ]
+   // const faqs = [
+   //    {
+   //       id: 1,
+   //       question: "Lorem ipsum dolor sit amet consectetur. Pellentesque orci potenti non sit netus.",
+   //       answer:
+   //          "Lorem ipsum dolor sit amet consectetur. Donec sit tristique velit justo vel a scelerisque laoreet. Urna lectus justo lectus quis duis odio montes. Lacus.",
+   //    },
+   //    {
+   //       id: 2,
+   //       question: "Lorem ipsum dolor sit amet consectetur. Pellentesque orci potenti non sit netus.",
+   //       answer:
+   //          "Lorem ipsum dolor sit amet consectetur. Donec sit tristique velit justo vel a scelerisque laoreet. Urna lectus justo lectus quis duis odio montes. Lacus.",
+   //    },
+   //    {
+   //       id: 3,
+   //       question: "Lorem ipsum dolor sit amet consectetur. Pellentesque orci potenti non sit netus.",
+   //       answer:
+   //          "Lorem ipsum dolor sit amet consectetur. Donec sit tristique velit justo vel a scelerisque laoreet. Urna lectus justo lectus quis duis odio montes. Lacus.",
+   //    },
+   //    {
+   //       id: 4,
+   //       question: "Lorem ipsum dolor sit amet consectetur. Pellentesque orci potenti non sit netus.",
+   //       answer:
+   //          "Lorem ipsum dolor sit amet consectetur. Donec sit tristique velit justo vel a scelerisque laoreet. Urna lectus justo lectus quis duis odio montes. Lacus.",
+   //    },
+   //    {
+   //       id: 5,
+   //       question: "Lorem ipsum dolor sit amet consectetur. Pellentesque orci potenti non sit netus.",
+   //       answer:
+   //          "Lorem ipsum dolor sit amet consectetur. Donec sit tristique velit justo vel a scelerisque laoreet. Urna lectus justo lectus quis duis odio montes. Lacus.",
+   //    },
+   //    {
+   //       id: 6,
+   //       question: "Lorem ipsum dolor sit amet consectetur. Pellentesque orci potenti non sit netus.",
+   //       answer:
+   //          "Lorem ipsum dolor sit amet consectetur. Donec sit tristique velit justo vel a scelerisque laoreet. Urna lectus justo lectus quis duis odio montes. Lacus.",
+   //    },
+   // ]
 
    // State to track which FAQs are open
    const [openFaqs, setOpenFaqs] = useState([1, 2]) // Initially open the first two FAQs
@@ -136,18 +136,17 @@ const FaqSection = () => {
                   className="text-3xl md:text-4xl font-bold text-gray-700 text-center mb-4"
                   variants={headerVariants}
                >
-                  Everything You Need to Know
+                  {faqs.title}
                </motion.h2>
 
                {/* Subheading */}
                <motion.p className="text-gray-500 text-center max-w-3xl mx-auto mb-12" variants={headerVariants}>
-                  Lorem ipsum dolor sit amet consectetur. Nam sem amet nulla in non lorem. Rhoncus a lectus venenatis mattis
-                  tellus risus nullam risus. Eu amet feugiat enim nunc. Eget.
+                  {faqs.description}
                </motion.p>
 
                {/* FAQ Grid */}
                <motion.div className="grid md:grid-cols-2 gap-6" variants={gridVariants}>
-                  {faqs.map((faq) => (
+                  {faqs.content.map((faq: any) => (
                      <motion.div
                         key={faq.id}
                         className="bg-white rounded-lg shadow-sm border h-fit border-gray-100 overflow-hidden"

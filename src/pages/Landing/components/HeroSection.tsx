@@ -9,6 +9,12 @@ import { Autoplay, EffectCoverflow } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/effect-coverflow'
 import 'swiper/css/autoplay'
+import uni1 from '../../../assets/logos/logo1.png'
+import uni2 from '../../../assets/logos/logo2.png'
+import uni3 from '../../../assets/logos/logo3.png'
+import uni4 from '../../../assets/logos/logo4.png'
+import uni5 from '../../../assets/logos/logo5.png'
+import uni6 from '../../../assets/logos/logo6.jpg'
 
 // Animation variants
 const containerVariants = {
@@ -65,13 +71,14 @@ const LandingHeroSection = () => {
    })
 
    // Harvard university images array
-   const harvardImages = [
-      Images.HarwardLogo,
-      Images.HarwardLogo,
-      Images.HarwardLogo,
-      Images.HarwardLogo,
-      Images.HarwardLogo,
-   ]
+   const chineseUniversityLogos = [
+      uni1,
+      uni2,
+      uni3,
+      // uni4,
+      uni5,
+      uni6
+    ];
 
    return (
       <div
@@ -160,7 +167,7 @@ const LandingHeroSection = () => {
 
                         className="w-[80vw] xl:w-auto mx-auto md:ml-0"
                      >
-                        {harvardImages.map((image, index) => (
+                        {chineseUniversityLogos.map((image, index) => (
                            <SwiperSlide key={index} className="py-4">
                               <motion.div
                                  custom={index}

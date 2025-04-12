@@ -144,7 +144,7 @@ const TestimonialVideoSection = ({ Text }: any) => {
                 className="text-gray-600"
                 variants={itemVariants}
               >
-                {Text || ''}
+                {Text || "Our students' journeys speak for themselves! From securing admissions in top medical universities to thriving in their careers, their success stories reflect our commitment to guiding them every step of the way. Watch the video to hear firsthand experiences and discover how we make studying abroad a seamless and rewarding experience."}
               </motion.p>
             </motion.div>
           </div>

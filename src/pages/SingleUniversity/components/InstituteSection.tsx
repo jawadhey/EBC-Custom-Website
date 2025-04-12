@@ -3,6 +3,11 @@ import Container from "../../../components/Container"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 
+import image1 from '../../../assets/universities/all/ivy-dao-cuifWLkXVz0-unsplash.jpg'
+import image2 from '../../../assets/universities/all/lan-lin-1Y7TirECIGk-unsplash.jpg'
+import image3 from '../../../assets/universities/all/lan-lin-AIoqWbrxA0o-unsplash.jpg'
+import image4 from '../../../assets/universities/all/lan-lin-wMz22imjbGQ-unsplash.jpg'
+
 const InstitutionSection = ({ Heading, Text }: any) => {
    const [ref, inView] = useInView({
       threshold: 0.1,
@@ -171,7 +176,7 @@ const InstitutionSection = ({ Heading, Text }: any) => {
                   variants={galleryContainerVariants}
                >
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                     {[1, 2, 3, 4].map((item, index) => (
+                     {[image1, image2, image3, image4].map((item, index) => (
                         <motion.div
                            key={index}
                            className="rounded-lg overflow-hidden"
@@ -180,7 +185,7 @@ const InstitutionSection = ({ Heading, Text }: any) => {
                            custom={index}
                         >
                            <img
-                              src={Images.Universities.InstituteMain}
+                              src={item}
                               alt={`University image ${index + 1}`}
                               className="w-full h-60 object-cover"
                            />

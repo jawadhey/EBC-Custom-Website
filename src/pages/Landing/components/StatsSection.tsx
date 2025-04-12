@@ -2,11 +2,20 @@ import Container from "../../../components/Container"
 import { motion } from "motion/react"
 import { useInView } from "react-intersection-observer"
 
-const StatsSection = () => {
+interface StatItem {
+   value: React.ReactNode;
+   label: string;
+   description: string;
+}
+
+interface StatsSectionProps {
+   stats?: StatItem[];
+}
+
+const StatsSection = ({ stats }: StatsSectionProps) => {
    const [ref, inView] = useInView({
       threshold: 0.6,
       triggerOnce: false
-
    });
 
    const itemVariants = {
@@ -21,11 +30,15 @@ const StatsSection = () => {
       }
    }
 
-   const stats = [
+   // Default stats if none are provided
+   const defaultStats: StatItem[] = [
       { value: "15,000", label: "Students Enrolled", description: "Making dreams a reality" },
       { value: "Top-Ranked", label: "Universities ", description: "Globally recognized institutions" },
       { value: "100%", label: "Visa Success Rate ", description: "Smooth and stress-free process" }
    ];
+
+   // Use provided stats or fall back to defaults
+   const displayStats = stats || defaultStats;
 
    return (
       <div className="py-16 lg:py-32 bg-white" ref={ref}>
@@ -42,7 +55,6 @@ const StatsSection = () => {
                   transition={{ duration: 0.6 }}
                >
                   Trusted by Thousands of Aspiring Medical Students!
-
                </motion.h2>
 
                {/* Subheading */}
@@ -55,7 +67,7 @@ const StatsSection = () => {
 
                {/* Stats Grid */}
                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  {stats.map((stat, index) => (
+                  {displayStats.map((stat, index) => (
                      <motion.div
                         key={index}
                         className="flex flex-col items-center text-center relative"
@@ -80,7 +92,7 @@ const StatsSection = () => {
                               {stat.value}
                            </motion.span>
                            {
-                              index === 0 && (
+                              index === 0 && !stats && ( // Only show the "+" for the first default stat
                                  <motion.span
                                     className="text-yellow-500 text-5xl font-bold"
                                     initial={{ scale: 0 }}
@@ -121,7 +133,7 @@ const StatsSection = () => {
                         </motion.p>
 
                         {/* Right divider (visible only on desktop) */}
-                        {index < stats.length - 1 && (
+                        {index < displayStats.length - 1 && (
                            <div className="hidden md:block absolute right-0 top-0 bottom-0 w-px bg-gray-200 h-full"></div>
                         )}
                      </motion.div>

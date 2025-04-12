@@ -5,7 +5,8 @@ import Container from "../../../components/Container"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 
-const BenefitsSection = () => {
+const BenefitsSection = ({ benefits }: any) => {
+   console.log(benefits)
    const [ref, inView] = useInView({
       threshold: 0.3,
       triggerOnce: false
@@ -37,7 +38,7 @@ const BenefitsSection = () => {
 
    const cardVariants = {
       hidden: { y: 40, opacity: 0 },
-      visible: (index:any) => ({
+      visible: (index: any) => ({
          y: 0,
          opacity: 1,
          transition: {
@@ -49,56 +50,56 @@ const BenefitsSection = () => {
    }
 
    // Benefits data
-   const benefits = [
-      {
-         id: 1,
-         title: "Lorem ipsum",
-         description:
-            "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu. Nunc massa pretium sed ultrices mauris ornare nunc.",
-      },
-      {
-         id: 2,
-         title: "Lorem ipsum",
-         description:
-            "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu. Nunc massa pretium sed ultrices mauris ornare nunc.",
-      },
-      {
-         id: 3,
-         title: "Lorem ipsum",
-         description:
-            "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu. Nunc massa pretium sed ultrices mauris ornare nunc.",
-      },
-      {
-         id: 4,
-         title: "Lorem ipsum",
-         description:
-            "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu. Nunc massa pretium sed ultrices mauris ornare nunc.",
-      },
-      {
-         id: 5,
-         title: "Lorem ipsum",
-         description:
-            "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu. Nunc massa pretium sed ultrices mauris ornare nunc.",
-      },
-      {
-         id: 6,
-         title: "Lorem ipsum",
-         description:
-            "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu. Nunc massa pretium sed ultrices mauris ornare nunc.",
-      },
-      {
-         id: 7,
-         title: "Lorem ipsum",
-         description:
-            "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu. Nunc massa pretium sed ultrices mauris ornare nunc.",
-      },
-      {
-         id: 8,
-         title: "Lorem ipsum",
-         description:
-            "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu. Nunc massa pretium sed ultrices mauris ornare nunc.",
-      },
-   ]
+   // const benefits = [
+   //    {
+   //       id: 1,
+   //       title: "Lorem ipsum",
+   //       description:
+   //          "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu. Nunc massa pretium sed ultrices mauris ornare nunc.",
+   //    },
+   //    {
+   //       id: 2,
+   //       title: "Lorem ipsum",
+   //       description:
+   //          "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu. Nunc massa pretium sed ultrices mauris ornare nunc.",
+   //    },
+   //    {
+   //       id: 3,
+   //       title: "Lorem ipsum",
+   //       description:
+   //          "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu. Nunc massa pretium sed ultrices mauris ornare nunc.",
+   //    },
+   //    {
+   //       id: 4,
+   //       title: "Lorem ipsum",
+   //       description:
+   //          "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu. Nunc massa pretium sed ultrices mauris ornare nunc.",
+   //    },
+   //    {
+   //       id: 5,
+   //       title: "Lorem ipsum",
+   //       description:
+   //          "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu. Nunc massa pretium sed ultrices mauris ornare nunc.",
+   //    },
+   //    {
+   //       id: 6,
+   //       title: "Lorem ipsum",
+   //       description:
+   //          "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu. Nunc massa pretium sed ultrices mauris ornare nunc.",
+   //    },
+   //    {
+   //       id: 7,
+   //       title: "Lorem ipsum",
+   //       description:
+   //          "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu. Nunc massa pretium sed ultrices mauris ornare nunc.",
+   //    },
+   //    {
+   //       id: 8,
+   //       title: "Lorem ipsum",
+   //       description:
+   //          "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu. Nunc massa pretium sed ultrices mauris ornare nunc.",
+   //    },
+   // ]
 
    return (
       <div className="py-16 bg-white" ref={ref}>
@@ -139,13 +140,12 @@ const BenefitsSection = () => {
                   className="text-gray-500 text-center max-w-3xl mx-auto mb-12"
                   variants={itemVariants}
                >
-                  Lorem ipsum dolor sit amet consectetur. Nam sem amet nulla in non lorem. Rhoncus a lectus venenatis mattis
-                  tellus risus nullam risus. Eu amet feugiat enim nunc. Eget.
+                  {benefits.title}
                </motion.p>
 
                {/* Benefits Grid */}
                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {benefits.map((benefit, index) => (
+                  {benefits.content.map((benefit: any, index: any) => (
                      <motion.div
                         key={benefit.id}
                         className="bg-amber-50 bg-opacity-50 p-6 rounded-lg"

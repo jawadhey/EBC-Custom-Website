@@ -10,7 +10,7 @@ const HeroSection = ({
    buttonText,
    buttonLink,
    backgroundImage,
-   overlayColor = "rgba(102, 51, 204, 0.7)", // Default purple overlay
+   overlayColor = "rgba(0, 0, 0, 0.5)", // Default purple overlay
 }: any) => {
    const [ref, inView] = useInView({
       threshold: 0.1,
@@ -104,11 +104,11 @@ const HeroSection = ({
             <img
                src={backgroundImage || "/students-group.jpg"}
                alt="Background"
-               className="w-full h-full object-cover"
+               className="w-full h-full object-cover opacity-50"
             />
             <div
                className="absolute inset-0"
-            // style={{ backgroundColor: overlayColor }}
+               style={{ backgroundColor: overlayColor }}
             ></div>
          </motion.div>
 

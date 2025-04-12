@@ -33,7 +33,7 @@ const Router = () => {
                element: <UniversitiesPage />,
             },
             {
-               path: 'university-detail',
+               path: 'university-detail/:id',
                element: <SingleUnitversity />,
             },
             {
