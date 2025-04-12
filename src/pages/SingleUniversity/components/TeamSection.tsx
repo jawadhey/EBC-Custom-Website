@@ -40,7 +40,7 @@ const TeamSection = () => {
 
    const cardVariants = {
       hidden: { y: 40, opacity: 0 },
-      visible: (index:any) => ({
+      visible: (index: any) => ({
          y: 0,
          opacity: 1,
          transition: {
@@ -89,7 +89,7 @@ const TeamSection = () => {
    return (
       <Container>
          <section className="py-12 mt-8 px-4 bg-white" ref={ref}>
-            <motion.div 
+            <motion.div
                className="mx-auto"
                initial="hidden"
                animate={inView ? "visible" : "hidden"}
@@ -113,7 +113,7 @@ const TeamSection = () => {
                </motion.div>
 
                {/* Heading */}
-               <motion.h2 
+               <motion.h2
                   className="text-3xl md:text-4xl font-bold text-gray-700 text-center mb-4"
                   variants={itemVariants}
                >
@@ -121,19 +121,18 @@ const TeamSection = () => {
                </motion.h2>
 
                {/* Subheading */}
-               <motion.p 
+               <motion.p
                   className="text-gray-500 text-center max-w-3xl mx-auto mb-12"
                   variants={itemVariants}
                >
-                  Lorem ipsum dolor sit amet consectetur. Nam sem amet nulla in non lorem. Rhoncus a lectus venenatis mattis
-                  tellus risus nullam risus. Eu amet feugiat enim nunc. Eget.
+                  Meet the exceptional students whose academic dedication, innovation, and leadership have made them stand out among their peers across the globe.
                </motion.p>
 
                {/* Team Members Grid */}
                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
                   {teamMembers.map((member, index) => (
-                     <motion.div 
-                        key={member.id} 
+                     <motion.div
+                        key={member.id}
                         className="rounded-lg overflow-hidden relative"
                         custom={index}
                         variants={cardVariants}
@@ -154,7 +153,7 @@ const TeamSection = () => {
                                  transition={{ delay: 0.4 + index * 0.1, duration: 0.6 }}
                                  whileHover={{ scale: 1.05, transition: { duration: 0.4 } }}
                               />
-                              <motion.div 
+                              <motion.div
                                  className="absolute bottom-0 left-4"
                                  initial={{ y: 20, opacity: 0 }}
                                  animate={inView ? { y: 0, opacity: 1 } : {}}
@@ -168,7 +167,7 @@ const TeamSection = () => {
                            </div>
 
                            <div className="p-4 bg-white">
-                              <motion.p 
+                              <motion.p
                                  className="text-gray-700 mb-2"
                                  initial={{ opacity: 0 }}
                                  animate={inView ? { opacity: 1 } : {}}

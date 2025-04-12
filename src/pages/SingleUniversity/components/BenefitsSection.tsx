@@ -49,57 +49,6 @@ const BenefitsSection = ({ benefits }: any) => {
       })
    }
 
-   // Benefits data
-   // const benefits = [
-   //    {
-   //       id: 1,
-   //       title: "Lorem ipsum",
-   //       description:
-   //          "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu. Nunc massa pretium sed ultrices mauris ornare nunc.",
-   //    },
-   //    {
-   //       id: 2,
-   //       title: "Lorem ipsum",
-   //       description:
-   //          "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu. Nunc massa pretium sed ultrices mauris ornare nunc.",
-   //    },
-   //    {
-   //       id: 3,
-   //       title: "Lorem ipsum",
-   //       description:
-   //          "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu. Nunc massa pretium sed ultrices mauris ornare nunc.",
-   //    },
-   //    {
-   //       id: 4,
-   //       title: "Lorem ipsum",
-   //       description:
-   //          "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu. Nunc massa pretium sed ultrices mauris ornare nunc.",
-   //    },
-   //    {
-   //       id: 5,
-   //       title: "Lorem ipsum",
-   //       description:
-   //          "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu. Nunc massa pretium sed ultrices mauris ornare nunc.",
-   //    },
-   //    {
-   //       id: 6,
-   //       title: "Lorem ipsum",
-   //       description:
-   //          "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu. Nunc massa pretium sed ultrices mauris ornare nunc.",
-   //    },
-   //    {
-   //       id: 7,
-   //       title: "Lorem ipsum",
-   //       description:
-   //          "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu. Nunc massa pretium sed ultrices mauris ornare nunc.",
-   //    },
-   //    {
-   //       id: 8,
-   //       title: "Lorem ipsum",
-   //       description:
-   //          "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu. Nunc massa pretium sed ultrices mauris ornare nunc.",
-   //    },
-   // ]
 
    return (
       <div className="py-16 bg-white" ref={ref}>

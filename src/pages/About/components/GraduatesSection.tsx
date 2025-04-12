@@ -161,7 +161,7 @@ const GraduatesSection = () => {
                 </div>
                 <div>
                   <p className="font-medium text-sm">Our Graduates Get-together</p>
-                  <p className="text-gray-500 text-xs">Lorem ipsum dolor sit amet consectetur.</p>
+                  <p className="text-gray-500 text-xs">A heartwarming reunion celebrating the achievements and journeys of our alumni across the globe.</p>
                 </div>
                 <div className="ml-3 bg-gray-100 rounded-full p-2">
                   <FaGraduationCap className="text-gray-600 text-xs" />

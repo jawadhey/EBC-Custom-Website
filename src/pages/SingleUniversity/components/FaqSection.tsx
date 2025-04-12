@@ -7,46 +7,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 
 const FaqSection = ({ faqs }: any) => {
-   // FAQ data
-   // const faqs = [
-   //    {
-   //       id: 1,
-   //       question: "Lorem ipsum dolor sit amet consectetur. Pellentesque orci potenti non sit netus.",
-   //       answer:
-   //          "Lorem ipsum dolor sit amet consectetur. Donec sit tristique velit justo vel a scelerisque laoreet. Urna lectus justo lectus quis duis odio montes. Lacus.",
-   //    },
-   //    {
-   //       id: 2,
-   //       question: "Lorem ipsum dolor sit amet consectetur. Pellentesque orci potenti non sit netus.",
-   //       answer:
-   //          "Lorem ipsum dolor sit amet consectetur. Donec sit tristique velit justo vel a scelerisque laoreet. Urna lectus justo lectus quis duis odio montes. Lacus.",
-   //    },
-   //    {
-   //       id: 3,
-   //       question: "Lorem ipsum dolor sit amet consectetur. Pellentesque orci potenti non sit netus.",
-   //       answer:
-   //          "Lorem ipsum dolor sit amet consectetur. Donec sit tristique velit justo vel a scelerisque laoreet. Urna lectus justo lectus quis duis odio montes. Lacus.",
-   //    },
-   //    {
-   //       id: 4,
-   //       question: "Lorem ipsum dolor sit amet consectetur. Pellentesque orci potenti non sit netus.",
-   //       answer:
-   //          "Lorem ipsum dolor sit amet consectetur. Donec sit tristique velit justo vel a scelerisque laoreet. Urna lectus justo lectus quis duis odio montes. Lacus.",
-   //    },
-   //    {
-   //       id: 5,
-   //       question: "Lorem ipsum dolor sit amet consectetur. Pellentesque orci potenti non sit netus.",
-   //       answer:
-   //          "Lorem ipsum dolor sit amet consectetur. Donec sit tristique velit justo vel a scelerisque laoreet. Urna lectus justo lectus quis duis odio montes. Lacus.",
-   //    },
-   //    {
-   //       id: 6,
-   //       question: "Lorem ipsum dolor sit amet consectetur. Pellentesque orci potenti non sit netus.",
-   //       answer:
-   //          "Lorem ipsum dolor sit amet consectetur. Donec sit tristique velit justo vel a scelerisque laoreet. Urna lectus justo lectus quis duis odio montes. Lacus.",
-   //    },
-   // ]
-
+   
    // State to track which FAQs are open
    const [openFaqs, setOpenFaqs] = useState([1, 2]) // Initially open the first two FAQs
 

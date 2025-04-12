@@ -70,51 +70,52 @@ const ServicesSection = () => {
       icon: <FaStethoscope className="text-white text-2xl" />,
       title: "MBBS in China",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
+        "Get globally recognized medical education at affordable costs, with modern facilities and English-taught programs.",
     },
     {
       icon: <FaHardHat className="text-white text-2xl" />,
       title: "PFP for Engineers",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
+        "A pre-foundation program designed to help aspiring engineers meet academic and language requirements for international universities.",
     },
     {
       icon: <FaPills className="text-white text-2xl" />,
       title: "MD in Europe",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
+        "Study medicine in top-tier European universities with world-class faculty, clinical exposure, and global career opportunities.",
     },
     {
       icon: <FaFlag className="text-white text-2xl" />,
       title: "Study in USA",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
+        "Pursue your academic dreams in the USA with guidance on admission, visa process, and choosing the right university.",
     },
     {
       icon: <FaStethoscope className="text-white text-2xl" />,
       title: "MBBS in Australia",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
+        "Access high-quality medical education in Australia, known for its research excellence and modern clinical training.",
     },
     {
       icon: <FaPills className="text-white text-2xl" />,
       title: "MD in Europe",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
+        "Enroll in structured MD programs across Europe with globally respected degrees and hands-on experience in advanced hospitals.",
     },
     {
       icon: <FaFlag className="text-white text-2xl" />,
       title: "Study in USA",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
+        "Explore undergraduate and graduate programs in the USA, with full support from application to arrival.",
     },
     {
       icon: <FaStethoscope className="text-white text-2xl" />,
       title: "MBBS in Australia",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
+        "Join top-ranked medical schools in Australia with a focus on innovation, practical learning, and international recognition.",
     },
-  ]
+  ];
+
 
   return (
     <div className="py-16 overflow-hidden" ref={ref}>
@@ -138,7 +139,7 @@ const ServicesSection = () => {
             className="text-gray-500 text-center max-w-3xl mx-auto mb-12"
             variants={itemVariants}
           >
-            Lorem ipsum dolor sit amet consectetur. Nam sem amet nulla in non lorem. Rhoncus
+            Explore our wide range of academic programs and global opportunities tailored to shape your professional journey and future success.
           </motion.p>
 
           {/* Services Swiper */}
