@@ -50,7 +50,7 @@ const ImageGallerySection = () => {
   }
 
   return (
-    <div className="py-12 md:py-16 bg-amber-50" ref={ref}>
+    <div className="py-8 md:py-16 bg-amber-50" ref={ref}>
       <Container>
         <motion.div
           className="mx-auto"
@@ -59,9 +59,9 @@ const ImageGallerySection = () => {
           variants={containerVariants}
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3 sm:gap-4 md:gap-6">
-            {/* Top Row */}
+            {/* Top Row - Full width on mobile, split on larger screens */}
             <motion.div
-              className="sm:col-span-2 lg:col-span-4 h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px]"
+              className="sm:col-span-2 lg:col-span-7 h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px]"
               variants={imageVariants}
               whileHover={{ y: -3, transition: { duration: 0.2 } }}
             >
@@ -74,7 +74,7 @@ const ImageGallerySection = () => {
             </motion.div>
 
             <motion.div
-              className="sm:col-span-2 lg:col-span-8 h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px]"
+              className="sm:col-span-2 lg:col-span-5 h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px]"
               variants={imageVariants}
               whileHover={{ y: -3, transition: { duration: 0.2 } }}
             >
@@ -86,9 +86,9 @@ const ImageGallerySection = () => {
               />
             </motion.div>
 
-            {/* Middle Row */}
+            {/* Middle Row - Tall image on right */}
             <motion.div
-              className="sm:col-span-2 lg:col-span-7 h-[250px] sm:h-[300px] md:h-[350px]"
+              className="sm:col-span-2 lg:col-span-7 h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px]"
               variants={imageVariants}
               whileHover={{ y: -3, transition: { duration: 0.2 } }}
             >
@@ -101,26 +101,27 @@ const ImageGallerySection = () => {
             </motion.div>
 
             <motion.div
-              className="sm:col-span-2 lg:col-span-5 h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]"
-              variants={tallImageVariants}
-              whileHover={{ scale: 1.01, transition: { duration: 0.2 } }}
-            >
-              <img
-                src={Images.About.AboutGallery5 || "/placeholder.svg"}
-                alt="Student in graduation cap"
-                className="w-full h-full object-cover rounded-xl md:rounded-2xl shadow-sm"
-                loading="lazy"
-              />
-            </motion.div>
-
-            {/* Bottom Row */}
-            <motion.div
-              className="sm:col-span-2 lg:col-span-7 h-[250px] sm:h-[300px] md:h-[350px]"
+              className="sm:col-span-2 lg:col-span-5 h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px]"
               variants={imageVariants}
               whileHover={{ y: -3, transition: { duration: 0.2 } }}
             >
               <img
-                src={Images.About.AboutGallery4 || "/placeholder.svg"}
+                src={Images.About.AboutGallery5 || "/placeholder.svg"}
+                alt="Hands working on laptop"
+                className="w-full h-full object-cover rounded-xl md:rounded-2xl shadow-sm"
+                loading="lazy"
+              />
+            </motion.div>
+          
+
+            {/* Bottom Row - Full width */}
+            <motion.div
+              className="sm:col-span-2 lg:col-span-12 h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px]"
+              variants={imageVariants}
+              whileHover={{ y: -3, transition: { duration: 0.2 } }}
+            >
+              <img
+                src={Images.About.AboutGallery1 || "/placeholder.svg"}
                 alt="Students in office"
                 className="w-full h-full object-cover rounded-xl md:rounded-2xl shadow-sm"
                 loading="lazy"

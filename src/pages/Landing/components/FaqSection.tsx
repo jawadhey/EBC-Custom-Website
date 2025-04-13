@@ -168,7 +168,7 @@ const FaqSection = () => {
    }
 
    return (
-      <div className="py-12 md:py-16 lg:py-20 bg-white" ref={ref}>
+      <div className="py-8 md:py-16 lg:py-20 bg-white" ref={ref}>
          <Container>
             <motion.div
                className="mx-auto"

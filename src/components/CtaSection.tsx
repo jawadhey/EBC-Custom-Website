@@ -70,7 +70,7 @@ const CtaSection = ({ backgroundImage, Heading, Text }: any) => {
 
   return (
     <Container>
-      <div className="py-12 md:py-16 bg-purple-50 overflow-hidden relative" ref={ref}>
+      <div className="py-8 md:py-16 bg-purple-50 overflow-hidden relative" ref={ref}>
         <img
           src={backgroundImage || Images.About.ContactBg}
           className="absolute object-cover left-0 top-0 w-full h-full z-10"

@@ -82,7 +82,7 @@ const LandingHeroSection = () => {
 
    return (
       <div
-         className="bg-gradient-to-br from-transparent to-[#ECE5F9] flex items-center justify-center pb-16 md:pb-24 pt-[100px] lg:pt-[168px] overflow-hidden"
+         className="bg-gradient-to-br from-transparent to-[#ECE5F9] flex items-center justify-center pb-10 md:pb-24 pt-[100px] lg:pt-[168px] overflow-hidden"
          ref={ref}
       >
          <Container>
@@ -147,7 +147,7 @@ const LandingHeroSection = () => {
                         spaceBetween={20}
                         slidesPerView={3}
                         autoplay={{
-                           delay: 1500,
+                           delay: 2000,
                            disableOnInteraction: false,
                         }}
                         loop={true}

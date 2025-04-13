@@ -118,7 +118,7 @@ const ServicesSection = () => {
 
 
   return (
-    <div className="py-12 md:py-16 overflow-hidden" ref={ref}>
+    <div className="py-8 md:py-16 overflow-hidden" ref={ref}>
       <Container>
         <motion.div
           className="mx-auto"
@@ -153,7 +153,7 @@ const ServicesSection = () => {
               bulletActiveClass: "swiper-pagination-bullet-active",
             }}
             autoplay={{
-              delay: 2500,
+              delay: 4000,
               disableOnInteraction: false,
               pauseOnMouseEnter: true,
             }}

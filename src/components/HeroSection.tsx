@@ -101,7 +101,7 @@ const HeroSection = ({
    };
 
    return (
-      <section className="relative w-full py-16 md:py-24 lg:py-32 overflow-hidden" ref={ref}>
+      <section className="relative w-full py-10 md:py-24 lg:py-32 overflow-hidden" ref={ref}>
          {/* Animated Background Image with Overlay */}
          <motion.div
             className="absolute inset-0 z-0"

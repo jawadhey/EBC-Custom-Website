@@ -64,7 +64,7 @@ const AboutUsSection = ({ Heading, Text }: AboutUsSectionProps) => {
   };
 
   return (
-    <div className="py-12 md:py-16 bg-amber-50" ref={ref}>
+    <div className="py-8 md:py-16 bg-amber-50" ref={ref}>
       <Container>
         <motion.div
           className="mx-auto"

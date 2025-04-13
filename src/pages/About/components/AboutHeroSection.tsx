@@ -60,7 +60,7 @@ const HeroSection = () => {
 
   return (
     <div
-      className="bg-gradient-to-br from-transparent to-[#ECE5F9] flex items-center justify-center pb-12 md:pb-24 pt-[30px] overflow-hidden"
+      className="bg-gradient-to-br from-transparent to-[#ECE5F9] flex items-center justify-center pb-10 md:pb-24 pt-[30px] overflow-hidden"
       ref={ref}
     >
       <Container>

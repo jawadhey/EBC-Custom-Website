@@ -97,7 +97,7 @@ const FoundersMessageSection = () => {
   })
 
   return (
-    <div className="py-12 md:py-16 lg:py-24 bg-white overflow-hidden" ref={ref}>
+    <div className="py-8 md:py-16 lg:py-24 bg-white overflow-hidden" ref={ref}>
       <Container>
         <motion.div
           className="mx-auto"
