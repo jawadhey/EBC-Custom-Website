@@ -93,8 +93,8 @@ const buttonVariants = {
 }
 
 const FaqSection = () => {
-   const [openAboutFaqs, setOpenAboutFaqs] = useState([0])
-   const [openProgramsFaqs, setOpenProgramsFaqs] = useState([0])
+   const [openAboutFaqs, setOpenAboutFaqs] = useState<number[]>([])
+   const [openProgramsFaqs, setOpenProgramsFaqs] = useState<number[]>([])
    const [ref, inView] = useInView({
       threshold: 0.1,
       triggerOnce: true
@@ -119,9 +119,10 @@ const FaqSection = () => {
       {
          question: "Can I contact you for advice even after I've enrolled in my program?",
          answer:
-            "Absolutely! We believe in ongoing support, so we’re always here to help, even after you’ve started your studies abroad.",
+            "Absolutely! We believe in ongoing support, so we're always here to help, even after you've started your studies abroad.",
       },
    ]
+
    const programsFaqs = [
       {
          question: "Which universities in China do you work with?",
@@ -136,38 +137,38 @@ const FaqSection = () => {
       {
          question: "How long does the application process take?",
          answer:
-            "The application process typically takes 2-3 months, depending on the university’s requirements and the time needed to process your visa. We work with you to ensure everything is submitted on time.",
+            "The application process typically takes 2-3 months, depending on the university's requirements and the time needed to process your visa. We work with you to ensure everything is submitted on time.",
       },
       {
          question: "Can I work while studying abroad?",
          answer:
-            "Yes, many students can work part-time during their studies, depending on visa regulations. We’ll provide you with all the necessary information to ensure you’re aware of the rules regarding work while studying in China.",
+            "Yes, many students can work part-time during their studies, depending on visa regulations. We'll provide you with all the necessary information to ensure you're aware of the rules regarding work while studying in China.",
       },
       {
          question: "What are the living costs in China?",
          answer:
-            "Living costs vary depending on the city, but on average, students spend between $300 to $600 per month on accommodation, food, transportation, and other expenses. We’ll help you plan a budget to make sure you’re financially prepared.",
+            "Living costs vary depending on the city, but on average, students spend between $300 to $600 per month on accommodation, food, transportation, and other expenses. We'll help you plan a budget to make sure you're financially prepared.",
       },
    ]
 
    const toggleAboutFaq = (index: number) => {
-      if (openAboutFaqs.includes(index)) {
-         setOpenAboutFaqs(openAboutFaqs.filter((item) => item !== index))
-      } else {
-         setOpenAboutFaqs([...openAboutFaqs, index])
-      }
+      setOpenAboutFaqs(prev =>
+         prev.includes(index)
+            ? prev.filter(i => i !== index)
+            : [...prev, index]
+      )
    }
 
    const toggleProgramsFaq = (index: number) => {
-      if (openProgramsFaqs.includes(index)) {
-         setOpenProgramsFaqs(openProgramsFaqs.filter((item) => item !== index))
-      } else {
-         setOpenProgramsFaqs([...openProgramsFaqs, index])
-      }
+      setOpenProgramsFaqs(prev =>
+         prev.includes(index)
+            ? prev.filter(i => i !== index)
+            : [...prev, index]
+      )
    }
 
    return (
-      <div className="py-16 lg:py-24 bg-white" ref={ref}>
+      <div className="py-12 md:py-16 lg:py-20 bg-white" ref={ref}>
          <Container>
             <motion.div
                className="mx-auto"
@@ -177,11 +178,11 @@ const FaqSection = () => {
             >
                {/* Top Badge */}
                <motion.div
-                  className="flex justify-center mb-6"
+                  className="flex justify-center mb-4 md:mb-6"
                   variants={itemVariants}
                >
                   <motion.div
-                     className="bg-purple-100 text-TwPrimaryPurple px-6 py-2 rounded-full inline-block"
+                     className="bg-purple-100 text-TwPrimaryPurple px-4 py-1.5 md:px-6 md:py-2 rounded-full inline-block text-sm md:text-base"
                      variants={badgeVariants}
                   >
                      Clearing out your confusions
@@ -190,7 +191,7 @@ const FaqSection = () => {
 
                {/* Heading */}
                <motion.h2
-                  className="text-3xl md:text-4xl font-bold text-gray-700 text-center mb-4"
+                  className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-700 text-center mb-3 md:mb-4 !leading-tight"
                   variants={headingVariants}
                >
                   Frequently Asked Questions
@@ -198,49 +199,53 @@ const FaqSection = () => {
 
                {/* Subheading */}
                <motion.p
-                  className="text-gray-500 text-center max-w-3xl mx-auto mb-12"
+                  className="text-gray-500 text-center max-w-3xl mx-auto mb-8 md:mb-12 text-sm md:text-base !leading-relaxed"
                   variants={itemVariants}
                >
-                  Got questions? We’ve got answers! Check out our most frequently asked questions to get quick, clear info about studying abroad with EBC.
+                  Got questions? We've got answers! Check out our most frequently asked questions to get quick, clear info about studying abroad with EBC.
                </motion.p>
 
                {/* Two Column Layout */}
                <motion.div
-                  className="grid md:grid-cols-2 gap-8 lg:gap-16"
+                  className="flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12"
                   variants={containerVariants}
                >
                   {/* About Us FAQs */}
                   <motion.div
-                     className="bg-purple-50 rounded-2xl p-8"
+                     className="bg-purple-50 rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8"
                      variants={faqItemVariants}
-                     whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                     whileHover={{ y: -3, transition: { duration: 0.2 } }}
                   >
-                     <motion.h3 className="text-2xl font-semibold text-gray-800 mb-3">About Us</motion.h3>
-                     <motion.p className="text-gray-600 mb-8">Helping students study abroad with expert guidance and ongoing support.</motion.p>
+                     <motion.h3 className="text-xl md:text-2xl font-semibold text-gray-800 mb-2 md:mb-3">About Us</motion.h3>
+                     <motion.p className="text-gray-600 mb-4 md:mb-6 text-sm md:text-base">
+                        Helping students study abroad with expert guidance and ongoing support.
+                     </motion.p>
 
-                     <div className="space-y-4">
+                     <div className="space-y-3 md:space-y-4">
                         {aboutFaqs.map((faq, index) => (
                            <motion.div
                               key={index}
-                              className="border-b border-purple-100 pb-4 last:border-0"
+                              className="border-b border-purple-100 pb-3 md:pb-4 last:border-0"
                               variants={faqItemVariants}
                            >
                               <motion.div
-                                 className="flex justify-between items-start cursor-pointer"
+                                 className="flex justify-between items-start cursor-pointer gap-2"
                                  onClick={() => toggleAboutFaq(index)}
-                                 whileHover={{ x: 5 }}
+                                 whileHover={{ x: 3 }}
                               >
-                                 <h4 className="text-gray-700 font-medium pr-8">{faq.question}</h4>
+                                 <h4 className="text-gray-700 font-medium text-sm md:text-base pr-4 md:pr-8">
+                                    {faq.question}
+                                 </h4>
                                  <motion.button
-                                    className="bg-purple-100 rounded-full p-2 flex-shrink-0 hover:bg-purple-200 transition-colors"
+                                    className="bg-purple-100 rounded-full p-1.5 md:p-2 flex-shrink-0 hover:bg-purple-200 transition-colors"
                                     variants={buttonVariants}
                                     whileHover="hover"
                                     whileTap="tap"
                                  >
                                     {openAboutFaqs.includes(index) ? (
-                                       <FaTimes className="text-TwPrimaryPurple text-sm" />
+                                       <FaTimes className="text-TwPrimaryPurple text-xs md:text-sm" />
                                     ) : (
-                                       <FaPlus className="text-TwPrimaryPurple text-sm" />
+                                       <FaPlus className="text-TwPrimaryPurple text-xs md:text-sm" />
                                     )}
                                  </motion.button>
                               </motion.div>
@@ -248,7 +253,7 @@ const FaqSection = () => {
                               <AnimatePresence>
                                  {openAboutFaqs.includes(index) && (
                                     <motion.div
-                                       className="mt-3 text-gray-600 overflow-hidden"
+                                       className="mt-2 md:mt-3 text-gray-600 overflow-hidden text-sm md:text-base"
                                        initial="closed"
                                        animate="open"
                                        exit="closed"
@@ -265,36 +270,40 @@ const FaqSection = () => {
 
                   {/* Our Programs FAQs */}
                   <motion.div
-                     className="bg-[#FFF7E8] rounded-2xl p-8"
+                     className="bg-[#FFF7E8] rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8"
                      variants={faqItemVariants}
-                     whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                     whileHover={{ y: -3, transition: { duration: 0.2 } }}
                   >
-                     <motion.h3 className="text-2xl font-semibold text-gray-800 mb-3">Our Programs</motion.h3>
-                     <motion.p className="text-gray-600 mb-8">Offering top-tier medical programs through our trusted university partners.</motion.p>
+                     <motion.h3 className="text-xl md:text-2xl font-semibold text-gray-800 mb-2 md:mb-3">Our Programs</motion.h3>
+                     <motion.p className="text-gray-600 mb-4 md:mb-6 text-sm md:text-base">
+                        Offering top-tier medical programs through our trusted university partners.
+                     </motion.p>
 
-                     <div className="space-y-4">
+                     <div className="space-y-3 md:space-y-4">
                         {programsFaqs.map((faq, index) => (
                            <motion.div
                               key={index}
-                              className="border-b border-amber-100 pb-4 last:border-0"
+                              className="border-b border-amber-100 pb-3 md:pb-4 last:border-0"
                               variants={faqItemVariants}
                            >
                               <motion.div
-                                 className="flex justify-between items-start cursor-pointer"
+                                 className="flex justify-between items-start cursor-pointer gap-2"
                                  onClick={() => toggleProgramsFaq(index)}
-                                 whileHover={{ x: 5 }}
+                                 whileHover={{ x: 3 }}
                               >
-                                 <h4 className="text-gray-700 font-medium pr-8">{faq.question}</h4>
+                                 <h4 className="text-gray-700 font-medium text-sm md:text-base pr-4 md:pr-8">
+                                    {faq.question}
+                                 </h4>
                                  <motion.button
-                                    className="bg-amber-100 rounded-full p-2 flex-shrink-0 hover:bg-amber-200 transition-colors"
+                                    className="bg-amber-100 rounded-full p-1.5 md:p-2 flex-shrink-0 hover:bg-amber-200 transition-colors"
                                     variants={buttonVariants}
                                     whileHover="hover"
                                     whileTap="tap"
                                  >
                                     {openProgramsFaqs.includes(index) ? (
-                                       <FaTimes className="text-amber-600 text-sm" />
+                                       <FaTimes className="text-amber-600 text-xs md:text-sm" />
                                     ) : (
-                                       <FaPlus className="text-amber-600 text-sm" />
+                                       <FaPlus className="text-amber-600 text-xs md:text-sm" />
                                     )}
                                  </motion.button>
                               </motion.div>
@@ -302,7 +311,7 @@ const FaqSection = () => {
                               <AnimatePresence>
                                  {openProgramsFaqs.includes(index) && (
                                     <motion.div
-                                       className="mt-3 text-gray-600 overflow-hidden"
+                                       className="mt-2 md:mt-3 text-gray-600 overflow-hidden text-sm md:text-base"
                                        initial="closed"
                                        animate="open"
                                        exit="closed"

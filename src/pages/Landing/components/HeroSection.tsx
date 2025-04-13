@@ -78,51 +78,50 @@ const LandingHeroSection = () => {
       // uni4,
       uni5,
       uni6
-    ];
+   ];
 
    return (
       <div
-         className="bg-gradient-to-br from-transparent to-[#ECE5F9] flex items-center justify-center pb-24 pt-[120px] lg:pt-[168px] overflow-hidden"
+         className="bg-gradient-to-br from-transparent to-[#ECE5F9] flex items-center justify-center pb-16 md:pb-24 pt-[100px] lg:pt-[168px] overflow-hidden"
          ref={ref}
       >
          <Container>
-            <div className="w-full mx-auto flex flex-col xl:flex-row items-center justify-between gap-10">
+            <div className="w-full mx-auto flex flex-col xl:flex-row items-center justify-between gap-3 md:gap-10">
                {/* Left Content */}
                <motion.div
-                  className="w-full xl:w-1/2 space-y-6"
+                  className="w-full xl:w-1/2 space-y-4 md:space-y-6"
                   initial="hidden"
                   animate={inView ? "visible" : "hidden"}
                   variants={containerVariants}
                >
                   <motion.div
-                     className="flex w-fit px-4 h-[46px] items-center rounded-full bg-purple-100 border border-purple-200"
+                     className="flex w-fit px-3 md:px-4 h-[30px] md:h-[46px] items-center rounded-full bg-purple-100 border border-purple-200"
                      variants={itemVariants}
                   >
-                     <p className="text-TwPrimaryPurple text-sm font-medium">Best Medical Student Consultant in your City</p>
+                     <p className="text-TwPrimaryPurple text-xs md:text-sm font-medium">Best Medical Student Consultant in your City</p>
                   </motion.div>
 
                   <motion.h1
-                     className="text-4xl md:text-5xl font-bold text-gray-700 !leading-normal"
+                     className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-700 !leading-[1.3] md:!leading-normal"
                      variants={itemVariants}
                   >
                      Your Trusted Guide to Study Abroad
                   </motion.h1>
 
                   <motion.p
-                     className="text-gray-600 max-w-xl"
+                     className="text-gray-600 max-w-xl text-sm md:text-base !leading-relaxed"
                      variants={itemVariants}
                   >
                      Assisting FSC Students in Fulfilling Their Medical Dreams! <br />
                      Obtain admission to China's best medical schools with professional assistance and a simple application process. Begin your path to a degree that is recognized throughout the world right now! Admission is assured. Reasonably priced tuition. Full-Service Visa Support.
-
                   </motion.p>
 
                   <motion.div
-                     className="flex items-center flex-col md:flex-row gap-6 pt-2"
+                     className="flex items-center flex-row gap-4 md:gap-6 pt-0 md:pt-2"
                      variants={itemVariants}
                   >
                      <motion.button
-                        className="bg-TwPrimaryPurple hover:bg-TwPrimaryPurpleBgHover text-white font-medium py-3 px-6 rounded-md transition duration-300"
+                        className="bg-TwPrimaryPurple hover:bg-TwPrimaryPurpleBgHover text-white font-medium py-2 px-5 md:py-3 md:px-6 rounded-md transition duration-300 text-sm md:text-base"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                      >
@@ -131,7 +130,7 @@ const LandingHeroSection = () => {
 
                      <motion.a
                         href="#"
-                        className="flex items-center text-TwPrimaryPurple font-medium hover:text-purple-800 transition duration-300"
+                        className="flex items-center text-TwPrimaryPurple font-medium hover:text-purple-800 transition duration-300 text-sm md:text-base"
                         whileHover={{ x: 5 }}
                      >
                         About Us <FaArrowRight className="ml-2" />
@@ -140,13 +139,13 @@ const LandingHeroSection = () => {
 
                   {/* Harvard Swiper instead of static logos */}
                   <motion.div
-                     className="pt-12 w-auto overflow-hidden"
+                     className="pt-8 md:pt-12 w-auto overflow-hidden"
                      variants={containerVariants}
                   >
                      <Swiper
                         modules={[Autoplay]}
-                        spaceBetween={40}
-                        slidesPerView={2}
+                        spaceBetween={20}
+                        slidesPerView={3}
                         autoplay={{
                            delay: 1500,
                            disableOnInteraction: false,
@@ -155,20 +154,22 @@ const LandingHeroSection = () => {
                         speed={1000}
                         breakpoints={{
                            640: {
-                              slidesPerView: 2,
+                              slidesPerView: 3,
+                              spaceBetween: 30,
                            },
                            768: {
                               slidesPerView: 3,
+                              spaceBetween: 40,
                            },
                            1024: {
                               slidesPerView: 4,
+                              spaceBetween: 40,
                            },
                         }}
-
-                        className="w-[80vw] xl:w-auto mx-auto md:ml-0"
+                        className="w-[90vw] sm:w-[80vw] xl:w-auto mx-auto md:ml-0"
                      >
                         {chineseUniversityLogos.map((image, index) => (
-                           <SwiperSlide key={index} className="py-4">
+                           <SwiperSlide key={index} className="py-2 md:py-4">
                               <motion.div
                                  custom={index}
                                  variants={logoVariants}
@@ -177,7 +178,7 @@ const LandingHeroSection = () => {
                                  <img
                                     src={image}
                                     alt={`Harvard University ${index + 1}`}
-                                    className="h-auto w-auto object-contain"
+                                    className="h-auto w-auto max-h-[40px] md:max-h-none object-contain"
                                  />
                               </motion.div>
                            </SwiperSlide>
@@ -188,7 +189,7 @@ const LandingHeroSection = () => {
 
                {/* Right Content - Hexagon Image */}
                <motion.div
-                  className="w-full xl:w-1/2 relative"
+                  className="w-full xl:w-1/2 relative mt-6 md:mt-0"
                   initial="hidden"
                   animate={inView ? "visible" : "hidden"}
                   variants={imageVariants}
@@ -196,7 +197,7 @@ const LandingHeroSection = () => {
                   <div className="relative">
                      {/* Main image with floating animation */}
                      <motion.div
-                        className="relative mx-auto xl:ml-auto z-10 rounded-3xl max-w-[500px] xl:max-w-[550px]"
+                        className="relative mx-auto xl:ml-auto z-10 rounded-3xl max-w-[400px] sm:max-w-[500px] xl:max-w-[550px]"
                      >
                         <img
                            src={Images.LandingHero}

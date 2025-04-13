@@ -97,7 +97,7 @@ const FoundersMessageSection = () => {
   })
 
   return (
-    <div className="py-16 lg:py-32 bg-white overflow-hidden" ref={ref}>
+    <div className="py-12 md:py-16 lg:py-24 bg-white overflow-hidden" ref={ref}>
       <Container>
         <motion.div
           className="mx-auto"
@@ -107,11 +107,11 @@ const FoundersMessageSection = () => {
         >
           {/* Top Badge */}
           <motion.div
-            className="flex justify-center mb-6"
+            className="flex justify-center mb-4 md:mb-6"
             variants={badgeVariants}
           >
             <motion.div
-              className="bg-green-100 text-green-600 px-6 py-2 rounded-full inline-block"
+              className="bg-green-100 text-green-600 px-4 py-1.5 md:px-6 md:py-2 rounded-full inline-block text-sm md:text-base"
               whileHover={{
                 scale: 1.05,
                 transition: { duration: 0.2 }
@@ -123,7 +123,7 @@ const FoundersMessageSection = () => {
 
           {/* Heading */}
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-gray-700 text-center mb-4"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-700 text-center mb-3 md:mb-4 !leading-tight"
             variants={itemVariants}
           >
             Message from the Founders
@@ -131,18 +131,17 @@ const FoundersMessageSection = () => {
 
           {/* Subheading */}
           <motion.p
-            className="text-gray-500 text-center max-w-3xl mx-auto mb-12"
+            className="text-gray-500 text-center max-w-3xl mx-auto mb-8 md:mb-12 text-sm md:text-base !leading-relaxed"
             variants={itemVariants}
           >
             Helping students achieve their dreams is at the heart of everything we do.
-
           </motion.p>
 
           {/* Two Column Layout */}
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
+          <div className="flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
             {/* Left Column - Founder Images */}
             <motion.div
-              className="flex gap-4"
+              className="flex gap-3 md:gap-4 order-2 md:order-1"
               variants={foundersImageVariants}
             >
               <motion.div className="w-2/3" variants={imageVariants}>
@@ -150,7 +149,6 @@ const FoundersMessageSection = () => {
                   src={Images.FounderImage}
                   alt="Founder"
                   className="h-auto w-full rounded-lg object-cover object-top"
-
                   transition={{
                     duration: 5,
                     repeat: Infinity,
@@ -158,18 +156,18 @@ const FoundersMessageSection = () => {
                   }}
                 />
               </motion.div>
-              <div className="w-1/3 flex flex-col justify-between gap-4">
+              <div className="w-1/3 flex flex-col justify-between gap-3 md:gap-4">
                 <motion.img
                   src={Images.coFounderImage}
                   alt="Co-Founder"
-                  className="h-full w-auto rounded-[2rem] object-cover object-top"
+                  className="h-full w-auto rounded-2xl md:rounded-[2rem] object-cover object-top"
                   variants={smallImageVariants}
                   custom={0}
                 />
                 <motion.img
                   src={Images.coFounderImage}
                   alt="Co-Founder"
-                  className="h-full w-auto rounded-[2rem] object-cover object-top"
+                  className="h-full w-auto rounded-2xl md:rounded-[2rem] object-cover object-top"
                   variants={smallImageVariants}
                   custom={1}
                 />
@@ -177,26 +175,28 @@ const FoundersMessageSection = () => {
             </motion.div>
 
             {/* Right Column - Message */}
-            <motion.div variants={containerVariants}>
+            <motion.div
+              className="order-1 md:order-2"
+              variants={containerVariants}
+            >
               <motion.div variants={quoteVariants}>
-                <FaQuoteLeft className="text-gray-300 text-5xl mb-6" />
+                <FaQuoteLeft className="text-gray-300 text-3xl md:text-5xl mb-4 md:mb-6" />
               </motion.div>
 
               <motion.p
-                className="text-gray-700 text-lg leading-relaxed"
+                className="text-gray-700 text-base md:text-lg leading-relaxed"
                 variants={itemVariants}
               >
-                We started this platform to <b>make international education simple and accessible.</b> From choosing the right university to securing your admission and visa, we guide you every step of the way. Your success is our pride, and we’re here to help you achieve it!
-
+                We started this platform to <b>make international education simple and accessible.</b> From choosing the right university to securing your admission and visa, we guide you every step of the way. Your success is our pride, and we're here to help you achieve it!
               </motion.p>
 
               <motion.div
-                className="mt-10 flex justify-end"
+                className="mt-6 md:mt-10 flex justify-end"
                 variants={itemVariants}
               >
                 <motion.a
                   href="#"
-                  className="inline-flex items-center bg-purple-100 text-TwPrimaryPurple px-6 py-3 rounded-full hover:bg-purple-200 transition-colors"
+                  className="inline-flex items-center bg-purple-100 text-TwPrimaryPurple px-4 py-2 md:px-6 md:py-3 rounded-full hover:bg-purple-200 transition-colors text-sm md:text-base"
                   whileHover={{
                     scale: 1.05,
                     backgroundColor: "#E9D5FF",

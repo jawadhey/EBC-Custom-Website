@@ -108,7 +108,7 @@ const TestimonialSection = () => {
   const [progressWidth, setProgressWidth] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
   const intervalRef = useRef<NodeJS.Timeout | null>(null)
-  const slideDuration = 6000 // 8 seconds per slide
+  const slideDuration = 6000 // 6 seconds per slide
 
   const [ref, inView] = useInView({
     threshold: 0.2,
@@ -121,75 +121,57 @@ const TestimonialSection = () => {
       name: "Mary Jane",
       position: "MBBS Wuhan University of Medical Sciences",
       image: Images.TestimonialImage,
-      text: '"The best decision I made!" – Thanks to their guidance, I got into a top medical university in China without any hassle. They handled everything, from applications to visas, making the entire process smooth and stress-free. Studying abroad was a life-changing experience, and I’m now living my dream of studying medicine! Highly recommend their support.',
+      text: `"The best decision I made!" – Thanks to their guidance, I got into a top medical university in China without any hassle. They handled everything, from applications to visas, making the entire process smooth and stress-free. Studying abroad was a life-changing experience, and I'm now living my dream of studying medicine! Highly recommend their support.`,
     },
     {
       id: 2,
       name: "John Smith",
       position: "MD European Medical University",
       image: Images.TestimonialImage,
-      text: '"The best decision I made!" – Thanks to their guidance, I got into a top medical university in China without any hassle. They handled everything, from applications to visas, making the entire process smooth and stress-free. Studying abroad was a life-changing experience, and I’m now living my dream of studying medicine! Highly recommend their support.',
+      text: `"The best decision I made!" – Thanks to their guidance, I got into a top medical university in China without any hassle. They handled everything, from applications to visas, making the entire process smooth and stress-free. Studying abroad was a life-changing experience, and I'm now living my dream of studying medicine! Highly recommend their support.`,
     },
     {
       id: 3,
       name: "Sarah Williams",
       position: "MBBS Beijing Medical University",
       image: Images.TestimonialImage,
-      text: '"The best decision I made!" – Thanks to their guidance, I got into a top medical university in China without any hassle. They handled everything, from applications to visas, making the entire process smooth and stress-free. Studying abroad was a life-changing experience, and I’m now living my dream of studying medicine! Highly recommend their support.',
+      text: `"The best decision I made!" – Thanks to their guidance, I got into a top medical university in China without any hassle. They handled everything, from applications to visas, making the entire process smooth and stress-free. Studying abroad was a life-changing experience, and I'm now living my dream of studying medicine! Highly recommend their support.`,
     },
-  ]
+  ];
+
 
   // Function to handle slide transition
   const changeSlide = (direction: "next" | "prev") => {
+    if (isTransitioning) return
+
     // Stop current progress animation
     if (intervalRef.current) {
       clearInterval(intervalRef.current)
     }
 
-    // Set transition flag to prevent rapid clicking
     setIsTransitioning(true)
-
-    // Reset progress bar immediately
     setProgressWidth(0)
-
-    // Update slide direction
     setSlideDirection(direction === "next" ? "right" : "left")
 
-    // Calculate new slide index
     if (direction === "next") {
       setCurrentSlide((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1))
     } else {
       setCurrentSlide((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1))
     }
 
-    // Allow small delay for animation to complete
     setTimeout(() => {
       setIsTransitioning(false)
       startProgressTimer()
     }, 500)
   }
 
-  const nextSlide = () => {
-    if (isTransitioning) return
-    changeSlide("next")
-  }
-
-  const prevSlide = () => {
-    if (isTransitioning) return
-    changeSlide("prev")
-  }
-
   // Timer for progress bar
   const startProgressTimer = () => {
-    // Clear any existing interval
     if (intervalRef.current) {
       clearInterval(intervalRef.current)
     }
 
-    // Reset progress width
     setProgressWidth(0)
-
-    // Set up new timer
     let startTime = Date.now()
 
     intervalRef.current = setInterval(() => {
@@ -197,16 +179,13 @@ const TestimonialSection = () => {
       const newWidth = (elapsed / slideDuration) * 100
 
       if (newWidth >= 100) {
-        // When timer is complete, move to next slide
-        nextSlide()
+        changeSlide("next")
       } else {
-        // Update progress width
         setProgressWidth(newWidth)
       }
-    }, 30) // Update every 50ms for smooth animation
+    }, 30)
   }
 
-  // Start timer when component mounts or when inView changes
   useEffect(() => {
     if (inView) {
       startProgressTimer()
@@ -222,7 +201,7 @@ const TestimonialSection = () => {
   }, [inView])
 
   return (
-    <div className="py-16 bg-[#FFF7E8] overflow-hidden" ref={ref}>
+    <div className="py-12 md:py-16 bg-[#FFF7E8] overflow-hidden" ref={ref}>
       <Container>
         <motion.div
           className="mx-auto"
@@ -231,7 +210,10 @@ const TestimonialSection = () => {
           variants={containerVariants}
         >
           {/* Timer Progress Bar */}
-          <motion.div className="w-64 h-2 bg-gray-200 rounded-full mx-auto mb-12" variants={itemVariants}>
+          <motion.div
+            className="w-40 sm:w-64 h-1.5 sm:h-2 bg-gray-200 rounded-full mx-auto mb-8 sm:mb-12"
+            variants={itemVariants}
+          >
             <motion.div
               className="h-full bg-TwPrimaryPurple rounded-full transition-none"
               style={{ width: `${progressWidth}%` }}
@@ -239,15 +221,15 @@ const TestimonialSection = () => {
           </motion.div>
 
           {/* Testimonial Content */}
-          <div className="grid md:grid-cols-12 gap-8 lg:gap-16 items-center mb-12">
-            {/* Left Column - Image */}
-            <div className="col-span-3 overflow-hidden">
+          <div className="flex flex-col md:grid md:grid-cols-12 gap-6 md:gap-8 lg:gap-12 items-center mb-8 sm:mb-12">
+            {/* Image Column */}
+            <div className="md:col-span-3 w-full flex justify-center">
               <AnimatePresence mode="wait">
                 <motion.img
                   key={`img-${currentSlide}`}
                   src={testimonials[currentSlide].image || "/placeholder.svg"}
                   alt={testimonials[currentSlide].name}
-                  className="w-full h-auto max-h-[400px] max-w-[400px] rounded-2xl"
+                  className="w-full h-auto max-h-[300px] sm:max-h-[400px] max-w-[300px] sm:max-w-[400px] rounded-xl sm:rounded-2xl"
                   variants={imageVariants}
                   initial="hidden"
                   animate="visible"
@@ -260,8 +242,8 @@ const TestimonialSection = () => {
               </AnimatePresence>
             </div>
 
-            {/* Right Column - Testimonial */}
-            <div className="col-span-9">
+            {/* Text Column */}
+            <div className="md:col-span-9 w-full">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={`text-${currentSlide}`}
@@ -270,20 +252,20 @@ const TestimonialSection = () => {
                   animate="visible"
                   exit="exit"
                 >
-                  <motion.p className="text-gray-700 text-lg leading-relaxed mb-8">
+                  <motion.p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
                     {testimonials[currentSlide].text}
                   </motion.p>
 
                   <div className="flex items-start">
                     <motion.div
-                      className="bg-TwPrimaryPurple p-3 rounded-lg mr-4"
+                      className="bg-TwPrimaryPurple p-2 sm:p-3 rounded-lg mr-3 sm:mr-4"
                       variants={quoteIconVariants}
                     >
-                      <FaQuoteLeft className="text-white text-xl" />
+                      <FaQuoteLeft className="text-white text-lg sm:text-xl" />
                     </motion.div>
                     <motion.div variants={itemVariants}>
-                      <h3 className="text-xl font-semibold text-gray-800">{testimonials[currentSlide].name}</h3>
-                      <p className="text-gray-600">{testimonials[currentSlide].position}</p>
+                      <h3 className="text-lg sm:text-xl font-semibold text-gray-800">{testimonials[currentSlide].name}</h3>
+                      <p className="text-gray-600 text-sm sm:text-base">{testimonials[currentSlide].position}</p>
                     </motion.div>
                   </div>
                 </motion.div>
@@ -293,7 +275,7 @@ const TestimonialSection = () => {
 
           {/* Divider */}
           <motion.div
-            className="border-t border-amber-200 mb-6"
+            className="border-t border-amber-200 mb-4 sm:mb-6"
             initial={{ width: 0 }}
             animate={{ width: "100%" }}
             transition={{ duration: 1, delay: 0.5 }}
@@ -301,11 +283,11 @@ const TestimonialSection = () => {
 
           {/* Navigation */}
           <motion.div
-            className="flex justify-between items-center"
+            className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0"
             variants={itemVariants}
           >
             <motion.button
-              className="border border-gray-300 rounded-full px-8 py-3 text-gray-700 hover:bg-amber-100 transition-colors"
+              className="border border-gray-300 rounded-full px-4 py-2 sm:px-6 sm:py-3 text-gray-700 hover:bg-amber-100 transition-colors text-sm sm:text-base"
               whileHover={{
                 scale: 1.05,
                 backgroundColor: "#FDE68A",
@@ -318,24 +300,24 @@ const TestimonialSection = () => {
 
             <div className="flex space-x-2">
               <motion.button
-                onClick={prevSlide}
-                className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center hover:bg-amber-100 transition-colors"
+                onClick={() => changeSlide("prev")}
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-gray-300 flex items-center justify-center hover:bg-amber-100 transition-colors"
                 variants={navButtonVariants}
                 whileHover="hover"
                 whileTap="tap"
                 disabled={isTransitioning}
               >
-                <FaChevronLeft className="text-gray-700" />
+                <FaChevronLeft className="text-gray-700 text-sm sm:text-base" />
               </motion.button>
               <motion.button
-                onClick={nextSlide}
-                className="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center hover:bg-gray-800 transition-colors"
+                onClick={() => changeSlide("next")}
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gray-700 flex items-center justify-center hover:bg-gray-800 transition-colors"
                 variants={navButtonVariants}
                 whileHover="hover"
                 whileTap="tap"
                 disabled={isTransitioning}
               >
-                <FaChevronRight className="text-white" />
+                <FaChevronRight className="text-white text-sm sm:text-base" />
               </motion.button>
             </div>
           </motion.div>

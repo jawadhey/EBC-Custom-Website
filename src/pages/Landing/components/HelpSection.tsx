@@ -79,22 +79,21 @@ const helpContent = [
   {
     title: "Get Expert Guidance",
     description: "Schedule a free consultation with our experts to discuss your goals and get personalized university recommendations based on your budget and preferences.",
-    image: Images.HelpImage // Replace with your actual image path
+    image: Images.HelpImage
   },
   {
     title: "Secure Admission & Visa",
     description: "We assist in preparing and submitting your university application while handling all documentation and guiding you through the visa process.",
-    image: Images.About.AboutGallery1 // Replace with your actual image path
+    image: Images.About.AboutGallery1
   },
   {
     title: "Fly & Begin Your Journey",
     description: "Receive pre-departure support, including travel and accommodation guidance, then arrive at your university and start your journey toward becoming a doctor!",
-    image: Images.About.Graduate // Replace with your actual image path
+    image: Images.About.Graduate
   }
 ]
 
 const HelpSection = () => {
-
   const [ref, inView] = useInView({
     threshold: 0.1,
     triggerOnce: false
@@ -102,7 +101,6 @@ const HelpSection = () => {
 
   const [activeIndex, setActiveIndex] = useState(0)
   const [paused, setPaused] = useState(false)
-
 
   useEffect(() => {
     if (paused) return
@@ -115,7 +113,7 @@ const HelpSection = () => {
   }, [paused])
 
   return (
-    <div className="py-16 bg-white overflow-hidden" ref={ref}>
+    <div className="py-12 md:py-16 bg-white overflow-hidden" ref={ref}>
       <Container>
         <motion.div
           className="mx-auto"
@@ -125,11 +123,11 @@ const HelpSection = () => {
         >
           {/* Top Badge */}
           <motion.div
-            className="flex justify-center mb-6"
+            className="flex justify-center mb-4 md:mb-6"
             variants={badgeVariants}
           >
             <motion.div
-              className="bg-[#FFC2551A] text-[#FFC255] px-4 h-[44px] flex items-center rounded-full inline-block"
+              className="bg-[#FFC2551A] text-[#FFC255] px-3 md:px-4 h-[36px] md:h-[44px] flex items-center rounded-full inline-block text-sm md:text-base"
               whileHover={{
                 scale: 1.05,
                 transition: { duration: 0.2 }
@@ -141,17 +139,17 @@ const HelpSection = () => {
 
           {/* Heading */}
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-gray-700 text-center mb-12 max-w-4xl mx-auto leading-tight"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-700 text-center mb-8 md:mb-12 max-w-4xl mx-auto !leading-tight"
             variants={itemVariants}
           >
             Your Journey to Studying Medicine Abroad in 3 Simple Steps
           </motion.h2>
 
           {/* Two Column Layout */}
-          <div className="grid lg:grid-cols-2 gap-8 items-start">
+          <div className="flex flex-col lg:flex-row gap-6 md:gap-8 items-start">
             {/* Left Column - Dynamic Image with Animation */}
             <motion.div
-              className="relative rounded-2xl overflow-hidden h-[507px]"
+              className="relative rounded-2xl overflow-hidden w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[507px]"
               variants={imageVariants}
             >
               <AnimatePresence mode="wait">
@@ -164,9 +162,7 @@ const HelpSection = () => {
                   animate={{
                     opacity: 1,
                     scale: 1,
-                    // y: [0, -10, 0],
                   }}
-
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{
                     opacity: { duration: 0.4 },
@@ -183,7 +179,7 @@ const HelpSection = () => {
 
             {/* Right Column - Information Cards */}
             <motion.div
-              className="space-y-6"
+              className="w-full space-y-4 md:space-y-6"
               onMouseEnter={() => setPaused(true)}
               onMouseLeave={() => setPaused(false)}
               variants={containerVariants}
@@ -191,7 +187,7 @@ const HelpSection = () => {
               {helpContent.map((item, index) => (
                 <motion.div
                   key={index}
-                  className={`rounded-xl p-6 cursor-pointer transition-all duration-300 ${activeIndex === index
+                  className={`rounded-xl p-4 md:p-6 cursor-pointer transition-all duration-300 ${activeIndex === index
                     ? "bg-[#FFC2551A] border-l-4 border-[#ffc15552]"
                     : "bg-purple-50 hover:bg-purple-100"
                     }`}
@@ -199,8 +195,8 @@ const HelpSection = () => {
                   custom={index}
                   onClick={() => setActiveIndex(index)}
                   whileHover={{
-                    scale: 1.03,
-                    boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
+                    scale: 1.02,
+                    boxShadow: "0 5px 10px -3px rgba(0, 0, 0, 0.1)",
                     transition: { duration: 0.3 }
                   }}
                 >
@@ -208,19 +204,12 @@ const HelpSection = () => {
                     className="flex items-center justify-between"
                     variants={itemVariants}
                   >
-                    <h3 className="text-xl font-semibold text-gray-800 mb-4 border-b border-purple-100 pb-3">
+                    <h3 className="text-lg md:text-xl font-semibold text-gray-800 mb-2 md:mb-4 border-b border-purple-100 pb-2 md:pb-3">
                       {item.title}
                     </h3>
-                    {/* {activeIndex === index && (
-                      <motion.div
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        className="w-3 h-3 rounded-full bg-purple-500"
-                      />
-                    )} */}
                   </motion.div>
                   <motion.p
-                    className="text-gray-600"
+                    className="text-gray-600 text-sm md:text-base"
                     variants={itemVariants}
                   >
                     {item.description}

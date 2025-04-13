@@ -32,6 +32,7 @@ const Menu = () => {
           <Link to={"/"} className="flex items-center">
             <motion.img
               src={Icons.Brand.NavLogo}
+              className="w-[90px] h-[90px]"
               alt="Logo"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}

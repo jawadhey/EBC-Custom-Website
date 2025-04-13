@@ -41,7 +41,7 @@ const StatsSection = ({ stats }: StatsSectionProps) => {
    const displayStats = stats || defaultStats;
 
    return (
-      <div className="py-16 lg:py-32 bg-white" ref={ref}>
+      <div className="py-12 md:py-16 lg:py-24 bg-white" ref={ref}>
          <Container>
             <motion.div
                initial="hidden"
@@ -49,7 +49,7 @@ const StatsSection = ({ stats }: StatsSectionProps) => {
                className="mx-auto">
                {/* Heading */}
                <motion.h2
-                  className="text-3xl md:text-4xl font-bold text-gray-700 text-center mb-16 max-w-3xl mx-auto"
+                  className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-700 text-center mb-8 md:mb-12 lg:mb-16 max-w-3xl mx-auto !leading-tight"
                   initial={{ y: 20, opacity: 0 }}
                   animate={inView ? { y: 0, opacity: 1 } : {}}
                   transition={{ duration: 0.6 }}
@@ -59,18 +59,18 @@ const StatsSection = ({ stats }: StatsSectionProps) => {
 
                {/* Subheading */}
                <motion.p
-                  className="text-gray-500 text-center max-w-3xl mx-auto mb-12"
+                  className="text-gray-500 text-center max-w-3xl mx-auto mb-8 md:mb-12 text-sm md:text-base !leading-relaxed"
                   variants={itemVariants}
                >
                   We have helped thousands of students achieve their dream of studying medicine abroad. Join a growing community of successful medical professionals!
                </motion.p>
 
                {/* Stats Grid */}
-               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                   {displayStats.map((stat, index) => (
                      <motion.div
                         key={index}
-                        className="flex flex-col items-center text-center relative"
+                        className="flex flex-col items-center text-center relative px-4 py-6 md:py-0"
                         initial={{ y: 40, opacity: 0 }}
                         animate={inView ? { y: 0, opacity: 1 } : {}}
                         transition={{
@@ -81,7 +81,7 @@ const StatsSection = ({ stats }: StatsSectionProps) => {
                      >
                         <div className="flex items-baseline mb-2">
                            <motion.span
-                              className="text-TwPrimaryPurple text-5xl font-bold"
+                              className="text-TwPrimaryPurple text-4xl sm:text-5xl font-bold"
                               initial={{ scale: 0.8 }}
                               animate={inView ? { scale: 1 } : {}}
                               transition={{
@@ -94,7 +94,7 @@ const StatsSection = ({ stats }: StatsSectionProps) => {
                            {
                               index === 0 && !stats && ( // Only show the "+" for the first default stat
                                  <motion.span
-                                    className="text-yellow-500 text-5xl font-bold"
+                                    className="text-yellow-500 text-4xl sm:text-5xl font-bold"
                                     initial={{ scale: 0 }}
                                     animate={inView ? { scale: 1 } : {}}
                                     transition={{
@@ -110,7 +110,7 @@ const StatsSection = ({ stats }: StatsSectionProps) => {
                            }
                         </div>
                         <motion.p
-                           className="text-lg font-medium text-gray-700 mb-4"
+                           className="text-base md:text-lg font-medium text-gray-700 mb-2 md:mb-4"
                            initial={{ opacity: 0 }}
                            animate={inView ? { opacity: 1 } : {}}
                            transition={{
@@ -121,7 +121,7 @@ const StatsSection = ({ stats }: StatsSectionProps) => {
                            {stat.label}
                         </motion.p>
                         <motion.p
-                           className="text-gray-600"
+                           className="text-gray-600 text-sm md:text-base"
                            initial={{ opacity: 0 }}
                            animate={inView ? { opacity: 1 } : {}}
                            transition={{

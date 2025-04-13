@@ -26,7 +26,9 @@ const MobileMenu = () => {
         transition={{ duration: 0.5 }}
       >
         <Link to={"/"} className="flex items-center">
-          <img src={Icons.Brand.NavLogo} alt="" />
+          <img src={Icons.Brand.NavLogo} alt=""
+            className="w-[80px] h-[80px]"
+          />
         </Link>
       </motion.div>
 
@@ -68,11 +70,14 @@ const MobileMenu = () => {
                 transition={{ delay: 0.2 }}
               >
                 <Link to="/" className="flex items-center mb-6" onClick={() => setIsOpen(false)}>
-                  <img src={Icons.Brand.NavLogo} alt="" />
+                  <img src={Icons.Brand.NavLogo} alt=""
+                    className="w-[90px] h-[90px]"
+
+                  />
                 </Link>
               </motion.div>
 
-              <div className="flex flex-col gap-6 text-center mt-32 w-full items-center">
+              <div className="flex flex-col gap-6 text-center mt-24 w-full items-center">
                 {menuItems.map((item, index) => (
                   <motion.div
                     key={item.path}
@@ -83,8 +88,8 @@ const MobileMenu = () => {
                     <Link
                       to={item.path}
                       className={`text-lg font-medium ${location.pathname === item.path
-                          ? "text-TwPrimaryPurple font-semibold"
-                          : "text-gray-800"
+                        ? "text-TwPrimaryPurple font-semibold"
+                        : "text-gray-800"
                         }`}
                       onClick={() => setIsOpen(false)}
                     >

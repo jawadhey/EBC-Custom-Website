@@ -10,6 +10,7 @@ import uni2 from '../../../assets/universities/uni2/hero.jpg'
 import uni3 from '../../../assets/universities/uni3/hero.jpg'
 import uni4 from '../../../assets/universities/uni4/hero.jpg'
 import uni5 from '../../../assets/universities/uni5/hero.png'
+
 // Animation variants
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -72,7 +73,7 @@ const ProgramsSection = () => {
     { id: "exclusive", name: "Our Exclusive Universities" },
     { id: "medical", name: "Medical" },
     { id: "engineering", name: "Engineering" },
-    { id: "other", name: "other" },
+    { id: "other", name: "Other" },
   ]
 
   const allPrograms = [
@@ -100,7 +101,7 @@ const ProgramsSection = () => {
     {
       id: 4,
       title: "Guangxi Medical University",
-      description: "One of China’s oldest medical universities, known for public health and clinical medicine.",
+      description: "One of China's oldest medical universities, known for public health and clinical medicine.",
       image: uni4,
       categories: ["", "medical"],
     },
@@ -118,7 +119,7 @@ const ProgramsSection = () => {
     activeTab === "all" ? allPrograms : allPrograms.filter((program) => program.categories.includes(activeTab))
 
   return (
-    <div className="py-16 bg-white overflow-hidden px-0 lg:px-16 xl:px-32" ref={ref}>
+    <div className="py-12 md:py-16 bg-white overflow-hidden" ref={ref}>
       <Container>
         <motion.div
           className="mx-auto"
@@ -128,7 +129,7 @@ const ProgramsSection = () => {
         >
           {/* Heading */}
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-gray-700 text-center mb-4"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-700 text-center mb-3 md:mb-4 !leading-tight"
             variants={itemVariants}
           >
             Programs We Offer
@@ -136,23 +137,22 @@ const ProgramsSection = () => {
 
           {/* Subheading */}
           <motion.p
-            className="text-gray-500 text-center max-w-5xl mx-auto mb-12"
+            className="text-gray-500 text-center max-w-5xl mx-auto mb-8 md:mb-12 text-sm md:text-base !leading-relaxed"
             variants={itemVariants}
           >
             Explore top-ranked universities offering world-class education in <b>medicine, engineering, and other fields</b>. Whether you're aiming for an MBBS in China or a degree in another discipline, we guide you toward the best options that fit your goals and budget.
-
           </motion.p>
 
           {/* Tabs */}
           <motion.div
-            className="flex flex-wrap justify-center gap-3 mb-12"
+            className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 md:mb-12"
             variants={containerVariants}
           >
             {categories.map((category, index) => (
               <motion.button
                 key={category.id}
                 onClick={() => setActiveTab(category.id)}
-                className={`px-5 py-3 rounded-full text-sm font-medium transition-colors ${activeTab === category.id ? "bg-TwPrimaryPurple text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                className={`px-3 sm:px-4 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-medium transition-colors ${activeTab === category.id ? "bg-TwPrimaryPurple text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                   }`}
                 variants={buttonVariants}
                 custom={index}
@@ -169,7 +169,7 @@ const ProgramsSection = () => {
 
           {/* Programs Grid */}
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
             variants={containerVariants}
           >
             {filteredPrograms.map((program, index) => (
@@ -180,7 +180,7 @@ const ProgramsSection = () => {
                 custom={index}
                 whileHover={{
                   y: -5,
-                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                  boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
                   transition: { duration: 0.3 }
                 }}
                 layout
@@ -188,21 +188,21 @@ const ProgramsSection = () => {
                 <motion.img
                   src={program.image || "/placeholder.svg"}
                   alt={program.title}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-40 sm:h-48 object-cover"
                   whileHover={{
                     scale: 1.05,
                     transition: { duration: 0.5 }
                   }}
                 />
-                <div className="p-5">
+                <div className="p-4 sm:p-5">
                   <motion.h3
-                    className="text-TwPrimaryPurple font-semibold text-lg mb-2"
+                    className="text-TwPrimaryPurple font-semibold text-base sm:text-lg mb-2"
                     variants={itemVariants}
                   >
                     {program.title}
                   </motion.h3>
                   <motion.p
-                    className="text-gray-600 mb-4"
+                    className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base"
                     variants={itemVariants}
                   >
                     {program.description}
@@ -212,8 +212,7 @@ const ProgramsSection = () => {
                   >
                     <Link
                       to={`/university-detail/${program.id}`}
-                      className="text-yellow-500 font-medium flex items-center hover:text-yellow-600 transition-colors"
-
+                      className="text-yellow-500 font-medium flex items-center hover:text-yellow-600 transition-colors text-sm sm:text-base"
                     >
                       View More <FaArrowRight className="ml-2" />
                     </Link>

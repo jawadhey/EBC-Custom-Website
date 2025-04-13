@@ -10,7 +10,7 @@ export default function Container({ parentClassName, Landing, verticalPadding, c
    return (
       <div
          className={twMerge(
-            `px-[30px] md:px-[80px] xl:px-[120px] lg:max-w-[1920px] mx-auto
+            `px-[22px] md:px-[80px] xl:px-[120px] lg:max-w-[1920px] mx-auto
             ${verticalPadding && 'py-[40px]'}
             ${Landing && 'px-[40px] md:px-[130px]'}
             `,
