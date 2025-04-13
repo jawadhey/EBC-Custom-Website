@@ -1,17 +1,25 @@
-//@ts-nocheck
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-// Reusable Hero Section Component
+interface HeroSectionProps {
+   badgeText?: string;
+   title: string;
+   description: string;
+   buttonText?: string;
+   buttonLink?: string;
+   backgroundImage?: string;
+   overlayColor?: string;
+}
+
 const HeroSection = ({
    badgeText,
    title,
    description,
    buttonText,
-   buttonLink,
-   backgroundImage,
-   overlayColor = "rgba(0, 0, 0, 0.5)", // Default purple overlay
-}: any) => {
+   buttonLink = "#",
+   backgroundImage = "/students-group.jpg",
+   overlayColor = "rgba(67, 56, 202, 0.5)", // Purple overlay with 50% opacity
+}: HeroSectionProps) => {
    const [ref, inView] = useInView({
       threshold: 0.1,
       triggerOnce: true,
@@ -93,7 +101,7 @@ const HeroSection = ({
    };
 
    return (
-      <div className="relative w-full py-24 md:py-32 overflow-hidden" ref={ref}>
+      <section className="relative w-full py-16 md:py-24 lg:py-32 overflow-hidden" ref={ref}>
          {/* Animated Background Image with Overlay */}
          <motion.div
             className="absolute inset-0 z-0"
@@ -102,59 +110,64 @@ const HeroSection = ({
             variants={backgroundVariants}
          >
             <img
-               src={backgroundImage || "/students-group.jpg"}
-               alt="Background"
-               className="w-full h-full object-cover opacity-50"
+               src={backgroundImage}
+               alt="Students studying together"
+               className="w-full h-full object-cover"
+               loading="eager"
             />
             <div
                className="absolute inset-0"
                style={{ backgroundColor: overlayColor }}
+               aria-hidden="true"
             ></div>
          </motion.div>
 
          {/* Animated Content */}
-         <motion.div
-            className="relative z-10 max-w-5xl mx-auto text-center"
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-            variants={contentContainerVariants}
-         >
-            {badgeText && (
-               <motion.button
-                  className="mb-6 px-6 py-2 bg-TwPrimaryPurple text-white rounded-full text-sm font-medium"
-                  variants={badgeVariants}
-                  whileHover="hover"
-               >
-                  {badgeText}
-               </motion.button>
-            )}
-
-            <motion.h1
-               className="text-3xl md:text-5xl font-bold text-white mb-6"
-               variants={itemVariants}
+         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+               className="relative z-10 max-w-5xl mx-auto text-center"
+               initial="hidden"
+               animate={inView ? "visible" : "hidden"}
+               variants={contentContainerVariants}
             >
-               {title}
-            </motion.h1>
+               {badgeText && (
+                  <motion.div
+                     className="mb-4 md:mb-6"
+                     variants={badgeVariants}
+                  >
+                     <span className="inline-block px-4 py-1.5 md:px-6 md:py-2 bg-TwPrimaryPurple text-white rounded-full text-xs md:text-sm font-medium">
+                        {badgeText}
+                     </span>
+                  </motion.div>
+               )}
 
-            <motion.p
-               className="text-white text-lg md:text-xl opacity-90 max-w-3xl mx-auto mb-10"
-               variants={itemVariants}
-            >
-               {description}
-            </motion.p>
-
-            {buttonText && (
-               <motion.a
-                  href={buttonLink || "#"}
-                  className="inline-block px-8 py-3 bg-TwPrimaryPurple text-white rounded-md font-medium hover:bg-TwPrimaryPurpleBgHover transition-colors"
-                  variants={buttonVariants}
-                  whileHover="hover"
+               <motion.h1
+                  className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 !leading-tight"
+                  variants={itemVariants}
                >
-                  {buttonText}
-               </motion.a>
-            )}
-         </motion.div>
-      </div>
+                  {title}
+               </motion.h1>
+
+               <motion.p
+                  className="text-white text-base md:text-lg lg:text-xl opacity-90 max-w-3xl mx-auto mb-6 md:mb-8 lg:mb-10 !leading-relaxed"
+                  variants={itemVariants}
+               >
+                  {description}
+               </motion.p>
+
+               {buttonText && (
+                  <motion.div variants={buttonVariants}>
+                     <a
+                        href={buttonLink}
+                        className="inline-block px-6 py-2 md:px-8 md:py-3 bg-TwPrimaryPurple text-white rounded-md font-medium hover:bg-TwPrimaryPurpleBgHover transition-colors text-sm md:text-base"
+                     >
+                        {buttonText}
+                     </a>
+                  </motion.div>
+               )}
+            </motion.div>
+         </div>
+      </section>
    );
 };
 

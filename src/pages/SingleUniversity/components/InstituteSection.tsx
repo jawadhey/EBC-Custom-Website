@@ -8,10 +8,15 @@ import image2 from '../../../assets/universities/all/lan-lin-1Y7TirECIGk-unsplas
 import image3 from '../../../assets/universities/all/lan-lin-AIoqWbrxA0o-unsplash.jpg'
 import image4 from '../../../assets/universities/all/lan-lin-wMz22imjbGQ-unsplash.jpg'
 
-const InstitutionSection = ({ Heading, Text }: any) => {
+interface InstitutionSectionProps {
+   Heading?: string;
+   Text?: React.ReactNode;
+}
+
+const InstitutionSection = ({ Heading, Text }: InstitutionSectionProps) => {
    const [ref, inView] = useInView({
       threshold: 0.1,
-      triggerOnce: false,
+      triggerOnce: true,
    })
 
    // Animation variants
@@ -119,7 +124,7 @@ const InstitutionSection = ({ Heading, Text }: any) => {
    }
 
    return (
-      <div className="py-16 bg-white" ref={ref}>
+      <div className="py-12 md:py-16 bg-white" ref={ref}>
          <Container>
             <motion.div
                className="mx-auto"
@@ -128,9 +133,9 @@ const InstitutionSection = ({ Heading, Text }: any) => {
                variants={containerVariants}
             >
                {/* Top Badge */}
-               <motion.div className="flex justify-center mb-6" variants={badgeVariants}>
+               <motion.div className="flex justify-center mb-4 md:mb-6" variants={badgeVariants}>
                   <motion.div
-                     className="bg-yellow-100 text-yellow-600 px-6 py-2 rounded-full inline-block"
+                     className="bg-yellow-100 text-yellow-600 px-4 py-1.5 md:px-6 md:py-2 rounded-full inline-block text-xs md:text-sm"
                      whileHover="hover"
                      variants={badgeVariants}
                   >
@@ -140,14 +145,14 @@ const InstitutionSection = ({ Heading, Text }: any) => {
 
                {/* Main Heading */}
                <motion.h2
-                  className="text-3xl md:text-4xl font-bold text-gray-700 text-center mb-12 max-w-4xl mx-auto leading-tight"
+                  className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-700 text-center mb-8 md:mb-12 max-w-4xl mx-auto !leading-tight"
                   variants={headingVariants}
                >
-                  {Heading || 'Lorem ipsum dolor sit amet consectetur. Lobortis id nibh urna velit. Lorem pellentesque elementum.'}
+                  {Heading || 'Our Partner Institutions'}
                </motion.h2>
 
                {/* Main Content Section */}
-               <div className="grid md:grid-cols-2 gap-8 mb-16">
+               <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-12 md:mb-16">
                   {/* Left Column - Image */}
                   <motion.div
                      className="rounded-lg overflow-hidden"
@@ -156,26 +161,32 @@ const InstitutionSection = ({ Heading, Text }: any) => {
                   >
                      <motion.img
                         src={Images.Universities.InstituteMain}
-                        alt="Lecture hall with students"
-                        className="w-full h-full max-h-[470px] object-cover rounded-lg"
+                        alt="University campus with students"
+                        className="w-full h-full max-h-[350px] md:max-h-[400px] lg:max-h-[470px] object-cover rounded-lg"
                      />
                   </motion.div>
 
                   {/* Right Column - Text */}
                   <motion.div
-                     className="text-gray-600 space-y-4"
+                     className="text-gray-600 space-y-3 md:space-y-4 text-sm md:text-base !leading-relaxed"
                      variants={textVariants}
                   >
-                     {Text}
+                     {Text || (
+                        <>
+                           <p>We partner with top-tier educational institutions worldwide to provide our students with exceptional learning opportunities.</p>
+                           <p>Our network includes prestigious universities known for their academic excellence, state-of-the-art facilities, and vibrant campus communities.</p>
+                           <p>Each institution is carefully selected to ensure our students receive world-class education and support throughout their academic journey.</p>
+                        </>
+                     )}
                   </motion.div>
                </div>
 
                {/* Image Gallery */}
                <motion.div
-                  className="bg-purple-50 p-8 rounded-2xl"
+                  className="bg-purple-50 p-4 sm:p-6 md:p-8 rounded-xl md:rounded-2xl"
                   variants={galleryContainerVariants}
                >
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
                      {[image1, image2, image3, image4].map((item, index) => (
                         <motion.div
                            key={index}
@@ -186,8 +197,8 @@ const InstitutionSection = ({ Heading, Text }: any) => {
                         >
                            <img
                               src={item}
-                              alt={`University image ${index + 1}`}
-                              className="w-full h-60 object-cover"
+                              alt={`University campus ${index + 1}`}
+                              className="w-full h-40 sm:h-48 md:h-56 lg:h-60 object-cover"
                            />
                         </motion.div>
                      ))}

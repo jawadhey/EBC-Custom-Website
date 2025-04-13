@@ -17,20 +17,20 @@ const ImageGallerySection = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.1,
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
       },
     },
   }
 
   // Individual image animation variants
   const imageVariants = {
-    hidden: { y: 30, opacity: 0 },
+    hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.7,
+        duration: 0.6,
         ease: "easeOut",
       },
     },
@@ -43,14 +43,14 @@ const ImageGallerySection = () => {
       scale: 1,
       opacity: 1,
       transition: {
-        duration: 0.8,
+        duration: 0.7,
         ease: "easeOut",
       },
     },
   }
 
   return (
-    <div className="py-16 bg-amber-50" ref={ref}>
+    <div className="py-12 md:py-16 bg-amber-50" ref={ref}>
       <Container>
         <motion.div
           className="mx-auto"
@@ -58,67 +58,72 @@ const ImageGallerySection = () => {
           animate={inView ? "visible" : "hidden"}
           variants={containerVariants}
         >
-          <div className="grid grid-cols-12 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3 sm:gap-4 md:gap-6">
             {/* Top Row */}
             <motion.div
-              className="col-span-12 md:col-span-4 max-h-[500px]"
+              className="sm:col-span-2 lg:col-span-4 h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px]"
               variants={imageVariants}
-              whileHover={{ y: -5, transition: { duration: 0.3 } }}
+              whileHover={{ y: -3, transition: { duration: 0.2 } }}
             >
               <img
                 src={Images.About.AboutGallery2 || "/placeholder.svg"}
                 alt="Students discussing"
-                className="w-auto h-full object-cover rounded-2xl shadow-sm"
+                className="w-full h-full object-cover rounded-xl md:rounded-2xl shadow-sm"
+                loading="lazy"
               />
             </motion.div>
 
             <motion.div
-              className="col-span-12 md:col-span-8 max-h-[500px]"
+              className="sm:col-span-2 lg:col-span-8 h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px]"
               variants={imageVariants}
-              whileHover={{ y: -5, transition: { duration: 0.3 } }}
+              whileHover={{ y: -3, transition: { duration: 0.2 } }}
             >
               <img
                 src={Images.About.AboutGallery3 || "/placeholder.svg"}
                 alt="Hands working on laptop"
-                className="w-auto h-full object-cover rounded-2xl shadow-sm"
+                className="w-full h-full object-cover rounded-xl md:rounded-2xl shadow-sm"
+                loading="lazy"
               />
             </motion.div>
 
             {/* Middle Row */}
             <motion.div
-              className="col-span-12 md:col-span-7 mt-5"
+              className="sm:col-span-2 lg:col-span-7 h-[250px] sm:h-[300px] md:h-[350px]"
               variants={imageVariants}
-              whileHover={{ y: -5, transition: { duration: 0.3 } }}
+              whileHover={{ y: -3, transition: { duration: 0.2 } }}
             >
               <img
                 src={Images.About.AboutGallery4 || "/placeholder.svg"}
                 alt="Students studying in cafe"
-                className="w-full h-full object-cover rounded-2xl shadow-sm"
+                className="w-full h-full object-cover rounded-xl md:rounded-2xl shadow-sm"
+                loading="lazy"
               />
             </motion.div>
 
             <motion.div
-              className="col-span-12 md:col-span-5 md:row-span-2 mt-5"
+              className="sm:col-span-2 lg:col-span-5 h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]"
               variants={tallImageVariants}
-              whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
+              whileHover={{ scale: 1.01, transition: { duration: 0.2 } }}
             >
               <img
                 src={Images.About.AboutGallery5 || "/placeholder.svg"}
                 alt="Student in graduation cap"
-                className="w-full max-h-[700px] h-full object-cover rounded-2xl shadow-sm"
+                className="w-full h-full object-cover rounded-xl md:rounded-2xl shadow-sm"
+                loading="lazy"
               />
             </motion.div>
 
             {/* Bottom Row */}
             <motion.div
-              className="col-span-12 md:col-span-7"
+              className="sm:col-span-2 lg:col-span-7 h-[250px] sm:h-[300px] md:h-[350px]"
               variants={imageVariants}
-              whileHover={{ y: -5, transition: { duration: 0.3 } }}
+              whileHover={{ y: -3, transition: { duration: 0.2 } }}
             >
               <img
                 src={Images.About.AboutGallery4 || "/placeholder.svg"}
                 alt="Students in office"
-                className="w-full h-full object-cover rounded-2xl shadow-sm"
+                className="w-full h-full object-cover rounded-xl md:rounded-2xl shadow-sm"
+                loading="lazy"
               />
             </motion.div>
           </div>
@@ -129,4 +134,3 @@ const ImageGallerySection = () => {
 }
 
 export default ImageGallerySection
-

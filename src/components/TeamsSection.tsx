@@ -11,10 +11,9 @@ const TeamSection = () => {
    // Team categories
    const categories = [
       { id: "founders", name: "Founders" },
-      { id: "executive", name: "Executive Members" },
+      { id: "executive", name: "Executive" },
       { id: "directors", name: "Directors" },
-      // { id: "managers", name: "Lorem ipsum" },
-      { id: "staff", name: "staff" },
+      { id: "staff", name: "Staff" },
    ]
 
    // Team members data
@@ -75,27 +74,13 @@ const TeamSection = () => {
          {
             id: 9,
             name: "Robert Davis",
-            title: "Director of Marketing",
+            title: "Marketing Director",
             image: "/placeholder.svg?height=200&width=200",
          },
          {
             id: 10,
             name: "Lisa Miller",
-            title: "Director of Operations",
-            image: "/placeholder.svg?height=200&width=200",
-         },
-      ],
-      managers: [
-         {
-            id: 11,
-            name: "David Wilson",
-            title: "Project Manager",
-            image: "/placeholder.svg?height=200&width=200",
-         },
-         {
-            id: 12,
-            name: "Amanda Taylor",
-            title: "HR Manager",
+            title: "Operations Director",
             image: "/placeholder.svg?height=200&width=200",
          },
       ],
@@ -175,7 +160,7 @@ const TeamSection = () => {
    };
 
    return (
-      <div className="py-16 bg-white" ref={ref}>
+      <div className="py-12 md:py-16 bg-white" ref={ref}>
          <Container>
             <motion.div
                className="mx-auto"
@@ -185,11 +170,11 @@ const TeamSection = () => {
             >
                {/* Top Badge */}
                <motion.div
-                  className="flex justify-center mb-6"
+                  className="flex justify-center mb-4 md:mb-6"
                   variants={itemVariants}
                >
                   <motion.div
-                     className="bg-green-100 text-green-600 px-6 py-2 rounded-full inline-block"
+                     className="bg-green-100 text-green-600 px-4 py-1.5 md:px-6 md:py-2 rounded-full inline-block text-xs md:text-sm"
                      whileHover={{
                         scale: 1.05,
                         backgroundColor: "#dcfce7"
@@ -202,7 +187,7 @@ const TeamSection = () => {
 
                {/* Heading */}
                <motion.h2
-                  className="text-3xl md:text-4xl font-bold text-gray-700 text-center mb-4"
+                  className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-700 text-center mb-3 md:mb-4 !leading-tight"
                   variants={itemVariants}
                >
                   Our Executive Team
@@ -210,25 +195,24 @@ const TeamSection = () => {
 
                {/* Subheading */}
                <motion.p
-                  className="text-gray-500 text-center max-w-3xl mx-auto mb-12"
+                  className="text-gray-500 text-center max-w-3xl mx-auto mb-8 md:mb-12 text-sm md:text-base !leading-relaxed"
                   variants={itemVariants}
                >
                   Meet the passionate professionals driving our mission to guide students toward successful academic journeys abroad.
-
                </motion.p>
 
                {/* Category Tabs */}
                <motion.div
-                  className="flex flex-wrap justify-center gap-3 mb-12"
+                  className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8 md:mb-12"
                   variants={itemVariants}
                >
                   {categories.map((category) => (
                      <motion.button
                         key={category.id}
                         onClick={() => setActiveCategory(category.id)}
-                        className={`px-5 py-3 rounded-full text-sm font-medium transition-colors ${activeCategory === category.id
-                              ? "bg-TwPrimaryPurple text-white"
-                              : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                        className={`px-3 py-1.5 md:px-5 md:py-3 rounded-full text-xs md:text-sm font-medium transition-colors ${activeCategory === category.id
+                           ? "bg-TwPrimaryPurple text-white"
+                           : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                            }`}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
@@ -241,9 +225,9 @@ const TeamSection = () => {
 
                {/* Team Members Grid */}
                <motion.div
-                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-evenly gap-8 mb-12"
+                  className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-8 md:mb-12"
                   variants={containerVariants}
-                  key={activeCategory} // Force re-render animation when category changes
+                  key={activeCategory}
                   initial="hidden"
                   animate="visible"
                >
@@ -256,35 +240,35 @@ const TeamSection = () => {
                      >
                         {/* Image with corner accents */}
                         <motion.div
-                           className="relative mb-4"
+                           className="relative mb-3 md:mb-4"
                            whileHover={{ scale: 1.05 }}
                            transition={{ duration: 0.3 }}
                         >
                            <motion.div
-                              className="absolute -top-2 -left-2 w-6 h-6 border-t-2 border-l-2 border-yellow-400"
+                              className="absolute -top-2 -left-2 w-4 h-4 md:w-6 md:h-6 border-t-2 border-l-2 border-yellow-400"
                               variants={cornerVariants}
                            ></motion.div>
                            <motion.div
-                              className="absolute -top-2 -right-2 w-6 h-6 border-t-2 border-r-2 border-yellow-400"
+                              className="absolute -top-2 -right-2 w-4 h-4 md:w-6 md:h-6 border-t-2 border-r-2 border-yellow-400"
                               variants={cornerVariants}
                            ></motion.div>
                            <motion.div
-                              className="absolute -bottom-2 -left-2 w-6 h-6 border-b-2 border-l-2 border-yellow-400"
+                              className="absolute -bottom-2 -left-2 w-4 h-4 md:w-6 md:h-6 border-b-2 border-l-2 border-yellow-400"
                               variants={cornerVariants}
                            ></motion.div>
                            <motion.div
-                              className="absolute -bottom-2 -right-2 w-6 h-6 border-b-2 border-r-2 border-yellow-400"
+                              className="absolute -bottom-2 -right-2 w-4 h-4 md:w-6 md:h-6 border-b-2 border-r-2 border-yellow-400"
                               variants={cornerVariants}
                            ></motion.div>
                            <img
                               src={Images.About.Founder || "/placeholder.svg"}
                               alt={member.name}
-                              className="w-48 h-48 rounded-full object-cover"
+                              className="w-36 h-36 md:w-48 md:h-48 rounded-full object-cover"
                            />
                         </motion.div>
 
                         <motion.h3
-                           className="text-xl font-semibold text-TwPrimaryPurple mb-1"
+                           className="text-lg md:text-xl font-semibold text-TwPrimaryPurple mb-1 !leading-snug"
                            initial={{ opacity: 0 }}
                            animate={{ opacity: 1 }}
                            transition={{ delay: 0.3 + (index * 0.1) }}
@@ -292,7 +276,7 @@ const TeamSection = () => {
                            {member.name}
                         </motion.h3>
                         <motion.p
-                           className="text-gray-500"
+                           className="text-gray-500 text-sm md:text-base !leading-relaxed"
                            initial={{ opacity: 0 }}
                            animate={{ opacity: 1 }}
                            transition={{ delay: 0.4 + (index * 0.1) }}
@@ -310,7 +294,7 @@ const TeamSection = () => {
                >
                   <motion.a
                      href="#"
-                     className="inline-flex items-center bg-purple-100 text-TwPrimaryPurple px-6 py-3 rounded-full hover:bg-purple-200 transition-colors"
+                     className="inline-flex items-center bg-purple-100 text-TwPrimaryPurple px-4 py-2 md:px-6 md:py-3 rounded-full hover:bg-purple-200 transition-colors text-sm md:text-base"
                      whileHover={{
                         scale: 1.05,
                         boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)"
@@ -328,7 +312,7 @@ const TeamSection = () => {
                            repeatDelay: 1
                         }}
                      >
-                        <FaArrowRight className="ml-2" />
+                        <FaArrowRight className="ml-2 text-xs md:text-sm" />
                      </motion.span>
                   </motion.a>
                </motion.div>

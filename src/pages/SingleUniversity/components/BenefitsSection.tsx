@@ -5,11 +5,21 @@ import Container from "../../../components/Container"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 
-const BenefitsSection = ({ benefits }: any) => {
-   console.log(benefits)
+interface BenefitItem {
+   id: string;
+   title: string;
+   description: string;
+}
+
+interface BenefitsProps {
+   title?: string;
+   content: BenefitItem[];
+}
+
+const BenefitsSection = ({ benefits }: { benefits: BenefitsProps }) => {
    const [ref, inView] = useInView({
       threshold: 0.3,
-      triggerOnce: false
+      triggerOnce: true
    })
 
    // Animation variants
@@ -38,20 +48,47 @@ const BenefitsSection = ({ benefits }: any) => {
 
    const cardVariants = {
       hidden: { y: 40, opacity: 0 },
-      visible: (index: any) => ({
+      visible: (index: number) => ({
          y: 0,
          opacity: 1,
          transition: {
-            delay: 0.3 + index * 0.1, // Faster stagger for cards
+            delay: 0.2 + index * 0.1, // Faster stagger for cards
             duration: 0.6,
             ease: "backOut"
+         }
+      }),
+      hover: {
+         y: -5,
+         boxShadow: "0 10px 25px -5px rgba(245, 158, 11, 0.2)",
+         transition: { duration: 0.3 }
+      }
+   }
+
+   const iconVariants = {
+      hidden: { opacity: 0, scale: 0.8 },
+      visible: (index: number) => ({
+         opacity: 1,
+         scale: 1,
+         transition: {
+            delay: 0.3 + index * 0.1,
+            duration: 0.5
          }
       })
    }
 
+   const textVariants = {
+      hidden: { opacity: 0 },
+      visible: (index: number) => ({
+         opacity: 1,
+         transition: {
+            delay: 0.4 + index * 0.1,
+            duration: 0.4
+         }
+      })
+   }
 
    return (
-      <div className="py-16 bg-white" ref={ref}>
+      <div className="py-12 md:py-16 bg-white" ref={ref}>
          <Container>
             <motion.div
                className="mx-auto"
@@ -61,11 +98,11 @@ const BenefitsSection = ({ benefits }: any) => {
             >
                {/* Top Badge */}
                <motion.div
-                  className="flex justify-center mb-6"
+                  className="flex justify-center mb-4 md:mb-6"
                   variants={itemVariants}
                >
                   <motion.div
-                     className="bg-purple-100 text-TwPrimaryPurple px-6 py-2 rounded-full inline-block"
+                     className="bg-purple-100 text-TwPrimaryPurple px-4 py-1.5 md:px-6 md:py-2 rounded-full inline-block text-xs md:text-sm"
                      whileHover={{
                         scale: 1.05,
                         backgroundColor: "#f3e8ff"
@@ -78,7 +115,7 @@ const BenefitsSection = ({ benefits }: any) => {
 
                {/* Heading */}
                <motion.h2
-                  className="text-3xl md:text-4xl font-bold text-gray-700 text-center mb-4"
+                  className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-700 text-center mb-3 md:mb-4 !leading-tight"
                   variants={itemVariants}
                >
                   Benefits of International Studies
@@ -86,52 +123,45 @@ const BenefitsSection = ({ benefits }: any) => {
 
                {/* Subheading */}
                <motion.p
-                  className="text-gray-500 text-center max-w-3xl mx-auto mb-12"
+                  className="text-gray-500 text-center max-w-3xl mx-auto mb-8 md:mb-12 text-sm md:text-base !leading-relaxed"
                   variants={itemVariants}
                >
-                  {benefits.title}
+                  {benefits.title || "Discover the advantages of pursuing your education abroad with our global network of institutions"}
                </motion.p>
 
                {/* Benefits Grid */}
-               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {benefits.content.map((benefit: any, index: any) => (
+               <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                  {benefits.content.map((benefit: BenefitItem, index: number) => (
                      <motion.div
                         key={benefit.id}
-                        className="bg-amber-50 bg-opacity-50 p-6 rounded-lg"
+                        className="bg-amber-50 bg-opacity-50 p-4 md:p-6 rounded-lg"
                         custom={index}
                         variants={cardVariants}
-                        whileHover={{
-                           y: -5,
-                           boxShadow: "0 10px 25px -5px rgba(245, 158, 11, 0.2)",
-                           transition: { duration: 0.3 }
-                        }}
+                        whileHover="hover"
                      >
                         {/* Icon */}
                         <motion.div
-                           className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mb-4"
-                           initial={{ opacity: 0, scale: 0.8 }}
-                           animate={inView ? { opacity: 1, scale: 1 } : {}}
-                           transition={{ delay: 0.4 + index * 0.1, duration: 0.5 }}
+                           className="w-10 h-10 md:w-12 md:h-12 bg-purple-600 rounded-full flex items-center justify-center mb-3 md:mb-4"
+                           custom={index}
+                           variants={iconVariants}
                         >
-                           <FaGraduationCap className="text-white text-xl" />
+                           <FaGraduationCap className="text-white text-lg md:text-xl" />
                         </motion.div>
 
                         {/* Title */}
                         <motion.h3
-                           className="text-purple-600 font-semibold text-lg mb-2"
-                           initial={{ opacity: 0 }}
-                           animate={inView ? { opacity: 1 } : {}}
-                           transition={{ delay: 0.5 + index * 0.1, duration: 0.4 }}
+                           className="text-purple-600 font-semibold text-base md:text-lg mb-1 md:mb-2 !leading-snug"
+                           custom={index}
+                           variants={textVariants}
                         >
                            {benefit.title}
                         </motion.h3>
 
                         {/* Description */}
                         <motion.p
-                           className="text-gray-600 mb-4"
-                           initial={{ opacity: 0 }}
-                           animate={inView ? { opacity: 1 } : {}}
-                           transition={{ delay: 0.6 + index * 0.1, duration: 0.4 }}
+                           className="text-gray-600 mb-3 md:mb-4 text-sm md:text-base !leading-relaxed"
+                           custom={index}
+                           variants={textVariants}
                         >
                            {benefit.description}
                         </motion.p>
@@ -139,13 +169,15 @@ const BenefitsSection = ({ benefits }: any) => {
                         {/* View More Link */}
                         <motion.a
                            href="#"
-                           className="text-purple-600 font-medium flex items-center hover:text-purple-700 transition-colors"
+                           className="text-purple-600 font-medium flex items-center hover:text-purple-700 transition-colors text-xs md:text-sm"
                            whileHover={{
                               x: 5,
                               transition: { duration: 0.2 }
                            }}
+                           custom={index}
+                           variants={textVariants}
                         >
-                           View More <FaArrowRight className="ml-2" />
+                           View More <FaArrowRight className="ml-1 md:ml-2 text-xs md:text-sm" />
                         </motion.a>
                      </motion.div>
                   ))}

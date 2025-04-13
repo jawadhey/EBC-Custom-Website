@@ -160,7 +160,7 @@ const JourneySection = () => {
   }
 
   return (
-    <div className="py-16 bg-white" ref={ref}>
+    <div className="py-8 md:py-16 bg-white" ref={ref}>
       <Container>
         <motion.div
           className="mx-auto"
@@ -169,9 +169,9 @@ const JourneySection = () => {
           variants={containerVariants}
         >
           {/* Top Badge */}
-          <motion.div className="flex justify-center mb-6" variants={headerVariants}>
+          <motion.div className="flex justify-center mb-4 md:mb-6" variants={headerVariants}>
             <motion.div
-              className="bg-purple-100 text-TwPrimaryPurple px-6 py-2 rounded-full inline-block"
+              className="bg-purple-100 text-TwPrimaryPurple px-4 py-1 md:px-6 md:py-2 rounded-full inline-block text-xs md:text-sm"
               whileHover={{ y: -3, transition: { duration: 0.2 } }}
             >
               Have a look at our journey
@@ -180,14 +180,17 @@ const JourneySection = () => {
 
           {/* Heading */}
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-gray-700 text-center mb-4"
+            className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-700 text-center mb-3 md:mb-4"
             variants={headerVariants}
           >
             Brief History of EBC
           </motion.h2>
 
           {/* Subheading */}
-          <motion.p className="text-gray-500 text-center max-w-3xl mx-auto mb-16" variants={headerVariants}>
+          <motion.p
+            className="text-gray-500 text-center max-w-3xl mx-auto mb-8 md:mb-16 text-sm md:text-base !leading-relaxed"
+            variants={headerVariants}
+          >
             Our journey from humble beginnings to becoming a trusted global education consultancy
           </motion.p>
 
@@ -202,33 +205,37 @@ const JourneySection = () => {
 
             {/* Journey Items */}
             {journeyItems.map((item, index) => (
-              <motion.div key={index} className="relative mb-24 last:mb-0" variants={itemVariants}>
+              <motion.div key={index} className="relative mb-16 md:mb-24 last:mb-0" variants={itemVariants}>
                 {/* Timeline Dot */}
                 <motion.div
-                  className="top-24 absolute left-0 lg:left-[49.3%] transform lg:-translate-x-1/2 w-6 h-6 rounded-full bg-TwPrimaryPurple z-10"
+                  className="top-16 md:top-24 absolute left-0 lg:left-[49.3%] transform lg:-translate-x-1/2 w-5 h-5 md:w-6 md:h-6 rounded-full bg-TwPrimaryPurple z-10"
                   variants={dotVariants}
                 ></motion.div>
 
                 <div
-                  className={`flex flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} lg:pl-0 pl-[70px] items-center gap-14 lg:gap-36`}
+                  className={`flex flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} lg:pl-0 pl-12 md:pl-[70px] items-center gap-8 md:gap-14 lg:gap-36`}
                 >
                   {/* Text Content */}
                   <motion.div
-                    className={`w-full lg:w-1/2 ${index % 2 === 0 ? "lg:text-right lg:pr-12" : "lg:text-left lg:pl-12"}`}
+                    className={`w-full lg:w-1/2 ${index % 2 === 0 ? "lg:text-right lg:pr-8" : "lg:text-left lg:pl-8"}`}
                     variants={index % 2 === 0 ? textVariants : imageVariants}
                   >
                     <motion.div
-                      className="bg-purple-50 rounded-xl p-6 lg:p-8"
+                      className="bg-purple-50 rounded-xl p-4 md:p-6 lg:p-8"
                       whileHover={{ y: -5, transition: { duration: 0.2 } }}
                     >
-                      <h3 className="text-xl font-semibold text-gray-800 mb-4">{item.title}</h3>
-                      <p className="text-gray-600">{item.description}</p>
+                      <h3 className="text-lg md:text-xl font-semibold text-gray-800 mb-2 md:mb-4 !leading-snug">
+                        {item.title}
+                      </h3>
+                      <p className="text-gray-600 text-sm md:text-base !leading-relaxed">
+                        {item.description}
+                      </p>
                     </motion.div>
                   </motion.div>
 
                   {/* Year */}
                   <motion.div
-                    className="absolute max-w-[120px] text-wrap text-2xl font-bold text-TwPrimaryPurple top-0 -left-4 lg:left-1/2 transform lg:-translate-x-1/2 mt-4"
+                    className="absolute max-w-[100px] md:max-w-[120px] text-wrap text-xl md:text-2xl font-bold text-TwPrimaryPurple top-0 -left-2 md:-left-4 lg:left-1/2 transform lg:-translate-x-1/2 mt-2 md:mt-4"
                     variants={yearVariants}
                   >
                     {item.year}
@@ -239,7 +246,7 @@ const JourneySection = () => {
                     <motion.img
                       src={Images.About.Timeline1 || "/placeholder.svg"}
                       alt={item.imageAlt}
-                      className="w-full h-auto rounded-xl max-h-[340px] object-cover object-top"
+                      className="w-full h-auto rounded-xl max-h-[280px] md:max-h-[340px] object-cover object-top"
                       whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
                     />
                   </motion.div>

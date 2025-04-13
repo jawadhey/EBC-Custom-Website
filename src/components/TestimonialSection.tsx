@@ -80,7 +80,7 @@ const TestimonialVideoSection = ({ Text }: any) => {
   };
 
   return (
-    <div className="py-16 bg-purple-50" ref={ref}>
+    <div className="py-12 md:py-16 bg-purple-50" ref={ref}>
       <Container>
         <motion.div
           className="mx-auto"
@@ -88,10 +88,10 @@ const TestimonialVideoSection = ({ Text }: any) => {
           animate={inView ? "visible" : "hidden"}
           variants={containerVariants}
         >
-          <div className="grid md:grid-cols-12 gap-8 items-center">
+          <div className="grid md:grid-cols-12 gap-6 md:gap-8 items-center">
             {/* Left Column - Video */}
             <motion.div
-              className="relative col-span-7"
+              className="relative md:col-span-7 col-span-12"
               variants={videoVariants}
             >
               <motion.div
@@ -101,28 +101,32 @@ const TestimonialVideoSection = ({ Text }: any) => {
                 }}
                 transition={{ duration: 0.4 }}
               >
-                <img src={Images.About.Graduate} alt="Students in library" className="w-full h-auto object-cover max-h-[400px] rounded-2xl" />
+                <img
+                  src={Images.About.Graduate}
+                  alt="Students in library"
+                  className="w-full h-auto object-cover max-h-[300px] md:max-h-[400px] rounded-xl md:rounded-2xl"
+                />
               </motion.div>
 
               {/* Play Button Overlay */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <motion.button
-                  className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg"
+                  className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center shadow-lg"
                   variants={playButtonVariants}
                   whileHover="hover"
                 >
-                  <FaPlay className="text-TwPrimaryPurple ml-1" />
+                  <FaPlay className="text-TwPrimaryPurple ml-1 text-sm md:text-base" />
                 </motion.button>
               </div>
             </motion.div>
 
             {/* Right Column - Testimonial */}
             <motion.div
-              className="col-span-5"
+              className="md:col-span-5 col-span-12"
               variants={contentVariants}
             >
               <motion.div
-                className="inline-block px-4 py-2 rounded-full bg-red-100 text-red-500 text-sm mb-6"
+                className="inline-block px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-red-100 text-red-500 text-xs md:text-sm mb-4 md:mb-6"
                 variants={itemVariants}
                 whileHover={{
                   scale: 1.05,
@@ -134,14 +138,14 @@ const TestimonialVideoSection = ({ Text }: any) => {
               </motion.div>
 
               <motion.h2
-                className="text-3xl md:text-4xl font-bold text-gray-700 mb-6"
+                className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-700 mb-4 md:mb-6 !leading-tight"
                 variants={itemVariants}
               >
                 What our students say about us
               </motion.h2>
 
               <motion.p
-                className="text-gray-600"
+                className="text-gray-600 text-sm md:text-base !leading-relaxed"
                 variants={itemVariants}
               >
                 {Text || "Our students' journeys speak for themselves! From securing admissions in top medical universities to thriving in their careers, their success stories reflect our commitment to guiding them every step of the way. Watch the video to hear firsthand experiences and discover how we make studying abroad a seamless and rewarding experience."}

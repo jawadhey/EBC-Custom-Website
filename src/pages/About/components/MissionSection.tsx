@@ -13,8 +13,8 @@ interface MissionVisionSectionProps {
 
 const MissionVisionSection = ({ heading, tagline, programs }: MissionVisionSectionProps) => {
   const [ref, inView] = useInView({
-    threshold: 0.3,
-    triggerOnce: false
+    threshold: 0.2,
+    triggerOnce: true
   });
 
   const containerVariants = {
@@ -22,8 +22,8 @@ const MissionVisionSection = ({ heading, tagline, programs }: MissionVisionSecti
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1
+        staggerChildren: 0.1,
+        delayChildren: 0.2
       }
     }
   };
@@ -34,20 +34,20 @@ const MissionVisionSection = ({ heading, tagline, programs }: MissionVisionSecti
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.5,
+        duration: 0.4,
         ease: "easeOut"
       }
     }
   };
 
   const cardVariants = {
-    hidden: { y: 40, opacity: 0 },
+    hidden: { y: 30, opacity: 0 },
     visible: (index: number) => ({
       y: 0,
       opacity: 1,
       transition: {
-        delay: 0.3 + index * 0.2,
-        duration: 0.6,
+        delay: 0.2 + index * 0.15,
+        duration: 0.5,
         ease: "backOut"
       }
     })
@@ -68,7 +68,7 @@ const MissionVisionSection = ({ heading, tagline, programs }: MissionVisionSecti
   const displayPrograms = programs || defaultPrograms;
 
   return (
-    <div className="py-16 bg-white" ref={ref}>
+    <div className="py-12 md:py-16 bg-white" ref={ref}>
       <Container>
         <motion.div
           className="mx-auto"
@@ -78,16 +78,16 @@ const MissionVisionSection = ({ heading, tagline, programs }: MissionVisionSecti
         >
           {/* Top Badge */}
           <motion.div
-            className="flex justify-center mb-6"
+            className="flex justify-center mb-4 md:mb-6"
             variants={itemVariants}
           >
             <motion.div
-              className="bg-purple-100 text-TwPrimaryPurple px-6 py-2 rounded-full inline-block"
+              className="bg-purple-100 text-TwPrimaryPurple px-4 py-1.5 md:px-6 md:py-2 rounded-full inline-block text-sm md:text-base"
               whileHover={{
                 scale: 1.05,
                 backgroundColor: "#f3e8ff"
               }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.2 }}
             >
               {tagline || "What we thrive for"}
             </motion.div>
@@ -95,7 +95,7 @@ const MissionVisionSection = ({ heading, tagline, programs }: MissionVisionSecti
 
           {/* Heading */}
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-gray-700 text-center mb-4"
+            className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-700 text-center mb-3 md:mb-4 !leading-tight"
             variants={itemVariants}
           >
             {heading || "Programs Offered"}
@@ -103,7 +103,7 @@ const MissionVisionSection = ({ heading, tagline, programs }: MissionVisionSecti
 
           {/* Subheading */}
           <motion.p
-            className="text-gray-500 text-center max-w-5xl mx-auto mb-12"
+            className="text-gray-500 text-center max-w-5xl mx-auto mb-8 md:mb-12 text-sm md:text-base !leading-relaxed"
             variants={itemVariants}
           >
             {programs ?
@@ -112,34 +112,34 @@ const MissionVisionSection = ({ heading, tagline, programs }: MissionVisionSecti
           </motion.p>
 
           {/* Programs Grid */}
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
             {displayPrograms.map((program, index) => (
               <motion.div
                 key={index}
-                className={`rounded-2xl p-8 ${index % 2 === 0 ? 'bg-purple-50' : 'bg-amber-50'}`}
+                className={`rounded-xl md:rounded-2xl p-5 sm:p-6 md:p-8 ${index % 2 === 0 ? 'bg-purple-50' : 'bg-amber-50'}`}
                 custom={index}
                 variants={cardVariants}
                 whileHover={{
-                  y: -5,
+                  y: -3,
                   boxShadow: index % 2 === 0 ?
-                    "0 10px 25px -5px rgba(124, 58, 237, 0.2)" :
-                    "0 10px 25px -5px rgba(245, 158, 11, 0.2)",
-                  transition: { duration: 0.3 }
+                    "0 5px 15px -3px rgba(124, 58, 237, 0.2)" :
+                    "0 5px 15px -3px rgba(245, 158, 11, 0.2)",
+                  transition: { duration: 0.2 }
                 }}
               >
                 <motion.h3
-                  className="text-2xl font-semibold text-gray-800 mb-6 pb-4 border-b border-purple-100"
+                  className="text-xl md:text-2xl font-semibold text-gray-800 mb-3 md:mb-4 pb-2 md:pb-4 border-b border-purple-100"
                   initial={{ opacity: 0 }}
                   animate={inView ? { opacity: 1 } : {}}
-                  transition={{ delay: 0.5 + index * 0.1, duration: 0.4 }}
+                  transition={{ delay: 0.3 + index * 0.1, duration: 0.3 }}
                 >
                   {program.title}
                 </motion.h3>
                 <motion.p
-                  className="text-gray-600"
+                  className="text-gray-600 text-sm md:text-base"
                   initial={{ opacity: 0 }}
                   animate={inView ? { opacity: 1 } : {}}
-                  transition={{ delay: 0.7 + index * 0.1, duration: 0.4 }}
+                  transition={{ delay: 0.4 + index * 0.1, duration: 0.3 }}
                 >
                   {program.description}
                 </motion.p>

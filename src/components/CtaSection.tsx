@@ -70,33 +70,34 @@ const CtaSection = ({ backgroundImage, Heading, Text }: any) => {
 
   return (
     <Container>
-      <div className="py-16 bg-purple-50 overflow-hidden relative" ref={ref}>
+      <div className="py-12 md:py-16 bg-purple-50 overflow-hidden relative" ref={ref}>
         <img
           src={backgroundImage || Images.About.ContactBg}
           className="absolute object-cover left-0 top-0 w-full h-full z-10"
+          alt="CTA background"
         />
 
         <motion.div
-          className="z-20 mx-auto relative px-8 lg:px-16"
+          className="z-20 mx-auto relative px-4 sm:px-6 lg:px-8"
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           variants={containerVariants}
         >
-          <div className="grid md:grid-cols-12 gap-16 items-center">
+          <div className="grid md:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-center">
             {/* Left Content */}
             <div className="col-span-full lg:col-span-8">
               <motion.h2
-                className="text-3xl md:text-4xl font-bold text-gray-700 mb-6"
+                className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-700 mb-4 md:mb-6 !leading-tight"
                 variants={contentVariants}
               >
-                {Heading || 'Lorem'}
+                {Heading || 'Ready to start your journey?'}
               </motion.h2>
 
               <motion.p
-                className="text-gray-600 mb-8"
+                className="text-gray-600 mb-6 md:mb-8 text-sm md:text-base !leading-relaxed"
                 variants={contentVariants}
               >
-                {Text || 'Lorem'}
+                {Text || 'Our team is here to guide you through every step of your international education journey. Get in touch today to learn more about our services.'}
               </motion.p>
             </div>
 
@@ -108,17 +109,17 @@ const CtaSection = ({ backgroundImage, Heading, Text }: any) => {
               <motion.img
                 src={Images.About.Contact}
                 alt="Business professional"
-                className="w-full max-h-[200px] max-w-[200px] h-full rounded-lg mb-4"
+                className="w-full max-h-[160px] md:max-h-[200px] max-w-[160px] md:max-w-[200px] h-full rounded-lg mb-3 md:mb-4"
                 variants={imageVariants}
                 whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
               />
 
               <motion.button
-                className="bg-TwPrimaryPurple text-white px-6 py-3 rounded-lg flex items-center hover:bg-TwPrimaryPurpleBgHover transition-colors"
+                className="bg-TwPrimaryPurple text-white px-4 py-2 md:px-6 md:py-3 rounded-lg flex items-center hover:bg-TwPrimaryPurpleBgHover transition-colors text-sm md:text-base"
                 variants={buttonVariants}
                 whileHover="hover"
               >
-                Contact Us <FaArrowRight className="ml-2" />
+                Contact Us <FaArrowRight className="ml-2 text-xs md:text-sm" />
               </motion.button>
             </motion.div>
           </div>
