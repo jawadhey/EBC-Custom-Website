@@ -188,8 +188,8 @@ const HelpSection = () => {
                 <motion.div
                   key={index}
                   className={`rounded-xl p-4 md:p-6 cursor-pointer transition-all duration-300 ${activeIndex === index
-                    ? "bg-[#FFC2551A] border-l-4 border-[#ffc15552]"
-                    : "bg-purple-50 hover:bg-purple-100"
+                    ? "bg-[#ffcd767c] border-l-4 border-[#ffc15552]"
+                    : "bg-purple-200 hover:bg-purple-300"
                     }`}
                   variants={cardVariants}
                   custom={index}

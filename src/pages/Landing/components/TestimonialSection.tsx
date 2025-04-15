@@ -201,7 +201,7 @@ const TestimonialSection = () => {
   }, [inView])
 
   return (
-    <div className="py-8 md:py-16 bg-[#FFF7E8] overflow-hidden" ref={ref}>
+    <div className="py-8 md:py-16 bg-TwOrangeBg overflow-hidden" ref={ref}>
       <Container>
         <motion.div
           className="mx-auto"

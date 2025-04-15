@@ -182,7 +182,7 @@ const FaqSection = () => {
                   variants={itemVariants}
                >
                   <motion.div
-                     className="bg-purple-100 text-TwPrimaryPurple px-4 py-1.5 md:px-6 md:py-2 rounded-full inline-block text-sm md:text-base"
+                     className="bg-purple-200 text-TwPrimaryPurple px-4 py-1.5 md:px-6 md:py-2 rounded-full inline-block text-sm md:text-base"
                      variants={badgeVariants}
                   >
                      Clearing out your confusions
@@ -212,7 +212,7 @@ const FaqSection = () => {
                >
                   {/* About Us FAQs */}
                   <motion.div
-                     className="bg-purple-50 rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8"
+                     className="bg-purple-200 rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8"
                      variants={faqItemVariants}
                      whileHover={{ y: -3, transition: { duration: 0.2 } }}
                   >
@@ -270,7 +270,7 @@ const FaqSection = () => {
 
                   {/* Our Programs FAQs */}
                   <motion.div
-                     className="bg-[#FFF7E8] rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8"
+                     className="bg-TwOrangeBg rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8"
                      variants={faqItemVariants}
                      whileHover={{ y: -3, transition: { duration: 0.2 } }}
                   >

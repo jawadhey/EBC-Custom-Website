@@ -174,7 +174,7 @@ const GraduatesSection = () => {
               {sections.map((section, index) => (
                 <motion.div
                   key={index}
-                  className="bg-purple-50 rounded-lg md:rounded-xl p-4 md:p-6"
+                  className="bg-purple-200 rounded-lg md:rounded-xl p-4 md:p-6"
                   variants={textBlockVariants}
                   whileHover={{
                     y: -5,

@@ -19,6 +19,12 @@ module.exports = {
       colors: {
         TwPrimaryPurple: '#7436EA',
         TwPrimaryPurpleBgHover: '#5d2fb3',
+
+        TwOrangeBg: '#ffcd767c',
+        TwOrangeBgHover: '#ffc15552',
+        
+        TwPurpleBg: '#5d2fb3',
+        TwPurpleBgHover: '#D9C4FF',
       },
 
       animation: {

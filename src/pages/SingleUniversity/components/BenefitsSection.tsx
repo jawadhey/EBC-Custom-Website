@@ -134,7 +134,7 @@ const BenefitsSection = ({ benefits }: { benefits: BenefitsProps }) => {
                   {benefits.content.map((benefit: BenefitItem, index: number) => (
                      <motion.div
                         key={benefit.id}
-                        className="bg-amber-50 bg-opacity-50 p-4 md:p-6 rounded-lg"
+                        className="bg-amber-100 bg-opacity-50 p-4 md:p-6 rounded-lg"
                         custom={index}
                         variants={cardVariants}
                         whileHover="hover"

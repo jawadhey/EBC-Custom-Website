@@ -116,7 +116,7 @@ const MissionVisionSection = ({ heading, tagline, programs }: MissionVisionSecti
             {displayPrograms.map((program, index) => (
               <motion.div
                 key={index}
-                className={`rounded-xl md:rounded-2xl p-5 sm:p-6 md:p-8 ${index % 2 === 0 ? 'bg-purple-50' : 'bg-amber-50'}`}
+                className={`rounded-xl md:rounded-2xl p-5 sm:p-6 md:p-8 ${index % 2 === 0 ? 'bg-purple-200' : 'bg-TwOrangeBg'}`}
                 custom={index}
                 variants={cardVariants}
                 whileHover={{

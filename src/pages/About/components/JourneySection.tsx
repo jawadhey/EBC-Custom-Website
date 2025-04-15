@@ -221,7 +221,7 @@ const JourneySection = () => {
                     variants={index % 2 === 0 ? textVariants : imageVariants}
                   >
                     <motion.div
-                      className="bg-purple-50 rounded-xl p-4 md:p-6 lg:p-8"
+                      className="bg-purple-200 rounded-xl p-4 md:p-6 lg:p-8"
                       whileHover={{ y: -5, transition: { duration: 0.2 } }}
                     >
                       <h3 className="text-lg md:text-xl font-semibold text-gray-800 mb-2 md:mb-4 !leading-snug">

@@ -80,7 +80,7 @@ const TestimonialVideoSection = ({ Text }: any) => {
   };
 
   return (
-    <div className="py-8 md:py-16 bg-purple-50" ref={ref}>
+    <div className="py-8 md:py-16 bg-purple-200" ref={ref}>
       <Container>
         <motion.div
           className="mx-auto"
@@ -126,7 +126,7 @@ const TestimonialVideoSection = ({ Text }: any) => {
               variants={contentVariants}
             >
               <motion.div
-                className="inline-block px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-red-100 text-red-500 text-xs md:text-sm mb-4 md:mb-6"
+                className="inline-block px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-gray-200 text-gray-700 text-xs md:text-sm mb-4 md:mb-6"
                 variants={itemVariants}
                 whileHover={{
                   scale: 1.05,

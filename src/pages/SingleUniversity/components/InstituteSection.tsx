@@ -183,7 +183,7 @@ const InstitutionSection = ({ Heading, Text }: InstitutionSectionProps) => {
 
                {/* Image Gallery */}
                <motion.div
-                  className="bg-purple-50 p-4 sm:p-6 md:p-8 rounded-xl md:rounded-2xl"
+                  className="bg-purple-200 p-4 sm:p-6 md:p-8 rounded-xl md:rounded-2xl"
                   variants={galleryContainerVariants}
                >
                   <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
