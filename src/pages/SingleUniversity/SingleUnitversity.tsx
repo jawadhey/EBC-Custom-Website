@@ -34,6 +34,7 @@ const SingleUnitversity = () => {
             buttonText="Book Consultation Now"
             buttonLink="/contact"
             backgroundImage={university.heroImage}
+            isSingleUniversity
          />
          {/* <StatsSection /> */}
          <StatsSection

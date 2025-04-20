@@ -21,7 +21,7 @@ const EventsPage = () => {
             description="Stay connected with EBC through our latest events, seminars, and webinars held across different countries. Whether you're looking for admission guidance, visa tips, or direct interaction with university representatives, our events are the perfect opportunity to get all your questions answered in person. "
             buttonText="Book Consultation Now"
             buttonLink="/contact-us"
-            backgroundImage={Images.Universities.UniversityHero}
+            backgroundImage={Images.Events.HeroImage}
          />
          <InstitutionSection
             Heading="Take a Look at the Seminars We Have Been Conducting"

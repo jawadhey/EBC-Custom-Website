@@ -9,6 +9,7 @@ import "swiper/css"
 import "swiper/css/pagination"
 import "swiper/css/navigation"
 import Container from "../../../components/Container"
+import { Images } from "../../../assets/images"
 
 // Animation variants
 const containerVariants = {
@@ -17,9 +18,9 @@ const containerVariants = {
     opacity: 1,
     transition: {
       staggerChildren: 0.2,
-      delayChildren: 0.3
-    }
-  }
+      delayChildren: 0.3,
+    },
+  },
 }
 
 const itemVariants = {
@@ -29,9 +30,9 @@ const itemVariants = {
     opacity: 1,
     transition: {
       duration: 0.5,
-      ease: "easeOut"
-    }
-  }
+      ease: "easeOut",
+    },
+  },
 }
 
 const serviceCardVariants = {
@@ -42,9 +43,9 @@ const serviceCardVariants = {
     transition: {
       delay: 0.2 + i * 0.1,
       duration: 0.6,
-      ease: "easeOut"
-    }
-  })
+      ease: "easeOut",
+    },
+  }),
 }
 
 const iconVariants = {
@@ -54,68 +55,89 @@ const iconVariants = {
     opacity: 1,
     transition: {
       duration: 0.5,
-      ease: "anticipate"
-    }
-  }
+      ease: "anticipate",
+    },
+  },
 }
 
 const ServicesSection = () => {
   const [ref, inView] = useInView({
     threshold: 0.1,
-    triggerOnce: true
+    triggerOnce: true,
   })
 
   const services = [
     {
-      icon: <FaStethoscope className="text-white text-xl sm:text-2xl" />,
+      icon: <FaStethoscope className="text-white text-xl" />,
       title: "MBBS in China",
       description:
-        "Get globally recognized medical education at affordable costs, with modern facilities and English-taught programs.",
+        "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
+      image: Images.Services.Service4,
     },
     {
-      icon: <FaHardHat className="text-white text-xl sm:text-2xl" />,
+      icon: <FaHardHat className="text-white text-xl" />,
       title: "PFP for Engineers",
       description:
-        "A pre-foundation program designed to help aspiring engineers meet academic and language requirements for international universities.",
-    },
-    {
-      icon: <FaPills className="text-white text-xl sm:text-2xl" />,
-      title: "MD in Europe",
-      description:
-        "Study medicine in top-tier European universities with world-class faculty, clinical exposure, and global career opportunities.",
-    },
-    {
-      icon: <FaFlag className="text-white text-xl sm:text-2xl" />,
-      title: "Study in USA",
-      description:
-        "Pursue your academic dreams in the USA with guidance on admission, visa process, and choosing the right university.",
-    },
-    {
-      icon: <FaStethoscope className="text-white text-xl sm:text-2xl" />,
-      title: "MBBS in Australia",
-      description:
-        "Access high-quality medical education in Australia, known for its research excellence and modern clinical training.",
-    },
-    {
-      icon: <FaPills className="text-white text-xl sm:text-2xl" />,
-      title: "MD in Europe",
-      description:
-        "Enroll in structured MD programs across Europe with globally respected degrees and hands-on experience in advanced hospitals.",
-    },
-    {
-      icon: <FaFlag className="text-white text-xl sm:text-2xl" />,
-      title: "Study in USA",
-      description:
-        "Explore undergraduate and graduate programs in the USA, with full support from application to arrival.",
-    },
-    {
-      icon: <FaStethoscope className="text-white text-xl sm:text-2xl" />,
-      title: "MBBS in Australia",
-      description:
-        "Join top-ranked medical schools in Australia with a focus on innovation, practical learning, and international recognition.",
-    },
-  ];
+        "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
+      // image: "/placeholder.svg?height=192&width=384",
+      image: Images.Services.Service3,
 
+    },
+    {
+      icon: <FaPills className="text-white text-xl" />,
+      title: "MD in Europe",
+      description:
+        "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
+      // image: "/placeholder.svg?height=192&width=384",
+      image: Images.Services.Service1,
+
+    },
+    {
+      icon: <FaFlag className="text-white text-xl" />,
+      title: "Study in USA",
+      description:
+        "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
+      // image: "/placeholder.svg?height=192&width=384",
+      image: Images.Services.Service2,
+
+    },
+    {
+      icon: <FaStethoscope className="text-white text-xl" />,
+      title: "MBBS in Australia",
+      description:
+        "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
+      // image: "/placeholder.svg?height=192&width=384",
+      image: Images.Services.Service1,
+
+    },
+    {
+      icon: <FaPills className="text-white text-xl" />,
+      title: "MD in Europe",
+      description:
+        "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
+      // image: "/placeholder.svg?height=192&width=384",
+      image: Images.Services.Service3,
+
+    },
+    {
+      icon: <FaFlag className="text-white text-xl" />,
+      title: "Study in USA",
+      description:
+        "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
+      // image: "/placeholder.svg?height=192&width=384",
+      image: Images.Services.Service4,
+
+    },
+    {
+      icon: <FaStethoscope className="text-white text-xl" />,
+      title: "MBBS in Australia",
+      description:
+        "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
+      // image: "/placeholder.svg?height=192&width=384",
+      image: Images.Services.Service2,
+
+    },
+  ]
 
   return (
     <div className="py-8 md:py-16 overflow-hidden" ref={ref}>
@@ -139,7 +161,8 @@ const ServicesSection = () => {
             className="text-gray-500 text-center max-w-3xl mx-auto mb-8 md:mb-12 text-sm md:text-base !leading-relaxed"
             variants={itemVariants}
           >
-            Explore our wide range of academic programs and global opportunities tailored to shape your professional journey and future success.
+            Explore our wide range of academic programs and global opportunities tailored to shape your professional
+            journey and future success.
           </motion.p>
 
           {/* Services Swiper */}
@@ -160,15 +183,15 @@ const ServicesSection = () => {
             breakpoints={{
               640: {
                 slidesPerView: 2,
-                spaceBetween: 24
+                spaceBetween: 20,
               },
               1024: {
                 slidesPerView: 3,
-                spaceBetween: 24
+                spaceBetween: 20,
               },
               1280: {
                 slidesPerView: 4,
-                spaceBetween: 24
+                spaceBetween: 20,
               },
             }}
             modules={[Autoplay, Pagination, Navigation]}
@@ -177,43 +200,41 @@ const ServicesSection = () => {
             {services.map((service, index) => (
               <SwiperSlide key={index}>
                 <motion.div
-                  className="bg-white rounded-lg shadow-TwBoxShadow p-5 sm:p-6 h-full flex flex-col"
+                  className="bg-white rounded-lg shadow-md overflow-hidden h-full flex flex-col relative"
                   variants={serviceCardVariants}
                   custom={index}
                   whileHover={{
                     y: -5,
-                    transition: { duration: 0.3 }
+                    transition: { duration: 0.3 },
                   }}
                 >
-                  <motion.div
-                    className="bg-TwPrimaryPurple w-12 h-12 sm:w-16 sm:h-16 rounded-lg flex items-center justify-center mb-4 sm:mb-6"
-                    variants={iconVariants}
-                  >
-                    {service.icon}
-                  </motion.div>
+                  {/* Background Image */}
+                  <div className="w-full h-48 relative">
+                    <img
+                      // src={`/placeholder.svg?height=192&width=384`}
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover"
+                    />
 
-                  <motion.h3
-                    className="text-lg sm:text-xl font-semibold text-gray-800 mb-3 sm:mb-4"
-                    variants={itemVariants}
-                  >
-                    {service.title}
-                  </motion.h3>
+                    {/* Icon Badge */}
+                    <div className="absolute bottom-0 translate-y-1/2 left-4 bg-purple-600 w-12 h-12 rounded-lg flex items-center justify-center">
+                      {service.icon}
+                    </div>
+                  </div>
 
-                  <motion.p
-                    className="text-gray-600 mb-4 sm:mb-6 flex-grow text-sm sm:text-base"
-                    variants={itemVariants}
-                  >
-                    {service.description}
-                  </motion.p>
+                  <div className="p-5 mt-5">
+                    <h3 className="text-lg font-semibold text-gray-800 mb-3">{service.title}</h3>
 
-                  <motion.a
-                    href="#"
-                    className="text-TwPrimaryPurple font-medium flex items-center hover:text-purple-700 transition-colors text-sm sm:text-base"
-                    variants={itemVariants}
-                    whileHover={{ x: 5 }}
-                  >
-                    View More <FaArrowRight className="ml-2" />
-                  </motion.a>
+                    <p className="text-gray-600 mb-4 text-sm">{service.description}</p>
+
+                    <a
+                      href="#"
+                      className="text-purple-600 font-medium flex items-center hover:text-purple-700 transition-colors text-sm"
+                    >
+                      View More <FaArrowRight className="ml-2" />
+                    </a>
+                  </div>
                 </motion.div>
               </SwiperSlide>
             ))}

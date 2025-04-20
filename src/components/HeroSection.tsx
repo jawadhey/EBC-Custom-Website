@@ -9,6 +9,7 @@ interface HeroSectionProps {
    buttonLink?: string;
    backgroundImage?: string;
    overlayColor?: string;
+   isSingleUniversity?: boolean
 }
 
 const HeroSection = ({
@@ -18,6 +19,7 @@ const HeroSection = ({
    buttonText,
    buttonLink = "#",
    backgroundImage = "/students-group.jpg",
+   isSingleUniversity,
    overlayColor = "rgba(67, 56, 202, 0.5)", // Purple overlay with 50% opacity
 }: HeroSectionProps) => {
    const [ref, inView] = useInView({
@@ -117,7 +119,7 @@ const HeroSection = ({
             />
             <div
                className="absolute inset-0"
-               style={{ backgroundColor: overlayColor }}
+               style={{ backgroundColor: isSingleUniversity ? overlayColor : '' }}
                aria-hidden="true"
             ></div>
          </motion.div>

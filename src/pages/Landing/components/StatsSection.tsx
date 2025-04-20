@@ -1,6 +1,7 @@
 import Container from "../../../components/Container"
 import { motion } from "motion/react"
 import { useInView } from "react-intersection-observer"
+import CountUp from "react-countup";
 
 interface StatItem {
    value: React.ReactNode;
@@ -30,14 +31,12 @@ const StatsSection = ({ stats }: StatsSectionProps) => {
       }
    }
 
-   // Default stats if none are provided
    const defaultStats: StatItem[] = [
-      { value: "15,000", label: "Students Enrolled", description: "Making dreams a reality" },
-      { value: "Top-Ranked", label: "Universities ", description: "Globally recognized institutions" },
-      { value: "100%", label: "Visa Success Rate ", description: "Smooth and stress-free process" }
+      { value: 15000, label: "Students Enrolled", description: "Making dreams a reality" },
+      { value: "Top-Ranked", label: "Universities", description: "Globally recognized institutions" },
+      { value: 100, label: "Visa Success Rate", description: "Smooth and stress-free process" }
    ];
 
-   // Use provided stats or fall back to defaults
    const displayStats = stats || defaultStats;
 
    return (
@@ -46,7 +45,8 @@ const StatsSection = ({ stats }: StatsSectionProps) => {
             <motion.div
                initial="hidden"
                animate={inView ? "visible" : "hidden"}
-               className="mx-auto">
+               className="mx-auto"
+            >
                {/* Heading */}
                <motion.h2
                   className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-700 text-center mb-8 md:mb-12 lg:mb-16 max-w-3xl mx-auto !leading-tight"
@@ -89,25 +89,47 @@ const StatsSection = ({ stats }: StatsSectionProps) => {
                                  duration: 0.5
                               }}
                            >
-                              {stat.value}
+                              {typeof stat.value === "number" ? (
+                                 <CountUp
+                                    start={inView ? 0 : undefined}
+                                    end={stat.value as number}
+                                    duration={2}
+                                    separator=","
+                                 />
+                              ) : (
+                                 stat.value
+                              )}
                            </motion.span>
-                           {
-                              index === 0 && !stats && ( // Only show the "+" for the first default stat
-                                 <motion.span
-                                    className="text-yellow-500 text-4xl sm:text-5xl font-bold"
-                                    initial={{ scale: 0 }}
-                                    animate={inView ? { scale: 1 } : {}}
-                                    transition={{
-                                       delay: 0.4 + index * 0.15,
-                                       duration: 0.3,
-                                       type: "spring",
-                                       stiffness: 300
-                                    }}
-                                 >
-                                    +
-                                 </motion.span>
-                              )
-                           }
+                           {index === 0 && !stats && (
+                              <motion.span
+                                 className="text-yellow-500 text-4xl sm:text-5xl font-bold"
+                                 initial={{ scale: 0 }}
+                                 animate={inView ? { scale: 1 } : {}}
+                                 transition={{
+                                    delay: 0.4 + index * 0.15,
+                                    duration: 0.3,
+                                    type: "spring",
+                                    stiffness: 300
+                                 }}
+                              >
+                                 +
+                              </motion.span>
+                           )}
+                           {index === 2 && typeof stat.value === "number" && (
+                              <motion.span
+                                 className="text-yellow-500 text-3xl sm:text-4xl font-bold ml-1"
+                                 initial={{ scale: 0 }}
+                                 animate={inView ? { scale: 1 } : {}}
+                                 transition={{
+                                    delay: 0.4 + index * 0.15,
+                                    duration: 0.3,
+                                    type: "spring",
+                                    stiffness: 300
+                                 }}
+                              >
+                                 %
+                              </motion.span>
+                           )}
                         </div>
                         <motion.p
                            className="text-base md:text-lg font-medium text-gray-700 mb-2 md:mb-4"
@@ -132,7 +154,7 @@ const StatsSection = ({ stats }: StatsSectionProps) => {
                            {stat.description}
                         </motion.p>
 
-                        {/* Right divider (visible only on desktop) */}
+                        {/* Right divider (desktop only) */}
                         {index < displayStats.length - 1 && (
                            <div className="hidden md:block absolute right-0 top-0 bottom-0 w-px bg-gray-200 h-full"></div>
                         )}

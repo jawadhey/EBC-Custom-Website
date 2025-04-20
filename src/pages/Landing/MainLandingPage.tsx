@@ -22,7 +22,7 @@ const MainLandingPage = () => {
       <StatsSection/>
       <ServicesSection/>
       <HelpSection/>
-      <ProgramsSection/>
+      <ProgramsSection isLanding/>
       <ContactSection/>
       <FoundersMessageSection/>
       <TestimonialSection/>

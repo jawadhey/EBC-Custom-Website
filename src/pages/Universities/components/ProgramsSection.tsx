@@ -60,7 +60,7 @@ const cardVariants = {
   })
 }
 
-const ProgramsSection = () => {
+const ProgramsSection = ({ isLanding }: { isLanding?: boolean }) => {
   const [activeTab, setActiveTab] = useState("all")
   const [ref, inView] = useInView({
     threshold: 0.1,
@@ -132,7 +132,7 @@ const ProgramsSection = () => {
             className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-700 text-center mb-3 md:mb-4 !leading-tight"
             variants={itemVariants}
           >
-            Programs We Offer
+            Our Executive Universities
           </motion.h2>
 
           {/* Subheading */}
@@ -140,32 +140,35 @@ const ProgramsSection = () => {
             className="text-gray-500 text-center max-w-5xl mx-auto mb-8 md:mb-12 text-sm md:text-base !leading-relaxed"
             variants={itemVariants}
           >
-            Explore top-ranked universities offering world-class education in <b>medicine, engineering, and other fields</b>. Whether you're aiming for an MBBS in China or a degree in another discipline, we guide you toward the best options that fit your goals and budget.
+            Discover our top-tier partner universities that offer world-class education and global career opportunities. These executive institutions are handpicked to ensure quality, recognition, and a bright future for our students.
           </motion.p>
 
           {/* Tabs */}
-          <motion.div
-            className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 md:mb-12"
-            variants={containerVariants}
-          >
-            {categories.map((category, index) => (
-              <motion.button
-                key={category.id}
-                onClick={() => setActiveTab(category.id)}
-                className={`px-3 sm:px-4 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-medium transition-colors ${activeTab === category.id ? "bg-TwPrimaryPurple text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                  }`}
-                variants={buttonVariants}
-                custom={index}
-                whileHover={{
-                  scale: 1.05,
-                  transition: { duration: 0.2 }
-                }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {category.name}
-              </motion.button>
-            ))}
-          </motion.div>
+          {!isLanding && (
+            <motion.div
+              className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 md:mb-12"
+              variants={containerVariants}
+            >
+              {categories.map((category, index) => (
+                <motion.button
+                  key={category.id}
+                  onClick={() => setActiveTab(category.id)}
+                  className={`px-3 sm:px-4 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-medium transition-colors ${activeTab === category.id ? "bg-TwPrimaryPurple text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                    }`}
+                  variants={buttonVariants}
+                  custom={index}
+                  whileHover={{
+                    scale: 1.05,
+                    transition: { duration: 0.2 }
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {category.name}
+                </motion.button>
+              ))}
+            </motion.div>
+          )}
+
 
           {/* Programs Grid */}
           <motion.div

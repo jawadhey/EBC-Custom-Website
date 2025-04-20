@@ -30,6 +30,13 @@ import InstituteMain from './Universities/Frame 79 (4).png'
 import TeamImage from './Universities/Image (1).png'
 
 
+import Service1 from './Landing/Services/Frame 3312-1.png'
+import Service2 from './Landing/Services/Frame 3312-2.png'
+import Service3 from './Landing/Services/Frame 3312.png'
+import Service4 from './Landing/Services/Frame 33121.png'
+
+import HeroImage from './General/Frame 3268.png'
+
 
 export const Images = {
    LandingHero,
@@ -63,5 +70,14 @@ export const Images = {
       UniversityBack,
       InstituteMain,
       TeamImage
+   },
+   Services: {
+      Service1,
+      Service2,
+      Service3,
+      Service4
+   },
+   Events: {
+      HeroImage
    }
 }

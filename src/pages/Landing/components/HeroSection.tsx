@@ -197,7 +197,7 @@ const LandingHeroSection = () => {
                   <div className="relative">
                      {/* Main image with floating animation */}
                      <motion.div
-                        className="relative mx-auto xl:ml-auto z-10 rounded-3xl max-w-[400px] sm:max-w-[500px] xl:max-w-[550px]"
+                        className="relative mx-auto xl:ml-auto z-10 rounded-3xl max-w-[450px] sm:max-w-[550px] xl:max-w-[650px]"
                      >
                         <img
                            src={Images.LandingHero}
