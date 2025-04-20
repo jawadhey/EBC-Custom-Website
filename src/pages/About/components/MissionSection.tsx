@@ -53,17 +53,39 @@ const MissionVisionSection = ({ heading, tagline, programs }: MissionVisionSecti
     })
   };
 
-  // Default programs if none are provided
   const defaultPrograms = [
     {
-      title: "MBBS Program",
-      description: "Our comprehensive MBBS program provides world-class medical education with hands-on clinical experience."
+      title: "Medical",
+      description:
+        "Step into the world of healthcare with our top-tier medical programs, focused on clinical excellence, hands-on training, and global standards.",
     },
     {
-      title: "MD Program",
-      description: "Advanced medical degree program for graduates looking to specialize in various medical fields."
-    }
+      title: "Engineering",
+      description:
+        "Design, build, and innovate with engineering programs that offer practical experience, modern labs, and future-forward learning.",
+    },
+    {
+      title: "Law",
+      description:
+        "Understand the global legal landscape through comprehensive programs in international law, legal theory, and practical case studies.",
+    },
+    {
+      title: "Business & Finance",
+      description:
+        "Master the art of business with programs in finance, management, and entrepreneurship tailored for global market readiness.",
+    },
+    {
+      title: "Computer & IT",
+      description:
+        "Explore the digital age with courses in software development, data science, and AI, preparing you for tech-driven industries.",
+    },
+    {
+      title: "Post Graduate Programs",
+      description:
+        "Advance your academic journey with specialized postgraduate degrees designed to deepen expertise and expand your career horizons.",
+    },
   ];
+
 
   const displayPrograms = programs || defaultPrograms;
 

@@ -9,12 +9,21 @@ import { Autoplay, EffectCoverflow } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/effect-coverflow'
 import 'swiper/css/autoplay'
-import uni1 from '../../../assets/logos/logo1.png'
-import uni2 from '../../../assets/logos/logo2.png'
-import uni3 from '../../../assets/logos/logo3.png'
-import uni4 from '../../../assets/logos/logo4.png'
-import uni5 from '../../../assets/logos/logo5.png'
-import uni6 from '../../../assets/logos/logo6.jpg'
+import uni1 from '../../../assets/logos/North_China_University_of_Technology.png'
+import uni2 from '../../../assets/logos/Kunming_University_of_Science_and_Technology.png'
+import uni3 from '../../../assets/logos/Birmingham_City_University_Logo.png'
+import uni4 from '../../../assets/logos/EEU_logo.png'
+import uni5 from '../../../assets/logos/Guangxi_Medical_University_wordmark.png'
+import uni6 from '../../../assets/logos/Logo-UB.jpg'
+import uni7 from '../../../assets/logos/Ulaw BS Logo.png'
+import uni8 from '../../../assets/logos/belarusian-state-university-logo-png_seeklogo-484456.png'
+import uni9 from '../../../assets/logos/logo-en_1738066967.png'
+import uni10 from '../../../assets/logos/nakhvhivan.png'
+// import uni2 from '../../../assets/logos/logo2.png'
+// import uni3 from '../../../assets/logos/logo3.png'
+// import uni4 from '../../../assets/logos/logo4.png'
+// import uni5 from '../../../assets/logos/logo5.png'
+// import uni6 from '../../../assets/logos/logo6.jpg'
 
 // Animation variants
 const containerVariants = {
@@ -75,9 +84,13 @@ const LandingHeroSection = () => {
       uni1,
       uni2,
       uni3,
-      // uni4,
+      uni4,
       uni5,
-      uni6
+      uni6,
+      uni7,
+      uni8,
+      uni9,
+      uni10,
    ];
 
    return (
@@ -178,7 +191,7 @@ const LandingHeroSection = () => {
                                  <img
                                     src={image}
                                     alt={`Harvard University ${index + 1}`}
-                                    className="h-auto w-auto max-h-[40px] md:max-h-none object-contain"
+                                    className="h-auto w-auto !max-h-[100px] !max-w-[180px] md:max-h-none object-contain"
                                  />
                               </motion.div>
                            </SwiperSlide>
