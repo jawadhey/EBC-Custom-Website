@@ -10,6 +10,10 @@ import "swiper/css/pagination"
 import "swiper/css/navigation"
 import Container from "../../../components/Container"
 import { Images } from "../../../assets/images"
+import chinaflag from '../../../assets/images/Landing/Countries/china.png'
+import ausflag from '../../../assets/images/Landing/Countries/vecteezy_circle-flag-of-australia_11571471.png'
+import usaflag from '../../../assets/images/Landing/Countries/vecteezy_circle-flag-of-usa_11571446.png'
+import euflag from '../../../assets/images/Landing/Countries/vecteezy_european-union-country-flag-in-circle-shape_34966140.png'
 
 // Animation variants
 const containerVariants = {
@@ -73,69 +77,71 @@ const ServicesSection = () => {
       description:
         "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
       image: Images.Services.Service4,
+      countryFlag: chinaflag, // Path to China flag image
+      countryCode: "CN"
     },
     {
       icon: <FaHardHat className="text-white text-xl" />,
       title: "PFP for Engineers",
       description:
         "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
-      // image: "/placeholder.svg?height=192&width=384",
       image: Images.Services.Service3,
-
+      countryFlag: ausflag, // Path to UK flag image
+      countryCode: "GB"
     },
     {
       icon: <FaPills className="text-white text-xl" />,
       title: "MD in Europe",
       description:
         "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
-      // image: "/placeholder.svg?height=192&width=384",
       image: Images.Services.Service1,
-
+      countryFlag: euflag, // Path to EU flag image
+      countryCode: "EU"
     },
     {
       icon: <FaFlag className="text-white text-xl" />,
       title: "Study in USA",
       description:
         "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
-      // image: "/placeholder.svg?height=192&width=384",
       image: Images.Services.Service2,
-
+      countryFlag: usaflag, // Path to USA flag image
+      countryCode: "US"
     },
     {
       icon: <FaStethoscope className="text-white text-xl" />,
       title: "MBBS in Australia",
       description:
         "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
-      // image: "/placeholder.svg?height=192&width=384",
       image: Images.Services.Service1,
-
+      countryFlag: ausflag, // Path to Australia flag image
+      countryCode: "AU"
     },
     {
       icon: <FaPills className="text-white text-xl" />,
       title: "MD in Europe",
       description:
         "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
-      // image: "/placeholder.svg?height=192&width=384",
       image: Images.Services.Service3,
-
+      countryFlag: euflag, // Path to EU flag image
+      countryCode: "EU"
     },
     {
       icon: <FaFlag className="text-white text-xl" />,
       title: "Study in USA",
       description:
         "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
-      // image: "/placeholder.svg?height=192&width=384",
       image: Images.Services.Service4,
-
+      countryFlag: usaflag, // Path to USA flag image
+      countryCode: "US"
     },
     {
       icon: <FaStethoscope className="text-white text-xl" />,
       title: "MBBS in Australia",
       description:
         "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
-      // image: "/placeholder.svg?height=192&width=384",
       image: Images.Services.Service2,
-
+      countryFlag: ausflag, // Path to Australia flag image
+      countryCode: "AU"
     },
   ]
 
@@ -208,14 +214,29 @@ const ServicesSection = () => {
                     transition: { duration: 0.3 },
                   }}
                 >
-                  {/* Background Image */}
+                  {/* Background Image with Flag */}
                   <div className="w-full h-48 relative">
                     <img
-                      // src={`/placeholder.svg?height=192&width=384`}
                       src={service.image}
                       alt={service.title}
                       className="w-full h-full object-cover"
                     />
+
+                    {/* Country Flag - Circular in top right */}
+                    <div className="absolute top-4 right-4 w-10 h-10 rounded-full overflow-hidden border-2 border-white shadow-md">
+                      {service.countryFlag ? (
+                        <img
+                          src={service.countryFlag}
+                          alt={`${service.title} country flag`}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        // Fallback for when flag image is not available
+                        <div className="w-full h-full bg-gray-200 flex items-center justify-center text-xs font-bold">
+                          {service.countryCode || "?"}
+                        </div>
+                      )}
+                    </div>
 
                     {/* Icon Badge */}
                     <div className="absolute bottom-0 translate-y-1/2 left-4 bg-purple-600 w-12 h-12 rounded-lg flex items-center justify-center">

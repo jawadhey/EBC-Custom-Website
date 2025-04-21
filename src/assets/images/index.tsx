@@ -37,6 +37,14 @@ import Service4 from './Landing/Services/Frame 33121.png'
 
 import HeroImage from './General/Frame 3268.png'
 
+import Hero1 from './Landing/Hero/Frame 6 (1).png'
+import Hero2 from './Landing/Hero/Frame 6 (2).png'
+import Hero3 from './Landing/Hero/Frame 6 (3).png'
+import Hero4 from './Landing/Hero/Frame 6 (4).png'
+import Hero5 from './Landing/Hero/Frame 6 (5).png'
+import Hero6 from './Landing/Hero/Frame 6 (6).png'
+import Hero7 from './Landing/Hero/Frame 6 (7).png'
+
 
 export const Images = {
    LandingHero,
@@ -79,5 +87,15 @@ export const Images = {
    },
    Events: {
       HeroImage
+   },
+   Landing: {
+      Hero1,
+      Hero2,
+      Hero3,
+      Hero4,
+      Hero5,
+      Hero6,
+      Hero7,
+
    }
 }

@@ -12,7 +12,7 @@ const SiteLayout = () => {
 
    return (
       <div className="font-poppins text-[16px] relative">
-         <Navbar isAbsolute={isAbsolute} />
+         <Navbar />
          <Outlet />
          <Footer />
 
