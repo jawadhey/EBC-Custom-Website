@@ -10,6 +10,7 @@ import uni2 from '../../../assets/universities/uni2/hero.jpg'
 import uni3 from '../../../assets/universities/uni3/hero.jpg'
 import uni4 from '../../../assets/universities/uni4/hero.jpg'
 import uni5 from '../../../assets/universities/uni5/hero.png'
+import uni6 from '../../../assets/images/Universities/Yichun-University.jpg'
 
 // Animation variants
 const containerVariants = {
@@ -110,6 +111,13 @@ const ProgramsSection = ({ isLanding }: { isLanding?: boolean }) => {
       title: "Wuhan University of Science & Technology",
       description: "An interdisciplinary university excelling in engineering, materials, and medical fields.",
       image: uni5,
+      categories: ["", "medical"],
+    },
+    {
+      id: 6,
+      title: "Yichuan University",
+      description: "Discover academic excellence and cultural immersion at Yichuan University — a dynamic institution known for its quality education, friendly campus environment, and growing international student community.",
+      image: uni6,
       categories: ["", "medical"],
     },
   ];
