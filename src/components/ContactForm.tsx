@@ -40,6 +40,9 @@ const ContactForm = ({
       message: "",
    })
 
+   // Added loading state for form submission
+   const [isSubmitting, setIsSubmitting] = useState(false)
+
    const [ref, inView] = useInView({
       threshold: 0.1,
       triggerOnce: true,
@@ -50,10 +53,39 @@ const ContactForm = ({
       setFormData((prev) => ({ ...prev, [name]: value }))
    }
 
-   const handleSubmit = (e: React.FormEvent) => {
+   // Updated handleSubmit to use the Google Script API like in the first file
+   const handleSubmit = async (e: React.FormEvent) => {
       e.preventDefault()
-      console.log("Form submitted:", formData)
-      // Add your form submission logic here
+      setIsSubmitting(true)
+
+      try {
+         const scriptURL = "https://script.google.com/macros/s/AKfycbzZnkDGQReRsNg3b_E2lCep9EmO4y_pRTEneEpCufMZhXD88zsmBA6hvwoCzLfkKDk1zQ/exec"
+
+         const response = await fetch(scriptURL, {
+            method: "POST",
+            mode: 'no-cors',
+            body: JSON.stringify(formData),
+            headers: {
+               "Content-Type": "application/json"
+            }
+         })
+
+         // Reset form after successful submission
+         setFormData({
+            fullName: "",
+            email: "",
+            phone: "",
+            city: "",
+            message: ""
+         })
+
+         alert("Form submitted successfully!")
+      } catch (error) {
+         alert("An error occurred. Please try again later.")
+         console.error("Submission Error:", error)
+      } finally {
+         setIsSubmitting(false)
+      }
    }
 
    // Animation variants
@@ -306,12 +338,23 @@ const ContactForm = ({
 
                            <motion.button
                               type="submit"
-                              className="w-full px-4 py-2 md:px-6 md:py-3 bg-TwPrimaryPurple text-white font-medium rounded-lg hover:bg-TwPrimaryPurpleBgHover transition-colors text-sm md:text-base"
+                              className="w-full px-4 py-2 md:px-6 md:py-3 bg-TwPrimaryPurple text-white font-medium rounded-lg hover:bg-TwPrimaryPurpleBgHover transition-colors text-sm md:text-base flex items-center justify-center"
                               variants={buttonVariants}
                               whileHover="hover"
                               whileTap={{ scale: 0.98 }}
+                              disabled={isSubmitting}
                            >
-                              Submit
+                              {isSubmitting ? (
+                                 <>
+                                    <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                    </svg>
+                                    Sending...
+                                 </>
+                              ) : (
+                                 "Submit"
+                              )}
                            </motion.button>
                         </form>
                      </motion.div>

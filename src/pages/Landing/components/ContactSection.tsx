@@ -2,6 +2,7 @@ import { Icons } from "../../../assets/icons"
 import { Images } from "../../../assets/images"
 import { motion } from "motion/react"
 import { useInView } from "react-intersection-observer"
+import { useState } from "react"
 import Container from "../../../components/Container"
 
 // Animation variants
@@ -94,6 +95,62 @@ const ContactSection = () => {
       threshold: 0.1,
       triggerOnce: false
    })
+   
+   // Form state management
+   const [formData, setFormData] = useState({
+      fullName: "",
+      email: "",
+      phone: "",
+      city: "",
+      message: ""
+   })
+   
+   // Loading state for form submission
+   const [isSubmitting, setIsSubmitting] = useState(false)
+   
+   // Handle input changes
+   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const { id, value } = e.target
+      setFormData(prevData => ({
+         ...prevData,
+         [id]: value
+      }))
+   }
+   
+   // Handle form submission
+   const handleSubmit = async (e: React.FormEvent) => {
+      e.preventDefault()
+      setIsSubmitting(true)
+      
+      try {
+         const scriptURL = "https://script.google.com/macros/s/AKfycbzZnkDGQReRsNg3b_E2lCep9EmO4y_pRTEneEpCufMZhXD88zsmBA6hvwoCzLfkKDk1zQ/exec"
+         
+         const response = await fetch(scriptURL, {
+            method: "POST",
+            mode: 'no-cors',
+            body: JSON.stringify(formData),
+            headers: {
+               "Content-Type": "application/json"
+            }
+         })
+         
+         // Reset form after successful submission
+         setFormData({
+            fullName: "",
+            email: "",
+            phone: "",
+            city: "",
+            message: ""
+         })
+         
+         alert("Form submitted successfully!")
+      } catch (error) {
+         alert("An error occurred. Please try again later.")
+         console.error("Submission Error:", error)
+      } finally {
+         setIsSubmitting(false)
+      }
+   }
 
    return (
       <div className="relative overflow-hidden" ref={ref}>
@@ -163,6 +220,7 @@ const ContactSection = () => {
                   <motion.form
                      className="space-y-4 md:space-y-6"
                      variants={formVariants}
+                     onSubmit={handleSubmit}
                   >
                      <motion.div variants={inputVariants} custom={0}>
                         <label htmlFor="fullName" className="block text-white mb-1 md:mb-2 text-sm md:text-base">
@@ -171,8 +229,11 @@ const ContactSection = () => {
                         <input
                            type="text"
                            id="fullName"
-                           placeholder="Jhon Doe"
+                           placeholder="John Doe"
                            className="w-full px-3 md:px-4 bg-[#FFFFFF33] py-2 md:py-3 rounded-lg text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 text-sm md:text-base"
+                           value={formData.fullName}
+                           onChange={handleChange}
+                           required
                         />
                      </motion.div>
 
@@ -185,6 +246,9 @@ const ContactSection = () => {
                            id="email"
                            placeholder="example@email.com"
                            className="w-full px-3 md:px-4 bg-[#FFFFFF33] py-2 md:py-3 rounded-lg text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 text-sm md:text-base"
+                           value={formData.email}
+                           onChange={handleChange}
+                           required
                         />
                      </motion.div>
 
@@ -202,6 +266,9 @@ const ContactSection = () => {
                               id="phone"
                               placeholder="+92 000 0000000"
                               className="w-full bg-[#FFFFFF33] px-3 md:px-4 py-2 md:py-3 rounded-lg text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 text-sm md:text-base"
+                              value={formData.phone}
+                              onChange={handleChange}
+                              required
                            />
                         </div>
 
@@ -214,6 +281,9 @@ const ContactSection = () => {
                               id="city"
                               placeholder="Islamabad"
                               className="w-full bg-[#FFFFFF33] px-3 md:px-4 py-2 md:py-3 rounded-lg text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 text-sm md:text-base"
+                              value={formData.city}
+                              onChange={handleChange}
+                              required
                            />
                         </div>
                      </motion.div>
@@ -227,12 +297,15 @@ const ContactSection = () => {
                            rows={3}
                            placeholder="What's on your mind"
                            className="w-full bg-[#FFFFFF33] px-3 md:px-4 py-2 md:py-3 rounded-lg text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 text-sm md:text-base"
+                           value={formData.message}
+                           onChange={handleChange}
+                           required
                         ></textarea>
                      </motion.div>
 
                      <motion.button
                         type="submit"
-                        className="px-4 md:px-6 py-2 md:py-3 bg-yellow-400 text-purple-900 font-medium rounded-lg hover:bg-yellow-500 transition-colors text-sm md:text-base"
+                        className="px-4 md:px-6 py-2 md:py-3 bg-yellow-400 text-purple-900 font-medium rounded-lg hover:bg-yellow-500 transition-colors text-sm md:text-base flex items-center justify-center"
                         variants={inputVariants}
                         custom={4}
                         whileHover={{
@@ -240,8 +313,19 @@ const ContactSection = () => {
                            backgroundColor: "#FBBF24",
                            transition: { duration: 0.2 }
                         }}
+                        disabled={isSubmitting}
                      >
-                        Send Message
+                        {isSubmitting ? (
+                           <>
+                              <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-purple-900" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                              </svg>
+                              Sending...
+                           </>
+                        ) : (
+                           "Send Message"
+                        )}
                      </motion.button>
                   </motion.form>
                </motion.div>
