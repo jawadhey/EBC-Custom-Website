@@ -4,6 +4,7 @@ import { motion } from "motion/react"
 import { useInView } from "react-intersection-observer"
 import { useState } from "react"
 import Container from "../../../components/Container"
+import emailjs from 'emailjs-com'
 
 // Animation variants
 const containerVariants = {
@@ -108,6 +109,9 @@ const ContactSection = () => {
    // Loading state for form submission
    const [isSubmitting, setIsSubmitting] = useState(false)
    
+   // EmailJS service ID from environment variable
+   const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID || 'default_service_id'
+   
    // Handle input changes
    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       const { id, value } = e.target
@@ -123,9 +127,9 @@ const ContactSection = () => {
       setIsSubmitting(true)
       
       try {
+         // Send form data to Google Script
          const scriptURL = "https://script.google.com/macros/s/AKfycbzZnkDGQReRsNg3b_E2lCep9EmO4y_pRTEneEpCufMZhXD88zsmBA6hvwoCzLfkKDk1zQ/exec"
-         
-         const response = await fetch(scriptURL, {
+         await fetch(scriptURL, {
             method: "POST",
             mode: 'no-cors',
             body: JSON.stringify(formData),
@@ -133,6 +137,22 @@ const ContactSection = () => {
                "Content-Type": "application/json"
             }
          })
+         
+         // Send form data via EmailJS
+         await emailjs.send(
+            serviceId,
+            'template_tifm4xn', // Replace with your EmailJS template ID
+            {
+               to_email: 'info.ebcworldwide@gmail.com',
+               from_name: formData.fullName,
+               from_email: formData.email,
+               phone: formData.phone,
+               city: formData.city,
+               message: formData.message
+            },
+            process.env.REACT_APP_EMAILJS_API_KEY
+            // 'user_id' // Replace with your EmailJS user ID
+         )
          
          // Reset form after successful submission
          setFormData({

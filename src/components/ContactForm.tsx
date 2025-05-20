@@ -5,6 +5,7 @@ import Container from "./Container"
 import { Images } from "../assets/images"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
+import emailjs from 'emailjs-com'
 
 interface FormData {
    fullName: string
@@ -43,6 +44,9 @@ const ContactForm = ({
    // Added loading state for form submission
    const [isSubmitting, setIsSubmitting] = useState(false)
 
+   // EmailJS service ID from environment variable
+   const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID || 'default_service_id'
+
    const [ref, inView] = useInView({
       threshold: 0.1,
       triggerOnce: true,
@@ -53,7 +57,7 @@ const ContactForm = ({
       setFormData((prev) => ({ ...prev, [name]: value }))
    }
 
-   // Updated handleSubmit to use the Google Script API like in the first file
+   // Updated handleSubmit to use the Google Script API and EmailJS
    const handleSubmit = async (e: React.FormEvent) => {
       e.preventDefault()
       setIsSubmitting(true)
@@ -61,7 +65,7 @@ const ContactForm = ({
       try {
          const scriptURL = "https://script.google.com/macros/s/AKfycbzZnkDGQReRsNg3b_E2lCep9EmO4y_pRTEneEpCufMZhXD88zsmBA6hvwoCzLfkKDk1zQ/exec"
 
-         const response = await fetch(scriptURL, {
+         await fetch(scriptURL, {
             method: "POST",
             mode: 'no-cors',
             body: JSON.stringify(formData),
@@ -69,6 +73,22 @@ const ContactForm = ({
                "Content-Type": "application/json"
             }
          })
+
+         // Send form data via EmailJS
+         await emailjs.send(
+            serviceId,
+            'template_tifm4xn', // Replace with your EmailJS template ID
+            {
+               to_email: 'info.ebcworldwide@gmail.com',
+               from_name: formData.fullName,
+               from_email: formData.email,
+               phone: formData.phone,
+               city: formData.city,
+               message: formData.message
+            },
+            process.env.REACT_APP_EMAILJS_API_KEY
+            // 'user_id' // Replace with your EmailJS user ID
+         )
 
          // Reset form after successful submission
          setFormData({

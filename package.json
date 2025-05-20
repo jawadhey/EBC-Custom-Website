@@ -12,6 +12,7 @@
     "antd": "^5.22.2",
     "axios": "^1.7.7",
     "cross-env": "^7.0.3",
+    "emailjs-com": "^3.2.0",
     "jwt-decode": "^4.0.0",
     "motion": "^12.6.3",
     "otp-input-react": "^0.3.0",
