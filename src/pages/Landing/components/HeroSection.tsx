@@ -138,7 +138,7 @@ const LandingHeroSection = () => {
                      className="flex w-fit px-3 md:px-4 h-[30px] md:h-[46px] items-center rounded-full bg-purple-100 border border-purple-200"
                      variants={itemVariants}
                   >
-                     <p className="text-TwPrimaryPurple text-xs md:text-sm font-medium">Best Medical Student Consultant in your City</p>
+                     <p className="text-TwPrimaryPurple text-xs md:text-sm font-medium">Best Student Consultant in your City</p>
                   </motion.div>
 
                   <motion.h1
@@ -152,8 +152,8 @@ const LandingHeroSection = () => {
                      className="text-gray-200 max-w-xl text-sm md:text-base !leading-relaxed"
                      variants={itemVariants}
                   >
-                     Assisting FSC Students in Fulfilling Their Medical Dreams! <br />
-                     Obtain admission to China's best medical schools with professional assistance and a simple application process. Begin your path to a degree that is recognized throughout the world right now! Admission is assured. Reasonably priced tuition. Full-Service Visa Support.
+                     Helping FSC Students Achieve Their Dream of Studying Abroad! <br />
+                     Secure admission to top international universities with expert guidance and a smooth application process. Whether you're pursuing medicine, engineering, business, or more, we'll help you earn a globally recognized degree. Guaranteed admission, affordable tuition, and full visa support—your global journey begins here.
                   </motion.p>
 
                   <motion.div

@@ -72,9 +72,11 @@ const ProgramsSection = ({ isLanding }: { isLanding?: boolean }) => {
   const categories = [
     { id: "all", name: "All" },
     { id: "exclusive", name: "Our Exclusive Universities" },
-    { id: "medical", name: "Medical" },
-    { id: "engineering", name: "Engineering" },
-    { id: "other", name: "Other" },
+    { id: 'MOE Chinese Universities', name: 'MOE Chinese Universities' },
+
+    // { id: "medical", name: "Medical" },
+    // { id: "engineering", name: "Engineering" },
+    // { id: "other", name: "Other" },
   ]
 
   const allPrograms = [
@@ -140,7 +142,7 @@ const ProgramsSection = ({ isLanding }: { isLanding?: boolean }) => {
             className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-700 text-center mb-3 md:mb-4 !leading-tight"
             variants={itemVariants}
           >
-            Our Executive Universities
+            Programs We Offer
           </motion.h2>
 
           {/* Subheading */}
@@ -152,7 +154,7 @@ const ProgramsSection = ({ isLanding }: { isLanding?: boolean }) => {
           </motion.p>
 
           {/* Tabs */}
-          {!isLanding && (
+          { (
             <motion.div
               className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 md:mb-12"
               variants={containerVariants}

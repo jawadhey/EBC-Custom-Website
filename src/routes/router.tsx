@@ -7,6 +7,10 @@ import ContactPage from "../pages/Contact/ContactPage";
 import UniversitiesPage from "../pages/Universities/UniversitiesPage";
 import SingleUnitversity from "../pages/SingleUniversity/SingleUnitversity";
 import EventsPage from "../pages/Events/EventsPage";
+import MbbsinChina from "../pages/Services/MbbsinChina";
+import StudyInEurope from "../pages/Services/StudyInEurope";
+import PfpForEngineers from "../pages/Services/PfpForEngineers";
+import MoeListedUniversities from "../pages/Services/MoeListedUniversities";
  
 
 const Router = () => {
@@ -40,6 +44,25 @@ const Router = () => {
                path: 'events',
                element: <EventsPage />,
             },
+           
+           
+            {
+               path: 'mbbs-in-china',
+               element: <MbbsinChina />,
+            },
+            {
+               path: 'study-in-europe',
+               element: <StudyInEurope />,
+            },
+            {
+               path: 'pfp-for-engineers',
+               element: <PfpForEngineers />,
+            },
+            {
+               path: 'moe-listed-universities',
+               element: <MoeListedUniversities />,
+            },
+
             
          ],
       },

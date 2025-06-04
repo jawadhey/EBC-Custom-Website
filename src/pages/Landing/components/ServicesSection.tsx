@@ -3,6 +3,7 @@ import { Pagination, Navigation, Autoplay } from "swiper/modules"
 import { FaArrowRight, FaStethoscope, FaHardHat, FaPills, FaFlag } from "react-icons/fa"
 import { motion } from "motion/react"
 import { useInView } from "react-intersection-observer"
+import { Link } from "react-router-dom"
 
 // Import Swiper styles
 import "swiper/css"
@@ -14,6 +15,10 @@ import chinaflag from '../../../assets/images/Landing/Countries/china.png'
 import ausflag from '../../../assets/images/Landing/Countries/vecteezy_circle-flag-of-australia_11571471.png'
 import usaflag from '../../../assets/images/Landing/Countries/vecteezy_circle-flag-of-usa_11571446.png'
 import euflag from '../../../assets/images/Landing/Countries/vecteezy_european-union-country-flag-in-circle-shape_34966140.png'
+
+import ukImage from '../../../assets/services/Frame 3312 (1).png'
+import ukFlag from '../../../assets/services/Frame.png'
+import moeImage from '../../../assets/services/moe.png'
 
 // Animation variants
 const containerVariants = {
@@ -78,71 +83,52 @@ const ServicesSection = () => {
         "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
       image: Images.Services.Service4,
       countryFlag: chinaflag, // Path to China flag image
-      countryCode: "CN"
+      countryCode: "CN",
+      path: "/mbbs-in-china"
     },
+
+    {
+      icon: <FaPills className="text-white text-xl" />,
+      title: "Study in Europe",
+      description:
+        "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
+      image: Images.Services.Service1,
+      countryFlag: euflag, // Path to EU flag image
+      countryCode: "EU",
+      path: "/study-in-europe"
+    },
+    // {
+    //   icon: <FaFlag className="text-white text-xl" />,
+    //   title: "Study in UK",
+    //   description:
+    //     "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
+    //   image: ukImage,
+    //   countryFlag: ukFlag, // Path to UK flag image
+    //   countryCode: "GB",
+    //   path: "/study-in-uk"
+    // },
     {
       icon: <FaHardHat className="text-white text-xl" />,
       title: "PFP for Engineers",
       description:
         "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
       image: Images.Services.Service3,
-      countryFlag: ausflag, // Path to UK flag image
-      countryCode: "GB"
+      // countryFlag: ausflag, // Path to UK flag image
+      countryCode: "GB",
+      path: "/pfp-for-engineers"
     },
+   
     {
-      icon: <FaPills className="text-white text-xl" />,
-      title: "MD in Europe",
+      icon: <FaHardHat className="text-white text-xl" />,
+      title: "MOE Listed Universities",
       description:
         "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
-      image: Images.Services.Service1,
-      countryFlag: euflag, // Path to EU flag image
-      countryCode: "EU"
+      image: moeImage,
+      // countryFlag: ausflag, // Path to UK flag image
+      // countryCode: "GB"
+      path: "/moe-listed-universities"
     },
-    {
-      icon: <FaFlag className="text-white text-xl" />,
-      title: "Study in USA",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
-      image: Images.Services.Service2,
-      countryFlag: usaflag, // Path to USA flag image
-      countryCode: "US"
-    },
-    {
-      icon: <FaStethoscope className="text-white text-xl" />,
-      title: "MBBS in Australia",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
-      image: Images.Services.Service1,
-      countryFlag: ausflag, // Path to Australia flag image
-      countryCode: "AU"
-    },
-    {
-      icon: <FaPills className="text-white text-xl" />,
-      title: "MD in Europe",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
-      image: Images.Services.Service3,
-      countryFlag: euflag, // Path to EU flag image
-      countryCode: "EU"
-    },
-    {
-      icon: <FaFlag className="text-white text-xl" />,
-      title: "Study in USA",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
-      image: Images.Services.Service4,
-      countryFlag: usaflag, // Path to USA flag image
-      countryCode: "US"
-    },
-    {
-      icon: <FaStethoscope className="text-white text-xl" />,
-      title: "MBBS in Australia",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
-      image: Images.Services.Service2,
-      countryFlag: ausflag, // Path to Australia flag image
-      countryCode: "AU"
-    },
+    
   ]
 
   return (
@@ -223,7 +209,7 @@ const ServicesSection = () => {
                     />
 
                     {/* Country Flag - Circular in top right */}
-                    <div className="absolute top-4 right-4 w-10 h-10 rounded-full overflow-hidden border-2 border-white shadow-md">
+                    {/* <div className="absolute top-4 right-4 w-10 h-10 rounded-full overflow-hidden border-2 border-white shadow-md">
                       {service.countryFlag ? (
                         <img
                           src={service.countryFlag}
@@ -236,7 +222,19 @@ const ServicesSection = () => {
                           {service.countryCode || "?"}
                         </div>
                       )}
-                    </div>
+                    </div> */}
+                    {/* Country Flag - Circular in top right */}
+                    {
+                      service.countryFlag && (
+                        <div className="absolute top-4 right-4 w-10 h-10 rounded-full overflow-hidden border-2 border-white shadow-md">
+                          <img
+                            src={service.countryFlag}
+                            alt={`${service.title} country flag`}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      )
+                    }
 
                     {/* Icon Badge */}
                     <div className="absolute bottom-0 translate-y-1/2 left-4 bg-purple-600 w-12 h-12 rounded-lg flex items-center justify-center">
@@ -249,12 +247,12 @@ const ServicesSection = () => {
 
                     <p className="text-gray-600 mb-4 text-sm">{service.description}</p>
 
-                    <a
-                      href="#"
+                    <Link
+                      to={service.path}
                       className="text-purple-600 font-medium flex items-center hover:text-purple-700 transition-colors text-sm"
                     >
                       View More <FaArrowRight className="ml-2" />
-                    </a>
+                    </Link>
                   </div>
                 </motion.div>
               </SwiperSlide>

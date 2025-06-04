@@ -7,101 +7,47 @@ import { Images } from "../assets/images"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 
+// Import team member images
+import drAmjadImage from "../assets/images/Team/Dr Amjad Iqbal.jpeg"
+import drKhadijaImage from "../assets/images/Team/Dr Khadija Nawaz.jpeg"
+import qasimGhaffarImage from "../assets/images/Team/Mr Qasim Ghaffar.jpeg"
+import kamranAliImage from "../assets/images/Team/Dr Farman Ali.jpeg"
+import laibaSaeedImage from "../assets/images/Team/Ma Laiba Saeed.jpeg"
+
 const TeamSection = () => {
-   // Team categories
-   const categories = [
-      { id: "founders", name: "Founders" },
-      { id: "executive", name: "Executive" },
-      { id: "directors", name: "Directors" },
-      { id: "staff", name: "Staff" },
-   ]
-
    // Team members data
-   const teamMembers: any = {
-      founders: [
-         {
-            id: 1,
-            name: "Sarah Anderson",
-            title: "Founder",
-            image: "/team-member-1.jpg",
-         },
-         {
-            id: 2,
-            name: "Sarah Anderson",
-            title: "Founder",
-            image: "/team-member-2.jpg",
-         },
-         {
-            id: 3,
-            name: "Sarah Anderson",
-            title: "Founder",
-            image: "/team-member-3.jpg",
-         },
-         {
-            id: 4,
-            name: "Sarah Anderson",
-            title: "Founder",
-            image: "/team-member-4.jpg",
-         },
-      ],
-      executive: [
-         {
-            id: 5,
-            name: "John Smith",
-            title: "CEO",
-            image: "/placeholder.svg?height=200&width=200",
-         },
-         {
-            id: 6,
-            name: "Emily Johnson",
-            title: "CTO",
-            image: "/placeholder.svg?height=200&width=200",
-         },
-         {
-            id: 7,
-            name: "Michael Brown",
-            title: "CFO",
-            image: "/placeholder.svg?height=200&width=200",
-         },
-         {
-            id: 8,
-            name: "Jessica Williams",
-            title: "COO",
-            image: "/placeholder.svg?height=200&width=200",
-         },
-      ],
-      directors: [
-         {
-            id: 9,
-            name: "Robert Davis",
-            title: "Marketing Director",
-            image: "/placeholder.svg?height=200&width=200",
-         },
-         {
-            id: 10,
-            name: "Lisa Miller",
-            title: "Operations Director",
-            image: "/placeholder.svg?height=200&width=200",
-         },
-      ],
-      staff: [
-         {
-            id: 13,
-            name: "James Anderson",
-            title: "Senior Developer",
-            image: "/placeholder.svg?height=200&width=200",
-         },
-         {
-            id: 14,
-            name: "Sophia Martinez",
-            title: "Marketing Specialist",
-            image: "/placeholder.svg?height=200&width=200",
-         },
-      ],
-   }
-
-   // State for active category
-   const [activeCategory, setActiveCategory] = useState("founders")
+   const teamMembers = [
+      {
+         id: 1,
+         name: "Dr Amjad Iqbal",
+         title: "Managing Director",
+         image: drAmjadImage,
+      },
+      {
+         id: 2,
+         name: "Dr Khadija Nawaz",
+         title: "Assisting Managing Director",
+         image: drKhadijaImage,
+      },
+      {
+         id: 3,
+         name: "Mr Qasim Ghaffar",
+         title: "Regional Head KPK",
+         image: qasimGhaffarImage,
+      },
+      {
+         id: 4,
+         name: "Mr Kamran Ali Khan",
+         title: "Student counsellor",
+         image: kamranAliImage,
+      },
+      {
+         id: 5,
+         name: "Ms Laiba Saeed",
+         title: "Office manager",
+         image: laibaSaeedImage,
+      },
+   ]
 
    // Animation hooks
    const [ref, inView] = useInView({
@@ -201,37 +147,12 @@ const TeamSection = () => {
                   Meet the passionate professionals driving our mission to guide students toward successful academic journeys abroad.
                </motion.p>
 
-               {/* Category Tabs */}
-               <motion.div
-                  className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8 md:mb-12"
-                  variants={itemVariants}
-               >
-                  {categories.map((category) => (
-                     <motion.button
-                        key={category.id}
-                        onClick={() => setActiveCategory(category.id)}
-                        className={`px-3 py-1.5 md:px-5 md:py-3 rounded-full text-xs md:text-sm font-medium transition-colors ${activeCategory === category.id
-                           ? "bg-TwPrimaryPurple text-white"
-                           : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                           }`}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        transition={{ duration: 0.2 }}
-                     >
-                        {category.name}
-                     </motion.button>
-                  ))}
-               </motion.div>
-
                {/* Team Members Grid */}
                <motion.div
                   className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-8 md:mb-12"
                   variants={containerVariants}
-                  key={activeCategory}
-                  initial="hidden"
-                  animate="visible"
                >
-                  {teamMembers[activeCategory].map((member: any, index: number) => (
+                  {teamMembers.map((member, index) => (
                      <motion.div
                         key={member.id}
                         className="flex flex-col items-center"
@@ -261,7 +182,7 @@ const TeamSection = () => {
                               variants={cornerVariants}
                            ></motion.div>
                            <img
-                              src={Images.About.Founder || "/placeholder.svg"}
+                              src={member.image}
                               alt={member.name}
                               className="w-36 h-36 md:w-48 md:h-48 rounded-full object-cover"
                            />
@@ -285,36 +206,6 @@ const TeamSection = () => {
                         </motion.p>
                      </motion.div>
                   ))}
-               </motion.div>
-
-               {/* View All Button */}
-               <motion.div
-                  className="flex justify-center"
-                  variants={itemVariants}
-               >
-                  <motion.a
-                     href="#"
-                     className="inline-flex items-center bg-purple-100 text-TwPrimaryPurple px-4 py-2 md:px-6 md:py-3 rounded-full hover:bg-purple-200 transition-colors text-sm md:text-base"
-                     whileHover={{
-                        scale: 1.05,
-                        boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)"
-                     }}
-                     whileTap={{ scale: 0.98 }}
-                     transition={{ duration: 0.2 }}
-                  >
-                     View Whole Team
-                     <motion.span
-                        initial={{ x: 0 }}
-                        animate={{ x: [0, 5, 0] }}
-                        transition={{
-                           duration: 1.2,
-                           repeat: Infinity,
-                           repeatDelay: 1
-                        }}
-                     >
-                        <FaArrowRight className="ml-2 text-xs md:text-sm" />
-                     </motion.span>
-                  </motion.a>
                </motion.div>
             </motion.div>
          </Container>
