@@ -3,6 +3,7 @@ import uni2 from '../assets/universities/uni2/hero.jpg'
 import uni3 from '../assets/universities/uni3/hero.jpg'
 import uni4 from '../assets/universities/uni4/hero.jpg'
 import uni5 from '../assets/universities/uni5/hero.png'
+import uni6 from '../assets/images/Universities/Yichun-University.jpg'
 
 
 export const headerMenuItems = [
@@ -86,7 +87,7 @@ export const universities: any = [
             around the globe.
           </p>
           <p>
-            The university’s MD/MBBS program, taught entirely in English, is especially popular among international students aspiring
+            The university's MD/MBBS program, taught entirely in English, is especially popular among international students aspiring
             to pursue medical education in Azerbaijan. By offering programs in English, NSU creates an inclusive environment for
             students from various linguistic and cultural backgrounds.
           </p>
@@ -136,7 +137,7 @@ export const universities: any = [
         },
         {
           title: "Personalized Counseling with EBC",
-          description: "With EBC’s expert guidance, students get tailored university recommendations, career advice, and ongoing support throughout their academic journey.",
+          description: "With EBC's expert guidance, students get tailored university recommendations, career advice, and ongoing support throughout their academic journey.",
         },
       ],
     },
@@ -859,5 +860,152 @@ export const universities: any = [
         },
       ],
     }
+  },
+  {
+    id: 6,
+    name: "Yichun University (YCU)",
+    description: "A Leading Destination for International Medical Education in China",
+    location: "Yichun, Jiangxi Province, China",
+    established: 1958,
+    heroImage: uni6, // Using uni5 as placeholder since no specific image was provided
+    stats: [
+      {
+        title: <strong>69+</strong>,
+        subtitle: "Academic Programs",
+        description: "Across 18 schools.",
+      },
+      {
+        title: <strong>1,400+</strong>,
+        subtitle: "International Students",
+        description: "Global learning environment.",
+      },
+      {
+        title: <strong>100%</strong>,
+        subtitle: "MBBS Enrollment Support",
+        description: "Complete assistance.",
+      },
+    ],
+    programs: [
+      {
+        title: <strong>MBBS (Bachelor of Medicine, Bachelor of Surgery)</strong>,
+        description: (
+          <>
+            Yichun University's <strong>MBBS program</strong> is a six-year English-medium course tailored for international students. It starts with a Chinese language foundation year, followed by core medical subjects like <strong>Anatomy, Physiology, Biochemistry</strong>, and more. The final year includes a hands-on clinical internship at the university's affiliated hospitals. <strong>Globally recognized</strong> by bodies such as WHO and ECFMG, this program offers quality medical education at an affordable cost, opening doors to international career opportunities.
+          </>
+        ),
+      }
+    ],
+    about: {
+      title: (<>
+        <p>
+          <strong>Discover Where Excellence Meets Opportunity — A University That Shapes Futures Across Borders</strong>
+        </p>
+      </>),
+      content: (
+        <>
+          <p>
+            Yichun University (YCU), established in 1958, stands as a prominent public university located in the scenic city of Yichun, Jiangxi Province, China. With a reputation built on academic excellence and a commitment to international education, YCU has grown into a leading destination for students around the world.
+          </p>
+          <p>
+            Offering 69 undergraduate programs across 18 schools and supported by two affiliated hospitals, the university is especially renowned for its well-structured MBBS (Clinical Medicine) program tailored for international students. This six-year course, taught entirely in English, integrates foundational medical sciences with hands-on clinical training, ensuring graduates are well-prepared for global medical careers.
+          </p>
+          <p>
+            With a strong emphasis on cultural diversity and global exchange, YCU provides not only quality education but also an enriching student life. The university's recognition by bodies such as WHO, WFME, and ECFMG further underscores its academic credibility, making it a compelling choice for those seeking both affordability and prestige in their international education journey.
+          </p>
+        </>
+      ),
+    },
+    benefits: {
+      title: 'Discover the unique advantages that make Yichun University a top destination for international students. From global recognition to a vibrant campus life, here\'s why thousands choose YCU every year.',
+      content: [
+        {
+          title: "Globally Recognized Degree",
+          description: "YCU is listed by WHO, WFME, ECFMG, and other global directories, ensuring your degree is valued worldwide.",
+        },
+        {
+          title: "English-Medium MBBS Program",
+          description: "The entire MBBS program is taught in English, eliminating language barriers and making learning more accessible.",
+        },
+        {
+          title: "Affordable Tuition Fees",
+          description: "Study medicine at a fraction of the cost compared to other countries, without compromising on quality.",
+        },
+        {
+          title: "Scholarship Opportunities",
+          description: "Merit-based scholarships are available for new students, helping reduce the financial burden.",
+        },
+        {
+          title: "Hands-On Clinical Training",
+          description: "Gain real-world experience with a one-year clinical internship at YCU's affiliated hospitals.",
+        },
+        {
+          title: "Modern Campus Facilities",
+          description: "Enjoy access to well-equipped labs, libraries, and comfortable student accommodations.",
+        },
+        {
+          title: "Cultural Diversity",
+          description: "Join a vibrant international student community and experience rich cultural exchange.",
+        },
+        {
+          title: "Supportive Environment",
+          description: "Benefit from the university's student-friendly policies and personal guidance from EBC Worldwide.",
+        },
+        {
+          title: "Strategic Location",
+          description: "Located in the peaceful city of Yichun, YCU offers a safe and inspiring setting for focused learning.",
+        },
+        
+
+      ],
+    },
+    faqs: {
+      title: "Everything You Need to Know About Yichun University",
+      description: "Find answers to common questions about programs, admissions, fees, and life at YCU.",
+      content: [
+        {
+          id: 1,
+          question: "What is the duration of the MBBS program at Yichun University?",
+          answer: "The MBBS program at Yichun University spans six years, which includes five years of academic study and a one-year clinical internship.",
+        },
+        {
+          id: 2,
+          question: "Is the MBBS program taught in English?",
+          answer: "Yes, Yichun University offers the MBBS (Clinical Medicine) program entirely in English, making it accessible to international students.",
+        },
+        {
+          id: 3,
+          question: "What is the annual tuition fee for the MBBS program?",
+          answer: "The tuition fee is 12,000 RMB for the first year, followed by 20,500 RMB per year from the second year onwards.",
+        },
+        {
+          id: 4,
+          question: "Are there any scholarships available for international students?",
+          answer: "Yes, YCU offers scholarships for new students based on FSc grades and HSK4 results. Each scholarship is valued at 20,000 RMB (one-time).",
+        },
+        {
+          id: 5,
+          question: "What are the admission requirements for international students?",
+          answer: "Applicants need a minimum of 60% in FSc and at least 50% in English, along with a valid passport, academic documents, a self-introduction video, and a study plan.",
+        },
+        {
+          id: 6,
+          question: "Is Yichun University recognized internationally?",
+          answer: "Yes, YCU is recognized by the Education Department of Jiangxi Province and is listed in global medical directories like WHO, WFME, ECFMG, EPIC, and GMC.",
+        },
+        {
+          id: 7,
+          question: "What kind of facilities does the university offer?",
+          answer: "The campus has modern laboratories, libraries, student accommodations, and recreational spaces to ensure a well-rounded academic and social experience.",
+        },
+        {
+          id: 8,
+          question: "How diverse is the student population at YCU?",
+          answer: "Yichun University hosts around 19,000 students, including approximately 1,400 international students from various countries.",
+        },
+      ],
+    }
+  },
+  {
+    
   }
 ];
