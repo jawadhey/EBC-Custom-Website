@@ -32,9 +32,9 @@ const StatsSection = ({ stats }: StatsSectionProps) => {
    }
 
    const defaultStats: StatItem[] = [
-      { value: 15000, label: "Students Enrolled", description: "Making dreams a reality" },
-      { value: "Top-Ranked", label: "Universities", description: "Globally recognized institutions" },
-      { value: 100, label: "Visa Success Rate", description: "Smooth and stress-free process" }
+      { value: 5000, label: "Medical Students", description: "Making dreams a reality" },
+      { value: 2000, label: "Other Students", description: "Diverse educational paths" },
+      { value: 18, label: "Years of Experience", description: "Trusted expertise in education" }
    ];
 
    const displayStats = stats || defaultStats;
@@ -100,7 +100,7 @@ const StatsSection = ({ stats }: StatsSectionProps) => {
                                  stat.value
                               )}
                            </motion.span>
-                           {index === 0 && !stats && (
+                           {(index === 0 || index === 1) && (
                               <motion.span
                                  className="text-yellow-500 text-4xl sm:text-5xl font-bold"
                                  initial={{ scale: 0 }}

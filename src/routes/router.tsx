@@ -11,6 +11,7 @@ import MbbsinChina from "../pages/Services/MbbsinChina";
 import StudyInEurope from "../pages/Services/StudyInEurope";
 import PfpForEngineers from "../pages/Services/PfpForEngineers";
 import MoeListedUniversities from "../pages/Services/MoeListedUniversities";
+import MDinEurope from "../pages/Services/MDinEurope";
  
 
 const Router = () => {
@@ -53,6 +54,10 @@ const Router = () => {
             {
                path: 'study-in-europe',
                element: <StudyInEurope />,
+            },
+            {
+               path: 'md-in-europe',
+               element: <MDinEurope />,
             },
             {
                path: 'pfp-for-engineers',

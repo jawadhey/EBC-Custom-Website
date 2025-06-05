@@ -17,36 +17,36 @@ import laibaSaeedImage from "../assets/images/Team/Ma Laiba Saeed.jpeg"
 const TeamSection = () => {
    // Team members data
    const teamMembers = [
-      {
-         id: 1,
+         {
+            id: 1,
          name: "Dr Amjad Iqbal",
          title: "Managing Director",
          image: drAmjadImage,
-      },
-      {
-         id: 2,
+         },
+         {
+            id: 2,
          name: "Dr Khadija Nawaz",
          title: "Assisting Managing Director",
          image: drKhadijaImage,
-      },
-      {
-         id: 3,
+         },
+         {
+            id: 3,
          name: "Mr Qasim Ghaffar",
          title: "Regional Head KPK",
          image: qasimGhaffarImage,
-      },
-      {
-         id: 4,
+         },
+         {
+            id: 4,
          name: "Mr Kamran Ali Khan",
          title: "Student counsellor",
          image: kamranAliImage,
-      },
-      {
-         id: 5,
+         },
+         {
+            id: 5,
          name: "Ms Laiba Saeed",
          title: "Office manager",
          image: laibaSaeedImage,
-      },
+         },
    ]
 
    // Animation hooks

@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Pagination, Navigation, Autoplay } from "swiper/modules"
-import { FaArrowRight, FaStethoscope, FaHardHat, FaPills, FaFlag } from "react-icons/fa"
+import { FaArrowRight, FaStethoscope, FaHardHat, FaPills, FaFlag, FaGraduationCap, FaUniversity, FaLandmark, FaGlobeEurope, FaCogs, FaBalanceScale, FaCheckCircle } from "react-icons/fa"
 import { motion } from "motion/react"
 import { useInView } from "react-intersection-observer"
 import { Link } from "react-router-dom"
@@ -19,6 +19,8 @@ import euflag from '../../../assets/images/Landing/Countries/vecteezy_european-u
 import ukImage from '../../../assets/services/Frame 3312 (1).png'
 import ukFlag from '../../../assets/services/Frame.png'
 import moeImage from '../../../assets/services/moe.png'
+import barAtLawImage from '../../../assets/images/Services/baratlaw/pexels-karolina-grabowska-7876088.jpg'
+
 
 // Animation variants
 const containerVariants = {
@@ -77,58 +79,70 @@ const ServicesSection = () => {
 
   const services = [
     {
-      icon: <FaStethoscope className="text-white text-xl" />,
+      icon: <FaGraduationCap className="text-white text-xl" />,
       title: "MBBS in China",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
+        "Study medicine at WHO-recognized Chinese universities with comprehensive support for admissions and cultural adaptation.",
       image: Images.Services.Service4,
-      countryFlag: chinaflag, // Path to China flag image
+      countryFlag: chinaflag,
       countryCode: "CN",
       path: "/mbbs-in-china"
     },
-
     {
-      icon: <FaPills className="text-white text-xl" />,
+      icon: <FaUniversity className="text-white text-xl" />,
+      title: "MD in Europe",
+      description:
+        "Access prestigious European medical schools with expert guidance through admissions and language requirements.",
+      image: Images.Services.Service1,
+      countryFlag: euflag,
+      countryCode: "EU",
+      path: "/md-in-europe"
+    },
+    {
+      icon: <FaLandmark className="text-white text-xl" />,
+      title: "Study in UK",
+      description:
+        "Experience world-class education in the UK with end-to-end support from application to accommodation.",
+      image: ukImage,
+      countryFlag: ukFlag,
+      countryCode: "GB",
+      path: "/study-in-uk"
+    },
+    {
+      icon: <FaGlobeEurope className="text-white text-xl" />,
       title: "Study in Europe",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
+        "Explore diverse educational opportunities across Europe with comprehensive guidance for university selection and visa processing.",
       image: Images.Services.Service1,
-      countryFlag: euflag, // Path to EU flag image
+      countryFlag: euflag,
       countryCode: "EU",
       path: "/study-in-europe"
     },
-    // {
-    //   icon: <FaFlag className="text-white text-xl" />,
-    //   title: "Study in UK",
-    //   description:
-    //     "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
-    //   image: ukImage,
-    //   countryFlag: ukFlag, // Path to UK flag image
-    //   countryCode: "GB",
-    //   path: "/study-in-uk"
-    // },
     {
-      icon: <FaHardHat className="text-white text-xl" />,
+      icon: <FaCogs className="text-white text-xl" />,
       title: "PFP for Engineers",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
+        "Specialized pathway programs for engineering students with personalized guidance for technical education abroad.",
       image: Images.Services.Service3,
-      // countryFlag: ausflag, // Path to UK flag image
       countryCode: "GB",
       path: "/pfp-for-engineers"
     },
-   
     {
-      icon: <FaHardHat className="text-white text-xl" />,
+      icon: <FaBalanceScale className="text-white text-xl" />,
+      title: "Bar-at-law",
+      description:
+        "Comprehensive support for legal education abroad, including bar exam preparation and international practice opportunities.",
+      image: barAtLawImage,
+      path: "/bar-at-law"
+    },
+    {
+      icon: <FaCheckCircle className="text-white text-xl" />,
       title: "MOE Listed Universities",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Lectus pellentesque augue magna in egestas nullam hac orci eu.",
+        "Access officially recognized universities ensuring your degree is globally recognized and valued.",
       image: moeImage,
-      // countryFlag: ausflag, // Path to UK flag image
-      // countryCode: "GB"
       path: "/moe-listed-universities"
-    },
-    
+    }
   ]
 
   return (
@@ -247,12 +261,16 @@ const ServicesSection = () => {
 
                     <p className="text-gray-600 mb-4 text-sm">{service.description}</p>
 
-                    <Link
-                      to={service.path}
-                      className="text-purple-600 font-medium flex items-center hover:text-purple-700 transition-colors text-sm"
-                    >
-                      View More <FaArrowRight className="ml-2" />
-                    </Link>
+                    {
+                      service.path && (
+                        <Link
+                          to={service.path}
+                          className="text-purple-600 font-medium flex items-center hover:text-purple-700 transition-colors text-sm"
+                        >
+                          View More <FaArrowRight className="ml-2" />
+                        </Link>
+                      )
+                    }
                   </div>
                 </motion.div>
               </SwiperSlide>

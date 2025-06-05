@@ -122,8 +122,8 @@ const HeroSection = () => {
               variants={containerVariants}
             >
               {[
-                { count: "15000", text: "Happy Students" },
-                { count: "95", text: "Success Rate %" },
+                { count: "7000", text: "Happy Students" },
+                { count: "5", text: "Offices Across Asia" },
                 { count: "50", text: "Partner Universities" }
               ].map((item, index) => (
                 <motion.div
@@ -139,11 +139,7 @@ const HeroSection = () => {
                 >
                   <div className="flex items-baseline mb-1 md:mb-2">
                     <span className="text-TwPrimaryPurple text-2xl md:text-3xl font-bold">{item.count}</span>
-                    {index !== 1 ? (
-                      <span className="text-yellow-500 text-2xl md:text-3xl font-bold">+</span>
-                    ) : (
-                      <span className="text-yellow-500 text-2xl md:text-3xl font-bold">%</span>
-                    )}
+                    <span className="text-yellow-500 text-2xl md:text-3xl font-bold">+</span>
                   </div>
                   <p className="text-gray-700 text-xs md:text-sm">{item.text}</p>
                 </motion.div>
@@ -162,14 +158,14 @@ const HeroSection = () => {
               {/* Floating animation for the main image */}
               <motion.div
                 className="relative mx-auto lg:ml-auto z-10 rounded-2xl md:rounded-3xl max-w-[400px] md:max-w-[500px] lg:max-w-[550px]"
-                // animate={{
-                //   y: [0, -10, 0],
-                // }}
-                // transition={{
-                //   duration: 6,
-                //   ease: "easeInOut",
-                //   repeat: Infinity
-                // }}
+              // animate={{
+              //   y: [0, -10, 0],
+              // }}
+              // transition={{
+              //   duration: 6,
+              //   ease: "easeInOut",
+              //   repeat: Infinity
+              // }}
               >
                 <img
                   src={Images.About.AboutHero}

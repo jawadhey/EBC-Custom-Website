@@ -71,12 +71,8 @@ const ProgramsSection = ({ isLanding }: { isLanding?: boolean }) => {
   // Program categories
   const categories = [
     { id: "all", name: "All" },
-    { id: "exclusive", name: "Our Exclusive Universities" },
-    { id: 'MOE Chinese Universities', name: 'MOE Chinese Universities' },
-
-    // { id: "medical", name: "Medical" },
-    // { id: "engineering", name: "Engineering" },
-    // { id: "other", name: "Other" },
+    { id: "china", name: "Chinese Universities" },
+    { id: "azerbaijan", name: "Azerbaijani Universities" },
   ]
 
   const allPrograms = [
@@ -85,42 +81,42 @@ const ProgramsSection = ({ isLanding }: { isLanding?: boolean }) => {
       title: "Nakhchivan University",
       description: "A progressive university in Azerbaijan offering diverse academic programs and global collaboration.",
       image: uni1,
-      categories: ["exclusive", "engineering"],
+      categories: ["azerbaijan"],
     },
     {
       id: 2,
       title: "North China University of Science & Technology",
       description: "A reputed institution combining science, technology, and medical education in northern China.",
       image: uni2,
-      categories: ["", "medical"],
+      categories: ["china"],
     },
     {
       id: 3,
       title: "Kunming University of Science & Technology",
       description: "Located in Yunnan, it proudly specializes in applied sciences and innovative, cutting-edge tech research.",
       image: uni3,
-      categories: ["other", "medical"],
+      categories: ["china"],
     },
     {
       id: 4,
       title: "Guangxi Medical University",
       description: "One of China's oldest medical universities, known for public health and clinical medicine.",
       image: uni4,
-      categories: ["", "medical"],
+      categories: ["china"],
     },
     {
       id: 5,
       title: "Wuhan University of Science & Technology",
       description: "An interdisciplinary university excelling in engineering, materials, and medical fields.",
       image: uni5,
-      categories: ["", "medical"],
+      categories: ["china"],
     },
     {
       id: 6,
       title: "Yichuan University",
       description: "Discover academic excellence and cultural immersion at Yichuan University — a dynamic institution known for its quality education, friendly campus environment, and growing international student community.",
       image: uni6,
-      categories: ["", "medical"],
+      categories: ["china"],
     },
   ];
 
