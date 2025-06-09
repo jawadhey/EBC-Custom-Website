@@ -26,7 +26,7 @@ const UniversitiesPage = () => {
 "/>
          <div className='my-14 lg:my-28'>
 
-            <CtaSection backgroundImage={Images.Universities.UniversityBack} Heading="Ready to Take the First Step Towards Your Medical Career Abroad? We're Here to Help!" Text="Don't wait any longer—start your journey today! Whether you have questions or need guidance on the application process, our team is ready to assist you every step of the way. Click the button below to get in touch with us and take the first step toward studying at a top medical university in China. Your dream is just one click away!
+            <CtaSection backgroundImage={Images.Universities.UniversityBack} Heading="Ready to Take the First Step Towards Your Career Abroad? We're Here to Help!" Text="Don't wait any longer—start your journey today! Whether you have questions or need guidance on the application process, our team is ready to assist you every step of the way. Click the button below to get in touch with us and take the first step toward studying at a top medical university in China. Your dream is just one click away!
 "/>
          </div>
 

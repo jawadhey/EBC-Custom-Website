@@ -3,6 +3,7 @@ import Container from "../../../components/Container"
 import { Images } from "../../../assets/images"
 import { motion } from "motion/react"
 import { useInView } from "react-intersection-observer"
+import { useNavigate } from "react-router-dom"
 
 // Animation variants
 const containerVariants = {
@@ -95,6 +96,7 @@ const FoundersMessageSection = () => {
     threshold: 0.1,
     triggerOnce: false
   })
+  const navigate = useNavigate()
 
   return (
     <div className="py-8 md:py-16 lg:py-24 bg-white overflow-hidden" ref={ref}>
@@ -191,11 +193,11 @@ const FoundersMessageSection = () => {
               </motion.p>
 
               <motion.div
-                className="mt-6 md:mt-10 flex justify-end"
+                className="mt-6 md:mt-10 flex justify-end cursor-pointer"
                 variants={itemVariants}
+                onClick={() => navigate('/about-us')}
               >
                 <motion.a
-                  href="#"
                   className="inline-flex items-center bg-purple-100 text-TwPrimaryPurple px-4 py-2 md:px-6 md:py-3 rounded-full hover:bg-purple-200 transition-colors text-sm md:text-base"
                   whileHover={{
                     scale: 1.05,

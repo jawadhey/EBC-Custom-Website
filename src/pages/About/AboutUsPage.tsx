@@ -27,7 +27,7 @@ const AboutUsPage = () => {
          <AnalyticsSection />
          <TestimonialVideoSection Text="Our students' journeys speak for themselves! From securing admissions in top medical universities to thriving in their careers, their success stories reflect our commitment to guiding them every step of the way. Watch the video to hear firsthand experiences and discover how we make studying abroad a seamless and rewarding experience."/>
          <TeamSection />
-         <CtaSection Heading="Take the First Step Toward Your Medical Career Abroad!" Text="Your dream of studying abroad is just one step away! Let our experts guide you through the admission, visa, and university selection process—hassle-free and stress-free. Get in touch now and take the first step toward your future!
+         <CtaSection Heading="Take the First Step Toward Your Career Abroad!" Text="Your dream of studying abroad is just one step away! Let our experts guide you through the admission, visa, and university selection process—hassle-free and stress-free. Get in touch now and take the first step toward your future!
 "/>
       </>
    )

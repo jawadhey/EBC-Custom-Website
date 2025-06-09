@@ -78,7 +78,7 @@ const ProgramsSection = ({ isLanding }: { isLanding?: boolean }) => {
   const allPrograms = [
     {
       id: 1,
-      title: "Nakhchivan University",
+      title: "Nakhchivan State University",
       description: "A progressive university in Azerbaijan offering diverse academic programs and global collaboration.",
       image: uni1,
       categories: ["azerbaijan"],
@@ -138,7 +138,7 @@ const ProgramsSection = ({ isLanding }: { isLanding?: boolean }) => {
             className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-700 text-center mb-3 md:mb-4 !leading-tight"
             variants={itemVariants}
           >
-            Programs We Offer
+            Our Exclusive Universities
           </motion.h2>
 
           {/* Subheading */}

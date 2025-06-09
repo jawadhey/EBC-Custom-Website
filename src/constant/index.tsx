@@ -48,10 +48,10 @@ export const universities: any = [
     ],
     programs: [
       {
-        title: <strong>MBBS (Bachelor of Medicine, Bachelor of Surgery)</strong>,
+        title: <strong>MBBS</strong>,
         description: (
           <>
-            The <strong>MBBS program</strong> at <strong>Nakhchivan University</strong> is designed for students beginning their
+            The <strong>MBBS program</strong> at <strong>Nakhchivan State University</strong> is designed for students beginning their
             journey into the world of medicine. This 5-year program combines <strong>theoretical learning</strong> with{" "}
             <strong>practical clinical training</strong>, preparing students to become competent, confident, and compassionate
             doctors. The curriculum follows <strong>international standards</strong> and is recognized by{" "}
@@ -60,7 +60,7 @@ export const universities: any = [
         ),
       },
       {
-        title: <strong>MD (Doctor of Medicine)</strong>,
+        title: <strong>MD</strong>,
         description: (
           <>
             The <strong>MD program</strong> is a postgraduate-level degree focused on{" "}

@@ -109,7 +109,7 @@ const FaqSection = () => {
       {
          question: "How long have you been helping students?",
          answer:
-            "We have been assisting students for over [X] years, with a proven track record of successful placements in top medical universities abroad, especially in China.",
+            "We have been assisting students for over 18+ years, with a proven track record of successful placements in top medical universities abroad, especially in China.",
       },
       {
          question: "Is your consultancy fee high?",
@@ -127,7 +127,7 @@ const FaqSection = () => {
       {
          question: "Which universities in China do you work with?",
          answer:
-            "We partner with top-tier medical universities in China, including [University A], [University B], and [University C], all recognized for their high-quality medical programs and global reputation.",
+            "We partner with top-tier medical universities in China, including Shihezi University, Ningxia Medical University, Zhengzhou University, Nanjing Medical University, Jiangsu University, Southwest Medical University, Kunming Medical University, Jilin University, Guangxi Medical University, Kunming University of Science & Technology, Yichun University, North China University of Science & Technology, and Jianghan University. All these universities are recognized by WHO, ECFMG, and other international medical bodies, offering high-quality English-taught MBBS programs.",
       },
       {
          question: "What documents do I need to apply for a program?",

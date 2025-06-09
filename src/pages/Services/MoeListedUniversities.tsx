@@ -16,6 +16,11 @@ import jiangsuImage from '../../assets/images/Services/china/juangsu.jpg'
 import southwestImage from '../../assets/images/Services/china/southwest-Medical-Universit.jpg'
 import kunmingImage from '../../assets/images/Services/china/kunming-medical-university.jpg'
 import jilinImage from '../../assets/images/Services/china/jilin.png'
+import uni4 from '../../assets/universities/uni4/hero.jpg'
+import uni3 from '../../assets/universities/uni3/hero.jpg'
+import uni6 from '../../assets/images/Universities/Yichun-University.jpg'
+import uni2 from '../../assets/universities/uni2/hero.jpg'
+import uni5 from '../../assets/universities/uni5/hero.png'
 
 // Animation variants
 const containerVariants = {
@@ -48,16 +53,22 @@ const universities = [
     name: "SHIHEZI UNIVERSITY",
     image: shiheziImage,
     details: {
-      accreditation: "MOE, PMDC listed",
-      duration: "06 years",
+      accreditation: "MOE China, WHO, PMDC/PMC, ECFMG, WDOMS/WFME recognized",
+      duration: "06 years (5 + 1 internship)",
       language: "English taught program",
-      features: ["No HSK 3-4 in the first year", "41000 international students enrolled"],
+      features: [
+        "No HSK‑3/4 requirement in first year",
+        "Over 400 international students enrolled"
+      ],
       fees: {
         tuition: "30000 RMB/year",
         hostel: "5000 RMB/year",
-        management: "13500 RMB (once)",
-        other: "1800 RMB (Insurance, visa extension, medical checkup, bedding etc)",
-        total: "50300 RMB (First year total)"
+        healthInsurance: "300 RMB/year",
+        visaExtension: "400 RMB/year",
+        medicalCheckup: "300 RMB/year",
+        management: "13500 RMB (first year only)",
+        other: "2200 RMB (insurance, visa, medical, bedding/books etc)",
+        total: "50300 RMB (First year total approx)"
       },
       requirements: [
         "SSC+ HSSC Mark sheet",
@@ -76,25 +87,24 @@ const universities = [
     name: "NINGXIA MEDICAL UNIVERSITY",
     image: ningxiaImage,
     details: {
-      accreditation: "MOE, PMDC, and ECFMG approved",
-      duration: "6 years",
+      accreditation: "MOE China, WHO, PMDC/PMC, ECFMG, NMC, BMDC, USMLE/PLAB approved",
+      duration: "6 years (5 + 1 internship)",
       language: "English taught program",
-      features: ["No HSK 3-4 in first year", "Located in Muslim province", "Economical living"],
+      features: ["No HSK‑3/4 requirement in first year", "Located in Muslim province", "Economical living"],
       fees: {
         tuition: "29800 RMB/year",
         hostel: "5000 RMB/year",
         application: "1000 RMB (once)",
         registration: "400 RMB (once)",
-        visa: "400 RMB/year",
-        medical: "500 RMB (once)",
+        visa: "800 RMB/year",
+        medical: "500 RMB/year",
         insurance: "200 RMB/year",
-        management: "13000 RMB (once)",
-        internship: "14900 RMB (half of tuition fee)"
+        internship: "14900 RMB (6th year tuition, half fee)"
       },
       requirements: [
         "Application Form",
         "SSC Certificate (grade 10)",
-        "HSSC/A-Levels/WAEC or Senior High School (grade 12)",
+        "HSSC/A‑Levels/WAEC or Senior High School (grade 12)",
         "Passport First page in Scan",
         "Medical Check up on Chinese physical form",
         "Police clearance certificate",
@@ -102,31 +112,31 @@ const universities = [
         "Financial Statement of Guardian"
       ]
     }
-  },
+  },  
   {
     id: 3,
     name: "ZHENGZHOU UNIVERSITY",
     image: zhengzhouImage,
     details: {
-      accreditation: "MOE, PMDC, and ECFMG approved",
-      duration: "6 years",
+      accreditation: "MOE, PMDC/PMC, ECFMG approved",
+      duration: "6 years (5 + 1 internship)",
       language: "English taught program",
-      features: ["No HSK 3-4 in first year"],
+      features: ["No HSK 3‑4 in first year"],
       fees: {
-        application: "1000 RMB (one time)",
-        management: "13500 RMB (one time)",
-        registration: "400 RMB per year",
-        tuition: "35000 RMB per year",
-        hostel: "5500 RMB per year",
-        visa: "400 RMB per year",
-        medical: "550 RMB per year",
-        insurance: "800 RMB per year"
+        application: "–",
+        registration: "2000 RMB (first year, non‑refundable)",
+        management: "7500 RMB (first year)",
+        tuition: "35000 RMB/year",
+        hostel: "5500 RMB/year",
+        visa: "2100 RMB/year (visa+insurance)",
+        other: "–",
+        total: "51000 RMB (approx 1st year total)"
       },
       requirements: [
         "Application Form",
         "CV of Student",
         "SSC Certificate (grade 10)",
-        "HSSC/A-Levels/WAEC or Senior High School (grade 12)",
+        "HSSC/A‑Levels/WAEC or Senior High School (grade 12)",
         "Passport First page in Scan",
         "Medical Check up on Chinese physical form",
         "Police clearance certificate",
@@ -135,28 +145,30 @@ const universities = [
       ]
     }
   },
+  
   {
     id: 4,
     name: "NANJING MEDICAL UNIVERSITY",
     image: nanjingImage,
     details: {
-      accreditation: "WHO, WFME, WCAME, and ECFMG, PMDC recognized",
-      duration: "6 years",
+      accreditation: "MOE, WHO, WFME, WCAME, ECFMG, PMDC recognized",
+      duration: "6 years (5 + 1 internship)",
       language: "English taught program",
       fees: {
-        application: "1000 RMB (one time)",
-        registration: "800 RMB one-time",
-        medical: "500 RMB one time",
-        tuition: "34000 RMB per year",
-        hostel: "6000 RMB per year",
-        visa: "800 RMB per year",
-        insurance: "800 RMB per year",
-        management: "12000 RMB one-time"
+        application: "1000 RMB (once)",
+        registration: "500 RMB (once)",
+        deposit: "4000 RMB (refundable on graduation)",
+        tuition: "34000 RMB/year",
+        hostel: "6000 RMB/year",
+        visa: "800 RMB/year",
+        medical: "500 RMB (once)",
+        insurance: "800 RMB/year",
+        management: "–"
       },
       requirements: [
         "Application Form",
         "Junior High School (grade 10)",
-        "Senior High School/HSSC/A-levels/WAEC (grade 12)",
+        "Senior High School/HSSC/A‑Levels/WAEC (grade 12)",
         "Passport First and 2nd page",
         "National Identity Card (Student and Parents)",
         "Medical Check up on Chinese physical form",
@@ -171,25 +183,25 @@ const universities = [
     name: "JIANGSU UNIVERSITY",
     image: jiangsuImage,
     details: {
-      accreditation: "WHO, PMDC, WFME, ECFMG, and WCAME China",
-      duration: "6 years",
+      accreditation: "WHO, PMDC, WFME, ECFMG, WCAME China",
+      duration: "6 years (5 + 1 internship)",
       language: "English taught program",
       features: ["Min 70% marks req in FSC"],
       fees: {
-        application: "1000 RMB (one time)",
-        registration: "200 RMB (one time)",
-        management: "13000 RMB (one time)",
+        application: "≈300 RMB (USD41)",
+        registration: "100 RMB/year",
         tuition: "34000 RMB/year",
-        hostel: "6000 RMB/year",
+        hostel: "4900 RMB/year",
         visa: "400 RMB/year",
-        medical: "500 RMB/year",
-        insurance: "800 RMB/year"
+        medical: "400 RMB (first year)",
+        insurance: "600 RMB/year",
+        other: "book & bedding: ~1000 RMB total"
       },
       requirements: [
         "Application Form",
         "English Proficiency Certificate",
         "SSC Certificate (grade 10)",
-        "HSSC/A-Levels/WAEC or Senior High School (grade 12)",
+        "HSSC/A‑Levels/WAEC or Senior High School (grade 12)",
         "Passport First page in Scan",
         "Foreigner Physical Examination Form",
         "Non-criminal Record Certificate",
@@ -219,7 +231,7 @@ const universities = [
       requirements: [
         "Application Form",
         "SSC Certificate (grade 10)",
-        "HSSC/A-Levels/WAEC or Senior High School (grade 12)",
+        "HSSC/A‑Levels/WAEC or Senior High School (grade 12)",
         "Passport First page in Scan",
         "Medical Check up on Chinese physical form",
         "Police clearance certificate",
@@ -228,30 +240,30 @@ const universities = [
       ]
     }
   },
+  
   {
     id: 7,
     name: "KUNMING MEDICAL UNIVERSITY",
     image: kunmingImage,
     details: {
       accreditation: "PMDC, ECFMG, WFME, WCAME and WHO approved",
-      duration: "6 years",
+      duration: "6 years (5 + 1 internship)",
       language: "English taught program",
       fees: {
-        application: "1000 RMB one time",
-        registration: "500 RMB one-time",
-        tuition: {
-          english: "35000 RMB per year",
-          chinese: "24000 RMB per year"
-        },
-        hostel: "5000 RMB per year dual sharing",
-        visa: "400 RMB per year",
-        medical: "500 RMB per year",
-        insurance: "800 RMB per year"
+        application: "1000 RMB (one time)",
+        registration: "500 RMB (first year)",
+        tuition: "30000 RMB per year",
+        hostel: "3800–4800 RMB/year (double sharing)",
+        food: "4500 RMB/year",
+        residencePermit: "400 RMB/year",
+        medical: "400 RMB (first year)",
+        insurance: "800 RMB/year",
+        deposit: "500 RMB (hostel deposit first year)"
       },
       requirements: [
         "Application Form",
         "SSC Certificate (grade 10)",
-        "HSSC/A-Levels/WAEC or Senior High School (grade 12)",
+        "HSSC/A‑Levels/WAEC or Senior High School (grade 12)",
         "Passport First page in Scan",
         "Medical Check up on Chinese physical form",
         "Police clearance certificate",
@@ -260,28 +272,31 @@ const universities = [
       ]
     }
   },
+  
   {
     id: 8,
     name: "JILIN UNIVERSITY",
     image: jilinImage,
     details: {
       accreditation: "PMDC, ECFMG, WFME, WCAME and WHO approved",
-      duration: "6 years",
+      duration: "6 years (5 + 1 internship)",
       language: "English taught program",
       features: ["No HSK 4 in the first year"],
       fees: {
-        application: "1000 RMB (One time)",
-        registration: "600 RMB (One time)",
-        tuition: "33,000 RMB/year",
-        hostel: "6000 RMB/year",
-        visa: "800 RMB/year",
-        medical: "750 RMB/year",
-        insurance: "800 RMB/year"
+        application: "1000 RMB (one time)",
+        registration: "2000 RMB (first year)",
+        management: "7000 RMB (JW202, courier first year)",
+        tuition: "33000 RMB/year",
+        hostel: "4800–7200 RMB/year",
+        visa: "2000 RMB/year (insurance + permit)",
+        medical: "400 RMB/year",
+        insurance: "600 RMB/year",
+        books: "1000 RMB/year"
       },
       requirements: [
         "Application Form",
         "SSC Certificate (grade 10)",
-        "HSSC/A-Levels/WAEC or Senior High School (grade 12)",
+        "HSSC/A‑Levels/WAEC or Senior High School (grade 12)",
         "Passport First page in Scan",
         "IELTS or TOEFL or English Proficiency Letter",
         "Medical Check up on Chinese physical form",
@@ -290,7 +305,198 @@ const universities = [
         "Financial Statement of Guardian"
       ]
     }
+  },
+  
+  {
+    id: 9,
+    name: "GUANGXI MEDICAL UNIVERSITY",
+    image: uni4,
+    details: {
+      accreditation: "WHO, IMED/Faimer, ECFMG recognized",
+      duration: "6 years (5 + 1 internship)",
+      language: "English taught program",
+      features: [
+        "12 affiliated hospitals",
+        "81 medical practice bases",
+        "Over 1,200 international students",
+        "Established in 1934"
+      ],
+      fees: {
+        tuition: "24000 RMB/year (after 11,000 RMB scholarship)",
+        hostel: "3000 RMB/year (plus 1,000 RMB refundable deposit)",
+        application: "1000 RMB (once)",
+        registration: "800 RMB/year",
+        visa: "400 RMB/year",
+        medical: "500 RMB/year",
+        insurance: "800 RMB/year"
+      },
+      requirements: [
+        "High School Transcript",
+        "Passport Copy",
+        "Police Character Certificate",
+        "Physical Examination Form",
+        "Passport Photos",
+        "Study Plan",
+        "JW202 Application Form",
+        "English Proficiency Certificate"
+      ]
+    }
+  },
+  
+  {
+    id: 10,
+    name: "KUNMING UNIVERSITY OF SCIENCE & TECHNOLOGY",
+    image: uni3,
+    details: {
+      accreditation: "WHO, WFME, ECFMG recognized",
+      duration: "6 years (1 foundation + 4 + 1 internship)",
+      language: "English taught program",
+      features: [
+        "Located in scenic Kunming city",
+        "Over 49,000 students",
+        "Three major campuses",
+        "Modern facilities and labs"
+      ],
+      fees: {
+        application: "1000 RMB (once)",
+        registration: "—",
+        management: "10400 + 13000 RMB (first year)",
+        tuition: {
+          english: "10000 RMB (first year)",
+          subsequent: "18500 RMB/year"
+        },
+        hostel: {
+          firstYear: "1200 RMB",
+          subsequent: "1400 RMB/year"
+        },
+        visa: "—",
+        insurance: "—",
+        industrial: "—",
+        other: "Insurance & visa: 1700 RMB first year, 1200 RMB subsequent years"
+      },
+      requirements: [
+        "Passport",
+        "10th and 12th grade mark sheets",
+        "Medical report",
+        "Police certificate",
+        "Financial support form",
+        "CV",
+        "White background picture",
+        "Affidavit (if under 18)"
+      ]
+    }
+  },
+  
+  {
+    id: 11,
+    name: "YICHUN UNIVERSITY",
+    image: uni6,
+    details: {
+      accreditation: "WHO, WFME, ECFMG, EPIC, GMC recognized",
+      duration: "6 years (1 Chinese + 5 MBBS)",
+      language: "English taught program",
+      features: [
+        "69 undergraduate programs",
+        "18 schools",
+        "Two affiliated hospitals",
+        "Over 1,400 international students"
+      ],
+      fees: {
+        tuition: "12200 RMB (first year), 18500 RMB (subsequent years)",
+        hostel: "4500 RMB/year",
+        application: "1000 RMB (once)",
+        registration: "—",
+        visa: "—",
+        medical: "—",
+        insurance: "—",
+        management: "10000 RMB (first year Chinese/development fee)",
+        other: "Insurance/visa/medical: 6250 RMB first year, 1200 RMB subsequent years"
+      },
+      requirements: [
+        "Minimum 60% in FSc",
+        "Minimum 50% in English",
+        "Valid passport",
+        "Academic documents",
+        "Self-introduction video",
+        "Study plan"
+      ]
+    }
+  },
+  
+  {
+    id: 12,
+    name: "NORTH CHINA UNIVERSITY OF SCIENCE & TECHNOLOGY",
+    image: uni2,
+    details: {
+      accreditation: "PMC (A‑listed), WHO, IMED/FAIMER, PMC/HEC, ECFMG/USMLE/PLAB eligible",
+      duration: "6 years (1 Chinese + 4 + 1 internship)",
+      language: "English taught program (foundation year Chinese)",
+      features: [
+        "Located in Tangshan, Hebei Province",
+        "Established in 1926",
+        "Over 48,000 students",
+        "745‑acre campus"
+      ],
+      fees: {
+        application: "1000 RMB (once)",
+        registration: "9500 RMB (first year)",
+        management: "13000 RMB (first year, JW202/courier)",
+        tuition: "10500 RMB (1st year), 18000 RMB (subsequent years)",
+        hostel: "5000 RMB/year",
+        visa: "—",
+        medicalInsurance: "2000 RMB (1st year), 1600 RMB (subsequent)",
+        total: "40000 RMB (1st year), ~24600 RMB/year thereafter"
+      },
+      requirements: [
+        "Minimum 60% in Biology & English; 50% in Physics & Chemistry",
+        "Age 18–25 years",
+        "Passport",
+        "SSC & HSSC mark sheets",
+        "Filled application Form + Resume",
+        "Medical Check up on Chinese physical form",
+        "Police clearance certificate",
+        "One Digital photo with a white background",
+        "Bank statement & affidavit of financial support (min ~USD 6,000)"
+      ]
+    }
+  },
+  {
+    id: 13,
+    name: "JIANGHAN UNIVERSITY",
+    image: uni5,
+    details: {
+      accreditation: "WHO, PMDC/PMC, WFME, ECFMG recognized",
+      duration: "4 years (MBBS)",
+      language: "English taught program",
+      features: [
+        "Located in Wuhan, Hubei Province",
+        "Modern medical facilities",
+        "International student support",
+        "Clinical training opportunities"
+      ],
+      fees: {
+        tuition: "20000 RMB/year (includes dormitory)",
+        application: "1000 RMB (once)",
+        admissionService: "7200 RMB/year",
+        hostel: "3200 RMB/year",
+        visa: "400 RMB/year",
+        medical: "500 RMB/year",
+        insurance: "800 RMB/year"
+      },
+      requirements: [
+        "Minimum 60% in Grade 12",
+        "Age 18–25 years",
+        "Passport Copy",
+        "Physical Examination Form",
+        "Police Clearance Certificate",
+        "English Proficiency Certificate (if available)",
+        "Financial Statement",
+        "Application Form",
+        "Passport Photos"
+      ]
+    }
   }
+  
 ]
 
 const MoeListedUniversities = () => {

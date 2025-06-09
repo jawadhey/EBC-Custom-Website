@@ -37,7 +37,7 @@ const EventsPage = () => {
             Text={<p>
                We’re bringing our expertise directly to your campus! Our consulting sessions are tailored to help medical students understand the process of studying abroad, from application requirements to living in top international universities. Whether you're interested in studying in China or another destination, our team will provide personalized guidance and answer any questions you may have.
                <br /><br />
-               These sessions are designed to make it easier for you to plan your future and gain the clarity you need to make confident decisions. We can schedule a session at your institution, so you can get all the support you need without leaving campus. Reach out today to arrange a session and take the first step toward your medical career abroad!
+               These sessions are designed to make it easier for you to plan your future and gain the clarity you need to make confident decisions. We can schedule a session at your institution, so you can get all the support you need without leaving campus. Reach out today to arrange a session and take the first step toward your career abroad!
             </p>}
          />
          <AboutUsSection
@@ -52,7 +52,7 @@ const EventsPage = () => {
          />
          <ImageGallerySection />
          <TeamSection />
-         <CtaSection Heading="Take the First Step Toward Your Medical Career Abroad!" Text="Your dream of studying abroad is just one step away! Let our experts guide you through the admission, visa, and university selection process—hassle-free and stress-free. Get in touch now and take the first step toward your future!
+         <CtaSection Heading="Take the First Step Toward Your Career Abroad!" Text="Your dream of studying abroad is just one step away! Let our experts guide you through the admission, visa, and university selection process—hassle-free and stress-free. Get in touch now and take the first step toward your future!
 "/>
 
       </>

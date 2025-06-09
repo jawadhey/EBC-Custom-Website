@@ -100,7 +100,7 @@ const StatsSection = ({ stats }: StatsSectionProps) => {
                                  stat.value
                               )}
                            </motion.span>
-                           {(index === 0 || index === 1) && (
+                           {(index === 0 || index === 1 || index === 2) && (
                               <motion.span
                                  className="text-yellow-500 text-4xl sm:text-5xl font-bold"
                                  initial={{ scale: 0 }}
@@ -113,21 +113,6 @@ const StatsSection = ({ stats }: StatsSectionProps) => {
                                  }}
                               >
                                  +
-                              </motion.span>
-                           )}
-                           {index === 2 && typeof stat.value === "number" && (
-                              <motion.span
-                                 className="text-yellow-500 text-3xl sm:text-4xl font-bold ml-1"
-                                 initial={{ scale: 0 }}
-                                 animate={inView ? { scale: 1 } : {}}
-                                 transition={{
-                                    delay: 0.4 + index * 0.15,
-                                    duration: 0.3,
-                                    type: "spring",
-                                    stiffness: 300
-                                 }}
-                              >
-                                 %
                               </motion.span>
                            )}
                         </div>

@@ -138,7 +138,7 @@ const LandingHeroSection = () => {
                      className="flex w-fit px-3 md:px-4 h-[30px] md:h-[46px] items-center rounded-full bg-purple-100 border border-purple-200"
                      variants={itemVariants}
                   >
-                     <p className="text-TwPrimaryPurple text-xs md:text-sm font-medium">Best Student Consultant in your City</p>
+                     <p className="text-TwPrimaryPurple text-xs md:text-sm font-medium">Best Educational Consultant in your region</p>
                   </motion.div>
 
                   <motion.h1
