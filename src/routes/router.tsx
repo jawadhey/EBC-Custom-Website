@@ -1,4 +1,3 @@
-
 import { createBrowserRouter } from "react-router-dom";
 import MainLandingPage from "../pages/Landing/MainLandingPage";
 import SiteLayout from "../layouts/SiteLayout";
@@ -12,6 +11,7 @@ import StudyInEurope from "../pages/Services/StudyInEurope";
 import PfpForEngineers from "../pages/Services/PfpForEngineers";
 import MoeListedUniversities from "../pages/Services/MoeListedUniversities";
 import MDinEurope from "../pages/Services/MDinEurope";
+import BarAtLaw from "../pages/Services/BarAtLaw";
  
 
 const Router = () => {
@@ -66,6 +66,10 @@ const Router = () => {
             {
                path: 'moe-listed-universities',
                element: <MoeListedUniversities />,
+            },
+            {
+               path: 'bar-at-law',
+               element: <BarAtLaw />,
             },
 
             

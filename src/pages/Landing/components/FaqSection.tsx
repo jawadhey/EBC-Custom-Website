@@ -127,7 +127,7 @@ const FaqSection = () => {
       {
          question: "Which universities in China do you work with?",
          answer:
-            "We partner with top-tier medical universities in China, including Shihezi University, Ningxia Medical University, Zhengzhou University, Nanjing Medical University, Jiangsu University, Southwest Medical University, Kunming Medical University, Jilin University, Guangxi Medical University, Kunming University of Science & Technology, Yichun University, North China University of Science & Technology, and Jianghan University. All these universities are recognized by WHO, ECFMG, and other international medical bodies, offering high-quality English-taught MBBS programs.",
+            "We partner with top-tier medical universities in China, including Shihezi University, Ningxia Medical University, Zhengzhou University, Nanjing Medical University, Jiangsu University, Southwest Medical University, Kunming Medical University, Jilin University, Guangxi Medical University, Kunming University of Science & Technology (KUST), Wuhan University, Yichun University, North China University of Science & Technology, and Jianghan University. All these universities are recognized by WHO, ECFMG, and other international medical bodies, offering high-quality English-taught MBBS programs.",
       },
       {
          question: "What documents do I need to apply for a program?",

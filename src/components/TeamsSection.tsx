@@ -13,47 +13,79 @@ import drKhadijaImage from "../assets/images/Team/Dr Khadija Nawaz.jpeg"
 import qasimGhaffarImage from "../assets/images/Team/Mr Qasim Ghaffar.jpeg"
 import kamranAliImage from "../assets/images/Team/Dr Farman Ali.jpeg"
 import laibaSaeedImage from "../assets/images/Team/Ma Laiba Saeed.jpeg"
+import FarmanImage from "../assets/images/Team/Dr farman.jpeg"
+import FarooqImage from "../assets/images/Team/Dr Farooq.jpeg"
 
 const TeamSection = () => {
    // Team members data
    const teamMembers = [
-         {
-            id: 1,
+      {
+         id: 1,
+         name: "Dr Farooq Korai",
+         title: "Founder and Chairman",
+         image: FarooqImage, // You'll need to import the correct image
+         category: "founder"
+      },
+      {
+         id: 2,
+         name: "Dr Farman Ali Khan",
+         title: "Founder and CEO",
+         image: FarmanImage, // You'll need to import the correct image
+         category: "founder"
+      },
+      {
+         id: 7,
+         name: "Mr Farman Ali",
+         title: "Student counsellor",
+         image: kamranAliImage,
+         category: "team"
+      },
+      {
+         id: 3,
          name: "Dr Amjad Iqbal",
-         title: "Managing Director",
+         title: "Founder and Managing Director",
          image: drAmjadImage,
-         },
-         {
-            id: 2,
+         category: "founder"
+      },
+      {
+         id: 4,
          name: "Dr Khadija Nawaz",
          title: "Assisting Managing Director",
          image: drKhadijaImage,
-         },
-         {
-            id: 3,
+         category: "team"
+      },
+      {
+         id: 5,
          name: "Mr Qasim Ghaffar",
          title: "Regional Head KPK",
          image: qasimGhaffarImage,
-         },
-         {
-            id: 4,
-         name: "Mr Kamran Ali Khan",
-         title: "Student counsellor",
-         image: kamranAliImage,
-         },
-         {
-            id: 5,
+         category: "team"
+      },
+      {
+         id: 6,
          name: "Ms Laiba Saeed",
          title: "Office manager",
          image: laibaSaeedImage,
-         },
+         category: "team"
+      },
    ]
 
-   // Animation hooks
+   const [activeTab, setActiveTab] = useState("all")
    const [ref, inView] = useInView({
       threshold: 0.1,
       triggerOnce: true
    });
+
+   // Categories for tabs
+   const categories = [
+      { id: "all", name: "All" },
+      { id: "founder", name: "Founders" },
+   ]
+
+   // Filter team members based on active tab
+   const filteredMembers = activeTab === "all"
+      ? teamMembers
+      : teamMembers.filter((member) => member.category === activeTab)
 
    // Animation variants
    const containerVariants = {
@@ -147,12 +179,37 @@ const TeamSection = () => {
                   Meet the passionate professionals driving our mission to guide students toward successful academic journeys abroad.
                </motion.p>
 
+               {/* Tabs */}
+               <motion.div
+                  className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 md:mb-12"
+                  variants={containerVariants}
+               >
+                  {categories.map((category, index) => (
+                     <motion.button
+                        key={category.id}
+                        onClick={() => setActiveTab(category.id)}
+                        className={`px-3 sm:px-4 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-medium transition-colors ${activeTab === category.id
+                              ? "bg-TwPrimaryPurple text-white"
+                              : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                           }`}
+                        variants={itemVariants}
+                        whileHover={{
+                           scale: 1.05,
+                           transition: { duration: 0.2 }
+                        }}
+                        whileTap={{ scale: 0.95 }}
+                     >
+                        {category.name}
+                     </motion.button>
+                  ))}
+               </motion.div>
+
                {/* Team Members Grid */}
                <motion.div
                   className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-8 md:mb-12"
                   variants={containerVariants}
                >
-                  {teamMembers.map((member, index) => (
+                  {filteredMembers.map((member, index) => (
                      <motion.div
                         key={member.id}
                         className="flex flex-col items-center"

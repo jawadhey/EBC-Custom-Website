@@ -3,7 +3,7 @@ import { Images } from "../../../assets/images"
 import Container from "../../../components/Container"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
-
+import aboutUsImage from '../../../assets/images/About/Frame 12.png'
 // Animation variants
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -168,7 +168,7 @@ const HeroSection = () => {
               // }}
               >
                 <img
-                  src={Images.About.AboutHero}
+                  src={aboutUsImage}
                   alt="Medical Students Consultation"
                   className="w-auto h-auto rounded-2xl md:rounded-3xl object-cover"
                 />

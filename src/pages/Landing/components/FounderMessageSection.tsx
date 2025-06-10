@@ -1,9 +1,13 @@
 import { FaArrowRight, FaQuoteLeft } from "react-icons/fa"
 import Container from "../../../components/Container"
-import { Images } from "../../../assets/images"
 import { motion } from "motion/react"
 import { useInView } from "react-intersection-observer"
 import { useNavigate } from "react-router-dom"
+
+// Import founder images
+import drAmjadImage from "../../../assets/images/Team/Dr Amjad Iqbal.jpeg"
+import drFarmanImage from "../../../assets/images/Team/Dr farman.jpeg"
+import drFarooqImage from "../../../assets/images/Team/Dr Farooq.jpeg"
 
 // Animation variants
 const containerVariants = {
@@ -148,7 +152,7 @@ const FoundersMessageSection = () => {
             >
               <motion.div className="w-2/3" variants={imageVariants}>
                 <motion.img
-                  src={Images.FounderImage}
+                  src={drFarooqImage}
                   alt="Founder"
                   className="h-auto w-full rounded-lg object-cover object-top"
                   transition={{
@@ -160,14 +164,14 @@ const FoundersMessageSection = () => {
               </motion.div>
               <div className="w-1/3 flex flex-col justify-between gap-3 md:gap-4">
                 <motion.img
-                  src={Images.coFounderImage}
+                  src={drAmjadImage}
                   alt="Co-Founder"
                   className="h-full w-auto rounded-2xl md:rounded-[2rem] object-cover object-top"
                   variants={smallImageVariants}
                   custom={0}
                 />
                 <motion.img
-                  src={Images.coFounderImage}
+                  src={drFarmanImage}
                   alt="Co-Founder"
                   className="h-full w-auto rounded-2xl md:rounded-[2rem] object-cover object-top"
                   variants={smallImageVariants}
@@ -189,7 +193,9 @@ const FoundersMessageSection = () => {
                 className="text-gray-700 text-base md:text-lg leading-relaxed"
                 variants={itemVariants}
               >
-                We started this platform to <b>make international education simple and accessible.</b> From choosing the right university to securing your admission and visa, we guide you every step of the way. Your success is our pride, and we're here to help you achieve it!
+                Our success is defined by <b>your success</b>. We take great pride in celebrating the <b>milestones and accomplishments</b> of our students. Your journey is our journey, and we are here to ensure that you have the <b>resources and support</b> necessary to reach your full potential.
+                <br /><br />
+                Thank you for considering <b>EBC Worldwide</b> as your partner in education. We are excited to embark on this journey with you and look forward to helping you achieve your dreams.
               </motion.p>
 
               <motion.div
