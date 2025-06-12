@@ -15,6 +15,7 @@ import kamranAliImage from "../assets/images/Team/Dr Farman Ali.jpeg"
 import laibaSaeedImage from "../assets/images/Team/Ma Laiba Saeed.jpeg"
 import FarmanImage from "../assets/images/Team/Dr farman.jpeg"
 import FarooqImage from "../assets/images/Team/Dr Farooq.jpeg"
+import HaiderImage from "../assets/images/Team/Mr Haider.jpeg"
 
 const TeamSection = () => {
    // Team members data
@@ -35,9 +36,9 @@ const TeamSection = () => {
       },
       {
          id: 7,
-         name: "Mr Farman Ali",
+         name: "Mr Kamran Ali Khan",
          title: "Student counsellor",
-         image: kamranAliImage,
+         image: HaiderImage,
          category: "team"
       },
       {

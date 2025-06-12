@@ -118,24 +118,24 @@ const TestimonialSection = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Mary Jane",
+      name: "Ahmed Khan",
       position: "MBBS Wuhan University of Medical Sciences",
-      image: Images.TestimonialImage,
-      text: `"The best decision I made!" – Thanks to their guidance, I got into a top medical university in China without any hassle. They handled everything, from applications to visas, making the entire process smooth and stress-free. Studying abroad was a life-changing experience, and I'm now living my dream of studying medicine! Highly recommend their support.`,
+      image: Images.TestimonialImage1,
+      text: `EBC Worldwide helped me in every step to study MBBS abroad. The team explained everything clearly and supported me with documents, admission, and visa. I am now studying in a good university in China. Thank you for the great help!`,
     },
     {
       id: 2,
-      name: "John Smith",
+      name: "Hassan Shah",
       position: "MD European Medical University",
-      image: Images.TestimonialImage,
-      text: `"The best decision I made!" – Thanks to their guidance, I got into a top medical university in China without any hassle. They handled everything, from applications to visas, making the entire process smooth and stress-free. Studying abroad was a life-changing experience, and I'm now living my dream of studying medicine! Highly recommend their support.`,
+      image: Images.TestimonialImage2,
+      text: `I had many doubts about studying abroad, but EBC guided me well. They were friendly and always answered my questions. I am now in Europe, studying medicine, and I feel confident because of their support.`,
     },
     {
       id: 3,
-      name: "Sarah Williams",
+      name: "Mariam Shahid",
       position: "MBBS Beijing Medical University",
-      image: Images.TestimonialImage,
-      text: `"The best decision I made!" – Thanks to their guidance, I got into a top medical university in China without any hassle. They handled everything, from applications to visas, making the entire process smooth and stress-free. Studying abroad was a life-changing experience, and I'm now living my dream of studying medicine! Highly recommend their support.`,
+      image: Images.TestimonialImage3,
+      text: `EBC Worldwide is professional and honest. They gave me correct information and helped with the full process. I am happy with their service and recommend them to other students who want to study abroad.`,
     },
   ];
 

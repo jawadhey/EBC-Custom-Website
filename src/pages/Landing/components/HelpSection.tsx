@@ -142,7 +142,7 @@ const HelpSection = () => {
             className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-700 text-center mb-8 md:mb-12 max-w-4xl mx-auto !leading-tight"
             variants={itemVariants}
           >
-            Your Journey to Studying Medicine Abroad in 3 Simple Steps
+            Your Journey to Studying Abroad in 3 Simple Steps
           </motion.h2>
 
           {/* Two Column Layout */}

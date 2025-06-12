@@ -12,6 +12,7 @@ import PfpForEngineers from "../pages/Services/PfpForEngineers";
 import MoeListedUniversities from "../pages/Services/MoeListedUniversities";
 import MDinEurope from "../pages/Services/MDinEurope";
 import BarAtLaw from "../pages/Services/BarAtLaw";
+import StudyinUK from "../pages/Services/StudyinUK";
  
 
 const Router = () => {
@@ -58,6 +59,10 @@ const Router = () => {
             {
                path: 'md-in-europe',
                element: <MDinEurope />,
+            },
+            {
+               path: 'study-in-uk',
+               element: <StudyinUK />,
             },
             {
                path: 'pfp-for-engineers',

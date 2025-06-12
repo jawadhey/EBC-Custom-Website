@@ -1,12 +1,14 @@
 
 import LandingHero from './Landing/Frame 18.png'
 import HarwardLogo from './Landing/Frame.png'
-import HelpImage from './Landing/Frame 79.png'
+import HelpImage from './Landing/help.png'
 import ProgramsImage from './Landing/Frame 31.png'
 import ContactImage from './Landing/Frame 118.png'
 import FounderImage from './Landing/Frame 3283.png'
 import coFounderImage from './Landing/Frame 3284.png'
-import TestimonialImage from './Landing/Frame 144.png'
+import TestimonialImage1 from './Landing/hassan.jpg'
+import TestimonialImage2 from './Landing/ahmed.jpg'
+import TestimonialImage3 from './Landing/maryum.jpg'
 
 import AboutHero from './About/Group 1.png'
 import AboutGallery1 from './About/Frame 144 (1).png'
@@ -54,7 +56,9 @@ export const Images = {
    ContactImage,
    FounderImage,
    coFounderImage,
-   TestimonialImage,
+   TestimonialImage1,
+   TestimonialImage2,
+   TestimonialImage3,
    About: {
       AboutHero,
       AboutGallery1,
