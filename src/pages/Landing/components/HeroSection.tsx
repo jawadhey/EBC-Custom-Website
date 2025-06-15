@@ -152,7 +152,7 @@ const LandingHeroSection = () => {
                      className="text-gray-200 max-w-xl text-sm md:text-base !leading-relaxed"
                      variants={itemVariants}
                   >
-                     Helping FSC Students Achieve Their Dream of Studying Abroad! <br />
+                     Helping Students Achieve Their Dream of Studying Abroad! <br />
                      Secure admission to top international universities with expert guidance and a smooth application process. Whether you're pursuing medicine, engineering, business, or more, we'll help you earn a globally recognized degree. Guaranteed admission, affordable tuition, and full visa support—your global journey begins here.
                   </motion.p>
 

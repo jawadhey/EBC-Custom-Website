@@ -22,6 +22,14 @@ import uni6 from '../../assets/images/Universities/Yichun-University.jpg'
 import uni2 from '../../assets/universities/uni2/hero.jpg'
 import uni5 from '../../assets/universities/uni5/hero.png'
 
+// Update university image imports to match actual filenames
+import ningboImage from '../../assets/images/Services/china/Ningbo_University_2018-04-09_02-1.jpg'
+import wenzhouImage from '../../assets/images/Services/china/wenzhou-medical-college.jpg.webp'
+import fujianImage from '../../assets/images/Services/china/fujian uni.webp'
+import dalianImage from '../../assets/images/Services/china/dalian.jpg'
+import xuzhouImage from '../../assets/images/Services/china/xuzhou-medical-uni.jpg'
+import southernImage from '../../assets/images/Services/china/southen medical uni.jpg'
+
 // Animation variants
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -345,158 +353,210 @@ const universities = [
   
   {
     id: 10,
-    name: "KUNMING UNIVERSITY OF SCIENCE & TECHNOLOGY",
-    image: uni3,
+    name: "NINGBO UNIVERSITY",
+    image: ningboImage,
     details: {
-      accreditation: "WHO, WFME, ECFMG recognized",
-      duration: "6 years (1 foundation + 4 + 1 internship)",
-      language: "English taught program",
+      accreditation: "Ministry of Education China, WHO, WFME, FAIMER, recognized by PMDC/PMC and ECFMG (eligible for USMLE)",
+      duration: "6 years (5 years coursework + 1-year internship)",
+      language: "English-medium MBBS program",
       features: [
-        "Located in scenic Kunming city",
-        "Over 49,000 students",
-        "Three major campuses",
-        "Modern facilities and labs"
+        "No HSK required in first year",
+        "Modern campus & teaching hospitals",
+        "Comprehensive support services for international students"
       ],
       fees: {
-        application: "1000 RMB (once)",
-        registration: "—",
-        management: "10400 + 13000 RMB (first year)",
-        tuition: {
-          english: "10000 RMB (first year)",
-          subsequent: "18500 RMB/year"
-        },
-        hostel: {
-          firstYear: "1200 RMB",
-          subsequent: "1400 RMB/year"
-        },
-        visa: "—",
-        insurance: "—",
-        industrial: "—",
-        other: "Insurance & visa: 1700 RMB first year, 1200 RMB subsequent years"
+        tuition: "38,000 RMB/year",
+        hostel: "≈ 4,000–5,200 RMB/year",
+        application: "≈ 513 RMB (once)",
+        registration: "≈ –",  // lumped into tuition/others
+        visa: "≈ 400–800 RMB/year",
+        medical: "≈ 300 RMB/year",
+        insurance: "≈ 600–1,200 RMB/year",
+        management: "N/A or included"
       },
       requirements: [
-        "Passport",
-        "10th and 12th grade mark sheets",
-        "Medical report",
-        "Police certificate",
-        "Financial support form",
-        "CV",
-        "White background picture",
-        "Affidavit (if under 18)"
+        "Completed high school (exit grade 12, science PCB)",
+        "Passport copy",
+        "Medical exam (on Chinese form)",
+        "No criminal record certificate",
+        "Passport‑size photos",
+        "Application form",
+        "Financial statement",
+        "NEET/TOEFL/IELTS for some nationalities"
       ]
     }
   },
-  
   {
     id: 11,
-    name: "YICHUN UNIVERSITY",
-    image: uni6,
+    name: "WENZHOU MEDICAL UNIVERSITY",
+    image: wenzhouImage,
     details: {
-      accreditation: "WHO, WFME, ECFMG, EPIC, GMC recognized",
-      duration: "6 years (1 Chinese + 5 MBBS)",
-      language: "English taught program",
+      accreditation: "Ministry of Education China, WHO, NMC/MCI, WFME/FAIMER recognized",
+      duration: "6 years (5 + 1 internship)",
+      language: "English-medium program (no HSK in first year)",
       features: [
-        "69 undergraduate programs",
-        "18 schools",
-        "Two affiliated hospitals",
-        "Over 1,400 international students"
+        "No HSK requirement in first year",
+        "Advanced clinical training and modern facilities",
+        "Strong international student support"
       ],
       fees: {
-        tuition: "12200 RMB (first year), 18500 RMB (subsequent years)",
-        hostel: "4500 RMB/year",
-        application: "1000 RMB (once)",
-        registration: "—",
-        visa: "—",
-        medical: "—",
-        insurance: "—",
-        management: "10000 RMB (first year Chinese/development fee)",
-        other: "Insurance/visa/medical: 6250 RMB first year, 1200 RMB subsequent years"
+        tuition: "30,000 RMB/year",
+        hostel: "4,000 RMB/year",
+        application: "≈ 600–1,000 RMB (once)",
+        registration: "Included in hostel/other",
+        visa: "Included in other/year",
+        medical: "Included in other/year",
+        insurance: "Included in other/year",
+        management: "10,000 RMB (first year only)",
+        other: "≈ 2,000 RMB/year (medical, visa, bedding, etc)"
       },
       requirements: [
-        "Minimum 60% in FSc",
-        "Minimum 50% in English",
-        "Valid passport",
-        "Academic documents",
-        "Self-introduction video",
-        "Study plan"
+        "Completed high school (grade 12, science PCB)",
+        "Passport copy and photos",
+        "Medical examination (Chinese form)",
+        "Police clearance certificate",
+        "Filled application form",
+        "Financial statement",
+        "NEET or equivalent for some nationalities"
       ]
     }
   },
-  
   {
     id: 12,
-    name: "NORTH CHINA UNIVERSITY OF SCIENCE & TECHNOLOGY",
-    image: uni2,
+    name: "FUJIAN MEDICAL UNIVERSITY",
+    image: fujianImage,
     details: {
-      accreditation: "PMC (A‑listed), WHO, IMED/FAIMER, PMC/HEC, ECFMG/USMLE/PLAB eligible",
-      duration: "6 years (1 Chinese + 4 + 1 internship)",
-      language: "English taught program (foundation year Chinese)",
+      accreditation: "Ministry of Education China, WHO, PMDC/PMC, ECFMG, WFME/FAIMER recognized",
+      duration: "6 years (5 + 1 internship)",
+      language: "English-medium program (HSK optional later)",
       features: [
-        "Located in Tangshan, Hebei Province",
-        "Established in 1926",
-        "Over 48,000 students",
-        "745‑acre campus"
+        "No HSK requirement in first year",
+        "Coastal campus with research focus",
+        "Multiple affiliated teaching hospitals"
       ],
       fees: {
-        application: "1000 RMB (once)",
-        registration: "9500 RMB (first year)",
-        management: "13000 RMB (first year, JW202/courier)",
-        tuition: "10500 RMB (1st year), 18000 RMB (subsequent years)",
-        hostel: "5000 RMB/year",
-        visa: "—",
-        medicalInsurance: "2000 RMB (1st year), 1600 RMB (subsequent)",
-        total: "40000 RMB (1st year), ~24600 RMB/year thereafter"
+        tuition: "34,000–35,000 RMB/year",
+        hostel: "4,000–6,000 RMB/year",
+        application: "≈ 500 RMB (once)",
+        registration: "≈ 250–800 RMB/year",
+        visa: "≈ 800 RMB/year",
+        medical: "≈ 500 RMB/year",
+        insurance: "≈ 800 RMB/year",
+        other: "–"
       },
       requirements: [
-        "Minimum 60% in Biology & English; 50% in Physics & Chemistry",
-        "Age 18–25 years",
-        "Passport",
-        "SSC & HSSC mark sheets",
-        "Filled application Form + Resume",
-        "Medical Check up on Chinese physical form",
+        "Completed high school (grade 12, science PCB, min. ~70%)",
+        "Passport copy and photos",
+        "Medical form (Chinese format)",
         "Police clearance certificate",
-        "One Digital photo with a white background",
-        "Bank statement & affidavit of financial support (min ~USD 6,000)"
+        "Application form",
+        "Financial statement",
+        "NEET/TOEFL/IELTS required for some nationals"
       ]
     }
   },
   {
     id: 13,
-    name: "JIANGHAN UNIVERSITY",
-    image: uni5,
+    name: "DALIAN MEDICAL UNIVERSITY",
+    image: dalianImage,
     details: {
-      accreditation: "WHO, PMDC/PMC, WFME, ECFMG recognized",
-      duration: "4 years (MBBS)",
-      language: "English taught program",
+      accreditation: "Ministry of Education China, WHO, NMC, WFME recognized",
+      duration: "6 years (5 + 1 internship)",
+      language: "English-medium program (no HSK in first year)",
       features: [
-        "Located in Wuhan, Hubei Province",
-        "Modern medical facilities",
-        "International student support",
-        "Clinical training opportunities"
+        "No HSK requirement in first year",
+        "Coastal city campus",
+        "Modern clinical facilities"
       ],
       fees: {
-        tuition: "20000 RMB/year (includes dormitory)",
-        application: "1000 RMB (once)",
-        admissionService: "7200 RMB/year",
-        hostel: "3200 RMB/year",
-        visa: "400 RMB/year",
-        medical: "500 RMB/year",
-        insurance: "800 RMB/year"
+        tuition: "42,000–45,000 RMB/year",
+        hostel: "≈ 8,000 RMB/year",
+        application: "Included in registration",
+        registration: "Varies per semester",
+        visa: "Included in other/year",
+        medical: "Included in other/year",
+        insurance: "Included in other/year",
+        other: "Textbooks, deposits, supplementary/reg fee per university policy"
       },
       requirements: [
-        "Minimum 60% in Grade 12",
-        "Age 18–25 years",
-        "Passport Copy",
-        "Physical Examination Form",
-        "Police Clearance Certificate",
-        "English Proficiency Certificate (if available)",
-        "Financial Statement",
-        "Application Form",
-        "Passport Photos"
+        "Completed high school (grade 12, science PCB, ~70%)",
+        "Passport copy and photos",
+        "Medical examination (Chinese form)",
+        "Police clearance certificate",
+        "Application form",
+        "Financial statement",
+        "NEET/entry exam required"
+      ]
+    }
+  },{
+    id: 14,
+    name: "XUZHOU MEDICAL UNIVERSITY",
+    image: xuzhouImage,
+    details: {
+      accreditation: "MOE China, WHO, NMC/MCI, WFME recognized",
+      duration: "6 years (5 + 1 internship)",
+      language: "English-medium program (no HSK first year)",
+      features: [
+        "No HSK requirement in first year",
+        "Strong clinical training",
+        "Modern teaching and research facilities"
+      ],
+      fees: {
+        tuition: "33,000 RMB/year",
+        hostel: "5,000 RMB/year",
+        application: "400 RMB (once)",
+        registration: "Included in other fees",
+        visa: "Included in other fees",
+        medical: "Included in other fees",
+        insurance: "Included in other fees",
+        other: "≈ 3,000 RMB/year (residence permit, textbooks, bedding, medical, insurance)"
+      },
+      requirements: [
+        "High school diploma (grade 12, PCB, ~50–70%)",
+        "Passport copy & passport‑size photos",
+        "Medical examination (Chinese form)",
+        "Police clearance certificate",
+        "Completed application form",
+        "Financial statement",
+        "NEET or equivalent for some nationalities"
+      ]
+    }
+  },
+  {
+    id: 15,
+    name: "SOUTHERN MEDICAL UNIVERSITY",
+    image: southernImage,
+    details: {
+      accreditation: "MOE China, WHO, NMC/MCI, WFME recognized",
+      duration: "6 years (5 + 1 internship)",
+      language: "English-medium program (no HSK first year)",
+      features: [
+        "No HSK requirement in first year",
+        "Advanced research facilities",
+        "Strong international collaboration"
+      ],
+      fees: {
+        tuition: "33,000 RMB/year",
+        hostel: "6,000 RMB/year",
+        application: "–",
+        registration: "800 RMB/year",
+        visa: "800 RMB/year",
+        medical: "500 RMB/year",
+        insurance: "800 RMB/year",
+        management: "–",
+        other: "–"
+      },
+      requirements: [
+        "High school diploma (grade 12, PCB, 50–75%)",
+        "Passport copy & photos",
+        "Medical examination (Chinese form)",
+        "Police clearance certificate",
+        "Application form",
+        "Financial statement",
+        "NEET or English proof (some nationalities)"
       ]
     }
   }
-  
 ]
 
 const MoeListedUniversities = () => {

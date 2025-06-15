@@ -24,22 +24,15 @@ const TeamSection = () => {
          id: 1,
          name: "Dr Farooq Korai",
          title: "Founder and Chairman",
-         image: FarooqImage, // You'll need to import the correct image
+         image: FarooqImage,
          category: "founder"
       },
       {
          id: 2,
          name: "Dr Farman Ali Khan",
          title: "Founder and CEO",
-         image: FarmanImage, // You'll need to import the correct image
+         image: FarmanImage,
          category: "founder"
-      },
-      {
-         id: 7,
-         name: "Mr Kamran Ali Khan",
-         title: "Student counsellor",
-         image: HaiderImage,
-         category: "team"
       },
       {
          id: 3,
@@ -69,6 +62,13 @@ const TeamSection = () => {
          image: laibaSaeedImage,
          category: "team"
       },
+      {
+         id: 7,
+         name: "Mr Kamran Ali Khan",
+         title: "Student counsellor",
+         image: HaiderImage,
+         category: "team"
+      }
    ]
 
    const [activeTab, setActiveTab] = useState("all")

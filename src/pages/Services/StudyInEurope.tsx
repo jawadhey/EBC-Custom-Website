@@ -10,6 +10,7 @@ import europeImage from '../../assets/images/Services/europe/pexels-pixabay-4606
 // Import country images
 import hungaryImage from '../../assets/images/Services/europe/hungary-in-pictures-beautiful-places-to-photograph-hungarian-parliament-building.jpg'
 import irelandImage from '../../assets/images/Services/europe/ireland.jpg'
+import AzerbaijanImage from '../../assets/images/Services/europe/Azerbaijan-MAIN-jpg-1536x884.webp'
 
 // Animation variants
 const containerVariants = {
@@ -62,6 +63,15 @@ const countries = [
       "National College of Ireland",
       "Cork Institute of Technology",
       "Letterkenny Institute of Technology"
+    ]
+  },
+  {
+    id: 3,
+    name: "AZERBAIJAN",
+    image: AzerbaijanImage,
+    description: "Azerbaijan offers high-quality education with modern facilities and a rich cultural experience. The country's universities are known for their strong programs in Medicine, Engineering, and Business, with many offering English-taught programs.",
+    universities: [
+      "Baku State University",
     ]
   }
 ]

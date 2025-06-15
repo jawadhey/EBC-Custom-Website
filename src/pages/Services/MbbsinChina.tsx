@@ -16,6 +16,11 @@ import jiangsuImage from '../../assets/images/Services/china/juangsu.jpg'
 import southwestImage from '../../assets/images/Services/china/southwest-Medical-Universit.jpg'
 import kunmingImage from '../../assets/images/Services/china/kunming-medical-university.jpg'
 import jilinImage from '../../assets/images/Services/china/jilin.png'
+import uni2 from '../../assets/universities/uni2/hero.jpg'
+import uni3 from '../../assets/universities/uni3/hero.jpg'
+import uni4 from '../../assets/universities/uni4/hero.jpg'
+import uni5 from '../../assets/universities/uni5/hero.png'
+import uni6 from '../../assets/images/Universities/Yichun-University.jpg'
 
 // Animation variants
 const containerVariants = {
@@ -288,6 +293,160 @@ const universities = [
         "Police clearance certificate",
         "One Digital photo with a white background",
         "Financial Statement of Guardian"
+      ]
+    }
+  },
+  
+  {
+    id: 16,
+    name: "NORTH CHINA UNIVERSITY OF SCIENCE & TECHNOLOGY",
+    image: uni2,
+    details: {
+      accreditation: "MOE China, WHO, WFME recognized",
+      duration: "6 years (5 + 1 internship)",
+      language: "English-medium program",
+      features: [
+        "A reputed institution combining science, technology, and medical education in northern China."
+      ],
+      fees: {
+        tuition: "28000 RMB/year",
+        hostel: "4500 RMB/year",
+        application: "800 RMB (once)",
+        registration: "400 RMB/year",
+        visa: "800 RMB/year",
+        medical: "500 RMB/year",
+        insurance: "800 RMB/year"
+      },
+      requirements: [
+        "High School Transcript",
+        "Passport Copy",
+        "Police Character Certificate",
+        "Physical Examination Form",
+        "Passport Photos",
+        "Study Plan"
+      ]
+    }
+  },
+  {
+    id: 17,
+    name: "KUNMING UNIVERSITY OF SCIENCE & TECHNOLOGY",
+    image: uni3,
+    details: {
+      accreditation: "MOE China, WHO, WFME recognized",
+      duration: "6 years (5 + 1 internship)",
+      language: "English-medium program",
+      features: [
+        "Located in Yunnan, it proudly specializes in applied sciences and innovative, cutting-edge tech research."
+      ],
+      fees: {
+        tuition: "29000 RMB/year",
+        hostel: "4000 RMB/year",
+        application: "800 RMB (once)",
+        registration: "400 RMB/year",
+        visa: "800 RMB/year",
+        medical: "500 RMB/year",
+        insurance: "800 RMB/year"
+      },
+      requirements: [
+        "High School Transcript",
+        "Passport Copy",
+        "Police Character Certificate",
+        "Physical Examination Form",
+        "Passport Photos",
+        "Study Plan"
+      ]
+    }
+  },
+  {
+    id: 18,
+    name: "WUHAN UNIVERSITY OF SCIENCE & TECHNOLOGY",
+    image: uni5,
+    details: {
+      accreditation: "MOE China, WHO, WFME recognized",
+      duration: "6 years (5 + 1 internship)",
+      language: "English-medium program",
+      features: [
+        "An interdisciplinary university excelling in engineering, materials, and medical fields."
+      ],
+      fees: {
+        tuition: "30000 RMB/year",
+        hostel: "5000 RMB/year",
+        application: "800 RMB (once)",
+        registration: "400 RMB/year",
+        visa: "800 RMB/year",
+        medical: "500 RMB/year",
+        insurance: "800 RMB/year"
+      },
+      requirements: [
+        "High School Transcript",
+        "Passport Copy",
+        "Police Character Certificate",
+        "Physical Examination Form",
+        "Passport Photos",
+        "Study Plan"
+      ]
+    }
+  },
+  {
+    id: 19,
+    name: "YICHUAN UNIVERSITY",
+    image: uni6,
+    details: {
+      accreditation: "MOE China, WHO, WFME recognized",
+      duration: "6 years (5 + 1 internship)",
+      language: "English-medium program",
+      features: [
+        "Discover academic excellence and cultural immersion at Yichuan University — a dynamic institution known for its quality education, friendly campus environment, and growing international student community."
+      ],
+      fees: {
+        tuition: "27000 RMB/year",
+        hostel: "4000 RMB/year",
+        application: "800 RMB (once)",
+        registration: "400 RMB/year",
+        visa: "800 RMB/year",
+        medical: "500 RMB/year",
+        insurance: "800 RMB/year"
+      },
+      requirements: [
+        "High School Transcript",
+        "Passport Copy",
+        "Police Character Certificate",
+        "Physical Examination Form",
+        "Passport Photos",
+        "Study Plan"
+      ]
+    }
+  },
+  {
+    id: 20,
+    name: "GUANGXI MEDICAL UNIVERSITY",
+    image: uni4,
+    details: {
+      accreditation: "MOE China, WHO, WFME recognized",
+      duration: "6 years (5 + 1 internship)",
+      language: "English-medium program",
+      features: [
+        "One of China's oldest medical universities",
+        "Known for public health and clinical medicine",
+        "Strong focus on research and practical training"
+      ],
+      fees: {
+        tuition: "32000 RMB/year",
+        hostel: "5000 RMB/year",
+        application: "800 RMB (once)",
+        registration: "400 RMB/year",
+        visa: "800 RMB/year",
+        medical: "500 RMB/year",
+        insurance: "800 RMB/year"
+      },
+      requirements: [
+        "High School Transcript",
+        "Passport Copy",
+        "Police Character Certificate",
+        "Physical Examination Form",
+        "Passport Photos",
+        "Study Plan",
+        "English Proficiency Certificate"
       ]
     }
   }
