@@ -8,7 +8,7 @@ const SiteLayout = () => {
    const isAbsolute = location.pathname === '/'
 
    // Replace with your WhatsApp number in international format
-   const whatsappLink = "https://wa.me/923001234567" // e.g. 92 = Pakistan, 3001234567 = phone
+   const whatsappLink = "https://wa.me/03310004761" // e.g. 92 = Pakistan, 3001234567 = phone
 
    return (
       <div className="font-poppins text-[16px] relative">

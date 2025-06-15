@@ -408,7 +408,9 @@ const FooterSection = () => {
               variants={containerVariants}
             >
               <motion.a
-                href="#"
+                href="https://www.facebook.com/share/14powXw55e/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors text-sm sm:text-base"
                 variants={socialIconVariants}
                 whileHover="hover"
@@ -416,7 +418,9 @@ const FooterSection = () => {
                 <FaFacebookF />
               </motion.a>
               <motion.a
-                href="#"
+                href="https://www.instagram.com/ebcworldwide?igsh=MThtYXZocjkwM3p1dw=="
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-purple-600 to-pink-500 rounded-full flex items-center justify-center hover:from-purple-700 hover:to-pink-600 transition-colors text-sm sm:text-base"
                 variants={socialIconVariants}
                 whileHover="hover"
@@ -424,7 +428,9 @@ const FooterSection = () => {
                 <FaInstagram />
               </motion.a>
               <motion.a
-                href="https://wa.me/03310004761"
+                href="https://wa.me/03360726422"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-8 h-8 sm:w-10 sm:h-10 bg-green-600 rounded-full flex items-center justify-center hover:bg-green-700 transition-colors text-sm sm:text-base"
                 variants={socialIconVariants}
                 whileHover="hover"
