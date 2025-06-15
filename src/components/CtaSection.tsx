@@ -3,6 +3,7 @@ import { Images } from "../assets/images"
 import Container from "./Container"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
+import { Link } from "react-router-dom"
 
 const CtaSection = ({ backgroundImage, Heading, Text }: any) => {
   const [ref, inView] = useInView({
@@ -119,7 +120,9 @@ const CtaSection = ({ backgroundImage, Heading, Text }: any) => {
                 variants={buttonVariants}
                 whileHover="hover"
               >
-                Contact Us <FaArrowRight className="ml-2 text-xs md:text-sm" />
+                <Link to="/contact-us" className="flex items-center">
+                  Contact Us <FaArrowRight className="ml-2 text-xs md:text-sm" />
+                </Link>
               </motion.button>
             </motion.div>
           </div>

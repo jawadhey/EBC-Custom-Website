@@ -11,8 +11,17 @@ import TeamSection from './components/TeamSection'
 import { useParams } from 'react-router-dom'
 import { universities } from '../../constant'
 
-const SingleUnitversity = () => {
+// Import EBC images
+import ebcImage1 from '../../assets/images/ebc/WhatsApp Image 2025-06-15 at 9.08.04 PM (1).jpeg'
+import ebcImage2 from '../../assets/images/ebc/WhatsApp Image 2025-06-15 at 9.08.05 PM (1).jpeg'
+import ebcImage3 from '../../assets/images/ebc/WhatsApp Image 2025-06-15 at 9.08.06 PM (1).jpeg'
+import ebcImage4 from '../../assets/images/ebc/WhatsApp Image 2025-06-15 at 9.08.07 PM (1).jpeg'
+import ebcImage5 from '../../assets/images/ebc/WhatsApp Image 2025-06-15 at 9.08.08 PM (1).jpeg'
+import ebcImage6 from '../../assets/images/ebc/WhatsApp Image 2025-06-15 at 9.08.09 PM (1).jpeg'
+import ebcImage7 from '../../assets/images/ebc/WhatsApp Image 2025-06-15 at 9.08.10 PM (1).jpeg'
+import ebcImage8 from '../../assets/images/ebc/WhatsApp Image 2025-06-15 at 9.08.11 PM (1).jpeg'
 
+const SingleUnitversity = () => {
    const { id } = useParams();
    const university = universities.find((u: any) => u.id == id);
 
@@ -23,7 +32,6 @@ const SingleUnitversity = () => {
    if (!university) {
       return <div>University not found</div>;
    }
-
 
    return (
       <>
@@ -57,14 +65,15 @@ const SingleUnitversity = () => {
                <br /><br />
                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem rerum corrupti tenetur, repellat nihil dignissimos eos pariatur sunt ullam libero possimus quas unde mollitia similique facilis voluptatem non. Explicabo, consequuntur. Labore est provident in dolores veritatis magnam quidem! Dolor, consectetur.
             </p>}
+            mainImage={ebcImage1}
+            galleryImages={[ebcImage2, ebcImage3, ebcImage4, ebcImage5]}
          />
          <BenefitsSection benefits={university.benefits} />
          <FaqSection faqs={university.faqs} />
          <TeamSection />
          <TestimonialVideoSection />
-
-
-      </>)
+      </>
+   )
 }
 
 export default SingleUnitversity

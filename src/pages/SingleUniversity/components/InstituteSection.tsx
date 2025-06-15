@@ -3,17 +3,24 @@ import Container from "../../../components/Container"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 
-import image1 from '../../../assets/universities/all/ivy-dao-cuifWLkXVz0-unsplash.jpg'
-import image2 from '../../../assets/universities/all/lan-lin-1Y7TirECIGk-unsplash.jpg'
-import image3 from '../../../assets/universities/all/lan-lin-AIoqWbrxA0o-unsplash.jpg'
-import image4 from '../../../assets/universities/all/lan-lin-wMz22imjbGQ-unsplash.jpg'
+// Import EBC images
+import ebcImage1 from '../../../assets/images/ebc/WhatsApp Image 2025-06-15 at 9.08.04 PM (1).jpeg'
+import ebcImage2 from '../../../assets/images/ebc/WhatsApp Image 2025-06-15 at 9.08.05 PM (1).jpeg'
+import ebcImage3 from '../../../assets/images/ebc/WhatsApp Image 2025-06-15 at 9.08.06 PM (1).jpeg'
+import ebcImage4 from '../../../assets/images/ebc/WhatsApp Image 2025-06-15 at 9.08.07 PM (1).jpeg'
+import ebcImage5 from '../../../assets/images/ebc/WhatsApp Image 2025-06-15 at 9.08.08 PM (1).jpeg'
+import ebcImage6 from '../../../assets/images/ebc/WhatsApp Image 2025-06-15 at 9.08.09 PM (1).jpeg'
+import ebcImage7 from '../../../assets/images/ebc/WhatsApp Image 2025-06-15 at 9.08.10 PM (1).jpeg'
+import ebcImage8 from '../../../assets/images/ebc/WhatsApp Image 2025-06-15 at 9.08.11 PM (1).jpeg'
 
 interface InstitutionSectionProps {
    Heading?: string;
    Text?: React.ReactNode;
+   mainImage: string;
+   galleryImages: string[];
 }
 
-const InstitutionSection = ({ Heading, Text }: InstitutionSectionProps) => {
+const InstitutionSection = ({ Heading, Text, mainImage, galleryImages }: InstitutionSectionProps) => {
    const [ref, inView] = useInView({
       threshold: 0.1,
       triggerOnce: true,
@@ -160,7 +167,7 @@ const InstitutionSection = ({ Heading, Text }: InstitutionSectionProps) => {
                      whileHover="hover"
                   >
                      <motion.img
-                        src={Images.Universities.InstituteMain}
+                        src={mainImage}
                         alt="University campus with students"
                         className="w-full h-full max-h-[350px] md:max-h-[400px] lg:max-h-[470px] object-cover rounded-lg"
                      />
@@ -187,7 +194,7 @@ const InstitutionSection = ({ Heading, Text }: InstitutionSectionProps) => {
                   variants={galleryContainerVariants}
                >
                   <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
-                     {[image1, image2, image3, image4].map((item, index) => (
+                     {galleryImages.map((item, index) => (
                         <motion.div
                            key={index}
                            className="rounded-lg overflow-hidden"
@@ -197,7 +204,7 @@ const InstitutionSection = ({ Heading, Text }: InstitutionSectionProps) => {
                         >
                            <img
                               src={item}
-                              alt={`University campus ${index + 1}`}
+                              alt={`Gallery image ${index + 1}`}
                               className="w-full h-40 sm:h-48 md:h-56 lg:h-60 object-cover"
                            />
                         </motion.div>

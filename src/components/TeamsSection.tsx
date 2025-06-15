@@ -58,7 +58,7 @@ const TeamSection = () => {
       {
          id: 6,
          name: "Ms Laiba Saeed",
-         title: "Office manager",
+         title: "Regional Manager",
          image: laibaSaeedImage,
          category: "team"
       },

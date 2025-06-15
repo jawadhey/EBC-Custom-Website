@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import Container from "./Container"
 import { universities } from "../constant"
+import { Icons } from "../assets/icons"
+import { Link } from "react-router-dom"
 
 // Animation variants
 const containerVariants = {
@@ -95,8 +97,36 @@ const FooterSection = () => {
     triggerOnce: false
   })
 
-  // Get top 3 universities for the footer
-  const featuredUniversities = universities.slice(0, 3)
+  const programs = [
+    {
+      title: "MBBS in China",
+      path: "/mbbs-in-china"
+    },
+    {
+      title: "MD in Europe",
+      path: "/md-in-europe"
+    },
+    {
+      title: "Study in UK",
+      path: "/study-in-uk"
+    },
+    {
+      title: "Study in Europe",
+      path: "/study-in-europe"
+    },
+    {
+      title: "PFP for Engineers",
+      path: "/pfp-for-engineers"
+    },
+    {
+      title: "Bar-at-law",
+      path: "/bar-at-law"
+    },
+    {
+      title: "MOE Listed Universities",
+      path: "/moe-listed-universities"
+    }
+  ]
 
   return (
     <motion.footer
@@ -130,14 +160,16 @@ const FooterSection = () => {
                   boxShadow: "0 0 0 2px rgba(139, 92, 246, 0.5)"
                 }}
               />
-              <motion.button
-                className="px-4 sm:px-6 py-2 sm:py-3 bg-TwPrimaryPurple text-white font-medium rounded-lg hover:bg-TwPrimaryPurpleBgHover transition-colors whitespace-nowrap text-sm sm:text-base"
-                variants={buttonVariants}
-                whileHover="hover"
-                whileTap="tap"
-              >
-                Contact Us
-              </motion.button>
+              <Link to="/contact-us">
+                <motion.button
+                  className="px-4 sm:px-6 py-2 sm:py-3 bg-TwPrimaryPurple text-white font-medium rounded-lg hover:bg-TwPrimaryPurpleBgHover transition-colors whitespace-nowrap text-sm sm:text-base"
+                  variants={buttonVariants}
+                  whileHover="hover"
+                  whileTap="tap"
+                >
+                  Contact Us
+                </motion.button>
+              </Link>
             </motion.div>
           </div>
 
@@ -163,21 +195,13 @@ const FooterSection = () => {
                 className="flex items-center mb-4 sm:mb-6"
                 whileHover={{ x: 5 }}
               >
-                <motion.div
-                  className="w-10 h-10 sm:w-12 sm:h-12 bg-TwPrimaryPurple rounded-full mr-3"
-                  animate={{
-                    scale: [1, 1.05, 1],
-                    rotate: [0, 5, -5, 0]
-                  }}
-                  transition={{
-                    duration: 1.5,
-                    repeat: Infinity,
-                    repeatType: "reverse"
-                  }}
+                <motion.img
+                  src={Icons.Brand.NavLogo}
+                  className="w-[90px] h-[90px]"
+                  alt="Logo"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
                 />
-                <div className="text-sm sm:text-base">
-                  <span className="text-TwPrimaryPurple">EBC</span> <span className="text-yellow-500">Worldwide</span>
-                </div>
               </motion.div>
 
               <div className="space-y-3 sm:space-y-4">
@@ -187,7 +211,7 @@ const FooterSection = () => {
                   whileHover={{ x: 5 }}
                 >
                   <FaPhone className="text-TwPrimaryPurple mr-3 flex-shrink-0" />
-                  <span>+92 000 0000000</span>
+                  <span>0330 9999933</span>
                 </motion.div>
                 <motion.div
                   className="flex items-center text-sm sm:text-base"
@@ -204,6 +228,14 @@ const FooterSection = () => {
                 >
                   <FaMapMarkerAlt className="text-TwPrimaryPurple mr-3 mt-1 flex-shrink-0" />
                   <span>Office No. 15, 1st Floor, Pakland Business Centre, I8 Markaz Islamabad</span>
+                </motion.div>
+                <motion.div
+                  className="flex items-start text-sm sm:text-base"
+                  variants={itemVariants}
+                  whileHover={{ x: 5 }}
+                >
+                  <FaMapMarkerAlt className="text-TwPrimaryPurple mr-3 mt-1 flex-shrink-0" />
+                  <span>Office #1, 2nd floor, Azam tower, Arbab Road stop, University Road Peshawar</span>
                 </motion.div>
               </div>
             </motion.div>
@@ -230,9 +262,9 @@ const FooterSection = () => {
                     }}
                     className="text-sm sm:text-base"
                   >
-                    <a href="#" className="hover:text-purple-400 transition-colors">
+                    <Link to={`/${link.toLowerCase().replace(' ', '-')}`} className="hover:text-purple-400 transition-colors">
                       {link}
-                    </a>
+                    </Link>
                   </motion.li>
                 ))}
               </ul>
@@ -250,7 +282,7 @@ const FooterSection = () => {
                 Universities
               </motion.h3>
               <ul className="space-y-2 sm:space-y-3">
-                {featuredUniversities.map((university: any, index: any) => (
+                {universities.slice(0, 3).map((university: any, index: any) => (
                   <motion.li
                     key={index}
                     variants={itemVariants}
@@ -260,9 +292,9 @@ const FooterSection = () => {
                     }}
                     className="text-sm sm:text-base"
                   >
-                    <a href={`/university-detail/${university.id}`} className="hover:text-purple-400 transition-colors">
+                    <Link to={`/university-detail/${university.id}`} className="hover:text-purple-400 transition-colors">
                       {university.name}
-                    </a>
+                    </Link>
                   </motion.li>
                 ))}
               </ul>
@@ -280,7 +312,7 @@ const FooterSection = () => {
                 Programs
               </motion.h3>
               <ul className="space-y-2 sm:space-y-3">
-                {featuredUniversities[0].programs.slice(0, 3).map((program: any, index: any) => (
+                {programs.map((program, index) => (
                   <motion.li
                     key={index}
                     variants={itemVariants}
@@ -290,9 +322,9 @@ const FooterSection = () => {
                     }}
                     className="text-sm sm:text-base"
                   >
-                    <a href="#" className="hover:text-purple-400 transition-colors">
-                      {program.title.props.children}
-                    </a>
+                    <Link to={program.path} className="hover:text-purple-400 transition-colors">
+                      {program.title}
+                    </Link>
                   </motion.li>
                 ))}
               </ul>
@@ -392,7 +424,7 @@ const FooterSection = () => {
                 <FaInstagram />
               </motion.a>
               <motion.a
-                href="#"
+                href="https://wa.me/03310004761"
                 className="w-8 h-8 sm:w-10 sm:h-10 bg-green-600 rounded-full flex items-center justify-center hover:bg-green-700 transition-colors text-sm sm:text-base"
                 variants={socialIconVariants}
                 whileHover="hover"

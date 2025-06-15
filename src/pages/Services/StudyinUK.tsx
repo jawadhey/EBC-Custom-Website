@@ -7,8 +7,19 @@ import ServicesHeroSection from "../../components/ServicesHero"
 import { Images } from '../../assets/images'
 import ukImage from '../../assets/images/Services/europe/pexels-pixabay-460672.jpg'
 
-// Import university images
-import bakuImage from '../../assets/images/Landing/Services/baku.jpg'
+// Import UK university images
+import eastLondonImage from '../../assets/images/Services/uk/uniofeastlondon.jpg'
+import salfordImage from '../../assets/images/Services/uk/uni of salford manchester.webp'
+import hullImage from '../../assets/images/Services/uk/uni of hull.webp'
+import sunderlandImage from '../../assets/images/Services/uk/uni of sunderland.png'
+import ulsterImage from '../../assets/images/Services/uk/ulster uni.jpg'
+import greenwichImage from '../../assets/images/Services/uk/uni of greenwich.jpg'
+import gcuImage from '../../assets/images/Services/uk/glasgow caledonian uni.jpg'
+import chesterImage from '../../assets/images/Services/uk/uni of chester.webp'
+import canterburyImage from '../../assets/images/Services/uk/canterbury christ.jpg'
+import bppImage from '../../assets/images/Services/uk/bpp.png'
+import londonMetImage from '../../assets/images/Services/uk/london metropolitan.webp'
+import aruImage from '../../assets/images/Services/uk/Anglia-Ruskin-University-International-Excellence-Scholarships-in-UK-2020.jpg'
 
 // Animation variants
 const containerVariants = {
@@ -38,30 +49,361 @@ const cardVariants = {
 const universities = [
   {
     id: 1,
-    name: "Baku Engineering University",
-    image: bakuImage,
+    name: "University of East London",
+    image: eastLondonImage,
     details: {
-      accreditation: "Recognized by Azerbaijan’s Ministry of Education, WHO, WFME, FAIMER",
-      duration: "6 years (including 1‑year internship)",
-      language: "English-medium program",
+      accreditation: "Recognized by UK's Quality Assurance Agency (QAA)",
+      duration: "3-4 years (depending on program)",
+      language: "English-medium programs",
       features: [
-        "Public, government-run medical university",
-        "Globally recognized MBBS degree",
-        "Modern clinical facilities and teaching hospitals"
+        "Modern campus facilities",
+        "Strong industry connections",
+        "Diverse student community",
+        "Located in London's business district"
       ],
       fees: {
-        tuition: "≈ 6,000 USD/year",
-        hostel: "≈ 500–1,000 USD/year",
-        other: "≈ 300–500 USD/month (living expenses)",
-        total: "≈ 9,000–10,000 USD (1st-year estimate incl. tuition, hostel & living)"
+        tuition: "≈ £13,000-15,000/year",
+        accommodation: "≈ £6,000-8,000/year",
+        living: "≈ £1,000-1,200/month",
+        total: "≈ £22,000-26,000/year (including tuition and living expenses)"
       },
       requirements: [
-        "Secondary school (Science) marksheets (Physics, Chemistry, Biology)",
+        "Academic transcripts",
+        "English language proficiency (IELTS 6.0 or equivalent)",
+        "Personal statement",
+        "Reference letters",
         "Passport copy",
-        "Medical fitness certificate",
-        "Passport‑size photos",
-        "Completed university application form",
-        "NEET (or equivalent) score for some nationalities"
+        "Visa documentation"
+      ]
+    }
+  },
+  {
+    id: 2,
+    name: "University of Salford Manchester",
+    image: salfordImage,
+    details: {
+      accreditation: "Recognized by UK's Quality Assurance Agency (QAA)",
+      duration: "3-4 years (depending on program)",
+      language: "English-medium programs",
+      features: [
+        "Industry-focused education",
+        "Strong research reputation",
+        "Modern campus facilities",
+        "Located in Greater Manchester"
+      ],
+      fees: {
+        tuition: "≈ £14,000-16,000/year",
+        accommodation: "≈ £5,000-7,000/year",
+        living: "≈ £800-1,000/month",
+        total: "≈ £21,000-25,000/year (including tuition and living expenses)"
+      },
+      requirements: [
+        "Academic transcripts",
+        "English language proficiency (IELTS 6.0 or equivalent)",
+        "Personal statement",
+        "Reference letters",
+        "Passport copy",
+        "Visa documentation"
+      ]
+    }
+  },
+  {
+    id: 3,
+    name: "University of Hull",
+    image: hullImage,
+    details: {
+      accreditation: "Recognized by UK's Quality Assurance Agency (QAA)",
+      duration: "3-4 years (depending on program)",
+      language: "English-medium programs",
+      features: [
+        "Research-intensive university",
+        "Historic campus",
+        "Strong student support",
+        "Located in East Yorkshire"
+      ],
+      fees: {
+        tuition: "≈ £13,000-15,000/year",
+        accommodation: "≈ £5,000-7,000/year",
+        living: "≈ £700-900/month",
+        total: "≈ £20,000-24,000/year (including tuition and living expenses)"
+      },
+      requirements: [
+        "Academic transcripts",
+        "English language proficiency (IELTS 6.0 or equivalent)",
+        "Personal statement",
+        "Reference letters",
+        "Passport copy",
+        "Visa documentation"
+      ]
+    }
+  },
+  {
+    id: 4,
+    name: "University of Sunderland",
+    image: sunderlandImage,
+    details: {
+      accreditation: "Recognized by UK's Quality Assurance Agency (QAA)",
+      duration: "3-4 years (depending on program)",
+      language: "English-medium programs",
+      features: [
+        "Industry-focused education",
+        "Modern facilities",
+        "Strong graduate employability",
+        "Located in North East England"
+      ],
+      fees: {
+        tuition: "≈ £12,000-14,000/year",
+        accommodation: "≈ £4,000-6,000/year",
+        living: "≈ £600-800/month",
+        total: "≈ £18,000-22,000/year (including tuition and living expenses)"
+      },
+      requirements: [
+        "Academic transcripts",
+        "English language proficiency (IELTS 6.0 or equivalent)",
+        "Personal statement",
+        "Reference letters",
+        "Passport copy",
+        "Visa documentation"
+      ]
+    }
+  },
+  {
+    id: 5,
+    name: "Ulster University",
+    image: ulsterImage,
+    details: {
+      accreditation: "Recognized by UK's Quality Assurance Agency (QAA)",
+      duration: "3-4 years (depending on program)",
+      language: "English-medium programs",
+      features: [
+        "Multiple campuses across Northern Ireland",
+        "Strong research focus",
+        "Industry partnerships",
+        "Modern facilities"
+      ],
+      fees: {
+        tuition: "≈ £13,000-15,000/year",
+        accommodation: "≈ £4,000-6,000/year",
+        living: "≈ £600-800/month",
+        total: "≈ £19,000-23,000/year (including tuition and living expenses)"
+      },
+      requirements: [
+        "Academic transcripts",
+        "English language proficiency (IELTS 6.0 or equivalent)",
+        "Personal statement",
+        "Reference letters",
+        "Passport copy",
+        "Visa documentation"
+      ]
+    }
+  },
+  {
+    id: 6,
+    name: "University of Greenwich",
+    image: greenwichImage,
+    details: {
+      accreditation: "Recognized by UK's Quality Assurance Agency (QAA)",
+      duration: "3-4 years (depending on program)",
+      language: "English-medium programs",
+      features: [
+        "Historic campus in London",
+        "Strong business and maritime programs",
+        "Modern facilities",
+        "Excellent location"
+      ],
+      fees: {
+        tuition: "≈ £14,000-16,000/year",
+        accommodation: "≈ £6,000-8,000/year",
+        living: "≈ £1,000-1,200/month",
+        total: "≈ £23,000-27,000/year (including tuition and living expenses)"
+      },
+      requirements: [
+        "Academic transcripts",
+        "English language proficiency (IELTS 6.0 or equivalent)",
+        "Personal statement",
+        "Reference letters",
+        "Passport copy",
+        "Visa documentation"
+      ]
+    }
+  },
+  {
+    id: 7,
+    name: "Glasgow Caledonian University (GCU)",
+    image: gcuImage,
+    details: {
+      accreditation: "Recognized by UK's Quality Assurance Agency (QAA)",
+      duration: "3-4 years (depending on program)",
+      language: "English-medium programs",
+      features: [
+        "Located in Glasgow city center",
+        "Strong focus on social responsibility",
+        "Modern campus",
+        "Industry connections"
+      ],
+      fees: {
+        tuition: "≈ £13,000-15,000/year",
+        accommodation: "≈ £5,000-7,000/year",
+        living: "≈ £700-900/month",
+        total: "≈ £20,000-24,000/year (including tuition and living expenses)"
+      },
+      requirements: [
+        "Academic transcripts",
+        "English language proficiency (IELTS 6.0 or equivalent)",
+        "Personal statement",
+        "Reference letters",
+        "Passport copy",
+        "Visa documentation"
+      ]
+    }
+  },
+  {
+    id: 8,
+    name: "University of Chester",
+    image: chesterImage,
+    details: {
+      accreditation: "Recognized by UK's Quality Assurance Agency (QAA)",
+      duration: "3-4 years (depending on program)",
+      language: "English-medium programs",
+      features: [
+        "Historic university",
+        "Multiple campuses",
+        "Strong student support",
+        "Industry-focused programs"
+      ],
+      fees: {
+        tuition: "≈ £12,000-14,000/year",
+        accommodation: "≈ £4,000-6,000/year",
+        living: "≈ £600-800/month",
+        total: "≈ £18,000-22,000/year (including tuition and living expenses)"
+      },
+      requirements: [
+        "Academic transcripts",
+        "English language proficiency (IELTS 6.0 or equivalent)",
+        "Personal statement",
+        "Reference letters",
+        "Passport copy",
+        "Visa documentation"
+      ]
+    }
+  },
+  {
+    id: 9,
+    name: "Canterbury Christ Church University",
+    image: canterburyImage,
+    details: {
+      accreditation: "Recognized by UK's Quality Assurance Agency (QAA)",
+      duration: "3-4 years (depending on program)",
+      language: "English-medium programs",
+      features: [
+        "Historic location in Canterbury",
+        "Strong teaching reputation",
+        "Modern facilities",
+        "Close-knit community"
+      ],
+      fees: {
+        tuition: "≈ £12,000-14,000/year",
+        accommodation: "≈ £4,000-6,000/year",
+        living: "≈ £600-800/month",
+        total: "≈ £18,000-22,000/year (including tuition and living expenses)"
+      },
+      requirements: [
+        "Academic transcripts",
+        "English language proficiency (IELTS 6.0 or equivalent)",
+        "Personal statement",
+        "Reference letters",
+        "Passport copy",
+        "Visa documentation"
+      ]
+    }
+  },
+  {
+    id: 10,
+    name: "BPP University",
+    image: bppImage,
+    details: {
+      accreditation: "Recognized by UK's Quality Assurance Agency (QAA)",
+      duration: "3-4 years (depending on program)",
+      language: "English-medium programs",
+      features: [
+        "Specialized in professional education",
+        "Multiple locations across UK",
+        "Strong industry links",
+        "Focus on practical skills"
+      ],
+      fees: {
+        tuition: "≈ £13,000-15,000/year",
+        accommodation: "≈ £6,000-8,000/year",
+        living: "≈ £800-1,000/month",
+        total: "≈ £21,000-25,000/year (including tuition and living expenses)"
+      },
+      requirements: [
+        "Academic transcripts",
+        "English language proficiency (IELTS 6.0 or equivalent)",
+        "Personal statement",
+        "Reference letters",
+        "Passport copy",
+        "Visa documentation"
+      ]
+    }
+  },
+  {
+    id: 11,
+    name: "London Metropolitan University",
+    image: londonMetImage,
+    details: {
+      accreditation: "Recognized by UK's Quality Assurance Agency (QAA)",
+      duration: "3-4 years (depending on program)",
+      language: "English-medium programs",
+      features: [
+        "Located in central London",
+        "Diverse student body",
+        "Modern facilities",
+        "Strong industry connections"
+      ],
+      fees: {
+        tuition: "≈ £13,000-15,000/year",
+        accommodation: "≈ £6,000-8,000/year",
+        living: "≈ £1,000-1,200/month",
+        total: "≈ £22,000-26,000/year (including tuition and living expenses)"
+      },
+      requirements: [
+        "Academic transcripts",
+        "English language proficiency (IELTS 6.0 or equivalent)",
+        "Personal statement",
+        "Reference letters",
+        "Passport copy",
+        "Visa documentation"
+      ]
+    }
+  },
+  {
+    id: 12,
+    name: "Anglia Ruskin University (ARU)",
+    image: aruImage,
+    details: {
+      accreditation: "Recognized by UK's Quality Assurance Agency (QAA)",
+      duration: "3-4 years (depending on program)",
+      language: "English-medium programs",
+      features: [
+        "Multiple campuses across East Anglia",
+        "Strong research focus",
+        "Modern facilities",
+        "Industry partnerships"
+      ],
+      fees: {
+        tuition: "≈ £13,000-15,000/year",
+        accommodation: "≈ £5,000-7,000/year",
+        living: "≈ £700-900/month",
+        total: "≈ £20,000-24,000/year (including tuition and living expenses)"
+      },
+      requirements: [
+        "Academic transcripts",
+        "English language proficiency (IELTS 6.0 or equivalent)",
+        "Personal statement",
+        "Reference letters",
+        "Passport copy",
+        "Visa documentation"
       ]
     }
   }
