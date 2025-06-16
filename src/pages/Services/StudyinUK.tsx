@@ -53,27 +53,27 @@ const universities = [
     image: eastLondonImage,
     details: {
       accreditation: "Recognized by UK's Quality Assurance Agency (QAA)",
-      duration: "3-4 years (depending on program)",
+      duration: "3-4 years (undergraduate), 1-2 years (postgraduate)",
       language: "English-medium programs",
       features: [
-        "Modern campus facilities",
-        "Strong industry connections",
-        "Diverse student community",
-        "Located in London's business district"
+        "Modern campus facilities in East London",
+        "Strong industry and professional partnerships",
+        "Diverse and international student community",
+        "Close to London's business districts and cultural hubs"
       ],
       fees: {
-        tuition: "≈ £13,000-15,000/year",
-        accommodation: "≈ £6,000-8,000/year",
-        living: "≈ £1,000-1,200/month",
-        total: "≈ £22,000-26,000/year (including tuition and living expenses)"
+        tuition: "£13,500–£15,000/year (UG)",
+        accommodation: "£6,500–£8,000/year",
+        living: "£1,100–£1,200/month",
+        total: "£22,000–£26,000/year (including tuition and living)"
       },
       requirements: [
-        "Academic transcripts",
-        "English language proficiency (IELTS 6.0 or equivalent)",
+        "Academic transcripts or equivalent qualifications",
+        "IELTS 6.0 (min 5.5 in each component) or equivalent",
         "Personal statement",
-        "Reference letters",
+        "Two references (academic or professional)",
         "Passport copy",
-        "Visa documentation"
+        "Student visa application documents"
       ]
     }
   },
@@ -83,25 +83,25 @@ const universities = [
     image: salfordImage,
     details: {
       accreditation: "Recognized by UK's Quality Assurance Agency (QAA)",
-      duration: "3-4 years (depending on program)",
+      duration: "3-4 years (undergraduate), 1 year (postgraduate)",
       language: "English-medium programs",
       features: [
-        "Industry-focused education",
-        "Strong research reputation",
-        "Modern campus facilities",
-        "Located in Greater Manchester"
+        "Industry-focused teaching and placement options",
+        "Research-active faculty and modern labs",
+        "Salford Quays waterfront campus",
+        "Strong transport links across Greater Manchester"
       ],
       fees: {
-        tuition: "≈ £14,000-16,000/year",
-        accommodation: "≈ £5,000-7,000/year",
-        living: "≈ £800-1,000/month",
-        total: "≈ £21,000-25,000/year (including tuition and living expenses)"
+        tuition: "£14,000–£16,000/year (UG)",
+        accommodation: "£5,500–£7,000/year",
+        living: "£900–£1,000/month",
+        total: "£21,000–£25,000/year"
       },
       requirements: [
-        "Academic transcripts",
-        "English language proficiency (IELTS 6.0 or equivalent)",
+        "Academic transcripts/qualification certificates",
+        "IELTS 6.0 or equivalent",
         "Personal statement",
-        "Reference letters",
+        "Two references",
         "Passport copy",
         "Visa documentation"
       ]
@@ -113,27 +113,27 @@ const universities = [
     image: hullImage,
     details: {
       accreditation: "Recognized by UK's Quality Assurance Agency (QAA)",
-      duration: "3-4 years (depending on program)",
+      duration: "3-4 years (undergraduate), 1 year (postgraduate)",
       language: "English-medium programs",
       features: [
-        "Research-intensive university",
-        "Historic campus",
-        "Strong student support",
-        "Located in East Yorkshire"
+        "Strong research profile and internationally recognised campus",
+        "Historic buildings and modern facilities",
+        "Excellent student support services",
+        "Located in scenic East Yorkshire"
       ],
       fees: {
-        tuition: "≈ £13,000-15,000/year",
-        accommodation: "≈ £5,000-7,000/year",
-        living: "≈ £700-900/month",
-        total: "≈ £20,000-24,000/year (including tuition and living expenses)"
+        tuition: "£13,000–£15,000/year (UG)",
+        accommodation: "£5,000–£7,000/year",
+        living: "£700–£900/month",
+        total: "£20,000–£24,000/year"
       },
       requirements: [
-        "Academic transcripts",
-        "English language proficiency (IELTS 6.0 or equivalent)",
-        "Personal statement",
-        "Reference letters",
+        "Official academic transcripts",
+        "IELTS 6.0 (or approved equivalent)",
+        "Motivation statement",
+        "Two academic references",
         "Passport copy",
-        "Visa documentation"
+        "Visa application documents"
       ]
     }
   },
@@ -143,25 +143,25 @@ const universities = [
     image: sunderlandImage,
     details: {
       accreditation: "Recognized by UK's Quality Assurance Agency (QAA)",
-      duration: "3-4 years (depending on program)",
+      duration: "3-4 years (undergraduate), 1 year (postgraduate)",
       language: "English-medium programs",
       features: [
-        "Industry-focused education",
-        "Modern facilities",
-        "Strong graduate employability",
-        "Located in North East England"
+        "Focused on employability and professional readiness",
+        "Newly upgraded campus facilities",
+        "High rates of graduate employment",
+        "Situated in North East England near coastline"
       ],
       fees: {
-        tuition: "≈ £12,000-14,000/year",
-        accommodation: "≈ £4,000-6,000/year",
-        living: "≈ £600-800/month",
-        total: "≈ £18,000-22,000/year (including tuition and living expenses)"
+        tuition: "£12,500–£14,000/year (UG)",
+        accommodation: "£4,500–£6,000/year",
+        living: "£600–£800/month",
+        total: "£18,000–£22,000/year"
       },
       requirements: [
-        "Academic transcripts",
-        "English language proficiency (IELTS 6.0 or equivalent)",
+        "Transcripts or equivalent",
+        "IELTS 6.0 or equivalent",
         "Personal statement",
-        "Reference letters",
+        "Two references",
         "Passport copy",
         "Visa documentation"
       ]
@@ -173,27 +173,27 @@ const universities = [
     image: ulsterImage,
     details: {
       accreditation: "Recognized by UK's Quality Assurance Agency (QAA)",
-      duration: "3-4 years (depending on program)",
+      duration: "3-4 years (undergraduate), 1 year (postgraduate)",
       language: "English-medium programs",
       features: [
-        "Multiple campuses across Northern Ireland",
-        "Strong research focus",
-        "Industry partnerships",
-        "Modern facilities"
+        "Four campuses across Northern Ireland",
+        "Strong research and innovation strengths",
+        "Extensive industry partnerships",
+        "Newly developed student accommodation and facilities"
       ],
       fees: {
-        tuition: "≈ £13,000-15,000/year",
-        accommodation: "≈ £4,000-6,000/year",
-        living: "≈ £600-800/month",
-        total: "≈ £19,000-23,000/year (including tuition and living expenses)"
+        tuition: "£13,500–£15,000/year (UG)",
+        accommodation: "£4,500–£6,000/year",
+        living: "£600–£800/month",
+        total: "£19,000–£23,000/year"
       },
       requirements: [
-        "Academic transcripts",
-        "English language proficiency (IELTS 6.0 or equivalent)",
+        "School exam results or equivalent",
+        "IELTS 6.0 (5.5 in each skill) or equivalent",
         "Personal statement",
-        "Reference letters",
+        "References",
         "Passport copy",
-        "Visa documentation"
+        "Visa documents"
       ]
     }
   },
@@ -203,25 +203,25 @@ const universities = [
     image: greenwichImage,
     details: {
       accreditation: "Recognized by UK's Quality Assurance Agency (QAA)",
-      duration: "3-4 years (depending on program)",
+      duration: "3-4 years (undergraduate), 1 year (postgraduate)",
       language: "English-medium programs",
       features: [
-        "Historic campus in London",
-        "Strong business and maritime programs",
-        "Modern facilities",
-        "Excellent location"
+        "Historic campuses by the River Thames",
+        "Top-rated maritime and business faculties",
+        "State-of-the-art teaching resources",
+        "Prime London locations with excellent transport"
       ],
       fees: {
-        tuition: "≈ £14,000-16,000/year",
-        accommodation: "≈ £6,000-8,000/year",
-        living: "≈ £1,000-1,200/month",
-        total: "≈ £23,000-27,000/year (including tuition and living expenses)"
+        tuition: "£14,000–£16,000/year (UG)",
+        accommodation: "£6,500–£8,000/year",
+        living: "£1,000–£1,200/month",
+        total: "£23,000–£27,000/year"
       },
       requirements: [
-        "Academic transcripts",
-        "English language proficiency (IELTS 6.0 or equivalent)",
+        "Official academic transcripts",
+        "IELTS 6.0 or equivalent",
         "Personal statement",
-        "Reference letters",
+        "Two references",
         "Passport copy",
         "Visa documentation"
       ]
@@ -233,27 +233,27 @@ const universities = [
     image: gcuImage,
     details: {
       accreditation: "Recognized by UK's Quality Assurance Agency (QAA)",
-      duration: "3-4 years (depending on program)",
+      duration: "3-4 years (undergraduate), 1 year (postgraduate)",
       language: "English-medium programs",
       features: [
-        "Located in Glasgow city center",
-        "Strong focus on social responsibility",
-        "Modern campus",
-        "Industry connections"
+        "Centrally located in Glasgow",
+        "Emphasis on social responsibility and sustainable development",
+        "Contemporary facilities and labs",
+        "Strong links with industry"
       ],
       fees: {
-        tuition: "≈ £13,000-15,000/year",
-        accommodation: "≈ £5,000-7,000/year",
-        living: "≈ £700-900/month",
-        total: "≈ £20,000-24,000/year (including tuition and living expenses)"
+        tuition: "£13,000–£15,000/year (UG)",
+        accommodation: "£5,500–£7,000/year",
+        living: "£700–£900/month",
+        total: "£20,000–£24,000/year"
       },
       requirements: [
-        "Academic transcripts",
-        "English language proficiency (IELTS 6.0 or equivalent)",
-        "Personal statement",
-        "Reference letters",
+        "Transcripts",
+        "IELTS 6.0 or equivalent",
+        "Motivation statement",
+        "Two references",
         "Passport copy",
-        "Visa documentation"
+        "Visa documents"
       ]
     }
   },
@@ -263,27 +263,27 @@ const universities = [
     image: chesterImage,
     details: {
       accreditation: "Recognized by UK's Quality Assurance Agency (QAA)",
-      duration: "3-4 years (depending on program)",
+      duration: "3-4 years (undergraduate), 1 year (postgraduate)",
       language: "English-medium programs",
       features: [
-        "Historic university",
-        "Multiple campuses",
-        "Strong student support",
-        "Industry-focused programs"
+        "Rich heritage and modern learning environment",
+        "Multiple campuses including Chester city centre",
+        "Comprehensive student support",
+        "Practical and career-oriented courses"
       ],
       fees: {
-        tuition: "≈ £12,000-14,000/year",
-        accommodation: "≈ £4,000-6,000/year",
-        living: "≈ £600-800/month",
-        total: "≈ £18,000-22,000/year (including tuition and living expenses)"
+        tuition: "£12,500–£14,000/year (UG)",
+        accommodation: "£4,500–£6,000/year",
+        living: "£600–£800/month",
+        total: "£18,000–£22,000/year"
       },
       requirements: [
-        "Academic transcripts",
-        "English language proficiency (IELTS 6.0 or equivalent)",
+        "Academic records",
+        "IELTS 6.0 (or equivalent)",
         "Personal statement",
-        "Reference letters",
+        "References",
         "Passport copy",
-        "Visa documentation"
+        "Visa paperwork"
       ]
     }
   },
@@ -293,27 +293,27 @@ const universities = [
     image: canterburyImage,
     details: {
       accreditation: "Recognized by UK's Quality Assurance Agency (QAA)",
-      duration: "3-4 years (depending on program)",
+      duration: "3-4 years (undergraduate), 1 year (postgraduate)",
       language: "English-medium programs",
       features: [
-        "Historic location in Canterbury",
-        "Strong teaching reputation",
-        "Modern facilities",
-        "Close-knit community"
+        "Located in historic Canterbury",
+        "Well-regarded for teacher training and health courses",
+        "Modern campus and good student-staff engagement",
+        "Tight-knit campus feel"
       ],
       fees: {
-        tuition: "≈ £12,000-14,000/year",
-        accommodation: "≈ £4,000-6,000/year",
-        living: "≈ £600-800/month",
-        total: "≈ £18,000-22,000/year (including tuition and living expenses)"
+        tuition: "£12,500–£14,000/year (UG)",
+        accommodation: "£4,500–£6,000/year",
+        living: "£600–£800/month",
+        total: "£18,000–£22,000/year"
       },
       requirements: [
-        "Academic transcripts",
-        "English language proficiency (IELTS 6.0 or equivalent)",
+        "Transcripts or exam results",
+        "IELTS 6.0 (min 5.5 each skill)",
         "Personal statement",
-        "Reference letters",
+        "References",
         "Passport copy",
-        "Visa documentation"
+        "Visa documents"
       ]
     }
   },
@@ -323,25 +323,25 @@ const universities = [
     image: bppImage,
     details: {
       accreditation: "Recognized by UK's Quality Assurance Agency (QAA)",
-      duration: "3-4 years (depending on program)",
+      duration: "3 years (undergraduate), 1 year (postgraduate)",
       language: "English-medium programs",
       features: [
-        "Specialized in professional education",
-        "Multiple locations across UK",
-        "Strong industry links",
-        "Focus on practical skills"
+        "Specialist in law, business, health and finance education",
+        "Campuses in major UK cities",
+        "Strong employability focus",
+        "Practical and professional accredited programs"
       ],
       fees: {
-        tuition: "≈ £13,000-15,000/year",
-        accommodation: "≈ £6,000-8,000/year",
-        living: "≈ £800-1,000/month",
-        total: "≈ £21,000-25,000/year (including tuition and living expenses)"
+        tuition: "£13,000–£15,000/year (UG)",
+        accommodation: "£6,500–£8,000/year",
+        living: "£800–£1,000/month",
+        total: "£21,000–£25,000/year"
       },
       requirements: [
-        "Academic transcripts",
-        "English language proficiency (IELTS 6.0 or equivalent)",
+        "Official transcripts",
+        "IELTS 6.0 (or equivalent)",
         "Personal statement",
-        "Reference letters",
+        "Two references",
         "Passport copy",
         "Visa documentation"
       ]
@@ -353,27 +353,27 @@ const universities = [
     image: londonMetImage,
     details: {
       accreditation: "Recognized by UK's Quality Assurance Agency (QAA)",
-      duration: "3-4 years (depending on program)",
+      duration: "3-4 years (undergraduate), 1 year (postgraduate)",
       language: "English-medium programs",
       features: [
-        "Located in central London",
-        "Diverse student body",
-        "Modern facilities",
-        "Strong industry connections"
+        "Central London location",
+        "Highly diverse student population",
+        "Contemporary facilities and strong social sciences",
+        "Well-connected to industry and employers"
       ],
       fees: {
-        tuition: "≈ £13,000-15,000/year",
-        accommodation: "≈ £6,000-8,000/year",
-        living: "≈ £1,000-1,200/month",
-        total: "≈ £22,000-26,000/year (including tuition and living expenses)"
+        tuition: "£13,000–£15,000/year (UG)",
+        accommodation: "£6,500–£8,000/year",
+        living: "£1,000–£1,200/month",
+        total: "£22,000–£26,000/year"
       },
       requirements: [
-        "Academic transcripts",
-        "English language proficiency (IELTS 6.0 or equivalent)",
+        "Transcripts or qualifications",
+        "IELTS 6.0 (min 5.5)",
         "Personal statement",
-        "Reference letters",
+        "References",
         "Passport copy",
-        "Visa documentation"
+        "Visa documents"
       ]
     }
   },
@@ -383,23 +383,23 @@ const universities = [
     image: aruImage,
     details: {
       accreditation: "Recognized by UK's Quality Assurance Agency (QAA)",
-      duration: "3-4 years (depending on program)",
+      duration: "3-4 years (undergraduate), 1 year (postgraduate)",
       language: "English-medium programs",
       features: [
-        "Multiple campuses across East Anglia",
-        "Strong research focus",
-        "Modern facilities",
-        "Industry partnerships"
+        "Campuses in Cambridge and Chelmsford",
+        "High research impact and industry engagement",
+        "Modern learning facilities",
+        "Extensive placement and career services"
       ],
       fees: {
-        tuition: "≈ £13,000-15,000/year",
-        accommodation: "≈ £5,000-7,000/year",
-        living: "≈ £700-900/month",
-        total: "≈ £20,000-24,000/year (including tuition and living expenses)"
+        tuition: "£13,000–£15,000/year (UG)",
+        accommodation: "£5,500–£7,000/year",
+        living: "£700–£900/month",
+        total: "£20,000–£24,000/year"
       },
       requirements: [
-        "Academic transcripts",
-        "English language proficiency (IELTS 6.0 or equivalent)",
+        "Academic transcripts or equivalent",
+        "IELTS 6.0 or equivalent",
         "Personal statement",
         "Reference letters",
         "Passport copy",
@@ -407,7 +407,8 @@ const universities = [
       ]
     }
   }
-]
+];
+
 
 const StudyinUK = () => {
   const [selectedUniversity, setSelectedUniversity] = useState<any>(null)
