@@ -14,14 +14,14 @@ export default function ContactPage() {
          <HeroSection
             badgeText="Put in the Word"
             title="We would Love to Hear from You"
-            description="Whether you have questions, need guidance, or just want to explore your options to study abroad — we’re here for you. Reach out and let’s start shaping your future together! "
+            description="Whether you have questions, need guidance, or just want to explore your options to study abroad — we're here for you. Reach out and let's start shaping your future together! "
             buttonText="Book Consultation Now"
-            buttonLink="/contact"
+            buttonLink="/contact-us"
             backgroundImage={Images.Contact.ContactHero}
          />
          <ContactForm
             title="Get in Touch"
-            description="We’d love to hear from you! Fill out the form and we’ll get back to you shortly."
+            description="We'd love to hear from you! Fill out the form and we'll get back to you shortly."
             image="/classroom.jpg"
             breadcrumbItems={[{ label: "Home", href: "/" }, { label: "Contact Us" }]}
          />

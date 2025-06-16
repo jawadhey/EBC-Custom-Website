@@ -8,7 +8,7 @@ import { Autoplay, EffectFade } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/effect-fade'
 import 'swiper/css/autoplay'
-
+import { useNavigate } from "react-router-dom"
 
 import uni1 from '../../../assets/logos/ncus.png'
 import uni2 from '../../../assets/logos/kust.png'
@@ -74,6 +74,8 @@ const LandingHeroSection = () => {
       threshold: 0.1,
       triggerOnce: true
    })
+
+   const navigate = useNavigate()
 
    // University logos array
    const chineseUniversityLogos = [
@@ -164,6 +166,7 @@ const LandingHeroSection = () => {
                         className="bg-TwPrimaryPurple hover:bg-TwPrimaryPurpleBgHover text-white font-medium py-2 px-5 md:py-3 md:px-6 rounded-md transition duration-300 text-sm md:text-base"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
+                        onClick={() => navigate('/contact-us')}
                      >
                         Book Consultation Now
                      </motion.button>

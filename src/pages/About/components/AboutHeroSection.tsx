@@ -4,6 +4,7 @@ import Container from "../../../components/Container"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import aboutUsImage from '../../../assets/images/About/Frame 12.png'
+import { useNavigate } from "react-router-dom"
 // Animation variants
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -57,6 +58,7 @@ const HeroSection = () => {
     threshold: 0.1,
     triggerOnce: true
   })
+  const navigate = useNavigate()
 
   return (
     <div
@@ -104,6 +106,7 @@ const HeroSection = () => {
                 className="bg-TwPrimaryPurple hover:bg-TwPrimaryPurpleBgHover text-white font-medium py-2 md:py-3 px-4 md:px-6 rounded-md transition duration-300 text-sm md:text-base"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => navigate('/contact-us')}
               >
                 Book Consultation Now
               </motion.button>

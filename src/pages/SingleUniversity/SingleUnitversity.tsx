@@ -40,7 +40,7 @@ const SingleUnitversity = () => {
             title={university.description}
             description={"Discover everything you need to know about this prestigious institution—from academic programs and campus life to admission details and student experiences. Let EBC help you take the first step toward your dream of studying abroad."}
             buttonText="Book Consultation Now"
-            buttonLink="/contact"
+            buttonLink="/contact-us"
             backgroundImage={university.heroImage}
             isSingleUniversity
          />

@@ -155,7 +155,7 @@ const ServicesHeroSection = ({
                   variants={buttonVariants}
                >
                   <Link
-                     to="/book-consultation"
+                     to="/contact-us"
                      className="inline-block px-6 py-2 md:px-8 md:py-3 bg-TwPrimaryPurple text-white rounded-md font-medium hover:bg-TwPrimaryPurpleBgHover transition-colors text-sm md:text-base"
                   >
                      Book Consultation Now

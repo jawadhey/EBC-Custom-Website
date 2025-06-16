@@ -109,7 +109,7 @@ const TestimonialVideoSection = ({ Text }: any) => {
               </motion.div>
 
               {/* Play Button Overlay */}
-              <div className="absolute inset-0 flex items-center justify-center">
+              {/* <div className="absolute inset-0 flex items-center justify-center">
                 <motion.button
                   className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center shadow-lg"
                   variants={playButtonVariants}
@@ -117,7 +117,7 @@ const TestimonialVideoSection = ({ Text }: any) => {
                 >
                   <FaPlay className="text-TwPrimaryPurple ml-1 text-sm md:text-base" />
                 </motion.button>
-              </div>
+              </div> */}
             </motion.div>
 
             {/* Right Column - Testimonial */}

@@ -428,7 +428,7 @@ const FooterSection = () => {
                 <FaInstagram />
               </motion.a>
               <motion.a
-                href="https://wa.me/03360726422"
+                href="https://wa.me/03310004761"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 sm:w-10 sm:h-10 bg-green-600 rounded-full flex items-center justify-center hover:bg-green-700 transition-colors text-sm sm:text-base"
