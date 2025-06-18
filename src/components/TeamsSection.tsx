@@ -17,54 +17,74 @@ import FarmanImage from "../assets/images/Team/Dr farman.jpeg"
 import FarooqImage from "../assets/images/Team/Dr Farooq.jpeg"
 import HaiderImage from "../assets/images/Team/Mr Haider.jpeg"
 
+import AbidImage from "../assets/images/Team/Dr Abid Ali.jpeg"
+import AmirImage from "../assets/images/Team/Dr Raja Aamir.jpeg"
+// Add placeholder for missing images
+
+// const placeholder = "https://via.placeholder.com/200x200?text=No+Image"
+
 const TeamSection = () => {
-   // Team members data
+   // Team members data (updated order and titles)
    const teamMembers = [
       {
          id: 1,
-         name: "Dr Farooq Korai",
-         title: "Founder and Chairman",
-         image: FarooqImage,
+         name: "Dr Amjad Iqbal",
+         title: "Managing Director",
+         image: drAmjadImage,
          category: "founder"
       },
       {
          id: 2,
          name: "Dr Farman Ali Khan",
-         title: "Founder and CEO",
+         title: "CEO",
          image: FarmanImage,
          category: "founder"
       },
       {
          id: 3,
-         name: "Dr Amjad Iqbal",
-         title: "Founder and Managing Director",
-         image: drAmjadImage,
+         name: "Dr Farooq Korai",
+         title: "Chairman",
+         image: FarooqImage,
          category: "founder"
       },
       {
          id: 4,
-         name: "Dr Khadija Nawaz",
-         title: "Assisting Managing Director",
-         image: drKhadijaImage,
-         category: "team"
-      },
-      {
-         id: 5,
          name: "Mr Qasim Ghaffar",
          title: "Regional Head KPK",
          image: qasimGhaffarImage,
          category: "team"
       },
       {
+         id: 5,
+         name: "Dr Abid Ali",
+         title: "Director Operations",
+         image: AbidImage,
+         category: "team"
+      },
+      {
          id: 6,
-         name: "Ms Laiba Saeed",
-         title: "Regional Manager",
-         image: laibaSaeedImage,
+         name: "Dr Raja Amir",
+         title: "Director Sales",
+         image: AmirImage,
          category: "team"
       },
       {
          id: 7,
-         name: "Mr Kamran Ali Khan",
+         name: "Dr Khadija Nawaz",
+         title: "Assisting Managing Director",
+         image: drKhadijaImage,
+         category: "team"
+      },
+      {
+         id: 8,
+         name: "Ms Laiba Saeed",
+         title: "Regional Manager KPK",
+         image: laibaSaeedImage,
+         category: "team"
+      },
+      {
+         id: 9,
+         name: "Mr Kamran Ali",
          title: "Student counsellor",
          image: HaiderImage,
          category: "team"

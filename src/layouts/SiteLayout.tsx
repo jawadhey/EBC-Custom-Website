@@ -2,6 +2,7 @@ import { Outlet, useLocation } from 'react-router-dom'
 import Navbar from '../components/navbar'
 import Footer from '../components/Footer'
 import { FaWhatsapp } from 'react-icons/fa'
+import ScrollToTop from '../utils/ScrollToTop'
 
 const SiteLayout = () => {
    const location = useLocation()
@@ -12,6 +13,7 @@ const SiteLayout = () => {
 
    return (
       <div className="font-poppins text-[16px] relative">
+         <ScrollToTop />
          <Navbar />
          <Outlet />
          <Footer />

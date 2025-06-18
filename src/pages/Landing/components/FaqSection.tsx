@@ -102,52 +102,77 @@ const FaqSection = () => {
 
    const aboutFaqs = [
       {
-         question: "Who is behind this student consultancy?",
+         question: "What is ebc worldwide?",
          answer:
-            "We are a dedicated team of education consultants with years of experience in helping students navigate their journey to study abroad. Our mission is to make the process as smooth and stress-free as possible for you.",
+            "EBC Worldwide is a leading study abroad consultancy that helps students apply to universities overseas. We specialize in MBBS and MD programs along with business, IT, engineering, and other undergrad and postgrad programs in countries like China, Azerbaijan, Georgia, Belarus, and more.",
       },
       {
-         question: "How long have you been helping students?",
+         question: "Why choose ebc worldwide for studying abroad?",
          answer:
-            "We have been assisting students for over 18+ years, with a proven track record of successful placements in top medical universities abroad, especially in China.",
+            "With years of experience and a strong track record, EBC Worldwide offers complete, reliable, and transparent study abroad services. Our direct partnerships with international universities ensure a smooth admission process, up-to-date information, and professional guidance for students and parents. Our expert team guides you every step from university admission to visa processing and student support.",
       },
       {
-         question: "Is your consultancy fee high?",
+         question: "Does ebc worldwide specialize in MBBS/MD admissions?",
          answer:
-            "Our services are affordable and tailored to the needs of each student. We aim to provide value and ensure that every student gets the best possible guidance throughout the application process.",
+            "Yes, EBC Worldwide is one of the leading MBBS/MD consultants for studying medicine abroad. We assist students with MBBS admissions in top medical universities recognized by the WHO, PMDC, ECFMG, WFME, and other international medical bodies.",
       },
       {
-         question: "Can I contact you for advice even after I've enrolled in my program?",
+         question: "Does ebc worldwide help with student visas?",
          answer:
-            "Absolutely! We believe in ongoing support, so we're always here to help, even after you've started your studies abroad.",
+            "Yes, we provide complete visa support including documentation, interview preparation, embassy guidance, and assistance throughout the visa process to increase approval chances.",
+      },
+      {
+         question: "Does ebc worldwide assist after students arrive abroad?",
+         answer:
+            "Yes, our services continue even after you travel. We help with airport pickup, hostel accommodation, student orientation, and ongoing support to ensure a smooth transition and successful academic journey.",
+      },
+      {
+         question: "How can I apply to study abroad with ebc worldwide?",
+         answer:
+            "You can apply easily through our website enquiry form, contact us via WhatsApp or phone, or visit our office for a free one-on-one consultation. Our expert counsellors will guide you step by step through the entire admission process.",
+      },
+      {
+         question: "Does ebc worldwide charge a consultancy fee?",
+         answer:
+            "Yes, but our fee structure is transparent and depends on the country, university, and program you choose. All details are discussed clearly during your counselling session.",
+      },
+      {
+         question: "Does ebc worldwide offer scholarships?",
+         answer:
+            "Some universities offer partial scholarships or tuition discounts based on academic performance. We help students explore these opportunities during the admission process.",
       },
    ]
 
    const programsFaqs = [
       {
-         question: "Which universities in China do you work with?",
+         question: "What is the duration of MBBS/MD programs abroad?",
          answer:
-            "We partner with top-tier medical universities in China, including Shihezi University, Ningxia Medical University, Zhengzhou University, Nanjing Medical University, Jiangsu University, Southwest Medical University, Kunming Medical University, Jilin University, Guangxi Medical University, Kunming University of Science & Technology (KUST), Wuhan University, Yichun University, North China University of Science & Technology, and Jianghan University. All these universities are recognized by WHO, ECFMG, and other international medical bodies, offering high-quality English-taught MBBS programs.",
+            "Most MBBS/MD programs abroad are 6 years in duration: 5 years academic and one year internship.",
       },
       {
-         question: "What documents do I need to apply for a program?",
+         question: "Are medical degrees from abroad recognised in Pakistan?",
          answer:
-            "Generally, you'll need your academic transcripts, passport, proof of language proficiency (if required), a recommendation letter, and a medical check-up certificate. Our team will guide you through the specific requirements for each university.",
+            "Yes, provided the universities are listed on WHO, WFME, and PMDC directories. We guide students towards recognized universities to ensure smooth licensing and registration upon return.",
       },
       {
-         question: "How long does the application process take?",
+         question: "Do I need to pass any exams before applying for medical programs abroad?",
          answer:
-            "The application process typically takes 2-3 months, depending on the university's requirements and the time needed to process your visa. We work with you to ensure everything is submitted on time.",
+            "Generally, no entrance exam is required for medical admission in most of our partner universities. However, students must meet minimum academic qualifications.",
       },
       {
-         question: "Can I work while studying abroad?",
+         question: "Will I be eligible for USMLE, PLAB and PMDC licensing exams after graduation?",
          answer:
-            "Yes, many students can work part-time during their studies, depending on visa regulations. We'll provide you with all the necessary information to ensure you're aware of the rules regarding work while studying in China.",
+            "Yes, graduates from our partner universities are eligible to apply for licensing exams like USMLE, PLAB, AMC, and PMDC after fulfilling relevant requirements.",
       },
       {
-         question: "What are the living costs in China?",
+         question: "Am I allowed to work while studying abroad?",
          answer:
-            "Living costs vary depending on the city, but on average, students spend between $300 to $600 per month on accommodation, food, transportation, and other expenses. We'll help you plan a budget to make sure you're financially prepared.",
+            "Yes, you are allowed to work in several countries while studying abroad, but in some countries like China, undergrad students are not allowed to work during their study tenure.",
+      },
+      {
+         question: "Is the medium of instruction English?",
+         answer:
+            "Yes, all programs offered through EBC Worldwide partner universities are taught fully in English.",
       },
    ]
 

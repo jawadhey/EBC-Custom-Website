@@ -11,6 +11,7 @@ import europeImage from '../../assets/images/Services/europe/pexels-pixabay-4606
 import hungaryImage from '../../assets/images/Services/europe/hungary-in-pictures-beautiful-places-to-photograph-hungarian-parliament-building.jpg'
 import irelandImage from '../../assets/images/Services/europe/ireland.jpg'
 import AzerbaijanImage from '../../assets/images/Services/europe/Azerbaijan-MAIN-jpg-1536x884.webp'
+import georgiaImage from '../../assets/images/Services/europe/georgia.webp'
 
 // Animation variants
 const containerVariants = {
@@ -72,6 +73,20 @@ const countries = [
     description: "Azerbaijan offers high-quality education with modern facilities and a rich cultural experience. The country's universities are known for their strong programs in Medicine, Engineering, and Business, with many offering English-taught programs.",
     universities: [
       "Baku State University",
+    ]
+  },
+  {
+    id: 4,
+    name: "GEORGIA",
+    image: georgiaImage,
+    description: "Georgia is an increasingly popular destination for international students, especially for medical and engineering programs. Georgian universities offer affordable tuition, English-taught programs, and a multicultural environment in the heart of Europe-Asia.",
+    universities: [
+      "Tbilisi State Medical University",
+      "Ivane Javakhishvili Tbilisi State University",
+      "European University",
+      "Caucasus International University",
+      "Georgian National University SEU",
+      "Batumi Shota Rustaveli State University"
     ]
   }
 ]
