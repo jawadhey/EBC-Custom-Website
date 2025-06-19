@@ -4,6 +4,8 @@ import uni3 from '../assets/universities/uni3/hero.jpg'
 import uni4 from '../assets/universities/uni4/hero.jpg'
 import uni5 from '../assets/universities/uni5/hero.png'
 import uni6 from '../assets/images/Universities/Yichun-University.jpg'
+import jianghanImage from '../assets/universities/all/jianghan-university-1.jpg'
+import shaanxiImage from '../assets/universities/all/shaanxi uni.jpg'
 
 
 export const headerMenuItems = [
@@ -954,7 +956,7 @@ export const universities: any = [
           title: "Strategic Location",
           description: "Located in the peaceful city of Yichun, YCU offers a safe and inspiring setting for focused learning.",
         },
-        
+
 
       ],
     },
@@ -1006,6 +1008,273 @@ export const universities: any = [
     }
   },
   {
-    
-  }
+    id: 1001,
+    name: "Jianghan University",
+    description: "A comprehensive public university in Wuhan, China, known for its multidisciplinary programs and strong research culture.",
+    location: "Wuhan, China",
+    established: 2001,
+    heroImage: jianghanImage,
+    stats: [
+      {
+        title: <strong>75+</strong>,
+        subtitle: "Undergraduate Programs",
+        description: "Across 11 major disciplines.",
+      },
+      {
+        title: <strong>20,000+</strong>,
+        subtitle: "Total Students",
+        description: "Including 300+ international students.",
+      },
+      {
+        title: <strong>133</strong>,
+        subtitle: "Campus Hectares",
+        description: "Modern campus in Wuhan Economic & Technological Development Zone.",
+      },
+    ],
+    programs: [
+      {
+        title: <strong>MBBS (Bachelor of Medicine, Bachelor of Surgery)</strong>,
+        description: (
+          <>
+            Jianghan University offers a comprehensive MBBS program designed for international students, taught in English. The curriculum covers foundational medical sciences, clinical medicine, and a one-year internship at affiliated hospitals. The program is recognized by major global medical bodies and emphasizes hands-on clinical training, research, and international collaboration.
+          </>
+        ),
+      },
+      {
+        title: <strong>Engineering, Business, Arts & Sciences</strong>,
+        description: (
+          <>
+            In addition to medicine, JHUN provides a wide range of undergraduate and postgraduate programs in engineering, business, management, arts, sciences, and more, fostering a multidisciplinary learning environment.
+          </>
+        ),
+      },
+    ],
+    about: {
+      title: (<>
+        <p>
+          <strong>Jianghan University: Excellence in Multidisciplinary Education and Research</strong>
+        </p>
+      </>),
+      content: (
+        <>
+          <p>
+            Jianghan University (JHUN) is a public multidisciplinary university located in Wuhan, Hubei Province, China. Formed in 2001 through the merger of four institutions, JHUN is co-built by municipal and provincial governments. The university is recognized for its strong academic programs, research output, and modern campus facilities.
+          </p>
+          <p>
+            JHUN offers 75 undergraduate programs and a variety of master's degrees across 11 disciplines, including medicine, engineering, management, science, and the arts. The university is home to over 20,000 students and more than 1,200 faculty members, including distinguished professors and academicians. JHUN is known for its research achievements, industry partnerships, and international collaborations with over 50 universities worldwide.
+          </p>
+          <p>
+            The campus, located in the Wuhan Economic and Technological Development Zone, features advanced teaching and research facilities, comfortable student accommodations, and a vibrant campus life. JHUN is committed to cultivating innovative, globally minded graduates ready to contribute to society.
+          </p>
+        </>
+      ),
+    },
+    benefits: {
+      title: 'Why Choose Jianghan University? Key Benefits for International Students',
+      content: [
+        {
+          title: "Multidisciplinary Excellence",
+          description: "Wide range of programs in medicine, engineering, business, and more, fostering cross-disciplinary skills.",
+        },
+        {
+          title: "Modern Campus & Facilities",
+          description: "State-of-the-art labs, libraries, sports centers, and comfortable dormitories in a scenic environment.",
+        },
+        {
+          title: "Strong Research & Industry Links",
+          description: "Active research platforms and partnerships with leading enterprises for practical training and innovation.",
+        },
+        {
+          title: "International Collaboration",
+          description: "Academic exchange and joint programs with 50+ universities in 21 countries.",
+        },
+        {
+          title: "Affordable Tuition & Scholarships",
+          description: "Competitive tuition fees and scholarship opportunities for outstanding international students.",
+        },
+        {
+          title: "Supportive International Office",
+          description: "Dedicated support for international students, including orientation, visa, and campus life assistance.",
+        },
+        {
+          title: "Vibrant Student Life",
+          description: "Clubs, sports, cultural events, and a diverse, welcoming community.",
+        },
+      ],
+    },
+    faqs: {
+      title: "Frequently Asked Questions about Jianghan University",
+      description: "Key information for prospective international students.",
+      content: [
+        {
+          id: 1,
+          question: "What programs are available for international students?",
+          answer: "Jianghan University offers MBBS, engineering, business, arts, and science programs, with several taught in English for international students.",
+        },
+        {
+          id: 2,
+          question: "Is the MBBS program recognized internationally?",
+          answer: "Yes, the MBBS program is recognized by major global medical bodies and is taught in English, with a strong focus on clinical training.",
+        },
+        {
+          id: 3,
+          question: "What are the admission requirements for international students?",
+          answer: "Applicants typically need a high school diploma (with science background for MBBS), proof of English proficiency, a valid passport, and other supporting documents.",
+        },
+        {
+          id: 4,
+          question: "Are scholarships available?",
+          answer: "Yes, Jianghan University offers scholarships for outstanding international students based on academic merit and other criteria.",
+        },
+        {
+          id: 5,
+          question: "What is campus life like?",
+          answer: "The campus offers modern facilities, student clubs, sports, cultural activities, and a supportive environment for international students.",
+        },
+        {
+          id: 6,
+          question: "Is accommodation available for international students?",
+          answer: "Yes, on-campus dormitories with modern amenities are available for international students.",
+        },
+        {
+          id: 7,
+          question: "How do I apply?",
+          answer: "Applications can be submitted online through the university's international admissions portal. Detailed instructions and requirements are provided on the official website.",
+        },
+      ],
+    }
+  },
+  {
+    id: 1002,
+    name: "Shaanxi University of Chinese Medicine",
+    description: "A leading university in Xianyang, China, specializing in traditional Chinese medicine, pharmacy, and integrative medical education.",
+    location: "Xianyang, China",
+    established: 1952,
+    heroImage: shaanxiImage,
+    stats: [
+      {
+        title: <strong>20+</strong>,
+        subtitle: "Undergraduate Programs",
+        description: "Focused on TCM, pharmacy, acupuncture, and integrative medicine.",
+      },
+      {
+        title: <strong>15,000+</strong>,
+        subtitle: "Total Students",
+        description: "Including 1,000+ international students from 50+ countries.",
+      },
+      {
+        title: <strong>60+</strong>,
+        subtitle: "Years of Excellence",
+        description: "Pioneering TCM education and research since 1952.",
+      },
+    ],
+    programs: [
+      {
+        title: <strong>MBBS (Traditional Chinese Medicine)</strong>,
+        description: (
+          <>
+            The university offers a Bachelor of Medicine in Traditional Chinese Medicine (TCM), taught in English and Chinese. The program covers TCM theory, clinical medicine, acupuncture, herbal pharmacology, and integrative medicine, with practical training in affiliated hospitals. Graduates are prepared for global careers in TCM and integrative healthcare.
+          </>
+        ),
+      },
+      {
+        title: <strong>Pharmacy, Acupuncture & Moxibustion, Nursing</strong>,
+        description: (
+          <>
+            Additional programs include pharmacy, acupuncture and moxibustion, nursing, and integrative medicine, all supported by strong research and clinical practice opportunities.
+          </>
+        ),
+      },
+    ],
+    about: {
+      title: (<>
+        <p>
+          <strong>Shaanxi University of Chinese Medicine: Tradition, Innovation, and Global Impact</strong>
+        </p>
+      </>),
+      content: (
+        <>
+          <p>
+            Founded in 1952, Shaanxi University of Chinese Medicine (SUCM) is a premier institution in Xianyang, China, dedicated to the education and research of traditional Chinese medicine (TCM), pharmacy, and integrative medicine. The university is recognized as one of the earliest and most influential TCM universities in northwest China.
+          </p>
+          <p>
+            SUCM offers over 20 undergraduate and numerous postgraduate programs, with a focus on TCM, acupuncture, pharmacy, and nursing. The university has two directly affiliated hospitals, nine teaching hospitals, and a GMP-certified pharmaceutical factory, providing students with extensive clinical and research experience. SUCM is also a hub for international education, hosting over 1,000 students from more than 50 countries.
+          </p>
+          <p>
+            With a distinguished faculty, modern campus, and a strong tradition of academic excellence, SUCM is committed to advancing the global understanding and practice of traditional Chinese medicine.
+          </p>
+        </>
+      ),
+    },
+    benefits: {
+      title: 'Why Study at Shaanxi University of Chinese Medicine? Key Benefits',
+      content: [
+        {
+          title: "Pioneer in TCM Education",
+          description: "One of the first TCM universities in northwest China, with a legacy of excellence since 1952.",
+        },
+        {
+          title: "Comprehensive Clinical Training",
+          description: "Access to affiliated hospitals, research centers, and a GMP pharmaceutical factory for hands-on learning.",
+        },
+        {
+          title: "International Student Support",
+          description: "Dedicated services for international students, including orientation, language support, and cultural integration.",
+        },
+        {
+          title: "Scholarships & Affordable Tuition",
+          description: "Multiple scholarship opportunities and competitive tuition fees for international students.",
+        },
+        {
+          title: "Global Recognition",
+          description: "Degrees recognized by major TCM and medical organizations worldwide.",
+        },
+        {
+          title: "Rich Campus Life",
+          description: "Cultural events, student clubs, and a diverse, welcoming community.",
+        },
+      ],
+    },
+    faqs: {
+      title: "Frequently Asked Questions about Shaanxi University of Chinese Medicine",
+      description: "Essential information for international applicants.",
+      content: [
+        {
+          id: 1,
+          question: "What programs are available for international students?",
+          answer: "SUCM offers TCM, pharmacy, acupuncture, nursing, and integrative medicine programs, with several taught in English.",
+        },
+        {
+          id: 2,
+          question: "Is the TCM degree recognized internationally?",
+          answer: "Yes, SUCM degrees are recognized by major TCM and medical organizations worldwide, preparing graduates for global careers.",
+        },
+        {
+          id: 3,
+          question: "What are the admission requirements?",
+          answer: "Applicants need a high school diploma (science background preferred), proof of English or Chinese proficiency, a valid passport, and supporting documents.",
+        },
+        {
+          id: 4,
+          question: "Are scholarships available?",
+          answer: "Yes, SUCM offers scholarships for international students based on academic performance and other criteria.",
+        },
+        {
+          id: 5,
+          question: "What is campus life like?",
+          answer: "The university offers a vibrant campus life with cultural activities, student organizations, and support services for international students.",
+        },
+        {
+          id: 6,
+          question: "Is accommodation available?",
+          answer: "Yes, on-campus accommodation is available for international students, with modern amenities and support services.",
+        },
+        {
+          id: 7,
+          question: "How do I apply?",
+          answer: "Applications can be submitted online via the university's international admissions portal. Detailed requirements and procedures are available on the official website.",
+        },
+      ],
+    }
+  },
 ];

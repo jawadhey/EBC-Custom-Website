@@ -11,6 +11,8 @@ import uni3 from '../../../assets/universities/uni3/hero.jpg'
 import uni4 from '../../../assets/universities/uni4/hero.jpg'
 import uni5 from '../../../assets/universities/uni5/hero.png'
 import uni6 from '../../../assets/images/Universities/Yichun-University.jpg'
+import jianghanImage from '../../../assets/universities/all/jianghan-university-1.jpg'
+import shaanxiImage from '../../../assets/universities/all/shaanxi uni.jpg'
 
 // Animation variants
 const containerVariants = {
@@ -116,6 +118,20 @@ const ProgramsSection = ({ isLanding }: { isLanding?: boolean }) => {
       title: "Yichuan University",
       description: "Discover academic excellence and cultural immersion at Yichuan University — a dynamic institution known for its quality education, friendly campus environment, and growing international student community.",
       image: uni6,
+      categories: ["china"],
+    },
+    {
+      id: 1001,
+      title: "Jianghan University",
+      description: "A comprehensive university in Wuhan, China, offering a wide range of programs and a vibrant campus life.",
+      image: jianghanImage,
+      categories: ["china"],
+    },
+    {
+      id: 1002,
+      title: "Shaanxi University of Chinese Medicine",
+      description: "A leading institution in Xianyang, China, specializing in traditional Chinese medicine and modern medical education.",
+      image: shaanxiImage,
       categories: ["china"],
     },
   ];

@@ -120,7 +120,7 @@ const ServicesSection = () => {
     },
     {
       icon: <FaCogs className="text-white text-xl" />,
-      title: "PFP for Engineers",
+      title: "Pocket Friendly Programs for Engineers",
       description:
         "Specialized pathway programs for engineering students with personalized guidance for technical education abroad.",
       image: Images.Services.Service3,
