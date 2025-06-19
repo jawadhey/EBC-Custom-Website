@@ -136,7 +136,7 @@ const GraduatesSection = () => {
             {/* Left Column - Image */}
             <motion.div className="relative" variants={imageContainerVariants}>
               <motion.img
-                src={Images.About.Graduate || "/placeholder.svg"}
+                src={Images.EbcGraduates}
                 alt="Graduates taking selfie"
                 className="w-full h-full max-h-[350px] md:max-h-[470px] object-cover rounded-xl md:rounded-2xl relative"
                 whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
@@ -154,7 +154,7 @@ const GraduatesSection = () => {
               >
                 <div className="flex-shrink-0 mr-2 md:mr-3">
                   <img
-                    src={Images.About.Graduate || "/placeholder.svg"}
+                    src={Images.EbcGraduates}
                     alt="Profile"
                     className="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-white"
                   />

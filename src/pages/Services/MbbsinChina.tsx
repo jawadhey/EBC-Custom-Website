@@ -449,6 +449,62 @@ const universities = [
         "English Proficiency Certificate"
       ]
     }
+  },
+  {
+    id: 21,
+    name: "JIANGHAN UNIVERSITY",
+    image: Images.jianghanImage,
+    details: {
+      accreditation: "MOE China, WHO, WFME, ECFMG, PMDC recognized",
+      duration: "6 years (5 + 1 internship)",
+      language: "English-medium program",
+      fees: {
+        tuition: "13,500 – 20,000 RMB/year",
+        hostel: "3200 RMB/year",
+        application: "1000 RMB (once)",
+        visa: "400 RMB/year",
+        medical: "500 RMB/year",
+        insurance: "800 RMB/year"
+      },
+      requirements: [
+        "High School Transcript (60%+)",
+        "Passport Copy",
+        "Physical Examination Form",
+        "Passport Photos",
+        "Study Plan"
+      ]
+    }
+  },
+   
+  {
+    "id": 22,
+    "name": "SHANXI UNIVERSITY OF CHINESE MEDICINE",
+    image: Images.shaanxiImage,
+    "details": {
+      "accreditation": "MOE China, WHO recognized",
+      "duration": "6 years (5 + 1 internship)",
+      "language": "English-medium program",
+      "features": [
+        "International student apartment on campus",
+        "14 colleges & 4 affiliated hospitals"
+      ],
+      "fees": {
+        "tuition": "21,000 RMB/year",
+        "hostel": "3,000 RMB/year",
+        "application": "400 RMB (once)",
+        "visa_extension": "400 RMB/year",
+        "insurance": "800 RMB/year",
+        "medical": "485 RMB (once)",
+        "registration": "500 RMB (management fee)"
+      },
+      "requirements": [
+        "High School Certificate",
+        "Passport Copy",
+        "Physical Examination Form",
+        "Passport Photos",
+        "HSK‑4 (if no Chinese proficiency)"
+      ]
+    }
   }
 ]
 

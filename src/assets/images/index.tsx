@@ -1,4 +1,3 @@
-
 import LandingHero from './Landing/Frame 18.png'
 import HarwardLogo from './Landing/Frame.png'
 import HelpImage from './Landing/help.png'
@@ -47,7 +46,24 @@ import Hero5 from './Landing/Hero/Frame 6 (5).png'
 import Hero6 from './Landing/Hero/Frame 6 (6).png'
 import Hero7 from './Landing/Hero/Frame 6 (7).png'
 
-
+import EbcGuidance from './ebc/WhatsApp Image 2025-06-15 at 9.08.19 PM.jpeg'
+import EbcAdmission from './ebc/WhatsApp Image 2025-06-15 at 9.08.20 PM.jpeg'
+import EbcJourney from './ebc/WhatsApp Image 2025-06-15 at 9.08.10 PM (1).jpeg'
+import EbcAboutHero from './ebc/WhatsApp Image 2025-06-15 at 9.08.05 PM (1).jpeg'
+import EbcAboutSection from './ebc/WhatsApp Image 2025-06-15 at 9.08.04 PM.jpeg'
+import EbcJourney1 from './ebc/WhatsApp Image 2025-06-15 at 9.08.06 PM (1).jpeg'
+import EbcJourney2 from './ebc/WhatsApp Image 2025-06-15 at 9.08.07 PM.jpeg'
+import EbcJourney3 from './ebc/WhatsApp Image 2025-06-15 at 9.08.08 PM.jpeg'
+import EbcJourney4 from './ebc/WhatsApp Image 2025-06-15 at 9.08.09 PM (1).jpeg'
+import EbcJourney5 from './ebc/WhatsApp Image 2025-06-15 at 9.08.12 PM.jpeg'
+import EbcJourney6 from './ebc/WhatsApp Image 2025-06-15 at 9.08.13 PM (2).jpeg'
+import EbcJourney7 from './ebc/WhatsApp Image 2025-06-15 at 9.08.14 PM (2).jpeg'
+import EbcGraduates from './ebc/WhatsApp Image 2025-06-15 at 9.08.15 PM.jpeg'
+import EbcAnalytics from './ebc/WhatsApp Image 2025-06-15 at 9.08.18 PM.jpeg'
+import EbcTestimonial from './ebc/WhatsApp Image 2025-06-15 at 9.08.06 PM (2).jpeg'
+import jianghanImage from '../universities/all/jianghan-university-1.jpg'
+import shaanxiImage from '../universities/all/shaanxi uni.jpg'
+// WhatsApp Image 2025-06-15 at 9.08.06 PM (2)
 export const Images = {
    LandingHero,
    HarwardLogo,
@@ -101,5 +117,22 @@ export const Images = {
       Hero6,
       Hero7,
 
-   }
+   },
+   EbcGuidance,
+   EbcAdmission,
+   EbcJourney,
+   EbcAboutHero,
+   EbcAboutSection,
+   EbcJourney1,
+   EbcJourney2,
+   EbcJourney3,
+   EbcJourney4,
+   EbcJourney5,
+   EbcJourney6,
+   EbcJourney7,
+   EbcGraduates,
+   EbcAnalytics,
+   EbcTestimonial,
+   jianghanImage,
+   shaanxiImage,
 }

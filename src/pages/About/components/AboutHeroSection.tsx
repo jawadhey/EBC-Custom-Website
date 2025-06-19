@@ -3,7 +3,6 @@ import { Images } from "../../../assets/images"
 import Container from "../../../components/Container"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
-import aboutUsImage from '../../../assets/images/About/Frame 12.png'
 import { useNavigate } from "react-router-dom"
 // Animation variants
 const containerVariants = {
@@ -160,20 +159,12 @@ const HeroSection = () => {
             <div className="relative">
               {/* Floating animation for the main image */}
               <motion.div
-                className="relative mx-auto lg:ml-auto z-10 rounded-2xl md:rounded-3xl max-w-[400px] md:max-w-[500px] lg:max-w-[550px]"
-              // animate={{
-              //   y: [0, -10, 0],
-              // }}
-              // transition={{
-              //   duration: 6,
-              //   ease: "easeInOut",
-              //   repeat: Infinity
-              // }}
+                className="relative mx-auto lg:ml-auto z-10 rounded-2xl md:rounded-3xl max-w-[600px] md:max-w-[700px] lg:max-w-[800px]"
               >
                 <img
-                  src={aboutUsImage}
+                  src={Images.EbcAboutHero}
                   alt="Medical Students Consultation"
-                  className="w-auto h-auto rounded-2xl md:rounded-3xl object-cover"
+                  className="w-full h-auto min-h-[320px] md:min-h-[400px] rounded-2xl md:rounded-3xl object-cover"
                 />
               </motion.div>
 

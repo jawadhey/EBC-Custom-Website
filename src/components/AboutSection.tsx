@@ -85,7 +85,7 @@ const AboutUsSection = ({ Heading, Text }: AboutUsSectionProps) => {
                 }}
               >
                 <img
-                  src={Images.About.AboutGallery1}
+                  src={Images.EbcAboutSection}
                   alt="Student reading in library"
                   className="w-full h-auto max-h-[400px] md:max-h-[500px] object-cover rounded-xl md:rounded-2xl"
                 />

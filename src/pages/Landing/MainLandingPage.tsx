@@ -9,6 +9,7 @@ import FoundersMessageSection from './components/FounderMessageSection'
 import TestimonialSection from './components/TestimonialSection'
 import FaqSection from './components/FaqSection'
 import ProgramsSection from '../Universities/components/ProgramsSection'
+import BlogsSection from './components/BlogsSection'
 
 const MainLandingPage = () => {
 
@@ -27,6 +28,7 @@ const MainLandingPage = () => {
       <FoundersMessageSection/>
       <TestimonialSection/>
       <FaqSection/>
+      <BlogsSection/>
     </>
 
   )

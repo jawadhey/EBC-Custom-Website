@@ -102,7 +102,7 @@ const TestimonialVideoSection = ({ Text }: any) => {
                 transition={{ duration: 0.4 }}
               >
                 <img
-                  src={Images.About.Graduate}
+                  src={Images.EbcTestimonial}
                   alt="Students in library"
                   className="w-full h-auto object-cover max-h-[300px] md:max-h-[400px] rounded-xl md:rounded-2xl"
                 />

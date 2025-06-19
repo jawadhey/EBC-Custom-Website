@@ -13,6 +13,7 @@ import MoeListedUniversities from "../pages/Services/MoeListedUniversities";
 import MDinEurope from "../pages/Services/MDinEurope";
 import BarAtLaw from "../pages/Services/BarAtLaw";
 import StudyinUK from "../pages/Services/StudyinUK";
+import SingleBlogPage from '../pages/Landing/SingleBlogPage';
  
 
 const Router = () => {
@@ -76,7 +77,10 @@ const Router = () => {
                path: 'bar-at-law',
                element: <BarAtLaw />,
             },
-
+            {
+               path: 'blog/:id',
+               element: <SingleBlogPage />,
+            },
             
          ],
       },

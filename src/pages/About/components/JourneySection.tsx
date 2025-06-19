@@ -17,49 +17,49 @@ const JourneySection = () => {
       year: "2007",
       title: "EBC Worldwide is Founded",
       description: "We officially opened our doors in 2007 with a simple mission — to guide passionate students toward quality education abroad.",
-      image: "/whiteboard-person.jpg",
+      image: Images.EbcJourney1,
       imageAlt: "EBC Worldwide founding",
     },
     {
       year: "2008",
       title: "First Student Batch to China",
       description: "Our first successful batch of students took off to study in China, marking the start of our deep-rooted partnerships with Chinese universities.",
-      image: "/meeting-discussion.jpg",
+      image: Images.EbcJourney2,
       imageAlt: "First student batch to China",
     },
     {
       year: "2009",
       title: "Expansion of Services",
       description: "We expanded our consultancy offerings to include detailed pre-departure guidance, document preparation, and admission assistance.",
-      image: "/placeholder.svg?height=300&width=500",
+      image: Images.EbcJourney3,
       imageAlt: "Service expansion",
     },
     {
       year: "2009–2015",
       title: "Strengthening Global Ties",
       description: "Over the years, we developed long-term collaborations with reputable institutions across China, including Guangxi Medical University and Kunming University of Science and Technology.",
-      image: "/placeholder.svg?height=300&width=500",
+      image: Images.EbcJourney4,
       imageAlt: "Global partnerships",
     },
     {
       year: "2015–2020",
       title: "Going Beyond Borders",
       description: "Our reach extended to new destinations like the UK and Azerbaijan, partnering with universities such as Nakhchivan State University and Baku Engineering University.",
-      image: "/placeholder.svg?height=300&width=500",
+      image: Images.EbcJourney5,
       imageAlt: "International expansion",
     },
     {
       year: "2021–2024",
       title: "5,000+ Students and Growing",
       description: "We hit a major milestone by guiding over 5,000 students to prestigious institutions globally, with a growing presence across multiple countries.",
-      image: "/placeholder.svg?height=300&width=500",
+      image: Images.EbcJourney6,
       imageAlt: "Student milestone celebration",
     },
     {
       year: "Present Day",
       title: "Onward to Georgia and Beyond",
       description: "With upcoming offices in Georgia and continuous global expansion, we remain committed to shaping futures and fulfilling dreams through education.",
-      image: "/placeholder.svg?height=300&width=500",
+      image: Images.EbcJourney7,
       imageAlt: "Future expansion plans",
     },
   ]
@@ -244,9 +244,9 @@ const JourneySection = () => {
                   {/* Image */}
                   <motion.div className="w-full md:w-1/2" variants={index % 2 === 0 ? imageVariants : textVariants}>
                     <motion.img
-                      src={Images.About.Timeline1 || "/placeholder.svg"}
+                      src={item.image}
                       alt={item.imageAlt}
-                      className="w-full h-auto rounded-xl max-h-[280px] md:max-h-[340px] object-cover object-top"
+                      className="w-full h-auto rounded-xl max-h-[280px] md:max-h-[340px] object-cover object-center"
                       whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
                     />
                   </motion.div>

@@ -114,7 +114,7 @@ const AnalyticsSection = () => {
             >
               <motion.div transition={{ duration: 0.4 }}>
                 <img
-                  src={Images.About.Skyscraper}
+                  src={Images.EbcAnalytics}
                   alt="Skyscrapers"
                   className="w-full h-auto max-h-[400px] md:max-h-[560px] rounded-xl md:rounded-2xl object-cover"
                 />

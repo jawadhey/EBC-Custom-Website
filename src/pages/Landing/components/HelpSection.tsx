@@ -79,17 +79,17 @@ const helpContent = [
   {
     title: "Get Expert Guidance",
     description: "Schedule a free consultation with our experts to discuss your goals and get personalized university recommendations based on your budget and preferences.",
-    image: Images.HelpImage
+    image: Images.EbcGuidance
   },
   {
     title: "Secure Admission & Visa",
     description: "We assist in preparing and submitting your university application while handling all documentation and guiding you through the visa process.",
-    image: Images.About.AboutGallery1
+    image: Images.EbcAdmission
   },
   {
     title: "Fly & Begin Your Journey",
     description: "Receive pre-departure support, including travel and accommodation guidance, then arrive at your university and start your journey toward becoming a doctor!",
-    image: Images.About.Graduate
+    image: Images.EbcJourney
   }
 ]
 
