@@ -63,6 +63,7 @@ import EbcAnalytics from './ebc/WhatsApp Image 2025-06-15 at 9.08.18 PM.jpeg'
 import EbcTestimonial from './ebc/WhatsApp Image 2025-06-15 at 9.08.06 PM (2).jpeg'
 import jianghanImage from '../universities/all/jianghan-university-1.jpg'
 import shaanxiImage from '../universities/all/shaanxi uni.jpg'
+import EbcContactForm from './ebc/WhatsApp Image 2025-06-15 at 9.08.12 PM (1).jpeg'
 // WhatsApp Image 2025-06-15 at 9.08.06 PM (2)
 export const Images = {
    LandingHero,
@@ -135,4 +136,5 @@ export const Images = {
    EbcTestimonial,
    jianghanImage,
    shaanxiImage,
+   EbcContactForm,
 }

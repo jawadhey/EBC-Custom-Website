@@ -224,7 +224,7 @@ const ContactForm = ({
                         variants={imageVariants}
                      >
                         <motion.img
-                           src={Images.Contact.ContactForm || "/classroom.jpg"}
+                           src={Images.EbcContactForm}
                            alt="Contact us illustration"
                            className="w-full h-full max-w-[550px] object-cover"
                            whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}

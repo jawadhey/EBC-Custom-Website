@@ -26,7 +26,7 @@ const GraduatesSection = () => {
     {
       title: "Proven Track Record",
       content:
-        "With 15000+ successful student placements and partnerships with top medical universities, we take pride in our impact on shaping future doctors and healthcare professionals.",
+        "With 7000+ successful student placements and partnerships with top medical universities, we take pride in our impact on shaping future doctors and healthcare professionals.",
     },
   ]
 
