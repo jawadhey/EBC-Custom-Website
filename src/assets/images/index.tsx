@@ -48,6 +48,8 @@ import Hero7 from './Landing/Hero/Frame 6 (7).png'
 
 import EbcGuidance from './ebc/WhatsApp Image 2025-06-15 at 9.08.19 PM.jpeg'
 import EbcAdmission from './ebc/WhatsApp Image 2025-06-15 at 9.08.20 PM.jpeg'
+import EbcAdmission2 from './ebc/WhatsApp Image 2025-06-15 at 9.08.20 PM (1).jpeg'
+import EbcAdmission3 from './ebc/WhatsApp Image 2025-06-15 at 9.08.21 PM (1).jpeg'
 import EbcJourney from './ebc/WhatsApp Image 2025-06-15 at 9.08.10 PM (1).jpeg'
 import EbcAboutHero from './ebc/WhatsApp Image 2025-06-15 at 9.08.05 PM (1).jpeg'
 import EbcAboutSection from './ebc/WhatsApp Image 2025-06-15 at 9.08.04 PM.jpeg'
@@ -64,6 +66,15 @@ import EbcTestimonial from './ebc/WhatsApp Image 2025-06-15 at 9.08.06 PM (2).jp
 import jianghanImage from '../universities/all/jianghan-university-1.jpg'
 import shaanxiImage from '../universities/all/shaanxi uni.jpg'
 import EbcContactForm from './ebc/WhatsApp Image 2025-06-15 at 9.08.12 PM (1).jpeg'
+import EbcHeroMain from './ebc/WhatsApp Image 2025-06-15 at 9.08.05 PM.jpeg'
+import EbcHero2 from './ebc/WhatsApp Image 2025-06-15 at 9.08.07 PM.jpeg'
+import EbcHero3 from './ebc/WhatsApp Image 2025-06-15 at 9.08.08 PM (1).jpeg'
+import EbcHero4 from './ebc/WhatsApp Image 2025-06-15 at 9.08.09 PM (1).jpeg'
+import EbcHero5 from './ebc/WhatsApp Image 2025-06-15 at 9.08.11 PM (1).jpeg'
+import EbcHero6 from './ebc/WhatsApp Image 2025-06-15 at 9.08.14 PM (1).jpeg'
+import EbcHero7 from './ebc/WhatsApp Image 2025-06-15 at 9.08.10 PM (1).jpeg'
+import EbcUniversitiesHero from './ebc/WhatsApp Image 2025-06-15 at 9.08.05 PM (1).jpeg'
+import EbcEventsHero from './ebc/WhatsApp Image 2025-06-15 at 9.08.12 PM (1).jpeg'
 // WhatsApp Image 2025-06-15 at 9.08.06 PM (2)
 export const Images = {
    LandingHero,
@@ -121,6 +132,8 @@ export const Images = {
    },
    EbcGuidance,
    EbcAdmission,
+   EbcAdmission2,
+   EbcAdmission3,
    EbcJourney,
    EbcAboutHero,
    EbcAboutSection,
@@ -137,4 +150,13 @@ export const Images = {
    jianghanImage,
    shaanxiImage,
    EbcContactForm,
+   EbcHeroMain,
+   EbcHero2,
+   EbcHero3,
+   EbcHero4,
+   EbcHero5,
+   EbcHero6,
+   EbcHero7,
+   EbcUniversitiesHero,
+   EbcEventsHero,
 }

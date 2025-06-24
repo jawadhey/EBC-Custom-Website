@@ -31,7 +31,8 @@ const EventsPage = () => {
             description="Stay connected with EBC through our latest events, seminars, and webinars held across different countries. Whether you're looking for admission guidance, visa tips, or direct interaction with university representatives, our events are the perfect opportunity to get all your questions answered in person. "
             buttonText="Book Consultation Now"
             buttonLink="/contact-us"
-            backgroundImage={Images.Events.HeroImage}
+            backgroundImage={Images.EbcEventsHero}
+            position={'center'}
          />
          <InstitutionSection
             Heading="Take a Look at the Seminars We Have Been Conducting"
@@ -40,8 +41,8 @@ const EventsPage = () => {
                These sessions are designed to provide you with in-depth knowledge, practical tips, and real-life experiences shared by students who have successfully navigated the path to studying medicine overseas. You'll also get the chance to interact with industry experts, ask questions, and gain confidence in your ability to make informed decisions about your future. <br /> <br />
                Whether you're still considering your options or ready to start your application, our seminars will equip you with all the information you need. Don't miss out on the opportunity to get the clarity and support you deserve as you take the next step towards your medical career abroad! Join us at our upcoming seminar and start building your future today.
             </p>}
-            mainImage={ebcImage1}
-            galleryImages={[ebcImage2, ebcImage3, ebcImage4, ebcImage5]}
+            mainImage={Images.EbcAnalytics}
+            galleryImages={[Images.EbcGuidance, Images.EbcAdmission, Images.EbcAdmission2, Images.EbcAdmission3]}
          />
          <InstitutionSection
             Heading="Providing Consulting Sessions at Your Institution"

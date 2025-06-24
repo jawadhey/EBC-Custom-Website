@@ -19,10 +19,10 @@ const UniversitiesPage = () => {
             description="Discover a world of opportunities as you browse through the top-ranked universities we work with. From medicine to engineering, we connect you with institutions that match your academic goals and dreams of studying abroad. "
             buttonText="Book Consultation Now"
             buttonLink="/contact-us"
-            backgroundImage={Images.Universities.UniversityHero}
+            backgroundImage={Images.EbcUniversitiesHero}
          />
          <ProgramsSection />
-         <TestimonialVideoSection Text="Our students' success stories speak volumes! From smooth application processes to achieving their dreams of studying medicine abroad, we’ve helped countless students embark on life-changing journeys. Hear firsthand from those who’ve experienced our support, and discover how our team has made studying abroad easier, stress-free, and more rewarding. Join the community of successful students and start your journey with us today!
+         <TestimonialVideoSection Text="Our students' success stories speak volumes! From smooth application processes to achieving their dreams of studying medicine abroad, we've helped countless students embark on life-changing journeys. Hear firsthand from those who've experienced our support, and discover how our team has made studying abroad easier, stress-free, and more rewarding. Join the community of successful students and start your journey with us today!
 "/>
          <div className='my-14 lg:my-28'>
 

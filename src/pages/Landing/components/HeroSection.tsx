@@ -84,13 +84,13 @@ const LandingHeroSection = () => {
    ];
 
    const backgroungImages = [
-      Images.Landing.Hero1,
-      Images.Landing.Hero2,
-      Images.Landing.Hero3,
-      Images.Landing.Hero4,
-      Images.Landing.Hero5,
-      Images.Landing.Hero6,
-      Images.Landing.Hero7,
+      Images.EbcHeroMain,
+      Images.EbcHero2,
+      Images.EbcHero3,
+      Images.EbcHero4,
+      Images.EbcHero5,
+      Images.EbcHero6,
+      Images.EbcHero7,
    ]
 
    return (

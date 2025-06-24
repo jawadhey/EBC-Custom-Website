@@ -10,6 +10,7 @@ interface HeroSectionProps {
    backgroundImage?: string;
    overlayColor?: string;
    isSingleUniversity?: boolean
+   position?: string
 }
 
 const HeroSection = ({
@@ -20,6 +21,7 @@ const HeroSection = ({
    buttonLink = "#",
    backgroundImage = "/students-group.jpg",
    isSingleUniversity,
+   position,
    overlayColor = "rgba(67, 56, 202, 0.5)", // Purple overlay with 50% opacity
 }: HeroSectionProps) => {
    const [ref, inView] = useInView({
@@ -114,9 +116,13 @@ const HeroSection = ({
             <img
                src={backgroundImage}
                alt="Students studying together"
-               className="w-full h-full object-cover"
+               className={`w-full h-full object-cover ${
+                  position === 'bottom' ? 'object-bottom' : 
+                  position === 'center' ? 'object-center' : 'object-top'
+               }`}
                loading="eager"
             />
+            <div className="absolute inset-0 bg-black bg-opacity-40"></div>
             <div
                className="absolute inset-0"
                style={{ backgroundColor: isSingleUniversity ? overlayColor : '' }}

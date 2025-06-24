@@ -17,7 +17,8 @@ export default function ContactPage() {
             description="Whether you have questions, need guidance, or just want to explore your options to study abroad — we're here for you. Reach out and let's start shaping your future together! "
             buttonText="Book Consultation Now"
             buttonLink="/contact-us"
-            backgroundImage={Images.Contact.ContactHero}
+            backgroundImage={Images.EbcGraduates}
+            position="center"
          />
          <ContactForm
             title="Get in Touch"
